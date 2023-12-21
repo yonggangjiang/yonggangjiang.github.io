@@ -1,0 +1,1241 @@
+<!DOCTYPE html><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+<title>Fine-Grained Complexity | Home | Yonggang&#39;s homepage</title>
+
+<meta name="generator" content="Hugo Eureka 0.8.3-dev" />
+<link rel="stylesheet" href="https://jyg94.github.io/css/eureka.min.css">
+<script defer src="https://jyg94.github.io/js/eureka.min.js"></script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js"
+   crossorigin></script>
+
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/dart.min.js"
+     crossorigin></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js"
+   integrity="sha256-uNYoXefWRqv&#43;PsIF/OflNmwtKM4lStn9yrz2gVl6ymo="  crossorigin></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+   integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" 
+  integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+   integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js" 
+  integrity="sha256-Zmpaaj&#43;GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE="  crossorigin></script>
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="https://jyg94.github.io/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_32x32_fill_box_center_3.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://jyg94.github.io/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png">
+
+<meta name="description"
+  content="Fine-Grained Complexity Problem reductions, conjecture on lower bounds and algorithm upper bound. The follwoing reduciton definition is foundamental on fine-grained complexity.
+Definition of Fine-grained ReductionLet $P,Q$ be problems and $T_P,T_Q:\mathbb{R}^&#43;\to\mathbb{R}^&#43;$ be time functions. We say $(P,T_P)$ has a fine-grained reduction to $(Q,T_Q)$, denoted by $(P,T_P)\le_{fgr}(Q,T_Q)$, if for any $\epsilon&gt;0$ there exists $\delta&gt;0$ and an algorithm $A^Q$ with oracle call to algorithm solving $Q$, such that $A^Q$ solves $P$ and for any $P$ instance with input size $n$ we have 1.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Docs",
+      "item":"https://jyg94.github.io/docs/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"Home",
+      "item":"https://jyg94.github.io/docs/wiki/"},{
+      "@type": "ListItem",
+      "position": 3 ,
+      "name":"Fine-Grained Complexity",
+      "item":"https://jyg94.github.io/docs/wiki/finegrained/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://jyg94.github.io/docs/wiki/finegrained/"
+    },
+    "headline": "Fine-Grained Complexity | Home | Yonggang\u0027s homepage","datePublished": "2020-11-20T22:52:56+08:00",
+    "dateModified": "2020-11-20T22:52:56+08:00",
+    "wordCount":  3878 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "C. Wang",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://jyg94.github.io/images/icon.png"
+        }
+        },
+    "description": "Fine-Grained Complexity Problem reductions, conjecture on lower bounds and algorithm upper bound. The follwoing reduciton definition is foundamental on fine-grained complexity.\nDefinition of Fine-grained Reduction\rLet $P,Q$ be problems and $T_P,T_Q:\\mathbb{R}^\u002b\\to\\mathbb{R}^\u002b$ be time functions. We say $(P,T_P)$ has a fine-grained reduction to $(Q,T_Q)$, denoted by $(P,T_P)\\le_{fgr}(Q,T_Q)$, if for any $\\epsilon\u003e0$ there exists $\\delta\u003e0$ and an algorithm $A^Q$ with oracle call to algorithm solving $Q$, such that $A^Q$ solves $P$ and for any $P$ instance with input size $n$ we have 1."
+}
+</script><meta property="og:title" content="Fine-Grained Complexity | Home | Yonggang&#39;s homepage" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="https://jyg94.github.io/images/icon.png">
+
+
+<meta property="og:url" content="https://jyg94.github.io/docs/wiki/finegrained/" />
+
+
+
+
+<meta property="og:description" content="Fine-Grained Complexity Problem reductions, conjecture on lower bounds and algorithm upper bound. The follwoing reduciton definition is foundamental on fine-grained complexity.
+Definition of Fine-grained ReductionLet $P,Q$ be problems and $T_P,T_Q:\mathbb{R}^&#43;\to\mathbb{R}^&#43;$ be time functions. We say $(P,T_P)$ has a fine-grained reduction to $(Q,T_Q)$, denoted by $(P,T_P)\le_{fgr}(Q,T_Q)$, if for any $\epsilon&gt;0$ there exists $\delta&gt;0$ and an algorithm $A^Q$ with oracle call to algorithm solving $Q$, such that $A^Q$ solves $P$ and for any $P$ instance with input size $n$ we have 1." />
+
+
+
+
+<meta property="og:locale" content="en" />
+
+
+
+
+<meta property="og:site_name" content="Yonggang&#39;s homepage" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2020-11-20T22:52:56&#43;08:00" />
+
+
+<meta property="article:modified_time" content="2020-11-20T22:52:56&#43;08:00" />
+
+
+
+<meta property="article:section" content="docs" />
+
+
+
+
+<head>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-94BJ1L4MWP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-94BJ1L4MWP');
+</script>
+</head>
+
+<body class="flex flex-col min-h-screen">
+  <header class="fixed flex items-center w-full min-h-16 z-50 bg-secondary-bg shadow-sm">
+    <div class="w-full mx-auto"><script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0" style="width:1300px">
+    <a href="/docs/wiki" class="mr-6 text-primary-text text-xl font-bold" style="color: black;">Yonggang's wiki</a>
+    
+
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+  </header>
+  <main class="flex-grow pt-16">
+
+
+<div class="flex flex-col md:flex-row bg-secondary-bg rounded">
+    <div class="md:w-1/4 lg:w-1/6 border-r">
+        <div class="sticky top-16 pt-6">
+            
+
+
+
+
+
+
+
+
+
+
+<div id="sidebar-title" class="md:hidden mx-4 px-2 pt-4 pb-2 md:border-b text-tertiary-text md:text-primary-text">
+    <span class="font-semibold">Table of Contents</span>
+    <i class="fas fa-caret-right ml-1"></i>
+</div>
+
+<div id="sidebar-toc"
+    class="hidden md:block overflow-y-auto mx-6 md:mx-0 pr-6 pt-2 md:max-h-doc-sidebar bg-primary-bg md:bg-transparent">
+
+    <div class="flex flex-wrap ml-4 -mr-2 p-2 hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://jyg94.github.io/docs/wiki/&#34;">
+        <a class=" hover:text-eureka font-bold"
+            href="https://jyg94.github.io/docs/wiki/">Home</a>
+        
+        
+        
+
+
+    </div>
+    
+    
+
+
+<ul class="pl-4">
+    
+    
+    
+    <li class="py-1"></li>
+        <div class="  -mr-2 p-2  hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://jyg94.github.io/docs/wiki/advanced/&#34;">
+            <a class=""
+            href="https://jyg94.github.io/docs/wiki/advanced/">Advanced Algorithm (ETHz)</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-1"></li>
+        <div class="  -mr-2 p-2  hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://jyg94.github.io/docs/wiki/math/&#34;">
+            <a class=""
+            href="https://jyg94.github.io/docs/wiki/math/">Basic Math</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-1"></li>
+        <div class="  -mr-2 p-2  hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://jyg94.github.io/docs/wiki/complexity/&#34;">
+            <a class=""
+            href="https://jyg94.github.io/docs/wiki/complexity/">Complexity</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-1"></li>
+        <div class="  -mr-2 p-2  hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://jyg94.github.io/docs/wiki/concentration/&#34;">
+            <a class=""
+            href="https://jyg94.github.io/docs/wiki/concentration/">Concentration of Measure</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-1"></li>
+        <div class="  -mr-2 p-2  hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://jyg94.github.io/docs/wiki/convex/&#34;">
+            <a class=""
+            href="https://jyg94.github.io/docs/wiki/convex/">Convex Optimization</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-1"></li>
+        <div class="  -mr-2 p-2  hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://jyg94.github.io/docs/wiki/finegrained/&#34;">
+            <a class=" text-eureka "
+            href="https://jyg94.github.io/docs/wiki/finegrained/">Fine-Grained Complexity</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-1"></li>
+        <div class="  -mr-2 p-2  hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://jyg94.github.io/docs/wiki/graph/&#34;">
+            <a class=""
+            href="https://jyg94.github.io/docs/wiki/graph/">Graph Theory</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-1"></li>
+        <div class="  -mr-2 p-2  hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://jyg94.github.io/docs/wiki/matrix/&#34;">
+            <a class=""
+            href="https://jyg94.github.io/docs/wiki/matrix/">Matrix</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-1"></li>
+        <div class="  -mr-2 p-2  hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://jyg94.github.io/docs/wiki/ml/&#34;">
+            <a class=""
+            href="https://jyg94.github.io/docs/wiki/ml/">ML Foundations</a>
+        </div>
+        
+    </li>
+    
+    
+    <li class="py-2"></li>
+    </li>
+</ul>
+
+</div>
+
+
+
+
+
+        </div>
+    </div>
+    <div class="w-full md:w-3/4 lg:w-4/5 pb-8 pt-2 md:pt-8">
+        <div class="flex">
+            <div class="w-full lg:w-4/4 px-6">
+                
+                
+                <div class="content">
+                    <h1 id="fine-grained-complexity">Fine-Grained Complexity</h1>
+<p>Problem reductions, conjecture on lower bounds and algorithm upper bound. The follwoing reduciton definition is foundamental on fine-grained complexity.</p>
+<div class="rounded border" style="line-height:15px; background-color: #A7C1F2; border-radius: 5px; border-color: #AAAAAA; border-left-width: 2px; border-top-width: 2px;">
+    <div class="px-2 pt-2 pb-2 font-bold">
+        Definition of Fine-grained Reduction
+    </div>
+    <div class="rounded border px-4 pt-2 pb-2" style="background-color: white; border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-color: #AAAAAA; border-top-right-radius: 0%; border-top-left-radius: 0%;">
+        <div>
+Let $P,Q$ be problems and $T_P,T_Q:\mathbb{R}^+\to\mathbb{R}^+$ be time functions. We say $(P,T_P)$ has a fine-grained reduction to $(Q,T_Q)$, denoted by $(P,T_P)\le_{fgr}(Q,T_Q)$, if for any $\epsilon>0$ there exists $\delta>0$ and an algorithm $A^Q$ with oracle call to algorithm solving $Q$, such that $A^Q$ solves $P$ and for any $P$ instance with input size $n$ we have
+</br>
+1. Let $n_1,n_2,...,n_k$ be the instance size of oracle calls to $Q$, then
+<div>
+\[\sum_{i=1}^kT_Q(n_i)^{1-\epsilon}=O(T_P(n)^{1-\delta})\]
+</div> 
+</br>
+2. $A^Q$ runs for $O(T_P(n)^{1-\delta})$ besides calls to oracle $Q$. 
+</div>
+    </div>
+</div>
+<p>One can see that if the reduction holds, then &ldquo;there are no algorithm solving $P$ in $T_P^{1-\epsilon}$ for any $\epsilon&gt;0$&rdquo; implies &ldquo;there are no algorithm solving $Q$ in $T_Q^{1-\epsilon}$ for any $\epsilon&gt;0$&rdquo;.</p>
+<h2 id="3-sat">3-SAT</h2>
+<p>The following is <a href="https://en.wikipedia.org/wiki/Exponential_time_hypothesis">Exponential Time Hypothesis</a>.</p>
+<p>Suppose $S_k$ contains all the constant $c$ such that there is an algorithm solve $k-SAT$ in $O(2^{cn})$. We define $c_k=\inf S_k$.
+<div class="rounded border" style="line-height:15px; background-color: MediumSeaGreen; border-radius: 5px; border-color: #AAAAAA; border-left-width: 2px; border-top-width: 2px;">
+    <div class="px-2 pt-2 pb-2 font-bold">
+        Exponential Time Hypothesis (ETH)
+    </div>
+    <div class="rounded border px-4 pt-2 pb-2" style="background-color: white; border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-color: #AAAAAA; border-top-right-radius: 0%; border-top-left-radius: 0%;">
+        
+
+Exponential Time Hypothesis says that $c_3>0$. A weaker illustration is "there do not exists algorithm solving 3-SAT in $2^{o(n)}$ time". 
+
+
+    </div>
+</div>
+<div class="rounded border" style="line-height:15px; background-color: MediumSeaGreen; border-radius: 5px; border-color: #AAAAAA; border-left-width: 2px; border-top-width: 2px;">
+    <div class="px-2 pt-2 pb-2 font-bold">
+        Strong Exponential Time Hypothesis (SETH)
+    </div>
+    <div class="rounded border px-4 pt-2 pb-2" style="background-color: white; border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-color: #AAAAAA; border-top-right-radius: 0%; border-top-left-radius: 0%;">
+        
+
+Strong Exponential Time Hypothesis (SETH) says that $\lim_{i\to \infty}c_i=1$. 
+
+
+    </div>
+</div></p>
+<p><strong>Beat Trivial Algorithm</strong></p>
+<p>The trivial way to solve k-CNF use time $O^\star(2^n)$. Some simple deterministic way to improve this for 3-SAT: guess $7$ possible correct assignment of a clause and recurse $T(n)=7T(n-3)=O^\star(1.9130^4)$; Guess the first variable to satisfy a cluase, lead to $T(n)=T(n-1)+T(n-2)+T(n-3)=O^\star(1.8393^n)$.</p>
+<p>Further randomized improvements: TBD</p>
+<p>Fatest algorithm up to now: <a href="https://dl.acm.org/doi/pdf/10.1145/3313276.3316359">Faster k-SAT Algorithms using Biased-PPSZ</a>. Solve $3-SAT$ in $O(1.307^n)$.</p>
+<p>The following are some problems that SAT can be reduced to.</p>
+<h3 id="orthogonal-vectors-ov">Orthogonal Vectors (OV)</h3>
+<p>Given two set $A,B\subseteq\lbrace 0,1 \rbrace^d$ where $|A|=|B|=n$, determine whether there exists $a\in A,b\in B$ such that $\langle a,b\rangle=0$, i.e., the places where $a$ has $1$ and $b$ has $1$ are disjoint.</p>
+<div class="rounded border" style="line-height:15px; background-color: MediumSeaGreen; border-radius: 5px; border-color: #AAAAAA; border-left-width: 2px; border-top-width: 2px;">
+    <div class="px-2 pt-2 pb-2 font-bold">
+        OV Hypothesis (OVH) 
+    </div>
+    <div class="rounded border px-4 pt-2 pb-2" style="background-color: white; border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-color: #AAAAAA; border-top-right-radius: 0%; border-top-left-radius: 0%;">
+        
+
+There are no $O(n^{2-\epsilon}\cdot {\rm poly}(d))$ algorithm for OV for any constant $\epsilon>0$. 
+
+
+    </div>
+</div>
+<p><strong>For small $d$, we have the following $O(nd+d2^d)$ algorithm.</strong>
+Build a graph $G=(V,E)$ with $2^d$ vertices, where each vertex represent a subset a string $\lbrace 0,1\rbrace^d$. For each $v\in V$, we make directed edges $(v,v&rsquo;)$ for all $v&rsquo;$ such that $v&rsquo;$ exactly flip one $0$ in $v$ to $1$. For each $a\in A$, mark $a$ as a $A$-vertex. For each $b\in B$, mark the flip-bit string of $b$ as $B$-vertex. Use graph search to find whether there is a path from $A$-vertex to $B$-vertex. A path exists iff. $A$ and $B$ has two orthogonal vectors.</p>
+<p><strong>For large $d$, we have the following $O\left(n^{2-\frac{1}{O(\log c)}}\right)$ algorithm.</strong> TBD.</p>
+<p>The following is a stronger hypothesis.</p>
+<div class="rounded border" style="line-height:15px; background-color: MediumSeaGreen; border-radius: 5px; border-color: #AAAAAA; border-left-width: 2px; border-top-width: 2px;">
+    <div class="px-2 pt-2 pb-2 font-bold">
+        Low Dimensional OV Hypothesis (LD-OVH) 
+    </div>
+    <div class="rounded border px-4 pt-2 pb-2" style="background-color: white; border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-color: #AAAAAA; border-top-right-radius: 0%; border-top-left-radius: 0%;">
+        
+
+For any constant $\epsilon>0$, there exists $c$ such that there are no $O(n^{2-\epsilon}\cdot {\rm poly}(d))$ algorithm for OV when $d\le c\log n$. 
+
+
+    </div>
+</div>
+<div class="rounded border" style="line-height:15px; background-color: #A7C1F2; border-radius: 5px; border-color: #AAAAAA; border-left-width: 2px; border-top-width: 2px;">
+    <div class="px-2 pt-2 pb-2 font-bold">
+        LD-OVH to SETH
+    </div>
+    <div class="rounded border px-4 pt-2 pb-2" style="background-color: white; border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-color: #AAAAAA; border-top-right-radius: 0%; border-top-left-radius: 0%;">
+        <div>
+
+If there exists $\epsilon>0$ and polynomial such that OV can be solved in $O(n^{2-\epsilon}{\rm poly}(d))$, then there exists $\epsilon'>0$ such that $k$-SAT can be solved in $O(2^{(1-\epsilon')n})$, which contradict SETH.
+ 
+</div>
+    </div>
+</div>
+<div class="rounded border" style="background-color: white; border-left-width: 2px; border-top-width: 2px; border-color: #AAAAAA; ">
+    <div class="px-2 pt-1 pb-1 font-bold"><a style="cursor:pointer" id="proofOV to SETH">Proof.</a></div>
+    <div class="hidden px-4 pt-0 pb-2" id="proofcontentOV to SETH">
+        <div>
+Split variable into two halfs. For each half, enumerate all the possible assinment. For an assignment $\sigma$, construct a string $x_{\sigma}$ which has the same number of bits as the number of clauses, where the $i$-th bit is $0$ iff. $\sigma$ satisfies the $i$-th clause. 
+
+Such construction has $d=\log^k N$ where $N=2^{n/2}$ is the number of nodes in OV instance. By using sparcification lemma, $d$ can be reduced to $O(\log N)$. 
+</div>
+    </div>
+</div>
+<script>
+    document.getElementById('proofOV to SETH').addEventListener('click', () => {
+        element = document.getElementById('proofcontentOV to SETH')
+        console.log(element.classList)
+        if(element.classList.contains('hidden'))
+            element.classList.remove('hidden')
+        else
+            element.classList.add('hidden')
+    })
+</script>
+<div></div>
+<p>Note: $k$-OV cannot be solved in $O(n^{k-\epsilon}poly d)$ assuming SETH, by the same proof.</p>
+<h3 id="graph-diameter">Graph Diameter</h3>
+<p>Since <a href="https://en.wikipedia.org/wiki/Fibonacci_heap">Fibonacci Heap</a> use $O(1)$ to decrease an element, the Dijstra use $O(m+n\log n)$ time. Thus, computing the diameter use $O(nm+n^2\log n)=\tilde{O}(nm)$ time.</p>
+<p><strong>Remark</strong>: choose a vertex, going to the farest one and start from it, go to the farest one is not a correct algorithm for general graph. It works for tree.</p>
+<p><div class="rounded border" style="line-height:15px; background-color: #A7C1F2; border-radius: 5px; border-color: #AAAAAA; border-left-width: 2px; border-top-width: 2px;">
+    <div class="px-2 pt-2 pb-2 font-bold">
+        OV to Graph Diameter
+    </div>
+    <div class="rounded border px-4 pt-2 pb-2" style="background-color: white; border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-color: #AAAAAA; border-top-right-radius: 0%; border-top-left-radius: 0%;">
+        <div>
+
+If there exists $\epsilon>0$ and an $O(m^{2-\epsilon})$ time algorithm for Graph Diameter (even for unweighted), then OVH fails.
+</br></br>
+Actually, the reduction is on a sparse graph where $m$ and $n$ do not differ to much. The reductino does not deny a $O(n^2)$ algorithm. 
+</div>
+    </div>
+</div>
+<div class="rounded border" style="background-color: white; border-left-width: 2px; border-top-width: 2px; border-color: #AAAAAA; ">
+    <div class="px-2 pt-1 pb-1 font-bold"><a style="cursor:pointer" id="proofGraph Diameter to OVH">Proof.</a></div>
+    <div class="hidden px-4 pt-0 pb-2" id="proofcontentGraph Diameter to OVH">
+        <div>
+A graph with three large parts: $n$ nodes represents each element in $A$; $n$ nodes represents each element in $B$; $d$ nodes represent each bit. Each node $a\in A$ connect to all bit nodes where it has $1$ on that place. Then nodes between $A$ and $B$ has distance $2$ iff. every path of $a\in A$ and $b\in B$ are not orthogonal. To reduce the distance between other nodes, add two nodes $v_1,v_2,$ where $v_1$ connects to all nodes except $B$, and $v_2$ connects to all nodes except $A$. Then the above claim still holds, while any other pairs of nodes has distance at most $2$. 
+</div>
+    </div>
+</div>
+<script>
+    document.getElementById('proofGraph Diameter to OVH').addEventListener('click', () => {
+        element = document.getElementById('proofcontentGraph Diameter to OVH')
+        console.log(element.classList)
+        if(element.classList.contains('hidden'))
+            element.classList.remove('hidden')
+        else
+            element.classList.add('hidden')
+    })
+</script>
+<div></div></p>
+<h3 id="dominating-set">Dominating Set</h3>
+<p>Given a graph $G=(V,E)$ with $n$ vertices, given an integer $q$. Determine if there is a subset $S\subseteq V$ such that $|S|\le q$ and $\forall v\in V$ we have $v\in S$ or $v$ is incident to a vertex in $S$. Naive algorithm cost $O(m2^n)$ time.</p>
+<div class="rounded border" style="line-height:15px; background-color: #A7C1F2; border-radius: 5px; border-color: #AAAAAA; border-left-width: 2px; border-top-width: 2px;">
+    <div class="px-2 pt-2 pb-2 font-bold">
+        Dominating Set to ETH
+    </div>
+    <div class="rounded border px-4 pt-2 pb-2" style="background-color: white; border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-color: #AAAAAA; border-top-right-radius: 0%; border-top-left-radius: 0%;">
+        <div>
+
+There exists a constant $\delta>0$, such that Dominating Set cannot be solved in $O(2^{\delta n})$, unless ETH fails. 
+
+</div>
+    </div>
+</div>
+<p>The above theorem need the following Sparsification Lemma due to <a href="https://www.sciencedirect.com/science/article/pii/S002200000191774X?via%3Dihub">Impagliazzo, Paturi &amp; Zane (2001)</a>.</p>
+<p><div class="rounded border" style="line-height:15px; background-color: lightgray; border-radius: 5px; border-color: #AAAAAA; border-left-width: 2px; border-top-width: 2px;">
+    <div class="px-2 pt-2 pb-2 font-bold">
+        Sparsification Lemma
+    </div>
+    <div class="rounded border px-4 pt-2 pb-2" style="background-color: white; border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-color: #AAAAAA; border-top-right-radius: 0%; border-top-left-radius: 0%;">
+        
+
+Let $\phi$ be a $k-SAT$ formula with $n$ variables. For any $\epsilon>0$, there exists an algorithm that runs in $t=O(2^{\epsilon n})$ time and output $k-SAT$ formulas $\phi_1,\phi_2,...,\phi_t$ on the same variable as $\phi$, and satisfying
+</br>
+1. There exists a constant $c=c(\epsilon,k)$ such that each variable appears at most $c$ times in any formula $\phi_i$. That means the number of clauses for each $\phi_i$ is linear on $n$. 
+</br>
+2. $\phi$ is satisfiable if and only if at least one $\phi_i$ is satisfiable.
+
+
+    </div>
+</div>
+<div class="rounded border" style="background-color: white; border-left-width: 2px; border-top-width: 2px; border-color: #AAAAAA; ">
+    <div class="px-2 pt-1 pb-1 font-bold"><a style="cursor:pointer" id="proofdominating set to ETH">Proof.</a></div>
+    <div class="hidden px-4 pt-0 pb-2" id="proofcontentdominating set to ETH">
+        <div>
+Use sparsification lemma to create $O(2^{\epsilonn})$ $3-SAT$ instances. Each instance has bounded clauses (linear on the number of variables $O(n)$). We consider using dominating set to solve the satisfiability for each instance.
+
+For each variable $x_i$, create three nodes $x_i,\bar{x_i},d_i$, and connected them into a triangle. For each clause $c_j$, create one node $c_j$. $x_i$ is connected to $c_j$ if $x_i$ satisfies $c_j$, same for $\bar{x_i}$. 
+
+Now the dominating set of the graph must be at least $q$, since $d_i$ must be covered, which means each triangle contains at least $1$ dominating node. The dominating set has size $q$ is equivalent to each triangle contains exactly $1$ dominating node. If it is $d_i$, we shift it to $x_i$ or $\bar{x_i}$, that changes nothing. This dominating set corresponds to a assignment.
+
+The graph contains $O(n)$ nodes, the total time is
+<div>
+\[O(2^{\epsilon n})\cdot O(2^{\delta c(\epsilon,3)n})\]
+</div>
+By setting $\epsilon,\delta$ sufficiently small, we get the conclusion.
+</div>
+    </div>
+</div>
+<script>
+    document.getElementById('proofdominating set to ETH').addEventListener('click', () => {
+        element = document.getElementById('proofcontentdominating set to ETH')
+        console.log(element.classList)
+        if(element.classList.contains('hidden'))
+            element.classList.remove('hidden')
+        else
+            element.classList.add('hidden')
+    })
+</script>
+<div></div></p>
+<p>The state of the art algorithm for DomSet has running time $O(2^{0.582n})$.</p>
+<p>We can also consider the parameterized complexity of Dominating Set: when $q$ is considered as constant, the trivial algorithm runs in $O(n^{q+1)})$.  We have the follow reduction.</p>
+<p><div class="rounded border" style="line-height:15px; background-color: #A7C1F2; border-radius: 5px; border-color: #AAAAAA; border-left-width: 2px; border-top-width: 2px;">
+    <div class="px-2 pt-2 pb-2 font-bold">
+        Dominating Set to ETH (parameterized)
+    </div>
+    <div class="rounded border px-4 pt-2 pb-2" style="background-color: white; border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-color: #AAAAAA; border-top-right-radius: 0%; border-top-left-radius: 0%;">
+        <div>
+There exists a constant $\delta>0$ such that for any $q\ge\frac{2}{\delta}$, $q-DomSet$ cannot be solved in time $O(n^{\delta q})$ unless ETH fails. 
+
+</div>
+    </div>
+</div>
+<div class="rounded border" style="background-color: white; border-left-width: 2px; border-top-width: 2px; border-color: #AAAAAA; ">
+    <div class="px-2 pt-1 pb-1 font-bold"><a style="cursor:pointer" id="proofdominating set parameterized">Proof.</a></div>
+    <div class="hidden px-4 pt-0 pb-2" id="proofcontentdominating set parameterized">
+        <div>
+Divide variables into $q$ roughly equal part. For each part, enumerate $2^{n/q}$ possible assinments, create one node for each of them. Create also $d_i$ for each part. Make each part as well as $d_i$ a clique. An assinment node is connnected to $c_i$ if the assinment satisfies $c_i$. Same arguement holds for the correctness of the reduction.
+
+Notice that we do not use sparcification lemma. The number of nodes is $O(q2^{n/q}+n^k)$ for $k-SAT$. If we treat $q$ as a constant, it is $O(2^{n/q})$. Based on ETH, $q-DomSet$ cannot be solve in the number of nodes to the power of $\delta q$ time, for some $\delta>0$.
+
+</div>
+    </div>
+</div>
+<script>
+    document.getElementById('proofdominating set parameterized').addEventListener('click', () => {
+        element = document.getElementById('proofcontentdominating set parameterized')
+        console.log(element.classList)
+        if(element.classList.contains('hidden'))
+            element.classList.remove('hidden')
+        else
+            element.classList.add('hidden')
+    })
+</script>
+<div></div></p>
+<p>If we have SETH, then $q-DomSet$ has a better lower bound. That is due to the proof of the above bound acctually holds even for $k-SAT$.
+<div class="rounded border" style="line-height:15px; background-color: #A7C1F2; border-radius: 5px; border-color: #AAAAAA; border-left-width: 2px; border-top-width: 2px;">
+    <div class="px-2 pt-2 pb-2 font-bold">
+        Dominating Set to SETH
+    </div>
+    <div class="rounded border px-4 pt-2 pb-2" style="background-color: white; border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-color: #AAAAAA; border-top-right-radius: 0%; border-top-left-radius: 0%;">
+        <div>
+
+$\forall q\ge 3,\epsilon>0$, $q-DomSet$ cannot be solved in time $O(n^{q-\epsilon})$ unless SETH fails. 
+
+</div>
+    </div>
+</div></p>
+<p><div class="rounded border" style="background-color: white; border-left-width: 2px; border-top-width: 2px; border-color: #AAAAAA; ">
+    <div class="px-2 pt-1 pb-1 font-bold"><a style="cursor:pointer" id="proofdominating set parameterized SETH">Proof.</a></div>
+    <div class="hidden px-4 pt-0 pb-2" id="proofcontentdominating set parameterized SETH">
+        <div>
+
+Use the same reduction. According to the above discussion, the number of nodes is $O(2^{n/q})$. That lead to an $O(2^{\frac{q-\epsilon}{q}n})$ algorithm for any $k$. By taking $k$ sufficiently large (tends to infinity), this violate $SETH$.
+
+</div>
+    </div>
+</div>
+<script>
+    document.getElementById('proofdominating set parameterized SETH').addEventListener('click', () => {
+        element = document.getElementById('proofcontentdominating set parameterized SETH')
+        console.log(element.classList)
+        if(element.classList.contains('hidden'))
+            element.classList.remove('hidden')
+        else
+            element.classList.add('hidden')
+    })
+</script>
+<div></div>
+The current best known algorithm has running time $n^{q+o(1)}$.</p>
+<h3 id="longest-common-subsequence-lcs">Longest Common Subsequence (LCS)</h3>
+<p>Given strings $X,Y\subseteq\Sigma^n$. Compute the longest common subsequence. By dynamic programming, the problem can be solve in $O(n^2)$, which only need the condition: $O(1)$ to compare two numbers in $\Sigma$. The following reduction applies to constant alphabet set $\Sigma$.</p>
+<div class="rounded border" style="line-height:15px; background-color: #A7C1F2; border-radius: 5px; border-color: #AAAAAA; border-left-width: 2px; border-top-width: 2px;">
+    <div class="px-2 pt-2 pb-2 font-bold">
+        LCS to OVH
+    </div>
+    <div class="rounded border px-4 pt-2 pb-2" style="background-color: white; border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-color: #AAAAAA; border-top-right-radius: 0%; border-top-left-radius: 0%;">
+        <div>
+If there is an algorithm solving LCS in $O(n^{2-\epsilon})$ for some $\epsilon>0$, then there is an algorithm solving OV in $O(n^{2-\epsilon'}{\rm poly}(d))$ time for some constant $\epsilon'>0$, which is a contradiciton to OVH.
+</div>
+    </div>
+</div>
+<p>Proof is too complecate.</p>
+<h3 id="nfa-acceptance-problem">NFA Acceptance Problem</h3>
+<p>Given a finite automation $G$ and string $S$, decide whether the nondeterministic finite automation $G$ accepts $S$.</p>
+<p>By using dynamic programming, we get $O(|S|\cdot |G|)$ algorithm.</p>
+<p>The following reductino applies to the case $|S|\approx |G|$.</p>
+<div class="rounded border" style="line-height:15px; background-color: #A7C1F2; border-radius: 5px; border-color: #AAAAAA; border-left-width: 2px; border-top-width: 2px;">
+    <div class="px-2 pt-2 pb-2 font-bold">
+        NFA acceptance to OVH
+    </div>
+    <div class="rounded border px-4 pt-2 pb-2" style="background-color: white; border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-color: #AAAAAA; border-top-right-radius: 0%; border-top-left-radius: 0%;">
+        <div>
+NFA Acceptance can not be solved in time $O(|S|+|G|)^{2-\epsilon}$ for any $\epsilon>0$ unless OVH fails. 
+</div>
+    </div>
+</div>
+<p>Easy proof.</p>
+<h3 id="subset-sum">Subset Sum</h3>
+<p>Determine whether a subset of a given a set of $n$ positive integers can sum up to an interger $t$. All integers should be polynomial on $n$.</p>
+<p>For large $t$, by meet-in-the-middle we get running time $O(2^{n/2}n)$.</p>
+<p>For small $t$, best known deterministic in $\tilde{O}(\sqrt{n}\cdot t)$ <a href="https://arxiv.org/pdf/1507.02318.pdf">[Koiliaris, Xu, 17]</a>, best knon randomized in $\tilde{O}(t)$ <a href="https://epubs.siam.org/doi/pdf/10.1137/1.9781611974782.69">[Bringmann, 17]</a>.</p>
+<p>We show the $\tilde{O}(t)$ algorithm in the following proof.</p>
+<div class="rounded border" style="background-color: white; border-left-width: 2px; border-top-width: 2px; border-color: #AAAAAA; ">
+    <div class="px-2 pt-1 pb-1 font-bold"><a style="cursor:pointer" id="proofsubsetsum ot algorithm">Proof.</a></div>
+    <div class="hidden px-4 pt-0 pb-2" id="proofcontentsubsetsum ot algorithm">
+        <div>
+$\tilde{O}(t)$ algorithm idea: use FFT
+<ul>
+<li>
+<p>Suppose we want to find a subset of size $k$ that sum up to $t$, we divide elements into $k^2$ subsets, and use FFT to find the possibility of taking at most one element in each subset: w.c.p the subset that sum up to $t$ spread into these $k^2$ subsets, and the running time is $\tilde{O}(k^2u)$ where $u$ is the maximum value in the set. Repeatly the algorithm $\log$ times to get w.h.p.</p>
+</li>
+<li>
+<p>Improve the above algorithm to $\tilde{O}(ku)$: divide elements into $k$ subsets, w.h.p. each subset contains $O(\log n)$ target elements, thus, use $\tilde{O}(u)$ time to find all possible sum of $O(\log n)$ elements in each subset. w.h.p, the target values is in each computed set. Use $\tilde{O}(ku)$ time to sum up all subsets.</p>
+</li>
+<li>
+<p>Final algorithm: divide set into $\log t$ subset by value in interval $[2^i,2^{i+1}]$. We only need to compute the sum of $t/2^{i}$ target elements in each subset, with maximum size $2^{i+1}$, which cost $\tilde{O}(t)$ time. Then use FFT to sum up all subset, total running time is $\tilde{O}(t)$.</p>
+</li>
+</ul>
+</div>
+    </div>
+</div>
+<script>
+    document.getElementById('proofsubsetsum ot algorithm').addEventListener('click', () => {
+        element = document.getElementById('proofcontentsubsetsum ot algorithm')
+        console.log(element.classList)
+        if(element.classList.contains('hidden'))
+            element.classList.remove('hidden')
+        else
+            element.classList.add('hidden')
+    })
+</script>
+<div></div>
+<div class="rounded border" style="line-height:15px; background-color: #A7C1F2; border-radius: 5px; border-color: #AAAAAA; border-left-width: 2px; border-top-width: 2px;">
+    <div class="px-2 pt-2 pb-2 font-bold">
+        Subset Sum under SETH
+    </div>
+    <div class="rounded border px-4 pt-2 pb-2" style="background-color: white; border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-color: #AAAAAA; border-top-right-radius: 0%; border-top-left-radius: 0%;">
+        <div>
+Subset Sum is not in $O(t^{1-\epsilon}\cdot 2^{o(n)})$ under SETH.
+</div>
+    </div>
+</div>
+<p>Proof: TBD.</p>
+<h3 id="approximate-maximum-inner-product-mip">Approximate Maximum Inner Product (MIP)</h3>
+<p>Given $A,B\subseteq\lbrace 0,1\rbrace^d$ of size $n$, maximize (or find $\alpha$ approximation of the optimal) $\langle a,b\rangle$ for $a\in A,b\in B$.</p>
+<div class="rounded border" style="line-height:15px; background-color: #A7C1F2; border-radius: 5px; border-color: #AAAAAA; border-left-width: 2px; border-top-width: 2px;">
+    <div class="px-2 pt-2 pb-2 font-bold">
+        Low dimensional OV to approximating MIP
+    </div>
+    <div class="rounded border px-4 pt-2 pb-2" style="background-color: white; border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-color: #AAAAAA; border-top-right-radius: 0%; border-top-left-radius: 0%;">
+        <div>
+For any $\epsilon>0$, there exists $\alpha\ge 1$ such that $\alpha$ approximation for $MIP$ cannot be computed in time $O(n^{2-\epsilon})poly\log d)$, unless LD-OVH fails.
+</div>
+    </div>
+</div>
+<p>Proof: TBD. The idea is to use DISJ comminication protocol. Make probability into approximation by brute force since $d=O(\log n)$.</p>
+<h2 id="omv-and-oumv">OMv and OuMv</h2>
+<p>OMv: given a matrix with size $n\times n$, answering online queries $Mv$.</p>
+<p>OuMv: given a matrix with size $n\times n$, answering online queries $uMv$.</p>
+<div class="rounded border" style="line-height:15px; background-color: MediumSeaGreen; border-radius: 5px; border-color: #AAAAAA; border-left-width: 2px; border-top-width: 2px;">
+    <div class="px-2 pt-2 pb-2 font-bold">
+        OMv and OuMv Hypothesis
+    </div>
+    <div class="rounded border px-4 pt-2 pb-2" style="background-color: white; border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-color: #AAAAAA; border-top-right-radius: 0%; border-top-left-radius: 0%;">
+        
+
+OMv and OuMv cannot be solve in $O(n^{3-\epsilon})$ time given $n$ queries.
+
+
+    </div>
+</div>
+<div class="rounded border" style="line-height:15px; background-color: #A7C1F2; border-radius: 5px; border-color: #AAAAAA; border-left-width: 2px; border-top-width: 2px;">
+    <div class="px-2 pt-2 pb-2 font-bold">
+        Equivalence between OMv and OuMv Hypothesis
+    </div>
+    <div class="rounded border px-4 pt-2 pb-2" style="background-color: white; border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-color: #AAAAAA; border-top-right-radius: 0%; border-top-left-radius: 0%;">
+        <div>
+
+OMv and OuMv Hypothesis are equivalent. 
+
+</div>
+    </div>
+</div>
+<p>The non-trivial part is how to use OuMv algorithm to solve OMv. TBD.</p>
+<h3 id="dynamic-single-source-reachability-dssr">Dynamic Single Source Reachability (DSSR)</h3>
+<p>Given a graph with a source $s$. Maintain three possible operations: insert, delete an edge, query whether a node is reachable from $s$.</p>
+<p>On undirected graph, best known $O(\log n)$ query time and $O(\log^5n)$ update time.</p>
+<p>On directed graph, if we only have edge insertion, we have $O(1)$ amortized update and query time; if we only have edge deletion, we have $poly(\log n)$ amortized update and query time.</p>
+<p>We consider the lowerbound for another similar problem #DSST, upon a query return the number of nodes reachable from $s$.</p>
+<div class="rounded border" style="line-height:15px; background-color: #A7C1F2; border-radius: 5px; border-color: #AAAAAA; border-left-width: 2px; border-top-width: 2px;">
+    <div class="px-2 pt-2 pb-2 font-bold">
+        OV to #DSSR
+    </div>
+    <div class="rounded border px-4 pt-2 pb-2" style="background-color: white; border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-color: #AAAAAA; border-top-right-radius: 0%; border-top-left-radius: 0%;">
+        <div>
+If there exists an algorithm achieving $O(m^{1-\epsilon})$ amortized query time and $O(m^{1-\epsilon})$ amortized update time simultaneously for #DSSR, then OVH fails. 
+</div>
+    </div>
+</div>
+<div class="rounded border" style="background-color: white; border-left-width: 2px; border-top-width: 2px; border-color: #AAAAAA; ">
+    <div class="px-2 pt-1 pb-1 font-bold"><a style="cursor:pointer" id="proof">Proof.</a></div>
+    <div class="hidden px-4 pt-0 pb-2" id="proofcontent">
+        <div>
+Given two sets $A,B$, build a node for each element in $B$, build a node for each bit. A bit node has an directed edge to $b$ if $b$ has $1$ on that bit. Fix a sourse $s$, for each $a\in A$, connect $s$ to all bits where $a$ has $1$, and query the number of reached nodes. If there are no orthogonal vectors, then all nodes should be reached. There are $O(dn)$ updates and $O(n)$ queries, where the number of edges is $O(nd)$. 
+</div>
+    </div>
+</div>
+<script>
+    document.getElementById('proof').addEventListener('click', () => {
+        element = document.getElementById('proofcontent')
+        console.log(element.classList)
+        if(element.classList.contains('hidden'))
+            element.classList.remove('hidden')
+        else
+            element.classList.add('hidden')
+    })
+</script>
+<div></div>
+<div class="rounded border" style="line-height:15px; background-color: #A7C1F2; border-radius: 5px; border-color: #AAAAAA; border-left-width: 2px; border-top-width: 2px;">
+    <div class="px-2 pt-2 pb-2 font-bold">
+        OuMv to DSSR
+    </div>
+    <div class="rounded border px-4 pt-2 pb-2" style="background-color: white; border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-color: #AAAAAA; border-top-right-radius: 0%; border-top-left-radius: 0%;">
+        <div>
+If there exists an algorithm achieving $O(m^{1-\epsilon})$ amortized query time and $O(m^{\frac{1}{2}-\epsilon})$ amortized update time simultaneously for DSSR, then OuMv hypothesis failed. 
+</div>
+    </div>
+</div>
+<div class="rounded border" style="background-color: white; border-left-width: 2px; border-top-width: 2px; border-color: #AAAAAA; ">
+    <div class="px-2 pt-1 pb-1 font-bold"><a style="cursor:pointer" id="proof">Proof.</a></div>
+    <div class="hidden px-4 pt-0 pb-2" id="proofcontent">
+        <div>
+Fix a source $s$ and sink $t$. Construct another $2n$ nodes $a_i,b_i,i\in[n]$ where $a_i$ has an edge to $b_i$ iff. $M_{ab}=1$. Now for each query, connect $s$ to $a_i$ if $u_i=1$, same for $t$ and $b_i$. $s$ can reach $t$ iff. $uMv=1$. There are $O(n^2)$ updates and $O(n)$ queries, the number of edges is $O(n^2)$. 
+</div>
+    </div>
+</div>
+<script>
+    document.getElementById('proof').addEventListener('click', () => {
+        element = document.getElementById('proofcontent')
+        console.log(element.classList)
+        if(element.classList.contains('hidden'))
+            element.classList.remove('hidden')
+        else
+            element.classList.add('hidden')
+    })
+</script>
+<div></div>
+<h2 id="all-pair-shortest-path-apsp">All Pair Shortest Path (APSP)</h2>
+<p>Problems that are equivalent.</p>
+<div class="rounded border" style="line-height:15px; background-color: #A7C1F2; border-radius: 5px; border-color: #AAAAAA; border-left-width: 2px; border-top-width: 2px;">
+    <div class="px-2 pt-2 pb-2 font-bold">
+        APSP equivalent class
+    </div>
+    <div class="rounded border px-4 pt-2 pb-2" style="background-color: white; border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-color: #AAAAAA; border-top-right-radius: 0%; border-top-left-radius: 0%;">
+        <div>
+If one of the following problems can be solved in $O(n^{3-\epsilon})$ time for some $\epsilon>0$, then all others can be solved in $O(n^{3-\epsilon'})$ for some $\epsilon'>0$. 
+<ul>
+<li>
+<p><strong>All pari shortest path:</strong> give a directed graph, output the distance matrix.</p>
+</li>
+<li>
+<p><strong>(min,$+$)-Product:</strong> give two matrices, compute the (min,$+$)-Product. Note that normal matrix multiplication can be solved in sub-cubic time.</p>
+</li>
+<li>
+<p><strong>AP-Neg-$\triangle$:</strong> give a weighted graph $G=(V,E)$, output whether $(u,v)\in E$ is in a negtive triangle for any $(u,v)\in E$.</p>
+</li>
+<li>
+<p><strong>Neg-$\triangle$:</strong> give a weighted graph, determine whether the graph contain a negtive triangle. The problem along with the above problem is also cubic equivalence to the tribipartite graph version.</p>
+</li>
+<li>
+<p><strong>Metricity:</strong> give a matrix $A$, determine whether $A_{ij}&lt; A_{ik}+A_{kj}$ for any $i,j,k$.</p>
+</li>
+<li>
+<p><strong>MaxSubmatrix:</strong> give a matrix, find the maximum of $\sum_{j=x_1}^{x_2}\sum_{i=y_1}^{y_2}A_{i,j}$ among all $x_1\le x_2,y_1\le y_2$. (Consider Negative circle on four partite graph, which is also APSP equivalent.)</p>
+</li>
+</ul>
+</div>
+    </div>
+</div>
+<div class="rounded border" style="line-height:15px; background-color: MediumSeaGreen; border-radius: 5px; border-color: #AAAAAA; border-left-width: 2px; border-top-width: 2px;">
+    <div class="px-2 pt-2 pb-2 font-bold">
+        APSP hypothesis
+    </div>
+    <div class="rounded border px-4 pt-2 pb-2" style="background-color: white; border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-color: #AAAAAA; border-top-right-radius: 0%; border-top-left-radius: 0%;">
+        
+
+APSP cannot be solved in $O(n^{3-\epsilon})$ for any $\epsilon>0$. 
+
+    </div>
+</div>
+<div class="rounded border" style="background-color: white; border-left-width: 2px; border-top-width: 2px; border-color: #AAAAAA; ">
+    <div class="px-2 pt-1 pb-1 font-bold"><a style="cursor:pointer" id="proofAPSP equivalence">Proof.</a></div>
+    <div class="hidden px-4 pt-0 pb-2" id="proofcontentAPSP equivalence">
+        <div>
+Easy cases: APSP is equivalent to (min,+)-Product. One direction is keeping square the weight matrix of a graph, the other direction is constructing a tripartite graph, and put directed weight between the $1,2$ and $2,3$ part according to matrix. 
+<p>Another trivial case: (min,+)-Product can be used to solve Neg-$\triangle$. For the tripartite graph, minimum weight from a node in part $1$ to $2$ then to $3$ can be computed by (min,+)-Product.</p>
+<p>Slight hard case: solving (min,+)-Product by All-Pairs-Neg-$\triangle$. Construct tripartite graph, put edge weight between part $1,2$ and $2,3$ according to the matrix. Dichotomy on the edge with between part $1,3$ and ask for each pair of part $1,3$ whether it lies in a triangle, which will show whether the edge weight between $1,3$ is greater than the true corresponding (min,+)-Product value or not. Thoses dichotomy can be run in parallel.</p>
+<p>Non-trivial case: use Neg-$\triangle$ to solve All-Pairs-Neg-$\triangle$. Firstly, use dichotomy we can use $O(\log n)$ calls to Neg-$\triangle$ to find a negative triangle. The idea is, there are $O(n^2)$ pairs, if we can find each pair by calling the Neg-$\triangle$ instance with number of nodes less than $n^{1/3}$, then we are done. Thus, consider the following procedure: divide each part into $n/\alpha$ block where each has size $\alpha\le n^{1/3}$. On every blocks tuple (in total there are $n^3/\alpha^3$ tuples), find negative triangle and delete it, repeate until there are no negative triangle in this block. Only $n^2$ pairs can be found, and only $n^3/\alpha^3$ tuples can be called. The total number of calls is $\tilde{O}(n^2+n^3/\alpha^3)$, and since each call has running time $\alpha^{3-\epsilon}$, the total running time is $\tilde{O}(n^{3-\epsilon/3}+n^{3}\alpha^{-\epsilon})$. By setting $\alpha$ to be at least polynomial on $n$, we get the result.</p>
+<p>Other proofs see homework.</p>
+</div>
+    </div>
+</div>
+<script>
+    document.getElementById('proofAPSP equivalence').addEventListener('click', () => {
+        element = document.getElementById('proofcontentAPSP equivalence')
+        console.log(element.classList)
+        if(element.classList.contains('hidden'))
+            element.classList.remove('hidden')
+        else
+            element.classList.add('hidden')
+    })
+</script>
+<div></div>
+<h3 id="zero-triangle">Zero Triangle</h3>
+<p>Given a weighted graph, determine whether there is an triangle sum up to zero.</p>
+<div class="rounded border" style="line-height:15px; background-color: #A7C1F2; border-radius: 5px; border-color: #AAAAAA; border-left-width: 2px; border-top-width: 2px;">
+    <div class="px-2 pt-2 pb-2 font-bold">
+        Zero-$\triangle$ complexity
+    </div>
+    <div class="rounded border px-4 pt-2 pb-2" style="background-color: white; border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-color: #AAAAAA; border-top-right-radius: 0%; border-top-left-radius: 0%;">
+        <div>
+
+There is a cubic time reduction from Neg-$\triangle$ to Zero-$\triangle$. 
+</div>
+    </div>
+</div>
+<div class="rounded border" style="background-color: white; border-left-width: 2px; border-top-width: 2px; border-color: #AAAAAA; ">
+    <div class="px-2 pt-1 pb-1 font-bold"><a style="cursor:pointer" id="proofNeg to Zero">Proof.</a></div>
+    <div class="hidden px-4 pt-0 pb-2" id="proofcontentNeg to Zero">
+        <div>
+
+Notice that $x+y> z$ iff. exists $l$ such that $\lfloor x/2\rfloor+\lfloor y/2\rfloor=\lfloor z/2\rfloor+1\ or\ 2$. Based on that, build $O(\log n)$ graph, where each graph divide the weight of the origninal graph by $2^l$, and plus $z$ by $0,1,2$. The original graph has Neg-$\triangle$ iff. one of the building graph has Zero-$\triangle$. 
+
+</div>
+    </div>
+</div>
+<script>
+    document.getElementById('proofNeg to Zero').addEventListener('click', () => {
+        element = document.getElementById('proofcontentNeg to Zero')
+        console.log(element.classList)
+        if(element.classList.contains('hidden'))
+            element.classList.remove('hidden')
+        else
+            element.classList.add('hidden')
+    })
+</script>
+<div></div>
+<p>The opposite direction is not known.</p>
+<h2 id="fast-matrix-multiplication-fmm">Fast Matrix Multiplication (FMM)</h2>
+<p>Multiply two $n\times n$ matrix. Suppose the running time is $O(n^\omega)$. Progress up to now: $\omega$=<a href="https://link.springer.com/content/pdf/10.1007/BF02165411.pdf">2.81</a>,<a href="https://dl.acm.org/doi/pdf/10.1145/28395.28396">2.376</a>,<a href="https://epubs.siam.org/doi/pdf/10.1137/1.9781611976465.32">2.373</a>. In the following we denote $\omega$ as the smallest possible $\omega$ such that matrix multiplication can be solved in $O(n^{\omega})$ time.</p>
+<p>It is not hard to see that Boolean MM is in time $O(n^{\omega})$.</p>
+<h3 id="node-weighted-neg-triangle">Node-Weighted Neg-$\triangle$</h3>
+<p>Recall Neg-$\triangle$ has three parts where edges has weight. The Node-Weighted Neg-$\triangle$ puts weights on nodes and ask whether there is a neigative triangle (wich sum of weight of nodes in the triangle negative).</p>
+<p>Not suprisingly, this problem is easier. Several reasons to see that node weights are easier: There are only $O(n)$ weights while the edges case has $O(n^2)$ weights; if all edges exists, then the problem is trivial by take the minimum weight of each part. One can also see that the bottleneck of the node weight problem is that we need to quickly determine whether a triangle exists between three small weight nodes.</p>
+<div class="rounded border" style="line-height:15px; background-color: #A7C1F2; border-radius: 5px; border-color: #AAAAAA; border-left-width: 2px; border-top-width: 2px;">
+    <div class="px-2 pt-2 pb-2 font-bold">
+        Node-Weighted Neg-$\triangle$ to FMM
+    </div>
+    <div class="rounded border px-4 pt-2 pb-2" style="background-color: white; border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-color: #AAAAAA; border-top-right-radius: 0%; border-top-left-radius: 0%;">
+        <div>
+
+Node-Weighted Neg-$\triangle$ can be solved in time $O(n^\omega+n^{2+\epsilon})$ for any $\epsilon>0$.
+
+</div>
+    </div>
+</div>
+<div class="rounded border" style="background-color: white; border-left-width: 2px; border-top-width: 2px; border-color: #AAAAAA; ">
+    <div class="px-2 pt-1 pb-1 font-bold"><a style="cursor:pointer" id="proofNode-weighted">Proof.</a></div>
+    <div class="hidden px-4 pt-0 pb-2" id="proofcontentNode-weighted">
+        <div>
+Use divide and conquer. Sort the nodes in each part by weights, and divide each part into $p$ clusters, ordered by weights as well. Use FMM algorithm to find the tuple clusters that contains triangle, between all the $p^3$ tuples, and recurse on $O(p^2)$ of them. 
+<p>Reason that only $O(p^2)$ should be recursed: notice that if a tuple is smaller than another tuple at any of the three cluster, then it should be ignored. Thus, let $S_{a,b}=(i,i+a,i+b)\mid_{a,b\in[-n,n]}$. Each $S_{a,b}$ should include at most $1$ tuple to be recursed. Only $4p^2$ are recursed. The recursive equation is</p>
+<div>
+\[T(n)=4p^2T(n/p)+O(n^\omega)=\tilde{O}(n^\omega+n^{\log_p4p^2})=\tilde{O}(n^\omega+n^{2+\log_p4})\]
+</div>
+</div>
+    </div>
+</div>
+<script>
+    document.getElementById('proofNode-weighted').addEventListener('click', () => {
+        element = document.getElementById('proofcontentNode-weighted')
+        console.log(element.classList)
+        if(element.classList.contains('hidden'))
+            element.classList.remove('hidden')
+        else
+            element.classList.add('hidden')
+    })
+</script>
+<div></div>
+<h3 id="apsp-on-special-graphs">APSP on Special Graphs</h3>
+<p>Undirected, unweighted graph in $O(n^\omega)$. <a href="https://reader.elsevier.com/reader/sd/pii/S0022000085710781?token=8F232A3F4EFE24E3EEF6612974E4F2948A0D580566A6C546E16D0770DB6C788CDE867EA64FD8A766C695DA4D29C7892F&amp;originRegion=eu-west-1&amp;originCreation=20220219141041">[Seidel, 95]</a>.</p>
+<p>When weights are restricted to below $k$: undirected in $\tilde{O}(k\cdot n^\omega)$<a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=814635">[Shoshan, Zwick, 99]</a>, directed in $\tilde{O}(k^{0.68}n^{2.58})$, directed approximation in $\tilde{O}(n^\omega\log k/\epsilon)$. <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=743464&amp;tag=1">[Zwick, 98]</a>.</p>
+<h3 id="triangle">Triangle</h3>
+<p>Give a tripartite graph, determine whether it contains a triangle.</p>
+<div class="rounded border" style="line-height:15px; background-color: MediumSeaGreen; border-radius: 5px; border-color: #AAAAAA; border-left-width: 2px; border-top-width: 2px;">
+    <div class="px-2 pt-2 pb-2 font-bold">
+        Triangle Hypothesis
+    </div>
+    <div class="rounded border px-4 pt-2 pb-2" style="background-color: white; border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-color: #AAAAAA; border-top-right-radius: 0%; border-top-left-radius: 0%;">
+        
+Triangle can not be solved in time $O(n^{\omega-\epsilon})$ for any $\epsilon$.
+
+    </div>
+</div>
+<p>One can see that Triangle can be trivially reduced to <strong>BooleanMM</strong> and <strong>Node-Weighted Neg-$\triangle$</strong>.</p>
+<h3 id="booleanmm-hypothesis">BooleanMM Hypothesis</h3>
+<p>The following hypothesis is easier to use, although it&rsquo;s implied by Triangle Hypothesis. BooleanMM is the problem of computing the multiplication of two boolean matrix, under multiplication substituted by $and$, adding substituted by $or$.</p>
+<div class="rounded border" style="line-height:15px; background-color: MediumSeaGreen; border-radius: 5px; border-color: #AAAAAA; border-left-width: 2px; border-top-width: 2px;">
+    <div class="px-2 pt-2 pb-2 font-bold">
+        BooleanMM Hypothesis
+    </div>
+    <div class="rounded border px-4 pt-2 pb-2" style="background-color: white; border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-color: #AAAAAA; border-top-right-radius: 0%; border-top-left-radius: 0%;">
+        
+BooleanMM Hypothesis can not be solved in time $O(n^{\omega-\epsilon})$ for any $\epsilon$. 
+
+    </div>
+</div>
+<h3 id="sliding-window-hamming-distance-swhd">Sliding Window Hamming Distance (SWHD)</h3>
+<p>Given string $T,P$ with length $O(n)$, for each shifting $\Delta$, find the hamming distance of $P$ and the substring of $T$ staring from the $\Delta$-th place and with the same length as $P$.</p>
+<div class="rounded border" style="line-height:15px; background-color: #A7C1F2; border-radius: 5px; border-color: #AAAAAA; border-left-width: 2px; border-top-width: 2px;">
+    <div class="px-2 pt-2 pb-2 font-bold">
+        BooleanMM to SWHD
+    </div>
+    <div class="rounded border px-4 pt-2 pb-2" style="background-color: white; border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-color: #AAAAAA; border-top-right-radius: 0%; border-top-left-radius: 0%;">
+        <div>
+
+SWHD is not in time $O(n^{\frac{\omega}{2}-\epsilon})$ under BooleanMM Hypothesis. 
+
+</div>
+    </div>
+</div>
+<div class="rounded border" style="background-color: white; border-left-width: 2px; border-top-width: 2px; border-color: #AAAAAA; ">
+    <div class="px-2 pt-1 pb-1 font-bold"><a style="cursor:pointer" id="proofBooleanMM to SWHD">Proof.</a></div>
+    <div class="hidden px-4 pt-0 pb-2" id="proofcontentBooleanMM to SWHD">
+        <div>
+To compute the multiplication of $A,B$, we write $A=[a_1,a_2,...,a_n]^T$ and $B=[b_1,b_2,...,b_n]$. We want to compute $a_ib_j$ for each $i,j$. Notice that by creating string $a'_i$ where we put $a'_i[k]=k$ when $a_i[k]=1$, and $a'_i[k]=a$ when $a_i[k]=0$, similar for $b'_j$, then $a'_i,b'_j$ has hamming distance less than $n$ iff. $a_ib_j=1$.
+
+We concatenate all $a_i$ to get the string $P$. To discard the affection of different vectors, we concatenate $b_j$ while inserting a $\triangle $ between two $b_j$. 
+
+</div>
+    </div>
+</div>
+<script>
+    document.getElementById('proofBooleanMM to SWHD').addEventListener('click', () => {
+        element = document.getElementById('proofcontentBooleanMM to SWHD')
+        console.log(element.classList)
+        if(element.classList.contains('hidden'))
+            element.classList.remove('hidden')
+        else
+            element.classList.add('hidden')
+    })
+</script>
+<div></div>
+<p>The currect best known algorithm is in time $\tilde{O}(n^{1.5})$.</p>
+<h2 id="3sum">3SUM</h2>
+<p>Given three sets $A,B,C$ with $n$ elements in $[w]$ where $w=poly(n)$. Determine whether $\exists a\in A,b\in B,c\in C, a+b=c$. general equivalent discription: $a+b+c=t$ where $t$ is a given interger. Naively, this problem can be solved in $O(n^2)$ time, and FFT in $O(n+W\log W)$ time.</p>
+<div class="rounded border" style="line-height:15px; background-color: MediumSeaGreen; border-radius: 5px; border-color: #AAAAAA; border-left-width: 2px; border-top-width: 2px;">
+    <div class="px-2 pt-2 pb-2 font-bold">
+        3SUM Hypothesis
+    </div>
+    <div class="rounded border px-4 pt-2 pb-2" style="background-color: white; border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-color: #AAAAAA; border-top-right-radius: 0%; border-top-left-radius: 0%;">
+        
+3SUM can not be solved in time $O(n^{\2-\epsilon})$ for any $\epsilon$.
+
+    </div>
+</div>
+<p>Current best known algorithm runs in $O\left(\frac{n^2}{\log^2n}poly(\log\log n)\right)$. <a href="https://dl.acm.org/doi/pdf/10.1145/3185378">[Groenluns, Pettie, 18]</a>. <a href="https://dl.acm.org/doi/pdf/10.1145/3363541">[Chan, 19]</a>.</p>
+<h3 id="geom-base">Geom Base</h3>
+<p>Given $n$ points one three horizontal lines, determine whether three of them shares a line.</p>
+<p>A trivial reduction shows that this problem cannot be solve in $O(n^{2-\epsilon})$ under 3SUM hypothesis.</p>
+<h3 id="conv3sum">Conv3SUM</h3>
+<p>Given three sets $A,B,C$ where $A=\lbrace a_i\mid {i\in [n]}\rbrace,B=\lbrace b_i\mid{i\in [n]}\rbrace,C=\lbrace c_i\mid{i\in [n]}\rbrace$. Determine whether there exists $i+j=k$ such that $a_i+b_j=c_k$.</p>
+<div class="rounded border" style="line-height:15px; background-color: #A7C1F2; border-radius: 5px; border-color: #AAAAAA; border-left-width: 2px; border-top-width: 2px;">
+    <div class="px-2 pt-2 pb-2 font-bold">
+        Conv3SUM to 3SUM
+    </div>
+    <div class="rounded border px-4 pt-2 pb-2" style="background-color: white; border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-color: #AAAAAA; border-top-right-radius: 0%; border-top-left-radius: 0%;">
+        <div>
+<p>If 3SUM is in $T(n)$, then Conv3SUM is in $O(T(n))$.</p>
+</div>
+    </div>
+</div>
+<p>let $a&rsquo;_i=i\cdot M+a_i$, same for $b&rsquo;_i,c&rsquo;_i$, where $M=O(n)$ is sufficiently large. This finishes the proof.</p>
+<div class="rounded border" style="line-height:15px; background-color: #A7C1F2; border-radius: 5px; border-color: #AAAAAA; border-left-width: 2px; border-top-width: 2px;">
+    <div class="px-2 pt-2 pb-2 font-bold">
+        3SUM to Conv3SUM
+    </div>
+    <div class="rounded border px-4 pt-2 pb-2" style="background-color: white; border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-color: #AAAAAA; border-top-right-radius: 0%; border-top-left-radius: 0%;">
+        <div>
+<p>If Conv3SUM is in $T(n)$, then 3SUM is in $O(T(n)poly(\log w))$. Since $w$ is polynomial in $n$, this is $\tilde{O}(T(n))$. <a href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.481.169&amp;rep=rep1&amp;type=pdf">[Patrascu, 10]</a>, <a href="https://arxiv.org/pdf/1407.6756.pdf">[Kopelowitz, Pettie, Porat, 16]</a>, <a href="https://epubs.siam.org/doi/pdf/10.1137/1.9781611976014.1">[Chan, He, 20]</a>.</p>
+</div>
+    </div>
+</div>
+<div class="rounded border" style="background-color: white; border-left-width: 2px; border-top-width: 2px; border-color: #AAAAAA; ">
+    <div class="px-2 pt-1 pb-1 font-bold"><a style="cursor:pointer" id="proof3SUM to Conv3SUM">Proof.</a></div>
+    <div class="hidden px-4 pt-0 pb-2" id="proofcontent3SUM to Conv3SUM">
+        <div>
+For the given set $A,B,C$, we need to order elements in them to form a Conv3SUM instance. Pick a random prime in $O(n)$ and set a linear hash function $h(a)=a\ mod\ p$, them for $a\in A$, let $h(a)$ be the place $a$ should be put. Then one can see that if $a+b=c$, then $h(a)+h(b)=h(c)$ and thus a Conv3SUM YES instance is constructed. 
+<p>One problem is that the place $h(a)$ might contain two many $a\in A$. We claim that its enough to consider the first $O(\log n)$ mapped elements, and run $O(\log n)$ Conv3SUM instance. Consider three elements $a\in A,b\in B,c\in C$ such that $a+b=c$. $a+b=c$ is not detected in one of the $O(\log n)$ Conv3SUM instance implies one of $a,b,c$ mapped to a slot with more than $O(\log n)$ elements. Notice that each element in $A$ has probability $O(\log n/n)$ to map to the same slot as $a$. Thus, the expectation is $O(\log n)$ and according to Markov&rsquo;s inequality, that happens with constant probability. That forms a randomized reduction.</p>
+</div>
+    </div>
+</div>
+<script>
+    document.getElementById('proof3SUM to Conv3SUM').addEventListener('click', () => {
+        element = document.getElementById('proofcontent3SUM to Conv3SUM')
+        console.log(element.classList)
+        if(element.classList.contains('hidden'))
+            element.classList.remove('hidden')
+        else
+            element.classList.add('hidden')
+    })
+</script>
+<div></div>
+<p>Deterministic: TBD.</p>
+<h3 id="zero-triangle-1">Zero Triangle</h3>
+<p>Recall that Zero Triangle is APSP hard. It is also 3SUM hard.</p>
+<div class="rounded border" style="line-height:15px; background-color: #A7C1F2; border-radius: 5px; border-color: #AAAAAA; border-left-width: 2px; border-top-width: 2px;">
+    <div class="px-2 pt-2 pb-2 font-bold">
+        Zero-$\triangle$ complexity
+    </div>
+    <div class="rounded border px-4 pt-2 pb-2" style="background-color: white; border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-color: #AAAAAA; border-top-right-radius: 0%; border-top-left-radius: 0%;">
+        <div>
+
+If Zero-$\triangle$ cam be solved in $O(n^{3-\epsilon})$ time, then Conv3SUM can be solved in $O(n^{2-\epsilon'})$ time.
+</div>
+    </div>
+</div>
+<div class="rounded border" style="background-color: white; border-left-width: 2px; border-top-width: 2px; border-color: #AAAAAA; ">
+    <div class="px-2 pt-1 pb-1 font-bold"><a style="cursor:pointer" id="proofconv3sum to Zero">Proof.</a></div>
+    <div class="hidden px-4 pt-0 pb-2" id="proofcontentconv3sum to Zero">
+        <div>
+<p>Intuition: For Conv3SUM we only need to check $n^2$ tuples, where Zero triangle can check $n^3$ tuples at one call. Moreover, each Zero triangle instance embed $n^2$ edge weights at one side. That gives us the following framework: construct $\sqrt{n}$ instance where each instance has $O(\sqrt{n})$ nodes. Since each edge is controled by 2 end points, its also convenient to treat elements index in $A,B,C$ as pairs, i.e., $(i,j)$ where $i,j\in[\sqrt{n}]$.</p>
+<p>Now construct the $t$-th tripartite graph $X,Y,Z$ in the following way: for $x\in X,y\in Y,z\in Z$, let the weight $w(x,y)=A[(x,y)],w(x,z)=B[(t-x,z)]$, which guarantee that whether $x$ changes, the sum of the first coordinate is equal to $t$. Then we can set $w(y,z)=C[(t,y+z)]$.</p>
+</div>
+    </div>
+</div>
+<script>
+    document.getElementById('proofconv3sum to Zero').addEventListener('click', () => {
+        element = document.getElementById('proofcontentconv3sum to Zero')
+        console.log(element.classList)
+        if(element.classList.contains('hidden'))
+            element.classList.remove('hidden')
+        else
+            element.classList.add('hidden')
+    })
+</script>
+<div></div>
+<h3 id="triangle-listing">Triangle Listing</h3>
+<p>Given a graph and an interger $t$, list $t$ triangles in this graph if there are at least $t$ triangles; otherwise list all of them.</p>
+<p>Current best konw: $\tilde{O}\left(m^{\frac{2\omega}{\omega+1}}+m^{\frac{3(\omega-1)}{\omega+1}}\cdot t^{\frac{3-\omega}{\omega+1}}\right)$. <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.650.4816&amp;rep=rep1&amp;type=pdf">[Bjoerklund1, Pagh, Vassilevska Williams, Zwick, 14]</a>. One can see that if $t\le m$, than the running time is $\tilde{O}\left(m^{\frac{2\omega}{\omega+1}}\right)$. This is the same as the running time of finding a single Triangle. When $\omega=2$, this runing time is $\tilde{O}(m^{4/3})$, which is the best we can do under 3SUM Hypothesis.</p>
+<div class="rounded border" style="line-height:15px; background-color: #A7C1F2; border-radius: 5px; border-color: #AAAAAA; border-left-width: 2px; border-top-width: 2px;">
+    <div class="px-2 pt-2 pb-2 font-bold">
+        3SIM to Triangle Listing
+    </div>
+    <div class="rounded border px-4 pt-2 pb-2" style="background-color: white; border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-color: #AAAAAA; border-top-right-radius: 0%; border-top-left-radius: 0%;">
+        <div>
+
+If Triangle listing cam be solved in $O(m^{4/3-\epsilon})$ time, then 3SUM can be solved in $O(n^{2-\epsilon'})$ time.
+
+</div>
+    </div>
+</div>
+<p>Proof: TBD</p>
+
+                </div>
+                
+                
+
+                
+
+
+
+                
+
+
+
+            </div>
+            
+            <div class="hidden lg:block lg:w-1/4">
+                
+                <div class="sticky top-16 z-10 hidden lg:block px-6 py-4  bg-secondary-bg pt-16 -mt-16 ">
+    <span class="text-lg font-semibold">On This Page</span>
+</div>
+<div class="sticky-toc hidden lg:block px-6 pb-6  pt-10 -mt-10 border-l ">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#fine-grained-complexity">Fine-Grained Complexity</a>
+      <ul>
+        <li><a href="#3-sat">3-SAT</a>
+          <ul>
+            <li><a href="#orthogonal-vectors-ov">Orthogonal Vectors (OV)</a></li>
+            <li><a href="#graph-diameter">Graph Diameter</a></li>
+            <li><a href="#dominating-set">Dominating Set</a></li>
+            <li><a href="#longest-common-subsequence-lcs">Longest Common Subsequence (LCS)</a></li>
+            <li><a href="#nfa-acceptance-problem">NFA Acceptance Problem</a></li>
+            <li><a href="#subset-sum">Subset Sum</a></li>
+            <li><a href="#approximate-maximum-inner-product-mip">Approximate Maximum Inner Product (MIP)</a></li>
+          </ul>
+        </li>
+        <li><a href="#omv-and-oumv">OMv and OuMv</a>
+          <ul>
+            <li><a href="#dynamic-single-source-reachability-dssr">Dynamic Single Source Reachability (DSSR)</a></li>
+          </ul>
+        </li>
+        <li><a href="#all-pair-shortest-path-apsp">All Pair Shortest Path (APSP)</a>
+          <ul>
+            <li><a href="#zero-triangle">Zero Triangle</a></li>
+          </ul>
+        </li>
+        <li><a href="#fast-matrix-multiplication-fmm">Fast Matrix Multiplication (FMM)</a>
+          <ul>
+            <li><a href="#node-weighted-neg-triangle">Node-Weighted Neg-$\triangle$</a></li>
+            <li><a href="#apsp-on-special-graphs">APSP on Special Graphs</a></li>
+            <li><a href="#triangle">Triangle</a></li>
+            <li><a href="#booleanmm-hypothesis">BooleanMM Hypothesis</a></li>
+            <li><a href="#sliding-window-hamming-distance-swhd">Sliding Window Hamming Distance (SWHD)</a></li>
+          </ul>
+        </li>
+        <li><a href="#3sum">3SUM</a>
+          <ul>
+            <li><a href="#geom-base">Geom Base</a></li>
+            <li><a href="#conv3sum">Conv3SUM</a></li>
+            <li><a href="#zero-triangle-1">Zero Triangle</a></li>
+            <li><a href="#triangle-listing">Triangle Listing</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        enableStickyToc();
+    });
+</script>
+                
+            </div>
+            
+        </div>
+
+    </div>
+
+
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        hljs.initHighlightingOnLoad();
+        changeSidebarHeight();
+        switchDocToc();
+    })
+</script>
+
+
+
+
+
+
+
+
+  </main>
+  <footer class="pl-scrollbar">
+    <div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">Powered by <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a>. Last updated in 2023 December. </p>
+</div></div>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,666 @@
+<!DOCTYPE html><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+<title>Basic Math | Home | Yonggang&#39;s homepage</title>
+
+<meta name="generator" content="Hugo Eureka 0.8.3-dev" />
+<link rel="stylesheet" href="https://jyg94.github.io/css/eureka.min.css">
+<script defer src="https://jyg94.github.io/js/eureka.min.js"></script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js"
+   crossorigin></script>
+
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/dart.min.js"
+     crossorigin></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js"
+   integrity="sha256-uNYoXefWRqv&#43;PsIF/OflNmwtKM4lStn9yrz2gVl6ymo="  crossorigin></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+   integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" 
+  integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+   integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js" 
+  integrity="sha256-Zmpaaj&#43;GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE="  crossorigin></script>
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="https://jyg94.github.io/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_32x32_fill_box_center_3.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://jyg94.github.io/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png">
+
+<meta name="description"
+  content="Basic Math Some basic theorem in mathematics.
+Link to Useful inequalities cheat sheet.
+Probability Expectation For random variable $X$, we have
+\[\mathbb{E}[X]=\int^{\infty}_0\Pr[X&gt;t]dt-\int^0_{-\infty}\Pr[X &lt; t]dt\]By substituting $X$ by $|X|^p$ for $p\in(0,&#43;\infty)$ we get
+\[\mathbb{E}[|X|^p]=\int^{\infty}_0\Pr[X&gt;t^{1/p}]dt=\int^{\infty}_0\Pr[X&gt;t]d(t^p)\]Norm Define $||X||_{L^p}=\left(\mathbb{E}[|X|^p]\right)^\frac{1}{p}$ for a random variable $X$ and $p\in(0,&#43;\infty]$. When $p=&#43;\infty$, the norm is the supreme of $|X|$.
+Jensen&rsquo;s inequality says that $\phi(\mathbb{E}[X])\le\mathbb{E}[\phi(X)]$ as $\phi$ is a convex function. Now since $\phi(x)=x^{q/p}$ for $q/p\ge 1$ is convex, we get
+\[\forall 1\le p\le q, ||X||_{L^p}\le ||X||_{L_q}\]Hölder&rsquo;s inequality: Suppose $p,q\in[1,&#43;\infty]$ with $1/p&#43;1/q=1$ and $X,Y$ are two random variables, then we have">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Docs",
+      "item":"https://jyg94.github.io/docs/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"Home",
+      "item":"https://jyg94.github.io/docs/wiki/"},{
+      "@type": "ListItem",
+      "position": 3 ,
+      "name":"Basic Math",
+      "item":"https://jyg94.github.io/docs/wiki/math/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://jyg94.github.io/docs/wiki/math/"
+    },
+    "headline": "Basic Math | Home | Yonggang\u0027s homepage","datePublished": "2020-11-20T22:52:56+08:00",
+    "dateModified": "2020-11-20T22:52:56+08:00",
+    "wordCount":  948 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "C. Wang",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://jyg94.github.io/images/icon.png"
+        }
+        },
+    "description": "Basic Math Some basic theorem in mathematics.\nLink to Useful inequalities cheat sheet.\nProbability Expectation For random variable $X$, we have\n\\[\\mathbb{E}[X]=\\int^{\\infty}_0\\Pr[X\u003et]dt-\\int^0_{-\\infty}\\Pr[X \u003c t]dt\\]\rBy substituting $X$ by $|X|^p$ for $p\\in(0,\u002b\\infty)$ we get\n\\[\\mathbb{E}[|X|^p]=\\int^{\\infty}_0\\Pr[X\u003et^{1\/p}]dt=\\int^{\\infty}_0\\Pr[X\u003et]d(t^p)\\]\rNorm Define $||X||_{L^p}=\\left(\\mathbb{E}[|X|^p]\\right)^\\frac{1}{p}$ for a random variable $X$ and $p\\in(0,\u002b\\infty]$. When $p=\u002b\\infty$, the norm is the supreme of $|X|$.\nJensen\u0026rsquo;s inequality says that $\\phi(\\mathbb{E}[X])\\le\\mathbb{E}[\\phi(X)]$ as $\\phi$ is a convex function. Now since $\\phi(x)=x^{q\/p}$ for $q\/p\\ge 1$ is convex, we get\n\\[\\forall 1\\le p\\le q, ||X||_{L^p}\\le ||X||_{L_q}\\]\rHölder\u0026rsquo;s inequality: Suppose $p,q\\in[1,\u002b\\infty]$ with $1\/p\u002b1\/q=1$ and $X,Y$ are two random variables, then we have"
+}
+</script><meta property="og:title" content="Basic Math | Home | Yonggang&#39;s homepage" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="https://jyg94.github.io/images/icon.png">
+
+
+<meta property="og:url" content="https://jyg94.github.io/docs/wiki/math/" />
+
+
+
+
+<meta property="og:description" content="Basic Math Some basic theorem in mathematics.
+Link to Useful inequalities cheat sheet.
+Probability Expectation For random variable $X$, we have
+\[\mathbb{E}[X]=\int^{\infty}_0\Pr[X&gt;t]dt-\int^0_{-\infty}\Pr[X &lt; t]dt\]By substituting $X$ by $|X|^p$ for $p\in(0,&#43;\infty)$ we get
+\[\mathbb{E}[|X|^p]=\int^{\infty}_0\Pr[X&gt;t^{1/p}]dt=\int^{\infty}_0\Pr[X&gt;t]d(t^p)\]Norm Define $||X||_{L^p}=\left(\mathbb{E}[|X|^p]\right)^\frac{1}{p}$ for a random variable $X$ and $p\in(0,&#43;\infty]$. When $p=&#43;\infty$, the norm is the supreme of $|X|$.
+Jensen&rsquo;s inequality says that $\phi(\mathbb{E}[X])\le\mathbb{E}[\phi(X)]$ as $\phi$ is a convex function. Now since $\phi(x)=x^{q/p}$ for $q/p\ge 1$ is convex, we get
+\[\forall 1\le p\le q, ||X||_{L^p}\le ||X||_{L_q}\]Hölder&rsquo;s inequality: Suppose $p,q\in[1,&#43;\infty]$ with $1/p&#43;1/q=1$ and $X,Y$ are two random variables, then we have" />
+
+
+
+
+<meta property="og:locale" content="en" />
+
+
+
+
+<meta property="og:site_name" content="Yonggang&#39;s homepage" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2020-11-20T22:52:56&#43;08:00" />
+
+
+<meta property="article:modified_time" content="2020-11-20T22:52:56&#43;08:00" />
+
+
+
+<meta property="article:section" content="docs" />
+
+
+
+
+<head>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-94BJ1L4MWP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-94BJ1L4MWP');
+</script>
+</head>
+
+<body class="flex flex-col min-h-screen">
+  <header class="fixed flex items-center w-full min-h-16 z-50 bg-secondary-bg shadow-sm">
+    <div class="w-full mx-auto"><script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0" style="width:1300px">
+    <a href="/docs/wiki" class="mr-6 text-primary-text text-xl font-bold" style="color: black;">Yonggang's wiki</a>
+    
+
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+  </header>
+  <main class="flex-grow pt-16">
+
+
+<div class="flex flex-col md:flex-row bg-secondary-bg rounded">
+    <div class="md:w-1/4 lg:w-1/6 border-r">
+        <div class="sticky top-16 pt-6">
+            
+
+
+
+
+
+
+
+
+
+
+<div id="sidebar-title" class="md:hidden mx-4 px-2 pt-4 pb-2 md:border-b text-tertiary-text md:text-primary-text">
+    <span class="font-semibold">Table of Contents</span>
+    <i class="fas fa-caret-right ml-1"></i>
+</div>
+
+<div id="sidebar-toc"
+    class="hidden md:block overflow-y-auto mx-6 md:mx-0 pr-6 pt-2 md:max-h-doc-sidebar bg-primary-bg md:bg-transparent">
+
+    <div class="flex flex-wrap ml-4 -mr-2 p-2 hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://jyg94.github.io/docs/wiki/&#34;">
+        <a class=" hover:text-eureka font-bold"
+            href="https://jyg94.github.io/docs/wiki/">Home</a>
+        
+        
+        
+
+
+    </div>
+    
+    
+
+
+<ul class="pl-4">
+    
+    
+    
+    <li class="py-1"></li>
+        <div class="  -mr-2 p-2  hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://jyg94.github.io/docs/wiki/advanced/&#34;">
+            <a class=""
+            href="https://jyg94.github.io/docs/wiki/advanced/">Advanced Algorithm (ETHz)</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-1"></li>
+        <div class="  -mr-2 p-2  hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://jyg94.github.io/docs/wiki/math/&#34;">
+            <a class=" text-eureka "
+            href="https://jyg94.github.io/docs/wiki/math/">Basic Math</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-1"></li>
+        <div class="  -mr-2 p-2  hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://jyg94.github.io/docs/wiki/complexity/&#34;">
+            <a class=""
+            href="https://jyg94.github.io/docs/wiki/complexity/">Complexity</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-1"></li>
+        <div class="  -mr-2 p-2  hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://jyg94.github.io/docs/wiki/concentration/&#34;">
+            <a class=""
+            href="https://jyg94.github.io/docs/wiki/concentration/">Concentration of Measure</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-1"></li>
+        <div class="  -mr-2 p-2  hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://jyg94.github.io/docs/wiki/convex/&#34;">
+            <a class=""
+            href="https://jyg94.github.io/docs/wiki/convex/">Convex Optimization</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-1"></li>
+        <div class="  -mr-2 p-2  hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://jyg94.github.io/docs/wiki/finegrained/&#34;">
+            <a class=""
+            href="https://jyg94.github.io/docs/wiki/finegrained/">Fine-Grained Complexity</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-1"></li>
+        <div class="  -mr-2 p-2  hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://jyg94.github.io/docs/wiki/graph/&#34;">
+            <a class=""
+            href="https://jyg94.github.io/docs/wiki/graph/">Graph Theory</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-1"></li>
+        <div class="  -mr-2 p-2  hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://jyg94.github.io/docs/wiki/matrix/&#34;">
+            <a class=""
+            href="https://jyg94.github.io/docs/wiki/matrix/">Matrix</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-1"></li>
+        <div class="  -mr-2 p-2  hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://jyg94.github.io/docs/wiki/ml/&#34;">
+            <a class=""
+            href="https://jyg94.github.io/docs/wiki/ml/">ML Foundations</a>
+        </div>
+        
+    </li>
+    
+    
+    <li class="py-2"></li>
+    </li>
+</ul>
+
+</div>
+
+
+
+
+
+        </div>
+    </div>
+    <div class="w-full md:w-3/4 lg:w-4/5 pb-8 pt-2 md:pt-8">
+        <div class="flex">
+            <div class="w-full lg:w-4/4 px-6">
+                
+                
+                <div class="content">
+                    <h1 id="basic-math">Basic Math</h1>
+<p>Some basic theorem in mathematics.</p>
+<p>Link to <a href="http://www.lkozma.net/inequalities_cheat_sheet/ineq.pdf">Useful inequalities cheat sheet</a>.</p>
+<h2 id="probability">Probability</h2>
+<h3 id="expectation">Expectation</h3>
+<p>For random variable $X$, we have</p>
+<div>
+\[\mathbb{E}[X]=\int^{\infty}_0\Pr[X>t]dt-\int^0_{-\infty}\Pr[X < t]dt\]
+</div>
+<p>By substituting $X$ by $|X|^p$ for $p\in(0,+\infty)$ we get</p>
+<div>
+\[\mathbb{E}[|X|^p]=\int^{\infty}_0\Pr[X>t^{1/p}]dt=\int^{\infty}_0\Pr[X>t]d(t^p)\]
+</div>
+<h3 id="norm">Norm</h3>
+<p>Define $||X||_{L^p}=\left(\mathbb{E}[|X|^p]\right)^\frac{1}{p}$ for a random variable $X$ and $p\in(0,+\infty]$. When $p=+\infty$, the norm is the supreme of $|X|$.</p>
+<p><em>Jensen&rsquo;s inequality</em> says that $\phi(\mathbb{E}[X])\le\mathbb{E}[\phi(X)]$ as $\phi$ is a convex function. Now since $\phi(x)=x^{q/p}$ for $q/p\ge 1$ is convex, we get</p>
+<div>
+\[\forall 1\le p\le q, ||X||_{L^p}\le ||X||_{L_q}\]
+</div>
+<p><a href="https://en.wikipedia.org/wiki/H%C3%B6lder%27s_inequality">Hölder&rsquo;s inequality</a>: Suppose $p,q\in[1,+\infty]$ with $1/p+1/q=1$ and $X,Y$ are two random variables, then we have</p>
+<div>
+\[\mathbb{E}[XY]\le||X||_{L^p}||Y||_{L^q}\]
+</div>
+<p>The Hölder’s inequality can be used to prove <a href="https://en.wikipedia.org/wiki/Minkowski_inequality">Minkowski inequality
+</a>, which is like the triangle inequality.</p>
+<div>
+\[||X+Y||_{L^p}\le||X||_{L^p}+||Y||_{L^p}\]
+</div>
+<h3 id="gaussian-distribution">Gaussian Distribution</h3>
+<p>$X\sim N(\mu,\sigma^2)$ means $X$ has <em>Gaussian (or normal) distribution</em>. The probability density function is</p>
+<div>
+\[\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}\]
+</div>
+<p>By setting $\mu=0,\sigma=\sqrt{2}/2$ we get $\int_{-\infty}^{+\infty}e^{-x^2}=\sqrt{\pi}$.</p>
+<p><a href="https://en.wikipedia.org/wiki/Gamma_function">Gamma function</a> is defined by</p>
+<div>
+\[\Gamma(z)=\int^\infty_0x^{z-1}e^{-x}dx\]
+</div>
+We have $\Gamma(1/2)=\sqrt{\pi}$. $\Gamma(z+1)$ is the interpolates of the factorial function, as the following graph shows.
+<div style="display: flex;
+justify-content: center;
+align-items: center;
+">
+<img src="/images/3.png"  alt="???" style="width:70%; height:70%;"/>
+</div>
+We have the Stirling's approximation for Gamma function:
+<div>
+\[\Gamma(x+1)\sim\sqrt{2\pi x}\left(\frac{x}{e}\right)^x\]
+</div>
+Use this approximation we can get an useful bound for Gamma function. For all $x\ge\frac{1}{2}$ we have
+<div>
+\[\Gamma(x)\le 3x^x\]
+</div>
+<h3 id="concentration">Concentration</h3>
+<p>A variable $X$ has <em>Poisson distribution</em> with parameter $\lambda$ is defined to be</p>
+<div>
+\[\Pr[X=k]=e^{-\lambda}\frac{\lambda^k}{k!}, k\in\mathbb{N}\]
+</div>
+<p>When $\lambda$ is the expectation of sum of independent Bernoulli distribution, then as the number tends to infinity, the distribution of the sum will converge to poisson distribution.</p>
+<h2 id="tayloy-expansion">Tayloy expansion</h2>
+<p>The following theorem is the general form of <a href="https://en.wikipedia.org/wiki/Taylor%27s_theorem">Tayloy&rsquo;s theorem</a>.</p>
+<div class="rounded border" style="line-height:15px; background-color: #A7C1F2; border-radius: 5px; border-color: #AAAAAA; border-left-width: 2px; border-top-width: 2px;">
+    <div class="px-2 pt-2 pb-2 font-bold">
+        Taylor's theorem
+    </div>
+    <div class="rounded border px-4 pt-2 pb-2" style="background-color: white; border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-color: #AAAAAA; border-top-right-radius: 0%; border-top-left-radius: 0%;">
+        <div>
+Suppose $k\in\mathbb{Z}^+$ and $f:\mathbb{R}\to\mathbb{R}$ is a function that is $k$ times continuously differentiable at the point $a\in\mathbb{R}$. Then we have
+<div>
+\[f(x)=f(a)+f'(a)(x-a)+\frac{f''(a)}{2!}(x-a)^2+...+\frac{f^{(k)}}{k!}(x-a)^k+o\left((x-a)^k\right)\]
+</div>
+i.e., if we write $P_k(x)=f(a)+f'(a)(x-a)+\frac{f''(a)}{2!}(x-a)^2+...+\frac{f^{(k)}}{k!}(x-a)^k$ and $R_k(x)=f(x)-P(x)$, then we have
+<div>
+\[
+\lim_{x\to a}\frac{R_k(x)}{(x-a)^k}=0
+\]
+</div>
+</div>
+    </div>
+</div>
+<p>$P_k(x)$ is the degree $k$ polynomial approximation for $f(x)$ around $a$ and $R_k(X)$ is the approximation error, which is also called the &ldquo;Remainder&rdquo;. The general form of Tayloy&rsquo;s theorem says nothing about the value of $R_k(x)$ not enough closed to $a$. If we put more stronger constraints on $f$, we can get better bound for $R(x)$, for example, the following lemma.</p>
+<div class="rounded border" style="line-height:15px; background-color: #A7C1F2; border-radius: 5px; border-color: #AAAAAA; border-left-width: 2px; border-top-width: 2px;">
+    <div class="px-2 pt-2 pb-2 font-bold">
+        Mean-value forms of the remainder
+    </div>
+    <div class="rounded border px-4 pt-2 pb-2" style="background-color: white; border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-color: #AAAAAA; border-top-right-radius: 0%; border-top-left-radius: 0%;">
+        <div>
+Suppose $k\in\mathbb{Z}^+$ and $a,x\in\mathbb{R}$. Suppose $f$ is a real value function defined on $[a,x]$ (or $[x,a]$ if $a>x$). If $f$ is $k+1$ times differentiable on $(a,x)$ (or $(x,a)$), and $k$ times continuous differentiable on $[a,x]$, then we have
+<div>
+\[R_k(x)=\frac{f^{(k+1)}(\xi_L)}{(k+1)!}(x-a)^{k+1}\]
+</div>
+for some real number $\xi_L$ between $a$ and $x$. The is called the Lagrange form of the remainder. We also have
+<div>
+\[R_k(x)=\frac{f^{(k+1)}(\xi_C)}{(k)!}(x-\xi_C)^{k}(x-a)\]
+</div>
+for some real number $\xi_C$ between a and x. This is called the Cauchy form of the remainder.
+</div>
+    </div>
+</div>
+<h3 id="applications">Applications</h3>
+<p>For any fixed $x$ and $a$, if the $(k+1)$-th derivative is bounded, then $R_k(x)$ will converge to $0$ as $k\to\infty$, which means</p>
+<div>
+\[f(x)=\sum_{k=0}^{+\infty}\frac{f^{(k)}(a)}{k!}(x-a)^k\]
+</div>
+The following are some examples.
+<div>
+\[e^x=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+...\]
+\[\ln(1+x)=x-\frac{x^2}{2}+\frac{x^3}{3}-\frac{x^4}{4}+...\]
+\[(1+x)^a=1+ax+\frac{a^{\underline{2}}}{2!}x^2+\frac{a^{\underline{3}}}{3!}x^3+...\]
+\[\frac{1}{1-x}=1+x+x^2+x^3+...\]
+\[\sin x=x-\frac{1}{3!}x^3+\frac{1}{5!}x^5-\frac{1}{7!}x^7+...\]
+\[\cos x=1-\frac{1}{2!}x^2+\frac{1}{4!}x^4-\frac{1}{6!}x^6+...\]
+</div>
+All the example above is the expension at point $0$, and the derivative is bounded for fixed $x$. If $x$ is a constant, the error goes exponentially small as $k$ grows. If $k$ is a contant and we expense to $k$-th layer, it is usefull to represent the error as $o(x^k)$. 
+<h2 id="conditional-optimal">Conditional Optimal</h2>
+<p>The following <a href="https://en.wikipedia.org/wiki/Lagrange_multiplier">Lagrange multipliers</a> theorem is useful to compute conditional optimal.
+<div class="rounded border" style="line-height:15px; background-color: #A7C1F2; border-radius: 5px; border-color: #AAAAAA; border-left-width: 2px; border-top-width: 2px;">
+    <div class="px-2 pt-2 pb-2 font-bold">
+        Lagrange multipliers
+    </div>
+    <div class="rounded border px-4 pt-2 pb-2" style="background-color: white; border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-color: #AAAAAA; border-top-right-radius: 0%; border-top-left-radius: 0%;">
+        <div>
+Suppose $f: \mathbb{R}^n\to\mathbb{R}, g:\mathbb{R}^n\to\mathbb{R}^C$ are two functions with continuous derivatives. Suppose $x^*$ is a extremum of $f$ conditioned on $g=0$ where the rank of $Dg(x^*)$ is $C$. Then there exists a unique $\lambda\in\mathbb{R}^C$ such that $Df(x^*)=\lambda^TDg(x^*)$.
+</div>
+    </div>
+</div>
+In other word, the extremum must satisfy the following equations for some $\lambda_1,\lambda_2,&hellip;,\lambda_c\in\mathbb{R}$.</p>
+<div>
+\[\left\{\begin{aligned}
+&g(x)=0\\
+&\frac{df}{dx_1}(x)=\lambda_1\frac{dg_1}{dx_1}(x)+\lambda_2\frac{dg_2}{dx_1}(x^*)+...+\lambda_c\frac{dg_c}{dx_1}(x)\\
+&\quad\quad\quad...\\
+&\frac{df}{dx_n}(x)=\lambda_1\frac{dg_1}{dx_n}(x)+\lambda_2\frac{dg_2}{dx_n}(x)+...+\lambda_c\frac{dg_c}{dx_n}(x)\end{aligned}\right.\]
+</div>
+<p>By solving the equations, we can find the possible extremum. Let&rsquo;s consider a special case when $c=1$ and $g(x)=x_1+x_2+&hellip;+x_n-1$. This is used when $x_1,x_2,&hellip;,x_n$ represent for the probability of distribution. Now $\frac{dg}{dx_i}(x)$ becomes $1$. The equations becomes</p>
+<div>
+\[\left\{\begin{aligned}
+&x_1+x_2+...+x_n=0\\
+&\frac{df}{dx_1}(x)=\frac{df}{dx_2}(x)=...=\frac{df}{dx_n}(x)\end{aligned}\right.\]
+</div>
+<p>i.e., the extremum land at the point where the derivatives are equally &ldquo;distributed&rdquo; to each direction.</p>
+<h3 id="span-idklkullbackleibler-divergencespan"><span id="kl">Kullback–Leibler divergence</span></h3>
+<p>Let&rsquo;s assume $f(x)=\sum_{i=1}^np_i\log1/x_i$ where the constant $p_i\in(0,1)$ with $\sum_{i=1}^np_1=1$ are considered probabilities of a distribution. This is the so-called <a href="https://en.wikipedia.org/wiki/Entropy_(information_theory)">entropy</a> of distribution when $x_i=p_i$. $f(x)$ is obviously unbounded above, but it is bounded below since entropy is positive. And it is also continuous derivable in $(0,1)^n$. Now if we want to find the minimum of $f(x)$ conditioned on $x_1+x_2+&hellip;x_n=1$, i.e., $x$ is also a distribution, we can use the result above and know the minimum must take place at the point when $p_i/x_i$ are equal for any $i\in[n]$. Thus, the only possible minimal is $\sum_{i=1}^np_i\log\frac{1}{x_i}$.</p>
+<p>The difference between $f(x)$ and it&rsquo;s minimal is called the <a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence">Kullback–Leibler divergence</a>, denoted by $D_{KL}(p||x)$ where $p=(p_1,p_2,&hellip;,p_n),x=(x_1,x_2,&hellip;,x_n)$. We have</p>
+<div>
+\[D_{KL}(p||x)=\sum_{i=1}^np_i\log\frac{p_i}{x_i}\]
+</div>
+<p>Now consider the case that $n=2$. The following graph shows an example of the Kullback–Leibler divergence when $p_1=0.3$.</p>
+<div style="display: flex;
+justify-content: center;
+align-items: center;
+">
+<img src="/images/1.png"  alt="???" style="width:60%; height:60%;"/>
+</div>
+<p>Generally, by changing $p_1$ we can get the following graph for different value of $p_1$ and $x_1$.</p>
+<div style="display: flex;
+justify-content: center;
+align-items: center;
+">
+<img src="/images/2.png"  alt="???" style="width:70%; height:70%;"/>
+</div>
+<p>We have the following useful inequality</p>
+<div id="klieq">
+\[D_{KL}(p||x)\ge\frac{(x_1-p_1)^2}{2(x_1+p_1)}\]
+</div>
+<h2 id="multivariable-calculas">Multivariable Calculas</h2>
+<p><div class="rounded border" style="line-height:15px; background-color: #A7C1F2; border-radius: 5px; border-color: #AAAAAA; border-left-width: 2px; border-top-width: 2px;">
+    <div class="px-2 pt-2 pb-2 font-bold">
+        Differentiable
+    </div>
+    <div class="rounded border px-4 pt-2 pb-2" style="background-color: white; border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-color: #AAAAAA; border-top-right-radius: 0%; border-top-left-radius: 0%;">
+        <div>
+Let $f:\mathbb{R}^n\to\mathbb{R}$. $f$ is differentiable at point $x_0\in\mathbb{R}^n$, if there exists $1\times n$ matrix $A$ such that
+<div>
+\[f(x_0+\Delta x)-f(x_0)=A\cdot\Delta x+o(||\Delta x||)\]
+</div>
+as $\Delta x\to 0$. $A$ is written as $\nabla f(x_0)$. 
+</div>
+    </div>
+</div>
+<div class="rounded border" style="line-height:15px; background-color: #A7C1F2; border-radius: 5px; border-color: #AAAAAA; border-left-width: 2px; border-top-width: 2px;">
+    <div class="px-2 pt-2 pb-2 font-bold">
+        Directional Derivative
+    </div>
+    <div class="rounded border px-4 pt-2 pb-2" style="background-color: white; border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-color: #AAAAAA; border-top-right-radius: 0%; border-top-left-radius: 0%;">
+        <div>
+Let $f:\mathbb{R}^n\to\mathbb{R}$. If $f$ is differentiable at point $x_0\in\mathbb{R}^n$, then the directional derivative at direction $h\in\mathbb{R}^n$ at $x_0$ is defined as
+<div>
+\[\nabla f(x_0)[h]=\frac{df(x_0+t\cdot h) }{dt}=\nabla f(x_0)\cdot h\]
+</div>
+according to chain rule, which must exists.
+</div>
+    </div>
+</div>
+Note: if a function has directional derivative at any direction at point $x_0$, then it is <strong>not guaranteed</strong> that the function is differentiable at point $x_0$.</p>
+<p>Similarly we can define second derivative, which is a $n\times n$ matrix $H(x_0)$, also called Hessian. And according to chain rule, the second directinal derivative at $h_1,h_2$ is $h_1^{T}H(x_0)h_2$.</p>
+<div class="rounded border" style="line-height:15px; background-color: #A7C1F2; border-radius: 5px; border-color: #AAAAAA; border-left-width: 2px; border-top-width: 2px;">
+    <div class="px-2 pt-2 pb-2 font-bold">
+        Multivariable Taylor's theorem
+    </div>
+    <div class="rounded border px-4 pt-2 pb-2" style="background-color: white; border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-color: #AAAAAA; border-top-right-radius: 0%; border-top-left-radius: 0%;">
+        <div>
+Suppose $k\in\mathbb{Z}^+$ and $f:\mathbb{R}^n\to\mathbb{R}$ is a function that is $k$ times continuously differentiable at the point $a\in\mathbb{R}$. Then we have
+<div>
+\[f(x)=f(a)+\nabla f(a)\cdot(x-a)+\frac{1}{2}(x-a)^T\nabla^2f(a)(x-a)+...+\frac{1}{k!}\nabla^kf(a)[x-a,...,x-a]+o\left((x-a)^k\right)\]
+</div>
+</div>
+    </div>
+</div>
+
+                </div>
+                
+                
+
+                
+
+
+
+                
+
+
+
+            </div>
+            
+            <div class="hidden lg:block lg:w-1/4">
+                
+                <div class="sticky top-16 z-10 hidden lg:block px-6 py-4  bg-secondary-bg pt-16 -mt-16 ">
+    <span class="text-lg font-semibold">On This Page</span>
+</div>
+<div class="sticky-toc hidden lg:block px-6 pb-6  pt-10 -mt-10 border-l ">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#basic-math">Basic Math</a>
+      <ul>
+        <li><a href="#probability">Probability</a>
+          <ul>
+            <li><a href="#expectation">Expectation</a></li>
+            <li><a href="#norm">Norm</a></li>
+            <li><a href="#gaussian-distribution">Gaussian Distribution</a></li>
+            <li><a href="#concentration">Concentration</a></li>
+          </ul>
+        </li>
+        <li><a href="#tayloy-expansion">Tayloy expansion</a>
+          <ul>
+            <li><a href="#applications">Applications</a></li>
+          </ul>
+        </li>
+        <li><a href="#conditional-optimal">Conditional Optimal</a>
+          <ul>
+            <li><a href="#span-idklkullbackleibler-divergencespan"><span id="kl">Kullback–Leibler divergence</span></a></li>
+          </ul>
+        </li>
+        <li><a href="#multivariable-calculas">Multivariable Calculas</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        enableStickyToc();
+    });
+</script>
+                
+            </div>
+            
+        </div>
+
+    </div>
+
+
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        hljs.initHighlightingOnLoad();
+        changeSidebarHeight();
+        switchDocToc();
+    })
+</script>
+
+
+
+
+
+
+
+
+  </main>
+  <footer class="pl-scrollbar">
+    <div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">Powered by <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a>. Last updated in 2023 December. </p>
+</div></div>
+  </footer>
+</body>
+
+</html>

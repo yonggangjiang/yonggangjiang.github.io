@@ -1,0 +1,403 @@
+<!DOCTYPE html><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+<title>Sequential Graph Problems | Home | Yonggang&#39;s homepage</title>
+
+<meta name="generator" content="Hugo Eureka 0.8.3-dev" />
+<link rel="stylesheet" href="https://jyg94.github.io/css/eureka.min.css">
+<script defer src="https://jyg94.github.io/js/eureka.min.js"></script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js"
+   crossorigin></script>
+
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/dart.min.js"
+     crossorigin></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js"
+   integrity="sha256-uNYoXefWRqv&#43;PsIF/OflNmwtKM4lStn9yrz2gVl6ymo="  crossorigin></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+   integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" 
+  integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+   integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js" 
+  integrity="sha256-Zmpaaj&#43;GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE="  crossorigin></script>
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="https://jyg94.github.io/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_32x32_fill_box_center_3.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://jyg94.github.io/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png">
+
+<meta name="description"
+  content="Misc. [Irmak, Mihaylov, Suel, 05] Improved single-round protocols for remote file synchronization.
+[Clifford, Kociumaka, Porat, SODA&#39;19] The streaming k-mismatch problem.
+Global minimum cut Minimum Cuts in Near-Linear Time. [read] randomized, undirected, weighted, $\tilde{O}(m)$, hide a factor $O(m\log^3n)$.
+Deterministic Edge Connectivity in Near-Linear Time. deterministic, undirected, unweighted, $\tilde{O}(m)$, hide a factor $O(\log^{12}n)$ which is large.
+Local Flow Partitioning for Faster Edge Connectivity. deterministic, undirected. unweighted, improves the factor to $O(m\log^2n\log\log^2n)$. Add a factor $\alpha^4$ for $\alpha$-balanced directed graph (every cut is $\alpha$ balanced regarding in-out edge).">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Docs",
+      "item":"https://jyg94.github.io/docs/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"Home",
+      "item":"https://jyg94.github.io/docs/research/"},{
+      "@type": "ListItem",
+      "position": 3 ,
+      "name":"Sequential Graph Problems",
+      "item":"https://jyg94.github.io/docs/research/sequential/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://jyg94.github.io/docs/research/sequential/"
+    },
+    "headline": "Sequential Graph Problems | Home | Yonggang\u0027s homepage","datePublished": "2020-11-20T22:52:56+08:00",
+    "dateModified": "2020-11-20T22:52:56+08:00",
+    "wordCount":  254 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "C. Wang",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://jyg94.github.io/images/icon.png"
+        }
+        },
+    "description": "Misc. [Irmak, Mihaylov, Suel, 05] Improved single-round protocols for remote file synchronization.\n[Clifford, Kociumaka, Porat, SODA\u002719] The streaming k-mismatch problem.\nGlobal minimum cut Minimum Cuts in Near-Linear Time. [read] randomized, undirected, weighted, $\\tilde{O}(m)$, hide a factor $O(m\\log^3n)$.\nDeterministic Edge Connectivity in Near-Linear Time. deterministic, undirected, unweighted, $\\tilde{O}(m)$, hide a factor $O(\\log^{12}n)$ which is large.\nLocal Flow Partitioning for Faster Edge Connectivity. deterministic, undirected. unweighted, improves the factor to $O(m\\log^2n\\log\\log^2n)$. Add a factor $\\alpha^4$ for $\\alpha$-balanced directed graph (every cut is $\\alpha$ balanced regarding in-out edge)."
+}
+</script><meta property="og:title" content="Sequential Graph Problems | Home | Yonggang&#39;s homepage" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="https://jyg94.github.io/images/icon.png">
+
+
+<meta property="og:url" content="https://jyg94.github.io/docs/research/sequential/" />
+
+
+
+
+<meta property="og:description" content="Misc. [Irmak, Mihaylov, Suel, 05] Improved single-round protocols for remote file synchronization.
+[Clifford, Kociumaka, Porat, SODA&#39;19] The streaming k-mismatch problem.
+Global minimum cut Minimum Cuts in Near-Linear Time. [read] randomized, undirected, weighted, $\tilde{O}(m)$, hide a factor $O(m\log^3n)$.
+Deterministic Edge Connectivity in Near-Linear Time. deterministic, undirected, unweighted, $\tilde{O}(m)$, hide a factor $O(\log^{12}n)$ which is large.
+Local Flow Partitioning for Faster Edge Connectivity. deterministic, undirected. unweighted, improves the factor to $O(m\log^2n\log\log^2n)$. Add a factor $\alpha^4$ for $\alpha$-balanced directed graph (every cut is $\alpha$ balanced regarding in-out edge)." />
+
+
+
+
+<meta property="og:locale" content="en" />
+
+
+
+
+<meta property="og:site_name" content="Yonggang&#39;s homepage" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2020-11-20T22:52:56&#43;08:00" />
+
+
+<meta property="article:modified_time" content="2020-11-20T22:52:56&#43;08:00" />
+
+
+
+<meta property="article:section" content="docs" />
+
+
+
+
+<head>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-94BJ1L4MWP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-94BJ1L4MWP');
+</script>
+</head>
+
+<body class="flex flex-col min-h-screen">
+  <header class="fixed flex items-center w-full min-h-16 z-50 bg-secondary-bg shadow-sm">
+    <div class="w-full mx-auto"><script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0" style="width:1300px">
+    <a href="/docs/research" class="mr-6 text-primary-text text-xl font-bold pl-3" style="color: black;">Yonggang's Page</a>
+    
+
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+  </header>
+  <main class="flex-grow pt-16">
+
+
+<div class="flex flex-col md:flex-row bg-secondary-bg rounded">
+    <div class="md:w-1/4 lg:w-1/6 border-r">
+        <div class="sticky top-16 pt-6">
+            
+
+
+
+
+
+
+
+
+
+
+<div id="sidebar-title" class="md:hidden mx-4 px-2 pt-4 pb-2 md:border-b text-tertiary-text md:text-primary-text">
+    <span class="font-semibold">Table of Contents</span>
+    <i class="fas fa-caret-right ml-1"></i>
+</div>
+
+<div id="sidebar-toc"
+    class="hidden md:block overflow-y-auto mx-6 md:mx-0 pr-6 pt-2 md:max-h-doc-sidebar bg-primary-bg md:bg-transparent">
+
+    <div class="flex flex-wrap ml-4 -mr-2 p-2 hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://jyg94.github.io/docs/research/&#34;">
+        <a class=" hover:text-eureka font-bold"
+            href="https://jyg94.github.io/docs/research/">Home</a>
+        
+        
+        
+
+
+    </div>
+    
+    
+
+
+<ul class="pl-4">
+    
+    
+    
+    <li class="py-1"></li>
+        <div class="  -mr-2 p-2  hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://jyg94.github.io/docs/research/congest/&#34;">
+            <a class=""
+            href="https://jyg94.github.io/docs/research/congest/">Congest Model</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-1"></li>
+        <div class="  -mr-2 p-2  hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://jyg94.github.io/docs/research/intersted/&#34;">
+            <a class=""
+            href="https://jyg94.github.io/docs/research/intersted/">Interested Topics</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-1"></li>
+        <div class="  -mr-2 p-2  hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://jyg94.github.io/docs/research/old/&#34;">
+            <a class=""
+            href="https://jyg94.github.io/docs/research/old/">old</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-1"></li>
+        <div class="  -mr-2 p-2  hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://jyg94.github.io/docs/research/sequential/&#34;">
+            <a class=" text-eureka "
+            href="https://jyg94.github.io/docs/research/sequential/">Sequential Graph Problems</a>
+        </div>
+        
+    </li>
+    
+    
+    <li class="py-2"></li>
+    </li>
+</ul>
+
+</div>
+
+
+
+
+
+        </div>
+    </div>
+    <div class="w-full md:w-3/4 lg:w-4/5 pb-8 pt-2 md:pt-8">
+        <div class="flex">
+            <div class="w-full lg:w-4/4 px-6">
+                
+                
+                <div class="content">
+                    <h1 id="misc">Misc.</h1>
+<p><a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=1498448">[Irmak, Mihaylov, Suel, 05]</a> <strong>Improved single-round protocols for remote file synchronization</strong>.</p>
+<p><a href="https://arxiv.org/pdf/1708.05223.pdf">[Clifford, Kociumaka, Porat, SODA'19]</a> <strong>The streaming k-mismatch problem</strong>.</p>
+<h1 id="global-minimum-cut">Global minimum cut</h1>
+<p><a href="https://dl.acm.org/doi/pdf/10.1145/331605.331608">Minimum Cuts in Near-Linear Time</a>. <span style="color: lime">[read]</span> <strong>randomized, undirected, weighted</strong>, $\tilde{O}(m)$, hide a factor $O(m\log^3n)$.</p>
+<p><a href="https://dl.acm.org/doi/pdf/10.1145/3274663">Deterministic Edge Connectivity in Near-Linear Time</a>. <strong>deterministic, undirected, unweighted</strong>, $\tilde{O}(m)$, hide a factor $O(\log^{12}n)$ which is large.</p>
+<p><a href="https://arxiv.org/pdf/1704.01254.pdf">Local Flow Partitioning for Faster Edge Connectivity</a>. <strong>deterministic, undirected. unweighted</strong>, improves the factor to $O(m\log^2n\log\log^2n)$. Add a factor $\alpha^4$ for $\alpha$-balanced directed graph (every cut is $\alpha$ balanced regarding in-out edge).</p>
+<!-- 
+[A Matroid Approach to Finding Edge Connectivity and Packing Arborescences](https://dl.acm.org/doi/pdf/10.1145/103418.103436). **directed**, $\tilde{O}(km)$ where $k$ is the connectivity. Hide factor $\log(n/m)$.
+-->
+<p><a href="https://arxiv.org/pdf/2106.05513.pdf">Deterministic Mincut in Almost-Linear Time</a>. <strong>deterministic, undirected, weighted</strong> in $O(m^{1+o(1)})$ time. Previous work <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=9317896&amp;tag=1">Deterministic Min-cut in Poly-logarithmic Max-flows</a> calls $polylog(m)^{1/\epsilon}$ times of maxflow and use $O(m^{1+\epsilon})$ time.</p>
+<p><a href="https://arxiv.org/pdf/2111.08959.pdf">Minimum Cuts in Directed Graphs via Partial Sparsification</a>. <strong>Randomized, directed, weighted</strong>. $\tilde{O}(nm^{2/3}+n^{2})$ time algorithm.</p>
+<h1 id="vertex-connectivity">Vertex Connectivity</h1>
+<p><a href="https://www.sciencedirect.com/science/article/pii/S0196677499910556">Computing Vertex Connectivity: New Bounds from Old Techniques</a>. <strong>randomized</strong> $\tilde{O}(mn)$ for both directed and undirected.</p>
+<p><a href="https://dl.acm.org/doi/pdf/10.1145/1183907.1183912">Using Expander Graphs to Find Vertex Connectivity</a>. <strong>derterministic</strong> for both, time $O(mn+mk^{5/2}+mn^{3/4}k)$.</p>
+<p><a href="https://arxiv.org/pdf/1910.14344.pdf">Computing and Testing Small Connectivity in Near-Linear Time and Queries via Fast Local Cut Algorithms</a>. <span style="color: lime">[read]</span> <strong>Randomized</strong> roughly $\tilde{O}(k^2m)$ for both. $\tilde{O}(m)$ for $k=poly(\log n)$, which is the best one for small $k$ (roughly under $n^{0.456}$).</p>
+<p><a href="https://dl.acm.org/doi/pdf/10.1145/3406325.3451088">Vertex Connectivity in Poly-logarithmic Max-Flows</a>. <span style="color: lime">[read]</span> <strong>Randomized</strong>, $\tilde{O}(m^{\alpha})$ time using a $\tilde{O}(m^{\alpha})$ max flow algorithm for $\alpha\ge 1$.</p>
+<h1 id="max-flow">Max-Flow</h1>
+<p><a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9317871&amp;casa_token=W7MpUZ5BRhQAAAAA:TBY6rOvxEeFHBmvy0FrQv00W4KTxrG9jo0Rh3LTaEh2y-0Ak9PBgcNrHzQwhRMiKloD_8IBsJQ&amp;tag=1">Unit Capacity Maxflow in Almost $O(m^{4/3})$ Time</a>. <strong>derterministic, directed</strong>, $O(m^{4/3+o(1)}U^{1/3})$ time where $U$ is the maximum capacity.</p>
+<p><a href="https://arxiv.org/pdf/2009.01802.pdf">Bipartite Matching in Nearly-linear Time on Moderately Dense Graphs</a>. <strong>randomized</strong>, $\tilde{O}(m+n^{1.5})$.</p>
+<h1 id="vertex-sample">Vertex Sample</h1>
+<p><a href="https://www.cs.technion.ac.il/~ckeren/CHGGHK15.pdf">Tight Bounds on Vertex Connectivity Under Vertex Sampling</a>.</p>
+<p><a href="https://arxiv.org/pdf/1304.4553.pdf">A New Perspective on Vertex Connectivity</a>.</p>
+
+                </div>
+                
+                
+
+                
+
+
+
+                
+
+
+
+            </div>
+            
+            <div class="hidden lg:block lg:w-1/4">
+                
+                <div class="sticky top-16 z-10 hidden lg:block px-6 py-4  bg-secondary-bg pt-16 -mt-16 ">
+    <span class="text-lg font-semibold">On This Page</span>
+</div>
+<div class="sticky-toc hidden lg:block px-6 pb-6  pt-10 -mt-10 border-l ">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#misc">Misc.</a></li>
+    <li><a href="#global-minimum-cut">Global minimum cut</a></li>
+    <li><a href="#vertex-connectivity">Vertex Connectivity</a></li>
+    <li><a href="#max-flow">Max-Flow</a></li>
+    <li><a href="#vertex-sample">Vertex Sample</a></li>
+  </ul>
+</nav>
+</div>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        enableStickyToc();
+    });
+</script>
+                
+            </div>
+            
+        </div>
+
+    </div>
+
+
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        hljs.initHighlightingOnLoad();
+        changeSidebarHeight();
+        switchDocToc();
+    })
+</script>
+
+
+
+
+
+
+
+
+  </main>
+  <footer class="pl-scrollbar">
+    <div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">Powered by <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a>. Last updated in 2023 December. </p>
+</div></div>
+  </footer>
+</body>
+
+</html>
