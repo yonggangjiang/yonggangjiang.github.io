@@ -57,7 +57,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="https://jyg94.github.io/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png">
 
 <meta name="description"
-  content=" weighted unweighted undefined SSSP MinCut undefined RAM CONGEST undefined ">
+  content=" MinVertexCut undefined sequential CONGEST PRAM streaming communication quantumQuery undefined unweighted weighted undefined undirected directed undefined randomized deterministic undefined exact approximate undefined parameterized unparameterized undefined ">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -84,7 +84,7 @@
         "@type": "WebPage",
         "@id": "https://jyg94.github.io/docs/collect/"
     },
-    "headline": "Home | Yonggang\u0027s homepage","wordCount":  9 ,
+    "headline": "Home | Yonggang\u0027s homepage","wordCount":  24 ,
     "publisher": {
         "@type": "Person",
         "name": "C. Wang",
@@ -93,7 +93,7 @@
             "url": "https://jyg94.github.io/images/icon.png"
         }
         },
-    "description": " weighted unweighted undefined SSSP MinCut undefined RAM CONGEST undefined "
+    "description": " MinVertexCut undefined sequential CONGEST PRAM streaming communication quantumQuery undefined unweighted weighted undefined undirected directed undefined randomized deterministic undefined exact approximate undefined parameterized unparameterized undefined "
 }
 </script><meta property="og:title" content="Home | Yonggang&#39;s homepage" />
 <meta property="og:type" content="website" />
@@ -239,16 +239,53 @@
                 
                 
                 <div class="content">
-                    <script>
-    let variables = {"models":"RAM,CONGEST","problems":"SSSP, MinCut","weight":"weighted,unweighted"} ;
+                    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>
+    let variables = {"approximate":"exact,approximate","direct":"undirected,directed","models":"sequential,CONGEST,PRAM,streaming,communication,quantumQuery","parameter":"parameterized, unparameterized","problems":"MinVertexCut","randomize":"randomized,deterministic","weight":"unweighted,weighted"} ;
 </script>
 <script>
   var values = new Map();
 
-function getResults(newValues) {
-  // Process newValues and generate result
-  // This is just a placeholder. Replace with your actual implementation.
-  return `Result(${[...newValues.keys()].join(', ')})\nResult(${[...newValues.values()].join(', ')})`;
+function getResults(newValues, callback) {
+  let problem = newValues.get("problems");
+  let model = newValues.get("models");
+
+  $.getJSON(`/collect/${problem}/${model}.json`, function(data) {
+    // Process the data within this callback
+
+    let bestMatch = null;
+    let maxMatches = 0;
+    for (const varItem of data) {
+      let matches = 0;
+      let isMatch = true;
+      for (const [key, value] of newValues.entries()) {
+        if (varItem.hasOwnProperty(key) && varItem[key] === value) {
+          matches++;
+        } else if (varItem.hasOwnProperty(key)) {
+          isMatch = false;
+          break;
+        }
+      }
+
+      if (isMatch && matches > maxMatches) {
+        bestMatch = varItem;
+        maxMatches = matches;
+      }
+    }
+
+    // Now that we have the best match, call the callback function with the result
+    if (bestMatch) {
+      callback(bestMatch["complexity"]);
+    } else {
+      callback(null); // or handle the case where no match is found
+    }
+  })
+  .fail(function(jqxhr, textStatus, error) {
+    console.error('Error fetching JSON:', textStatus, error);
+    callback(null); // handle the error case
+  });
 }
 
 function updateTable() {
@@ -278,7 +315,16 @@ function updateTable() {
   else if (undefinedKeys.length === 0) {
       let row = document.createElement('tr');
       let data = document.createElement('td');
-      data.innerHTML = `${getResults(values)}`;
+
+        getResults(values, function(result) {
+          if (result) {
+            data.innerHTML = `$$${result}$$`;
+            MathJax.typeset()
+          } else {
+            data.innerHTML = "No match found or error occurred";
+          }
+        });
+
       row.appendChild(data);
       table.appendChild(row);
   }
@@ -326,13 +372,72 @@ function updateTable() {
 
 
 
+<div class="button-group" id="problemsButtons">
+  
+    <input type="radio" id="problemsMinVertexCut" name="problems" value="MinVertexCut" checked>
+    <label for="problemsMinVertexCut">MinVertexCut</label>
+  
+    <input type="radio" id="problemsundefined" name="problems" value="undefined" >
+    <label for="problemsundefined">undefined</label>
+  
+</div>
+
+<script>
+  setupButtons( "problems" );
+</script>
+
+<br></p>
+<p>
+
+
+
+
+
+
+<div class="button-group" id="modelsButtons">
+  
+    <input type="radio" id="modelssequential" name="models" value="sequential" checked>
+    <label for="modelssequential">sequential</label>
+  
+    <input type="radio" id="modelsCONGEST" name="models" value="CONGEST" >
+    <label for="modelsCONGEST">CONGEST</label>
+  
+    <input type="radio" id="modelsPRAM" name="models" value="PRAM" >
+    <label for="modelsPRAM">PRAM</label>
+  
+    <input type="radio" id="modelsstreaming" name="models" value="streaming" >
+    <label for="modelsstreaming">streaming</label>
+  
+    <input type="radio" id="modelscommunication" name="models" value="communication" >
+    <label for="modelscommunication">communication</label>
+  
+    <input type="radio" id="modelsquantumQuery" name="models" value="quantumQuery" >
+    <label for="modelsquantumQuery">quantumQuery</label>
+  
+    <input type="radio" id="modelsundefined" name="models" value="undefined" >
+    <label for="modelsundefined">undefined</label>
+  
+</div>
+
+<script>
+  setupButtons( "models" );
+</script>
+
+<br></p>
+<p>
+
+
+
+
+
+
 <div class="button-group" id="weightButtons">
   
-    <input type="radio" id="weightweighted" name="weight" value="weighted" checked>
-    <label for="weightweighted">weighted</label>
-  
-    <input type="radio" id="weightunweighted" name="weight" value="unweighted" >
+    <input type="radio" id="weightunweighted" name="weight" value="unweighted" checked>
     <label for="weightunweighted">unweighted</label>
+  
+    <input type="radio" id="weightweighted" name="weight" value="weighted" >
+    <label for="weightweighted">weighted</label>
   
     <input type="radio" id="weightundefined" name="weight" value="undefined" >
     <label for="weightundefined">undefined</label>
@@ -343,29 +448,29 @@ function updateTable() {
   setupButtons( "weight" );
 </script>
 
-<br>
+<br></p>
+<p>
 
 
 
 
 
 
-
-<div class="button-group" id="problemsButtons">
+<div class="button-group" id="directButtons">
   
-    <input type="radio" id="problemsSSSP" name="problems" value="SSSP" >
-    <label for="problemsSSSP">SSSP</label>
+    <input type="radio" id="directundirected" name="direct" value="undirected" checked>
+    <label for="directundirected">undirected</label>
   
-    <input type="radio" id="problems MinCut" name="problems" value=" MinCut" >
-    <label for="problems MinCut"> MinCut</label>
+    <input type="radio" id="directdirected" name="direct" value="directed" >
+    <label for="directdirected">directed</label>
   
-    <input type="radio" id="problemsundefined" name="problems" value="undefined" checked>
-    <label for="problemsundefined">undefined</label>
+    <input type="radio" id="directundefined" name="direct" value="undefined" >
+    <label for="directundefined">undefined</label>
   
 </div>
 
 <script>
-  setupButtons( "problems" );
+  setupButtons( "direct" );
 </script>
 
 <br>
@@ -376,21 +481,71 @@ function updateTable() {
 
 
 
-<div class="button-group" id="modelsButtons">
+<div class="button-group" id="randomizeButtons">
   
-    <input type="radio" id="modelsRAM" name="models" value="RAM" >
-    <label for="modelsRAM">RAM</label>
+    <input type="radio" id="randomizerandomized" name="randomize" value="randomized" checked>
+    <label for="randomizerandomized">randomized</label>
   
-    <input type="radio" id="modelsCONGEST" name="models" value="CONGEST" >
-    <label for="modelsCONGEST">CONGEST</label>
+    <input type="radio" id="randomizedeterministic" name="randomize" value="deterministic" >
+    <label for="randomizedeterministic">deterministic</label>
   
-    <input type="radio" id="modelsundefined" name="models" value="undefined" checked>
-    <label for="modelsundefined">undefined</label>
+    <input type="radio" id="randomizeundefined" name="randomize" value="undefined" >
+    <label for="randomizeundefined">undefined</label>
   
 </div>
 
 <script>
-  setupButtons( "models" );
+  setupButtons( "randomize" );
+</script>
+
+<br>
+
+
+
+
+
+
+
+<div class="button-group" id="approximateButtons">
+  
+    <input type="radio" id="approximateexact" name="approximate" value="exact" checked>
+    <label for="approximateexact">exact</label>
+  
+    <input type="radio" id="approximateapproximate" name="approximate" value="approximate" >
+    <label for="approximateapproximate">approximate</label>
+  
+    <input type="radio" id="approximateundefined" name="approximate" value="undefined" >
+    <label for="approximateundefined">undefined</label>
+  
+</div>
+
+<script>
+  setupButtons( "approximate" );
+</script>
+
+<br>
+
+
+
+
+
+
+
+<div class="button-group" id="parameterButtons">
+  
+    <input type="radio" id="parameterparameterized" name="parameter" value="parameterized" checked>
+    <label for="parameterparameterized">parameterized</label>
+  
+    <input type="radio" id="parameter unparameterized" name="parameter" value=" unparameterized" >
+    <label for="parameter unparameterized"> unparameterized</label>
+  
+    <input type="radio" id="parameterundefined" name="parameter" value="undefined" >
+    <label for="parameterundefined">undefined</label>
+  
+</div>
+
+<script>
+  setupButtons( "parameter" );
 </script>
 
 <br></p>
@@ -442,7 +597,7 @@ function updateTable() {
   </main>
   <footer class="pl-scrollbar">
     <div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
-    <p class="text-sm text-tertiary-text">Powered by <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a>. Last updated in 2023 December. </p>
+    <p class="text-sm text-tertiary-text">Powered by <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a>. Last updated in 2024 January. </p>
 </div></div>
   </footer>
 </body>
