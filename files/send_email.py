@@ -15,7 +15,7 @@ def search_inbox_title(search_subject):
     # establish a connection
     mail = imaplib.IMAP4_SSL("mail.mpi-inf.mpg.de")
     # authenticate
-    mail.login(ID, password)
+    mail.login(ID, PASSWORD)
     # select the mailbox you want to delete in
     # if you want SPAM, use "INBOX.SPAM"
     mail.select("inbox")
@@ -44,7 +44,7 @@ def search_inbox_title(search_subject):
         else:
             continue
 
-def send_email(to_address, subject, message, from_address= ID + "@mpi-inf.mpg.de", password=password):
+def send_email(to_address, subject, message, from_address= ID + "@mpi-inf.mpg.de", password=PASSWORD):
     msg = MIMEMultipart()
     msg["From"] = from_address
     msg["To"] = to_address
@@ -87,8 +87,8 @@ if __name__ == "__main__":
     # Example usage
     title = "Your MPI-INF Account Credentials and Resources"
     body = search_inbox_title(f'Account Created for {name}')
-    username = re.search(r"login\.*: (.*)\n", body).group(1)
-    password = re.search(r"Start password \(all accounts\)\.*: (.*)\n", body).group(1)
+    username = re.search(r"Login\.*: (.*)\n", body).group(1)
+    password = re.search(r"Initial \(one-time\) password\.*: (.*)\n", body).group(1)
     messsage = f"""Dear {name},
 
 Welcome to MPI-INF! Your account credentials have been created and listed below.
@@ -102,10 +102,10 @@ Afterward, you can access your account and details at domino.mpi-inf.mpg.de. Our
 
 For detailed instructions on using our services, such as connecting to our WiFi network, accessing printing services, or setting up a VPN, please visit our extensive documentation hub at https://plex.mpi-klsb.mpg.de/display/Documentation/IST+Documentation+Home. Simply use the search bar at the top right corner to find the information you're looking for. This resource is designed to address most questions you may have.
 
-Kindly note that your credentials are universally applicable across all MPI IT resources including mail services, VPN, and the intranet.
+Please feel free to contact me if you have any questions. For hardware-related issues (getting a laptop or other equipment), please contact Paolo Luigi Rinaldi (prinaldi@mpi-inf.mpg.de).
 
 Best,
-{name}
+{NAME}
 
     """
 
