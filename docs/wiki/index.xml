@@ -7,104 +7,88 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Powered by &lt;a href=&#34;https://github.com/wangchucheng/hugo-eureka&#34; class=&#34;hover:text-eureka&#34;&gt;Eureka&lt;/a&gt; theme for &lt;a href=&#34;https://gohugo.io&#34; class=&#34;hover:text-eureka&#34;&gt;Hugo&lt;/a&gt;. Last update in</copyright>
-    <lastBuildDate>Fri, 16 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://jyg94.github.io/docs/wiki/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 16 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://jyg94.github.io/docs/wiki/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Advanced Algorithm (ETHz)</title>
       <link>https://jyg94.github.io/docs/wiki/advanced/</link>
       <pubDate>Fri, 20 Nov 2020 22:52:56 +0800</pubDate>
-      
       <guid>https://jyg94.github.io/docs/wiki/advanced/</guid>
       <description>Advanced Algorithm (ETHz) Highlights of the course advanced algorithm.
 Approximation Algorithm A algorithm with approximation rate $\alpha$ to solve an optimization problem: the output of the algorithm is at most $\alpha\cdot OPT$ where $OPT$ is the minimization goal (or at least $OPT/\alpha$ when $OPT$ is the maximization goal).
 Set Cover Given $m$ sets with weights over an $n$ elements universe, find the minimum weights sets that cover the universe. This problem is known to be NPC.</description>
     </item>
-    
     <item>
       <title>Basic Math</title>
       <link>https://jyg94.github.io/docs/wiki/math/</link>
       <pubDate>Fri, 20 Nov 2020 22:52:56 +0800</pubDate>
-      
       <guid>https://jyg94.github.io/docs/wiki/math/</guid>
       <description>Basic Math Some basic theorem in mathematics.
 Link to Useful inequalities cheat sheet.
 Probability Expectation For random variable $X$, we have
-\[\mathbb{E}[X]=\int^{\infty}_0\Pr[Xt]dt-\int^0_{-\infty}\Pr[X By substituting $X$ by $|X|^p$ for $p\in(0,+\infty)$ we get
-\[\mathbb{E}[|X|^p]=\int^{\infty}_0\Pr[Xt^{1/p}]dt=\int^{\infty}_0\Pr[Xt]d(t^p)\]Norm Define $||X||_{L^p}=\left(\mathbb{E}[|X|^p]\right)^\frac{1}{p}$ for a random variable $X$ and $p\in(0,+\infty]$. When $p=+\infty$, the norm is the supreme of $|X|$.
-Jensen&amp;rsquo;s inequality says that $\phi(\mathbb{E}[X])\le\mathbb{E}[\phi(X)]$ as $\phi$ is a convex function. Now since $\phi(x)=x^{q/p}$ for $q/p\ge 1$ is convex, we get</description>
+\[\mathbb{E}[X]=\int^{\infty}_0\Pr[X&gt;t]dt-\int^0_{-\infty}\Pr[X &lt; t]dt\]By substituting $X$ by $|X|^p$ for $p\in(0,+\infty)$ we get
+\[\mathbb{E}[|X|^p]=\int^{\infty}_0\Pr[X&gt;t^{1/p}]dt=\int^{\infty}_0\Pr[X&gt;t]d(t^p)\]Norm Define $||X||_{L^p}=\left(\mathbb{E}[|X|^p]\right)^\frac{1}{p}$ for a random variable $X$ and $p\in(0,+\infty]$. When $p=+\infty$, the norm is the supreme of $|X|$.
+Jensen&amp;rsquo;s inequality says that $\phi(\mathbb{E}[X])\le\mathbb{E}[\phi(X)]$ as $\phi$ is a convex function. Now since $\phi(x)=x^{q/p}$ for $q/p\ge 1$ is convex, we get
+\[\forall 1\le p\le q, ||X||_{L^p}\le ||X||_{L_q}\]Hölder&amp;rsquo;s inequality: Suppose $p,q\in[1,+\infty]$ with $1/p+1/q=1$ and $X,Y$ are two random variables, then we have</description>
     </item>
-    
     <item>
       <title>Complexity</title>
       <link>https://jyg94.github.io/docs/wiki/complexity/</link>
       <pubDate>Fri, 20 Nov 2020 22:52:56 +0800</pubDate>
-      
       <guid>https://jyg94.github.io/docs/wiki/complexity/</guid>
-      <description>Basics Turing Machine and Computation One possible definition of a $k$-tape Turing machine $M=(Q,\Sigma,\Gamma,\delta,q_0,Q_{acc})$ 1. $Q$ is a finite set, the states.  2. $\Sigma$ is a finite set, the input alphabet.  3. $\Gamma$ is a finite set, the tape alphabet. $\Box\in\Gamma$ is the blank symbol, $\Sigma\subseteq\Gamma\backslash\{\Box\}$.  4. The transition function $\delta: Q\times\Gamma^k\to Q\times \Gamma^k\times\{L,S,R\}^k$.  5. $q_0\subseteq Q$ is the start state.  6. $Q_{acc}\subseteq Q$ is the set of accepting states.</description>
+      <description>Basics Turing Machine and Computation One possible definition of a $k$-tape Turing machine $M=(Q,\Sigma,\Gamma,\delta,q_0,Q_{acc})$1. $Q$ is a finite set, the states. 2. $\Sigma$ is a finite set, the input alphabet. 3. $\Gamma$ is a finite set, the tape alphabet. $\Box\in\Gamma$ is the blank symbol, $\Sigma\subseteq\Gamma\backslash\{\Box\}$. 4. The transition function $\delta: Q\times\Gamma^k\to Q\times \Gamma^k\times\{L,S,R\}^k$. 5. $q_0\subseteq Q$ is the start state. 6. $Q_{acc}\subseteq Q$ is the set of accepting states. The first tape is the input tape.</description>
     </item>
-    
     <item>
       <title>Concentration of Measure</title>
       <link>https://jyg94.github.io/docs/wiki/concentration/</link>
       <pubDate>Fri, 20 Nov 2020 22:52:56 +0800</pubDate>
-      
       <guid>https://jyg94.github.io/docs/wiki/concentration/</guid>
       <description>Concentration of Measure Suppose $X_1,X_2,&amp;hellip;,X_n$ are $n$ random variables and $X=X_1+X_2+&amp;hellip;+X_n$. Many problems need us to show $X$ is concentrated on its expectation, i.e., we want to bound the probability $\Pr\left[\left|X-\mathbb{E}[X]\right|&amp;gt;d\right]$ for different possitive real number $d$.
 We disccuss this problem by considering two cases. The first case is when $X_1,X_2,&amp;hellip;,X_n$ are independent with each other, which is easier than the case when the independency is not gaurantteed.
 Independent Variables The general idea is to apply Markov&amp;rsquo;s inequality to $e^{tX}$, where $t\in\mathbb{R}$ will be determined later.</description>
     </item>
-    
     <item>
       <title>Convex Optimization</title>
       <link>https://jyg94.github.io/docs/wiki/convex/</link>
       <pubDate>Fri, 20 Nov 2020 22:52:56 +0800</pubDate>
-      
       <guid>https://jyg94.github.io/docs/wiki/convex/</guid>
       <description>Convex Optimization A set $K\subseteq\mathbb{R}^n$ is called convex if for any $x,y\in K,\lambda\in[0,1]$ we have $\lambda x+(1-\lambda)y\in K$.
 A function $f:K\to\mathbb{R}^n$ is called a convex function if $K$ is convex and for any $x,y\in K,\lambda\in[0,1]$ we have $\lambda f(x)+(1-\lambda)f(y)\ge f(\lambda x+(1-\lambda)y)$. In other words, the set $\lbrace(x,y)|y\ge f(x)\rbrace$ is a convex set in $\mathbb{R}^{n+1}$.
-Supporting Hyperplane and Subgradients Seperating and Supporting Hyperplane Theorem Suppose $K\subseteq\mathbb{R}^n$ is convex and closed. Then for any $y^*\in\mathbb{R}^n$ which is not a interior node of $K$, there exists $h\in\mathbb{R}^n\backslash\lbrace \mathbf{0}\rbrace$ such that for any $x\in K$ we have  \[\langle x,h\rangle\le\langle y^*,h\rangle\]  i.</description>
+Supporting Hyperplane and Subgradients Seperating and Supporting Hyperplane TheoremSuppose $K\subseteq\mathbb{R}^n$ is convex and closed. Then for any $y^*\in\mathbb{R}^n$ which is not a interior node of $K$, there exists $h\in\mathbb{R}^n\backslash\lbrace \mathbf{0}\rbrace$ such that for any $x\in K$ we have \[\langle x,h\rangle\le\langle y^*,h\rangle\] i.</description>
     </item>
-    
     <item>
       <title>Fine-Grained Complexity</title>
       <link>https://jyg94.github.io/docs/wiki/finegrained/</link>
       <pubDate>Fri, 20 Nov 2020 22:52:56 +0800</pubDate>
-      
       <guid>https://jyg94.github.io/docs/wiki/finegrained/</guid>
       <description>Fine-Grained Complexity Problem reductions, conjecture on lower bounds and algorithm upper bound. The follwoing reduciton definition is foundamental on fine-grained complexity.
-Definition of Fine-grained Reduction Let $P,Q$ be problems and $T_P,T_Q:\mathbb{R}^+\to\mathbb{R}^+$ be time functions. We say $(P,T_P)$ has a fine-grained reduction to $(Q,T_Q)$, denoted by $(P,T_P)\le_{fgr}(Q,T_Q)$, if for any $\epsilon0$ there exists $\delta0$ and an algorithm $A^Q$ with oracle call to algorithm solving $Q$, such that $A^Q$ solves $P$ and for any $P$ instance with input size $n$ we have  1.</description>
+Definition of Fine-grained ReductionLet $P,Q$ be problems and $T_P,T_Q:\mathbb{R}^+\to\mathbb{R}^+$ be time functions. We say $(P,T_P)$ has a fine-grained reduction to $(Q,T_Q)$, denoted by $(P,T_P)\le_{fgr}(Q,T_Q)$, if for any $\epsilon&gt;0$ there exists $\delta&gt;0$ and an algorithm $A^Q$ with oracle call to algorithm solving $Q$, such that $A^Q$ solves $P$ and for any $P$ instance with input size $n$ we have 1.</description>
     </item>
-    
     <item>
       <title>Graph Theory</title>
       <link>https://jyg94.github.io/docs/wiki/graph/</link>
       <pubDate>Fri, 20 Nov 2020 22:52:56 +0800</pubDate>
-      
       <guid>https://jyg94.github.io/docs/wiki/graph/</guid>
       <description>Graph Theory Reference: A First Course in Graph Theory, or this.
 Blocks A vertex-cut of $G$ whose removing will lead to $G$ being inconneted.
 A non-separable graph do not have a vertex-cut.
 A maximal nonseparable subgraph is a block of the graph.
-Another Definition Define relationship $\sim$ on all edges of $G$, where $a\sim b$ iff. edges $a$ and $b$ lies on a single circle. This is an equivalent relaitionship. Each equivalent class is a block.</description>
+Another DefinitionDefine relationship $\sim$ on all edges of $G$, where $a\sim b$ iff. edges $a$ and $b$ lies on a single circle. This is an equivalent relaitionship. Each equivalent class is a block.</description>
     </item>
-    
     <item>
       <title>Matrix</title>
       <link>https://jyg94.github.io/docs/wiki/matrix/</link>
       <pubDate>Fri, 20 Nov 2020 22:52:56 +0800</pubDate>
-      
       <guid>https://jyg94.github.io/docs/wiki/matrix/</guid>
-      <description>Matrix Pseudoinverse and Projection Pseudoinverse For $A\in\mathbb{R}^{m\times n}$, $A+\in\mathbb{R}^{n\times m}$ is a pseudoinverse of $A$ if the following criteria are satisfied.  1. $AA^+A=A$.  2. $A^+AA^+=A^+$.  3. Both $AA^+$ and $A^+A$ are symmetric.  Suppose we want to solve $Ax=b$. If there is ganranteed to be a solution $x$, then we have $AA^+b=AA^+Ax=Ax=b$, which means $A^+b$ is a solution. This only need the first condition.
+      <description>Matrix Pseudoinverse and Projection PseudoinverseFor $A\in\mathbb{R}^{m\times n}$, $A+\in\mathbb{R}^{n\times m}$ is a pseudoinverse of $A$ if the following criteria are satisfied. 1. $AA^+A=A$. 2. $A^+AA^+=A^+$. 3. Both $AA^+$ and $A^+A$ are symmetric. Suppose we want to solve $Ax=b$. If there is ganranteed to be a solution $x$, then we have $AA^+b=AA^+Ax=Ax=b$, which means $A^+b$ is a solution. This only need the first condition.
 Suppose $A$ has full rank, then the pseudoinverse is simply $(A^TA)^{-1}A^T$ or $A^T(A^TA)^{-1}$ depending on the size of $n,m$.</description>
     </item>
-    
     <item>
       <title>ML Foundations</title>
       <link>https://jyg94.github.io/docs/wiki/ml/</link>
       <pubDate>Fri, 20 Nov 2020 22:52:56 +0800</pubDate>
-      
       <guid>https://jyg94.github.io/docs/wiki/ml/</guid>
-      <description>ML Foundations Seperating and Supporting Hyperplane Theorem Suppose $K\subseteq\mathbb{R}^n$ is convex and closed. Then for any $y^*\in\mathbb{R}^n$ which is not a interior node of $K$, there exists $h\in\mathbb{R}^n\backslash\lbrace \mathbf{0}\rbrace$ such that for any $x\in K$ we have  \[\langle x,h\rangle\le\langle y^*,h\rangle\]  i.e., $h$ can define a hyperplane seperating $y^*$ and $K$.  Support Vector Machine (SVM) Generalization Bound Let $\mathcal{H}={wx\mid w\in\mathbb{R}^N,||w||\le 1}$ be set of all hyperplane classification. Let $S=((x_1,y_1),&amp;hellip;,(x_m,y_m))$ be $m$ i.</description>
+      <description>ML Foundations Seperating and Supporting Hyperplane TheoremSuppose $K\subseteq\mathbb{R}^n$ is convex and closed. Then for any $y^*\in\mathbb{R}^n$ which is not a interior node of $K$, there exists $h\in\mathbb{R}^n\backslash\lbrace \mathbf{0}\rbrace$ such that for any $x\in K$ we have \[\langle x,h\rangle\le\langle y^*,h\rangle\] i.e., $h$ can define a hyperplane seperating $y^*$ and $K$. Support Vector Machine (SVM) Generalization Bound Let $\mathcal{H}={wx\mid w\in\mathbb{R}^N,||w||\le 1}$ be set of all hyperplane classification. Let $S=((x_1,y_1),&amp;hellip;,(x_m,y_m))$ be $m$ i.i.d samples from a distribution $\mathcal{D}$.</description>
     </item>
-    
   </channel>
 </rss>

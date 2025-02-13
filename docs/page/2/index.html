@@ -82,7 +82,7 @@
             "@type":"ListItem",
             "position":  3 ,
             "name": "Home",
-            "description": "let variables = {\"approximate\":\"exact,approximate\",\"direct\":\"undirected,directed\",\"models\":\"sequential,CONGEST,PRAM,streaming,communication,quantumQuery\",\"parameter\":\"parameterized, unparameterized\",\"problems\":\"MinVertexCut\",\"randomize\":\"randomized,deterministic\",\"weight\":\"unweighted,weighted\"} ;   var values = new Map(); function getResults(newValues, callback) { let problem = newValues.get(\"problems\"); let model = newValues.get(\"models\"); $.getJSON(`/collect/${problem}/${model}.json`, function(data) { // Process the data within this callback let bestMatch = null; let maxMatches = 0; for (const varItem of data) { let matches = 0; let isMatch = true; for (const [key, value] of newValues.entries()) { if (varItem.hasOwnProperty(key) \u0026\u0026 varItem[key] === value) { matches++; } else if (varItem.",
+            "description": " MinVertexCut undefined sequential CONGEST PRAM streaming communication quantumQuery undefined unweighted weighted undefined undirected directed undefined randomized deterministic undefined exact approximate undefined parameterized unparameterized undefined ",
             "url": "https://jyg94.github.io/docs/collect/"
         }
     ]

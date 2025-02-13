@@ -60,9 +60,10 @@
   content="Basic Math Some basic theorem in mathematics.
 Link to Useful inequalities cheat sheet.
 Probability Expectation For random variable $X$, we have
-\[\mathbb{E}[X]=\int^{\infty}_0\Pr[Xt]dt-\int^0_{-\infty}\Pr[X By substituting $X$ by $|X|^p$ for $p\in(0,&#43;\infty)$ we get
-\[\mathbb{E}[|X|^p]=\int^{\infty}_0\Pr[Xt^{1/p}]dt=\int^{\infty}_0\Pr[Xt]d(t^p)\]Norm Define $||X||_{L^p}=\left(\mathbb{E}[|X|^p]\right)^\frac{1}{p}$ for a random variable $X$ and $p\in(0,&#43;\infty]$. When $p=&#43;\infty$, the norm is the supreme of $|X|$.
-Jensen&rsquo;s inequality says that $\phi(\mathbb{E}[X])\le\mathbb{E}[\phi(X)]$ as $\phi$ is a convex function. Now since $\phi(x)=x^{q/p}$ for $q/p\ge 1$ is convex, we get">
+\[\mathbb{E}[X]=\int^{\infty}_0\Pr[X&gt;t]dt-\int^0_{-\infty}\Pr[X &lt; t]dt\]By substituting $X$ by $|X|^p$ for $p\in(0,&#43;\infty)$ we get
+\[\mathbb{E}[|X|^p]=\int^{\infty}_0\Pr[X&gt;t^{1/p}]dt=\int^{\infty}_0\Pr[X&gt;t]d(t^p)\]Norm Define $||X||_{L^p}=\left(\mathbb{E}[|X|^p]\right)^\frac{1}{p}$ for a random variable $X$ and $p\in(0,&#43;\infty]$. When $p=&#43;\infty$, the norm is the supreme of $|X|$.
+Jensen&rsquo;s inequality says that $\phi(\mathbb{E}[X])\le\mathbb{E}[\phi(X)]$ as $\phi$ is a convex function. Now since $\phi(x)=x^{q/p}$ for $q/p\ge 1$ is convex, we get
+\[\forall 1\le p\le q, ||X||_{L^p}\le ||X||_{L_q}\]Hölder&rsquo;s inequality: Suppose $p,q\in[1,&#43;\infty]$ with $1/p&#43;1/q=1$ and $X,Y$ are two random variables, then we have">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -95,7 +96,7 @@ Jensen&rsquo;s inequality says that $\phi(\mathbb{E}[X])\le\mathbb{E}[\phi(X)]$ 
     },
     "headline": "Basic Math | Home | Yonggang\u0027s homepage","datePublished": "2020-11-20T22:52:56+08:00",
     "dateModified": "2020-11-20T22:52:56+08:00",
-    "wordCount":  946 ,
+    "wordCount":  948 ,
     "publisher": {
         "@type": "Person",
         "name": "C. Wang",
@@ -104,7 +105,7 @@ Jensen&rsquo;s inequality says that $\phi(\mathbb{E}[X])\le\mathbb{E}[\phi(X)]$ 
             "url": "https://jyg94.github.io/images/icon.png"
         }
         },
-    "description": "Basic Math Some basic theorem in mathematics.\nLink to Useful inequalities cheat sheet.\nProbability Expectation For random variable $X$, we have\n\r\\[\\mathbb{E}[X]=\\int^{\\infty}_0\\Pr[Xt]dt-\\int^0_{-\\infty}\\Pr[X By substituting $X$ by $|X|^p$ for $p\\in(0,\u002b\\infty)$ we get\n\r\\[\\mathbb{E}[|X|^p]=\\int^{\\infty}_0\\Pr[Xt^{1\/p}]dt=\\int^{\\infty}_0\\Pr[Xt]d(t^p)\\]\r\rNorm Define $||X||_{L^p}=\\left(\\mathbb{E}[|X|^p]\\right)^\\frac{1}{p}$ for a random variable $X$ and $p\\in(0,\u002b\\infty]$. When $p=\u002b\\infty$, the norm is the supreme of $|X|$.\nJensen\u0026rsquo;s inequality says that $\\phi(\\mathbb{E}[X])\\le\\mathbb{E}[\\phi(X)]$ as $\\phi$ is a convex function. Now since $\\phi(x)=x^{q\/p}$ for $q\/p\\ge 1$ is convex, we get"
+    "description": "Basic Math Some basic theorem in mathematics.\nLink to Useful inequalities cheat sheet.\nProbability Expectation For random variable $X$, we have\n\\[\\mathbb{E}[X]=\\int^{\\infty}_0\\Pr[X\u003et]dt-\\int^0_{-\\infty}\\Pr[X \u003c t]dt\\]\rBy substituting $X$ by $|X|^p$ for $p\\in(0,\u002b\\infty)$ we get\n\\[\\mathbb{E}[|X|^p]=\\int^{\\infty}_0\\Pr[X\u003et^{1\/p}]dt=\\int^{\\infty}_0\\Pr[X\u003et]d(t^p)\\]\rNorm Define $||X||_{L^p}=\\left(\\mathbb{E}[|X|^p]\\right)^\\frac{1}{p}$ for a random variable $X$ and $p\\in(0,\u002b\\infty]$. When $p=\u002b\\infty$, the norm is the supreme of $|X|$.\nJensen\u0026rsquo;s inequality says that $\\phi(\\mathbb{E}[X])\\le\\mathbb{E}[\\phi(X)]$ as $\\phi$ is a convex function. Now since $\\phi(x)=x^{q\/p}$ for $q\/p\\ge 1$ is convex, we get\n\\[\\forall 1\\le p\\le q, ||X||_{L^p}\\le ||X||_{L_q}\\]\rHölder\u0026rsquo;s inequality: Suppose $p,q\\in[1,\u002b\\infty]$ with $1\/p\u002b1\/q=1$ and $X,Y$ are two random variables, then we have"
 }
 </script><meta property="og:title" content="Basic Math | Home | Yonggang&#39;s homepage" />
 <meta property="og:type" content="article" />
@@ -121,9 +122,10 @@ Jensen&rsquo;s inequality says that $\phi(\mathbb{E}[X])\le\mathbb{E}[\phi(X)]$ 
 <meta property="og:description" content="Basic Math Some basic theorem in mathematics.
 Link to Useful inequalities cheat sheet.
 Probability Expectation For random variable $X$, we have
-\[\mathbb{E}[X]=\int^{\infty}_0\Pr[Xt]dt-\int^0_{-\infty}\Pr[X By substituting $X$ by $|X|^p$ for $p\in(0,&#43;\infty)$ we get
-\[\mathbb{E}[|X|^p]=\int^{\infty}_0\Pr[Xt^{1/p}]dt=\int^{\infty}_0\Pr[Xt]d(t^p)\]Norm Define $||X||_{L^p}=\left(\mathbb{E}[|X|^p]\right)^\frac{1}{p}$ for a random variable $X$ and $p\in(0,&#43;\infty]$. When $p=&#43;\infty$, the norm is the supreme of $|X|$.
-Jensen&rsquo;s inequality says that $\phi(\mathbb{E}[X])\le\mathbb{E}[\phi(X)]$ as $\phi$ is a convex function. Now since $\phi(x)=x^{q/p}$ for $q/p\ge 1$ is convex, we get" />
+\[\mathbb{E}[X]=\int^{\infty}_0\Pr[X&gt;t]dt-\int^0_{-\infty}\Pr[X &lt; t]dt\]By substituting $X$ by $|X|^p$ for $p\in(0,&#43;\infty)$ we get
+\[\mathbb{E}[|X|^p]=\int^{\infty}_0\Pr[X&gt;t^{1/p}]dt=\int^{\infty}_0\Pr[X&gt;t]d(t^p)\]Norm Define $||X||_{L^p}=\left(\mathbb{E}[|X|^p]\right)^\frac{1}{p}$ for a random variable $X$ and $p\in(0,&#43;\infty]$. When $p=&#43;\infty$, the norm is the supreme of $|X|$.
+Jensen&rsquo;s inequality says that $\phi(\mathbb{E}[X])\le\mathbb{E}[\phi(X)]$ as $\phi$ is a convex function. Now since $\phi(x)=x^{q/p}$ for $q/p\ge 1$ is convex, we get
+\[\forall 1\le p\le q, ||X||_{L^p}\le ||X||_{L_q}\]Hölder&rsquo;s inequality: Suppose $p,q\in[1,&#43;\infty]$ with $1/p&#43;1/q=1$ and $X,Y$ are two random variables, then we have" />
 
 
 
