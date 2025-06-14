@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Home on Yonggang&#39;s homepage</title>
-    <link>https://jyg94.github.io/docs/research/</link>
+    <link>https://yonggangjiang.github.io/docs/research/</link>
     <description>Recent content in Home on Yonggang&#39;s homepage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Powered by &lt;a href=&#34;https://github.com/wangchucheng/hugo-eureka&#34; class=&#34;hover:text-eureka&#34;&gt;Eureka&lt;/a&gt; theme for &lt;a href=&#34;https://gohugo.io&#34; class=&#34;hover:text-eureka&#34;&gt;Hugo&lt;/a&gt;. Last update in</copyright>
-    <lastBuildDate>Fri, 16 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://jyg94.github.io/docs/research/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 16 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://yonggangjiang.github.io/docs/research/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Congest Model</title>
-      <link>https://jyg94.github.io/docs/research/congest/</link>
+      <link>https://yonggangjiang.github.io/docs/research/congest/</link>
       <pubDate>Fri, 20 Nov 2020 22:52:56 +0800</pubDate>
       
-      <guid>https://jyg94.github.io/docs/research/congest/</guid>
+      <guid>https://yonggangjiang.github.io/docs/research/congest/</guid>
       <description>Reachability Brief Announcement: Distributed Single-Source Reachability, [read] randomized, in $\tilde{O}(D+\sqrt{n}D^{1/4})$ rounds. Imporved from Distributed Approximation Algorithms for Weighted Shortest Paths which is $\tilde{O}(D+\sqrt{n}D^{1/2})$ rounds.
 Parallel Reachability in Almost Linear Work and Square Root Depth, randomized, in $\tilde{O}(\sqrt{n}+n^{1/3+o(1)}D^{2/3})$ rounds.
 Distributed Planar Reachability in Nearly Optimal Time, planer graph in $\tilde{O}(D)$ rounds.
@@ -24,10 +24,10 @@ Distributed Weighted Min-Cut in Nearly-Optimal Time, randomized, undirected, wei
     
     <item>
       <title>Interested Topics</title>
-      <link>https://jyg94.github.io/docs/research/intersted/</link>
+      <link>https://yonggangjiang.github.io/docs/research/intersted/</link>
       <pubDate>Fri, 20 Nov 2020 22:52:56 +0800</pubDate>
       
-      <guid>https://jyg94.github.io/docs/research/intersted/</guid>
+      <guid>https://yonggangjiang.github.io/docs/research/intersted/</guid>
       <description>Misc. [Chekuri, Quanrud, ICALP&#39;21] Isolating Cuts, (Bi-)Submodularity, and Faster Algorithms for Global Connectivity Problems
 [Li, Nanongkai, Panigrahi, Saranurak] Fair Cuts, Approximate Isolating Cuts, and Approximate Gomory-Hu Trees in Near-Linear Time
 [Ghaffari, Kuhn, Su, PODC&#39;17] Distributed MST and Routing in Almost Mixing Time
@@ -37,10 +37,10 @@ Connectivity Vertex Sampling and Vertex Connectivity [Censor-Hillel, Ghaffari, K
     
     <item>
       <title>old</title>
-      <link>https://jyg94.github.io/docs/research/old/</link>
+      <link>https://yonggangjiang.github.io/docs/research/old/</link>
       <pubDate>Fri, 20 Nov 2020 22:52:56 +0800</pubDate>
       
-      <guid>https://jyg94.github.io/docs/research/old/</guid>
+      <guid>https://yonggangjiang.github.io/docs/research/old/</guid>
       <description>Quantum Quantum query complexity of some graph problems
 Approximate k-spanner Approximating k-Spanner Problems for k &amp;gt; 2 bicriteria approximation
 Transitive-Closure Spanners: A Survey, two interesting papers: Transitive-Closure Spanners, Finding Sparser Directed Spanners
@@ -53,10 +53,10 @@ Label Cover Instances with Large Girth and the Hardness of Approximating Basic k
     
     <item>
       <title>Sequential Graph Problems</title>
-      <link>https://jyg94.github.io/docs/research/sequential/</link>
+      <link>https://yonggangjiang.github.io/docs/research/sequential/</link>
       <pubDate>Fri, 20 Nov 2020 22:52:56 +0800</pubDate>
       
-      <guid>https://jyg94.github.io/docs/research/sequential/</guid>
+      <guid>https://yonggangjiang.github.io/docs/research/sequential/</guid>
       <description>Misc. [Irmak, Mihaylov, Suel, 05] Improved single-round protocols for remote file synchronization.
 [Clifford, Kociumaka, Porat, SODA&#39;19] The streaming k-mismatch problem.
 Global minimum cut Minimum Cuts in Near-Linear Time. [read] randomized, undirected, weighted, $\tilde{O}(m)$, hide a factor $O(m\log^3n)$.
