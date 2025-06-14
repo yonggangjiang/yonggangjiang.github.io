@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Yonggang&#39;s homepage</title>
+    <link>https://jyg94.github.io/categories/</link>
+    <description>Recent content in Categories on Yonggang&#39;s homepage</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Powered by &lt;a href=&#34;https://github.com/wangchucheng/hugo-eureka&#34; class=&#34;hover:text-eureka&#34;&gt;Eureka&lt;/a&gt; theme for &lt;a href=&#34;https://gohugo.io&#34; class=&#34;hover:text-eureka&#34;&gt;Hugo&lt;/a&gt;. Last update in</copyright><atom:link href="https://jyg94.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

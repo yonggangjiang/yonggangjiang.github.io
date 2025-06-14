@@ -1,0 +1,455 @@
+<!DOCTYPE html><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<style>
+  .blackout {
+    background-color: black;
+    color: black;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    padding: 2px 4px;
+    border-radius: 4px;
+  }
+
+  .blackout.revealed {
+    color: white;  
+  }
+</style>
+
+
+<title>Interested Topics | Home | Yonggang&#39;s homepage</title>
+
+<meta name="generator" content="Hugo Eureka 0.8.3-dev" />
+<link rel="stylesheet" href="https://jyg94.github.io/css/eureka.min.css">
+<script defer src="https://jyg94.github.io/js/eureka.min.js"></script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js"
+   crossorigin></script>
+
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/dart.min.js"
+     crossorigin></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js"
+   integrity="sha256-uNYoXefWRqv&#43;PsIF/OflNmwtKM4lStn9yrz2gVl6ymo="  crossorigin></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+   integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" 
+  integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+   integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js" 
+  integrity="sha256-Zmpaaj&#43;GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE="  crossorigin></script>
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="https://jyg94.github.io/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_32x32_fill_box_center_3.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://jyg94.github.io/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png">
+
+<meta name="description"
+  content="Misc. [Chekuri, Quanrud, ICALP&#39;21] Isolating Cuts, (Bi-)Submodularity, and Faster Algorithms for Global Connectivity Problems
+[Li, Nanongkai, Panigrahi, Saranurak] Fair Cuts, Approximate Isolating Cuts, and Approximate Gomory-Hu Trees in Near-Linear Time
+[Ghaffari, Kuhn, Su, PODC&#39;17] Distributed MST and Routing in Almost Mixing Time
+String Sketching Improved sketching of hamming distance with error correcting [Porat, Lipsky, CPM&#39;07]
+Connectivity Vertex Sampling and Vertex Connectivity [Censor-Hillel, Ghaffari, Kuhn, SODA&#39;14] A New Perspective on Vertex Connectivity, sampling with probability $p$ leads to $\Omega(kp^2/\log^3 n)$ connected.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Docs",
+      "item":"https://jyg94.github.io/docs/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"Home",
+      "item":"https://jyg94.github.io/docs/research/"},{
+      "@type": "ListItem",
+      "position": 3 ,
+      "name":"Interested Topics",
+      "item":"https://jyg94.github.io/docs/research/intersted/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://jyg94.github.io/docs/research/intersted/"
+    },
+    "headline": "Interested Topics | Home | Yonggang\u0027s homepage","datePublished": "2020-11-20T22:52:56+08:00",
+    "dateModified": "2020-11-20T22:52:56+08:00",
+    "wordCount":  387 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "C. Wang",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://jyg94.github.io/images/icon.png"
+        }
+        },
+    "description": "Misc. [Chekuri, Quanrud, ICALP\u002721] Isolating Cuts, (Bi-)Submodularity, and Faster Algorithms for Global Connectivity Problems\n[Li, Nanongkai, Panigrahi, Saranurak] Fair Cuts, Approximate Isolating Cuts, and Approximate Gomory-Hu Trees in Near-Linear Time\n[Ghaffari, Kuhn, Su, PODC\u002717] Distributed MST and Routing in Almost Mixing Time\nString Sketching Improved sketching of hamming distance with error correcting [Porat, Lipsky, CPM\u002707]\nConnectivity Vertex Sampling and Vertex Connectivity [Censor-Hillel, Ghaffari, Kuhn, SODA\u002714] A New Perspective on Vertex Connectivity, sampling with probability $p$ leads to $\\Omega(kp^2\/\\log^3 n)$ connected."
+}
+</script><meta property="og:title" content="Interested Topics | Home | Yonggang&#39;s homepage" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="https://jyg94.github.io/images/icon.png">
+
+
+<meta property="og:url" content="https://jyg94.github.io/docs/research/intersted/" />
+
+
+
+
+<meta property="og:description" content="Misc. [Chekuri, Quanrud, ICALP&#39;21] Isolating Cuts, (Bi-)Submodularity, and Faster Algorithms for Global Connectivity Problems
+[Li, Nanongkai, Panigrahi, Saranurak] Fair Cuts, Approximate Isolating Cuts, and Approximate Gomory-Hu Trees in Near-Linear Time
+[Ghaffari, Kuhn, Su, PODC&#39;17] Distributed MST and Routing in Almost Mixing Time
+String Sketching Improved sketching of hamming distance with error correcting [Porat, Lipsky, CPM&#39;07]
+Connectivity Vertex Sampling and Vertex Connectivity [Censor-Hillel, Ghaffari, Kuhn, SODA&#39;14] A New Perspective on Vertex Connectivity, sampling with probability $p$ leads to $\Omega(kp^2/\log^3 n)$ connected." />
+
+
+
+
+<meta property="og:locale" content="en" />
+
+
+
+
+<meta property="og:site_name" content="Yonggang&#39;s homepage" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2020-11-20T22:52:56&#43;08:00" />
+
+
+<meta property="article:modified_time" content="2020-11-20T22:52:56&#43;08:00" />
+
+
+
+<meta property="article:section" content="docs" />
+
+
+
+
+<head>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-94BJ1L4MWP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-94BJ1L4MWP');
+</script>
+</head>
+
+<body class="flex flex-col min-h-screen">
+  <header class="fixed flex items-center w-full min-h-16 z-50 bg-secondary-bg shadow-sm">
+    <div class="w-full mx-auto"><script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0" style="width:1300px">
+    <a href="/docs/research" class="mr-6 text-primary-text text-xl font-bold pl-3" style="color: black;">Yonggang's Page</a>
+    
+
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+  </header>
+  <main class="flex-grow pt-16">
+
+
+<div class="flex flex-col md:flex-row bg-secondary-bg rounded">
+    <div class="md:w-1/4 lg:w-1/6 border-r">
+        <div class="sticky top-16 pt-6">
+            
+
+
+
+
+
+
+
+
+
+
+<div id="sidebar-title" class="md:hidden mx-4 px-2 pt-4 pb-2 md:border-b text-tertiary-text md:text-primary-text">
+    <span class="font-semibold">Table of Contents</span>
+    <i class="fas fa-caret-right ml-1"></i>
+</div>
+
+<div id="sidebar-toc"
+    class="hidden md:block overflow-y-auto mx-6 md:mx-0 pr-6 pt-2 md:max-h-doc-sidebar bg-primary-bg md:bg-transparent">
+
+    <div class="flex flex-wrap ml-4 -mr-2 p-2 hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://jyg94.github.io/docs/research/&#34;">
+        <a class=" hover:text-eureka font-bold"
+            href="https://jyg94.github.io/docs/research/">Home</a>
+        
+        
+        
+
+
+    </div>
+    
+    
+
+
+<ul class="pl-4">
+    
+    
+    
+    <li class="py-1"></li>
+        <div class="  -mr-2 p-2  hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://jyg94.github.io/docs/research/congest/&#34;">
+            <a class=""
+            href="https://jyg94.github.io/docs/research/congest/">Congest Model</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-1"></li>
+        <div class="  -mr-2 p-2  hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://jyg94.github.io/docs/research/intersted/&#34;">
+            <a class=" text-eureka "
+            href="https://jyg94.github.io/docs/research/intersted/">Interested Topics</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-1"></li>
+        <div class="  -mr-2 p-2  hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://jyg94.github.io/docs/research/old/&#34;">
+            <a class=""
+            href="https://jyg94.github.io/docs/research/old/">old</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-1"></li>
+        <div class="  -mr-2 p-2  hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://jyg94.github.io/docs/research/sequential/&#34;">
+            <a class=""
+            href="https://jyg94.github.io/docs/research/sequential/">Sequential Graph Problems</a>
+        </div>
+        
+    </li>
+    
+    
+    <li class="py-2"></li>
+    </li>
+</ul>
+
+</div>
+
+
+
+
+
+        </div>
+    </div>
+    <div class="w-full md:w-3/4 lg:w-4/5 pb-8 pt-2 md:pt-8">
+        <div class="flex">
+            <div class="w-full lg:w-4/4 px-6">
+                
+                
+                <div class="content">
+                    <h1 id="misc">Misc.</h1>
+<p><a href="https://arxiv.org/pdf/2103.12908.pdf">[Chekuri, Quanrud, ICALP'21]</a> <strong>Isolating Cuts, (Bi-)Submodularity, and Faster Algorithms for Global Connectivity Problems</strong></p>
+<p><a href="https://arxiv.org/pdf/2203.00751.pdf">[Li, Nanongkai, Panigrahi, Saranurak]</a> <strong>Fair Cuts, Approximate Isolating Cuts, and Approximate Gomory-Hu Trees in Near-Linear Time</strong></p>
+<p><a href="https://dl.acm.org/doi/pdf/10.1145/3087801.3087827">[Ghaffari, Kuhn, Su, PODC'17]</a> <strong>Distributed MST and Routing in Almost Mixing Time</strong></p>
+<h2 id="string-sketching">String Sketching</h2>
+<p><strong>Improved sketching of hamming distance with error correcting</strong> [Porat, Lipsky, CPM'07]</p>
+<h1 id="connectivity">Connectivity</h1>
+<h2 id="vertex-sampling-and-vertex-connectivity">Vertex Sampling and Vertex Connectivity</h2>
+<p><a href="https://epubs.siam.org/doi/pdf/10.1137/1.9781611973402.41">[Censor-Hillel, Ghaffari, Kuhn, SODA'14]</a> <strong>A New Perspective on Vertex Connectivity</strong>, sampling with probability $p$ leads to $\Omega(kp^2/\log^3 n)$ connected.</p>
+<p><a href="https://epubs.siam.org/doi/pdf/10.1137/1.9781611973730.133">[ Censor-Hillel, Ghaffari, Giakkoupis, Haeupler, Kuhn, SODA'15]</a> <strong>Tight Bounds on Vertex Connectivity Under Vertex Sampling</strong>, improved to $\Omega(kp^2)$, which is optimal.</p>
+<h2 id="vetex-connectivity-oracles">Vetex Connectivity Oracles</h2>
+<p><a href="https://arxiv.org/pdf/2102.06805.pdf">[Pettie, Yin, ICALP'21]</a> <strong>The Structure of Minimum Vertex Cuts</strong></p>
+<p><a href="https://arxiv.org/pdf/2201.00408.pdf">[Pettie, Saranurak, Yin, STOC'22]</a> <strong>Optimal Vertex Connectivity Oracles</strong></p>
+<h2 id="cut-query">Cut Query</h2>
+<p><a href="https://arxiv.org/pdf/1711.03165.pdf">[Rubinstein, Schramn, Weinberg, ITCS'18]</a> <strong>Computing exact minimum cuts without knowing the graph</strong></p>
+<p><a href="https://arxiv.org/pdf/1911.01651.pdf">[Mukhopadhyay, Nanongkai, STOC'20]</a> <strong>Weighted Min-Cut: Sequential, Cut-Query and Streaming Algorithms</strong></p>
+<h1 id="reachability">Reachability</h1>
+<h2 id="parallel">Parallel</h2>
+<p><a href="https://arxiv.org/pdf/1711.01700.pdf">[Fineman, STOC'18]</a> <strong>Nearly Work-Efficient Parallel Algorithm for Digraph Reachability</strong></p>
+<p><a href="https://arxiv.org/pdf/1905.08841.pdf">[Jambulapati, Liu, Sidford, STOC'19]</a> <strong>Parallel Reachability in Almost Linear Work and Square Root Depth</strong></p>
+<p><a href="https://dl.acm.org/doi/pdf/10.1145/3350755.3400222">[Cao, Fineman, Russell, SPAA'20]</a> <strong>Brief Announcement: Improved Work Span Tradeoff for Single Source Reachability and Approximate Shortest Paths</strong></p>
+<h2 id="congest">CONGEST</h2>
+<p><a href="https://arxiv.org/pdf/1403.5171.pdf">[Nanongkai, STOC'14]</a> <strong>Distributed Approximation Algorithms for Weighted Shortest Paths</strong>, $\tilde{O}(D+\sqrt{n}D^{1/2})$ rounds.</p>
+<p><a href="https://dl.acm.org/doi/pdf/10.1145/2767386.2767444">[Ghaffari, Udwani, PODC'15]</a> <strong>Brief Announcement: Distributed Single-Source Reachability</strong>, $\tilde{O}(D+\sqrt{n}D^{1/4})$ rounds.</p>
+<p><a href="https://arxiv.org/pdf/1905.08841.pdf">[Jambulapati, Liu, Sidford, STOC'19]</a> <strong>Parallel Reachability in Almost Linear Work and Square Root Depth</strong>
+, $\tilde{O}(\sqrt{n}+n^{1/3+o(1)}D^{2/3})$ rounds.</p>
+<p><a href="https://drops.dagstuhl.de/opus/volltexte/2020/13116/pdf/LIPIcs-DISC-2020-38.pdf">[Parter, DISC'20]</a> <strong>Distributed Planar Reachability in Nearly Optimal Time</strong>, planer graph in $\tilde{O}(D)$ rounds.</p>
+<h2 id="diameter-reducing-shortcuts">Diameter-Reducing Shortcuts</h2>
+<p><a href="https://epubs.siam.org/doi/pdf/10.1137/1.9781611977073.55">[Kogan, Parter, SODA'22]</a> <strong>New Diameter-Reducing Shortcuts and Directed Hopsets: Breaking the O(√n) Barrier</strong></p>
+<p><a href="https://arxiv.org/pdf/1802.06271.pdf">[Huang, Pettie, 18]</a> <strong>Lower Bounds on Sparse Spanners, Emulators, and Diameter-reducing Shortcuts</strong></p>
+<p><a href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.19.4687&amp;rep=rep1&amp;type=pdf">[Hesse, SODA'03]</a>  <strong>Directed graphs requiring large numbers of shortcuts.</strong></p>
+<h1 id="max-flow">Max-Flow</h1>
+<h2 id="congest-1">CONGEST</h2>
+<p><a href="https://arxiv.org/pdf/1508.04747.pdf">[Ghaffari, Karrenbauer, Kuhn, Lenzen, Patt-Shamir, PODC'15]</a>. <strong>Near-Optimal Distributed Maximum Flow</strong> randomized, undirected, weighted, $(1+\epsilon)$ approximate in $O(D+\sqrt{n})\cdot n^{o(1)}\cdot \epsilon^{-3}$ rounds.</p>
+<p><a href="https://arxiv.org/pdf/2012.15675.pdf">[Forster,  Goranci, Liu, Peng, Sun, Ye, FOCS'21]</a>, <strong>Minor Sparsifiers and the Distributed Laplacian Paradigm</strong>.</p>
+<p><a href="https://arxiv.org/pdf/2109.05151.pdf">[Anagnostides, Lenzen, Haeupler, Zuzic, Gouleakis]</a>, <strong>Almost Universally Optimal Distributed Laplacian Solvers via Low-Congestion Shortcuts</strong>.</p>
+<h2 id="sequential">Sequential</h2>
+<p><a href="https://arxiv.org/pdf/1605.01717.pdf">[Cohen, Madry, Sankowski, Vladu, SODA'17]</a> <strong>Negative-Weight Shortest Paths and Unit Capacity Minimum Cost Flow in $\tilde{O}(m^{10/7}\log W)$ time.</strong></p>
+<p><a href="https://arxiv.org/pdf/2009.01802.pdf">[vdBLNPSSSW, FOCS'20]</a> <strong>Bipartite Matching in Nearly-linear Time on Moderately Dense Graphs.</strong></p>
+<p><a href="https://arxiv.org/pdf/2101.05719.pdf">[vdBLLSSSW, SOTC'20]</a> <strong>Minimum Cost Flows, MDPs, and $\ell_1$-Regression in Nearly Linear Time for Dense Instances.</strong></p>
+<p><a href="https://arxiv.org/pdf/2203.00671.pdf">[Chen, Kyng, Liu, Peng, Gutenberg, Sachdeva, FOCS'22]</a> <strong>Maximum Flow and Minimum-Cost Flow in Almost-Linear Time.</strong></p>
+
+                </div>
+                
+                
+
+                
+
+
+
+                
+
+
+
+            </div>
+            
+            <div class="hidden lg:block lg:w-1/4">
+                
+                <div class="sticky top-16 z-10 hidden lg:block px-6 py-4  bg-secondary-bg pt-16 -mt-16 ">
+    <span class="text-lg font-semibold">On This Page</span>
+</div>
+<div class="sticky-toc hidden lg:block px-6 pb-6  pt-10 -mt-10 border-l ">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#misc">Misc.</a>
+      <ul>
+        <li><a href="#string-sketching">String Sketching</a></li>
+      </ul>
+    </li>
+    <li><a href="#connectivity">Connectivity</a>
+      <ul>
+        <li><a href="#vertex-sampling-and-vertex-connectivity">Vertex Sampling and Vertex Connectivity</a></li>
+        <li><a href="#vetex-connectivity-oracles">Vetex Connectivity Oracles</a></li>
+        <li><a href="#cut-query">Cut Query</a></li>
+      </ul>
+    </li>
+    <li><a href="#reachability">Reachability</a>
+      <ul>
+        <li><a href="#parallel">Parallel</a></li>
+        <li><a href="#congest">CONGEST</a></li>
+        <li><a href="#diameter-reducing-shortcuts">Diameter-Reducing Shortcuts</a></li>
+      </ul>
+    </li>
+    <li><a href="#max-flow">Max-Flow</a>
+      <ul>
+        <li><a href="#congest-1">CONGEST</a></li>
+        <li><a href="#sequential">Sequential</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        enableStickyToc();
+    });
+</script>
+                
+            </div>
+            
+        </div>
+
+    </div>
+
+
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        hljs.initHighlightingOnLoad();
+        changeSidebarHeight();
+        switchDocToc();
+    })
+</script>
+
+
+
+
+
+
+
+
+  </main>
+  <footer class="pl-scrollbar">
+    <div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">Powered by <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a>. Last updated in 2025 June. </p>
+</div></div>
+  </footer>
+</body>
+
+</html>

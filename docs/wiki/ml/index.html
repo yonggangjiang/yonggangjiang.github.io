@@ -1,0 +1,600 @@
+<!DOCTYPE html><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<style>
+  .blackout {
+    background-color: black;
+    color: black;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    padding: 2px 4px;
+    border-radius: 4px;
+  }
+
+  .blackout.revealed {
+    color: white;  
+  }
+</style>
+
+
+<title>ML Foundations | Home | Yonggang&#39;s homepage</title>
+
+<meta name="generator" content="Hugo Eureka 0.8.3-dev" />
+<link rel="stylesheet" href="https://jyg94.github.io/css/eureka.min.css">
+<script defer src="https://jyg94.github.io/js/eureka.min.js"></script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js"
+   crossorigin></script>
+
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/dart.min.js"
+     crossorigin></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js"
+   integrity="sha256-uNYoXefWRqv&#43;PsIF/OflNmwtKM4lStn9yrz2gVl6ymo="  crossorigin></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+   integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" 
+  integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+   integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js" 
+  integrity="sha256-Zmpaaj&#43;GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE="  crossorigin></script>
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="https://jyg94.github.io/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_32x32_fill_box_center_3.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://jyg94.github.io/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png">
+
+<meta name="description"
+  content="ML Foundations Seperating and Supporting Hyperplane Theorem Suppose $K\subseteq\mathbb{R}^n$ is convex and closed. Then for any $y^*\in\mathbb{R}^n$ which is not a interior node of $K$, there exists $h\in\mathbb{R}^n\backslash\lbrace \mathbf{0}\rbrace$ such that for any $x\in K$ we have  \[\langle x,h\rangle\le\langle y^*,h\rangle\]  i.e., $h$ can define a hyperplane seperating $y^*$ and $K$.  Support Vector Machine (SVM) Generalization Bound Let $\mathcal{H}={wx\mid w\in\mathbb{R}^N,||w||\le 1}$ be set of all hyperplane classification. Let $S=((x_1,y_1),&hellip;,(x_m,y_m))$ be $m$ i.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Docs",
+      "item":"https://jyg94.github.io/docs/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"Home",
+      "item":"https://jyg94.github.io/docs/wiki/"},{
+      "@type": "ListItem",
+      "position": 3 ,
+      "name":"ML Foundations",
+      "item":"https://jyg94.github.io/docs/wiki/ml/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://jyg94.github.io/docs/wiki/ml/"
+    },
+    "headline": "ML Foundations | Home | Yonggang\u0027s homepage","datePublished": "2020-11-20T22:52:56+08:00",
+    "dateModified": "2020-11-20T22:52:56+08:00",
+    "wordCount":  799 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "C. Wang",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://jyg94.github.io/images/icon.png"
+        }
+        },
+    "description": "ML Foundations Seperating and Supporting Hyperplane Theorem\r\r Suppose $K\\subseteq\\mathbb{R}^n$ is convex and closed. Then for any $y^*\\in\\mathbb{R}^n$ which is not a interior node of $K$, there exists $h\\in\\mathbb{R}^n\\backslash\\lbrace \\mathbf{0}\\rbrace$ such that for any $x\\in K$ we have  \\[\\langle x,h\\rangle\\le\\langle y^*,h\\rangle\\]  i.e., $h$ can define a hyperplane seperating $y^*$ and $K$. \r\r Support Vector Machine (SVM) Generalization Bound Let $\\mathcal{H}={wx\\mid w\\in\\mathbb{R}^N,||w||\\le 1}$ be set of all hyperplane classification. Let $S=((x_1,y_1),\u0026hellip;,(x_m,y_m))$ be $m$ i."
+}
+</script><meta property="og:title" content="ML Foundations | Home | Yonggang&#39;s homepage" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="https://jyg94.github.io/images/icon.png">
+
+
+<meta property="og:url" content="https://jyg94.github.io/docs/wiki/ml/" />
+
+
+
+
+<meta property="og:description" content="ML Foundations Seperating and Supporting Hyperplane Theorem Suppose $K\subseteq\mathbb{R}^n$ is convex and closed. Then for any $y^*\in\mathbb{R}^n$ which is not a interior node of $K$, there exists $h\in\mathbb{R}^n\backslash\lbrace \mathbf{0}\rbrace$ such that for any $x\in K$ we have  \[\langle x,h\rangle\le\langle y^*,h\rangle\]  i.e., $h$ can define a hyperplane seperating $y^*$ and $K$.  Support Vector Machine (SVM) Generalization Bound Let $\mathcal{H}={wx\mid w\in\mathbb{R}^N,||w||\le 1}$ be set of all hyperplane classification. Let $S=((x_1,y_1),&hellip;,(x_m,y_m))$ be $m$ i." />
+
+
+
+
+<meta property="og:locale" content="en" />
+
+
+
+
+<meta property="og:site_name" content="Yonggang&#39;s homepage" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2020-11-20T22:52:56&#43;08:00" />
+
+
+<meta property="article:modified_time" content="2020-11-20T22:52:56&#43;08:00" />
+
+
+
+<meta property="article:section" content="docs" />
+
+
+
+
+<head>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-94BJ1L4MWP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-94BJ1L4MWP');
+</script>
+</head>
+
+<body class="flex flex-col min-h-screen">
+  <header class="fixed flex items-center w-full min-h-16 z-50 bg-secondary-bg shadow-sm">
+    <div class="w-full mx-auto"><script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0" style="width:1300px">
+    <a href="/docs/wiki" class="mr-6 text-primary-text text-xl font-bold" style="color: black;">Yonggang's wiki</a>
+    
+
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+  </header>
+  <main class="flex-grow pt-16">
+
+
+<div class="flex flex-col md:flex-row bg-secondary-bg rounded">
+    <div class="md:w-1/4 lg:w-1/6 border-r">
+        <div class="sticky top-16 pt-6">
+            
+
+
+
+
+
+
+
+
+
+
+<div id="sidebar-title" class="md:hidden mx-4 px-2 pt-4 pb-2 md:border-b text-tertiary-text md:text-primary-text">
+    <span class="font-semibold">Table of Contents</span>
+    <i class="fas fa-caret-right ml-1"></i>
+</div>
+
+<div id="sidebar-toc"
+    class="hidden md:block overflow-y-auto mx-6 md:mx-0 pr-6 pt-2 md:max-h-doc-sidebar bg-primary-bg md:bg-transparent">
+
+    <div class="flex flex-wrap ml-4 -mr-2 p-2 hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://jyg94.github.io/docs/wiki/&#34;">
+        <a class=" hover:text-eureka font-bold"
+            href="https://jyg94.github.io/docs/wiki/">Home</a>
+        
+        
+        
+
+
+    </div>
+    
+    
+
+
+<ul class="pl-4">
+    
+    
+    
+    <li class="py-1"></li>
+        <div class="  -mr-2 p-2  hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://jyg94.github.io/docs/wiki/advanced/&#34;">
+            <a class=""
+            href="https://jyg94.github.io/docs/wiki/advanced/">Advanced Algorithm (ETHz)</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-1"></li>
+        <div class="  -mr-2 p-2  hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://jyg94.github.io/docs/wiki/math/&#34;">
+            <a class=""
+            href="https://jyg94.github.io/docs/wiki/math/">Basic Math</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-1"></li>
+        <div class="  -mr-2 p-2  hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://jyg94.github.io/docs/wiki/complexity/&#34;">
+            <a class=""
+            href="https://jyg94.github.io/docs/wiki/complexity/">Complexity</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-1"></li>
+        <div class="  -mr-2 p-2  hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://jyg94.github.io/docs/wiki/concentration/&#34;">
+            <a class=""
+            href="https://jyg94.github.io/docs/wiki/concentration/">Concentration of Measure</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-1"></li>
+        <div class="  -mr-2 p-2  hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://jyg94.github.io/docs/wiki/convex/&#34;">
+            <a class=""
+            href="https://jyg94.github.io/docs/wiki/convex/">Convex Optimization</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-1"></li>
+        <div class="  -mr-2 p-2  hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://jyg94.github.io/docs/wiki/finegrained/&#34;">
+            <a class=""
+            href="https://jyg94.github.io/docs/wiki/finegrained/">Fine-Grained Complexity</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-1"></li>
+        <div class="  -mr-2 p-2  hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://jyg94.github.io/docs/wiki/graph/&#34;">
+            <a class=""
+            href="https://jyg94.github.io/docs/wiki/graph/">Graph Theory</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-1"></li>
+        <div class="  -mr-2 p-2  hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://jyg94.github.io/docs/wiki/matrix/&#34;">
+            <a class=""
+            href="https://jyg94.github.io/docs/wiki/matrix/">Matrix</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-1"></li>
+        <div class="  -mr-2 p-2  hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://jyg94.github.io/docs/wiki/ml/&#34;">
+            <a class=" text-eureka "
+            href="https://jyg94.github.io/docs/wiki/ml/">ML Foundations</a>
+        </div>
+        
+    </li>
+    
+    
+    <li class="py-2"></li>
+    </li>
+</ul>
+
+</div>
+
+
+
+
+
+        </div>
+    </div>
+    <div class="w-full md:w-3/4 lg:w-4/5 pb-8 pt-2 md:pt-8">
+        <div class="flex">
+            <div class="w-full lg:w-4/4 px-6">
+                
+                
+                <div class="content">
+                    <h1 id="ml-foundations">ML Foundations</h1>
+<div class="rounded border" style="line-height:15px; background-color: #A7C1F2; border-radius: 5px; border-color: #AAAAAA; border-left-width: 2px; border-top-width: 2px;">
+    <div class="px-2 pt-2 pb-2 font-bold">
+        Seperating and Supporting Hyperplane Theorem
+    </div>
+    <div class="rounded border px-4 pt-2 pb-2" style="background-color: white; border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-color: #AAAAAA; border-top-right-radius: 0%; border-top-left-radius: 0%;">
+        <div>
+Suppose $K\subseteq\mathbb{R}^n$ is convex and closed. Then for any $y^*\in\mathbb{R}^n$ which is not a interior node of $K$, there exists $h\in\mathbb{R}^n\backslash\lbrace \mathbf{0}\rbrace$ such that for any $x\in K$ we have
+<div>
+\[\langle x,h\rangle\le\langle y^*,h\rangle\]
+</div>
+i.e., $h$ can define a hyperplane seperating $y^*$ and $K$.
+</div>
+    </div>
+</div>
+<h2 id="support-vector-machine-svm">Support Vector Machine (SVM)</h2>
+<h3 id="generalization-bound">Generalization Bound</h3>
+<p>Let $\mathcal{H}={wx\mid w\in\mathbb{R}^N,||w||\le 1}$ be set of all hyperplane classification.
+Let $S=((x_1,y_1),&hellip;,(x_m,y_m))$ be $m$ i.i.d samples from a distribution $\mathcal{D}$. Let $R(x)$ be the generalization error and
+$\hat{R}_S(h)=\frac{1}{m}\sum _{1\le i\le m} y_i\cdot sign(h(x_i))$
+be the empirical error. Then according to Rademacher complexity theory, for any $\delta&gt;0$, with probability at least $1-\delta$, for any $h\in\mathcal{H}$ we have</p>
+<div>
+\[
+R(h)\le \hat{R}_S(h)+O\left(\sqrt{\frac{\log (m/d)}{(m/d)}}\right) + \sqrt{\frac{\log \frac{1}{\delta}}{2m}}
+\]
+</div>
+<p>Where $d$ is the VC-dimension for $\mathcal{H}$, which we proved to be $N+1$. Two reasons we are not satisfied with this generization bound (i) weak when $m$ is less than $N$, when later using kernelization, $N$ can be even infinity (ii) does not benefit from picking the seperating plane that maximize margin.</p>
+<p>In the book, the problem is solved by the following approch. Define</p>
+<div>
+\[
+\Phi_\rho(x) =
+  \begin{cases}
+    1 & \text{if } x \leq 0, \\
+    1 - \frac{x}{\rho} & \text{if } 0 < x \leq \rho, \\
+    0 & \text{if } \rho < x.
+  \end{cases}
+\]
+</div>
+<p>and define a new stronger empirical loss $\hat{R}_{S,\rho}(h)=\frac{1}{m}\sum _{1\le i\le m} \Phi _{\rho}(y_i\cdot h(x_i))$. The final result that we are going to prove is as follows. Suppose the distribution guarantee that $||x||&lt;r$, then with probability at least $1-\delta$, the following holds for any $h\in\mathcal{H}$</p>
+<div>
+\[
+R(h)\le \hat{R}_{S,\rho}(h)+O\left(\sqrt{\frac{r^2/p^2}{m}}\right) + \sqrt{\frac{\log \frac{1}{\delta}}{2m}}
+\]
+</div>
+<p>Before proving this, let&rsquo;s first see why this is better. Firstly, it perfectly solve the problem when $m&lt;N$ since it does not depend on $N$ at all. Secondly, to achieve this benefit, we acctually pay a strong empirical loss $\hat{R}_ {S,\rho}(h)$, which is at least $\hat{R}_ {S}(h)$. $\hat{R}_ {S,\rho}(h)$ depends on the margin, it grows as the margin decrease. So this bound solves the above two problems simultaneously.</p>
+<p>Let&rsquo;s see what intuition it gave us (how it finally leads to the SVM algorithm). According to the definition we have</p>
+<div>
+\[
+R(h)\le \frac{1}{m}\sum _{1\le i\le m}\max\left(0, 1-\frac{y_i\cdot (wx_i)}{\rho}\right)+O\left(\sqrt{\frac{r^2/\rho^2}{m}}\right) + \sqrt{\frac{\log \frac{1}{\delta}}{2m}}
+\]
+</div>
+<div>
+\[
+R(h)\le \frac{1}{m}\sum _{1\le i\le m}\max\left(0, 1-y_i\cdot (\frac{w}{\rho}x_i)\right)+O\left(\sqrt{\frac{r^2/\rho^2}{m}}\right) + \sqrt{\frac{\log \frac{1}{\delta}}{2m}}
+\]
+</div>
+<p>By substituting $w/\rho$ by $w$, we get the following inequality for any $h=wx+b$ with $||w||&lt;1/\rho$.</p>
+<div>
+\[
+R(h)\le \frac{1}{m}\sum _{1\le i\le m}\max\left(0, 1-y_i\cdot (wx_i)\right)+O\left(\sqrt{\frac{r^2/\rho^2}{m}}\right) + \sqrt{\frac{\log \frac{1}{\delta}}{2m}}
+\]
+</div>
+<p>We want to minimize the right hand size, which depends on the choice of $\rho$ and $w$. We will use cross-validation to choose $\rho$, the remaining part is to minimize the first term.</p>
+<div>
+\[
+\min _{||w||^2 < 1/\rho^2 } \frac{1}{m}\sum _{1\le i\le m}\max\left(0, 1-y_i\cdot (wx_i)\right)
+\]
+</div>
+<p>The dual problem is</p>
+<div>
+\[
+\max_{\lambda}\left( - \lambda/\rho^2 + \min_{w} \left(\lambda||w||^2  + \frac{1}{m}\sum _{1\le i\le m}\max\left(0, 1-y_i\cdot (wx_i)\right)\right)\right)
+\]
+</div>
+<p>We can use cross validation to choose $\lambda$. This collide with the soft SVM algorithm.</p>
+<h3 id="proof-of-generization-bound">Proof of Generization Bound</h3>
+<p>Now we show how to prove the result</p>
+<div>
+\[
+R(h)\le \hat{R}_{S,\rho}(h)+O\left(\sqrt{\frac{r^2/p^2}{m}}\right) + \sqrt{\frac{\log \frac{1}{\delta}}{2m}}
+\]
+</div>
+<p>Recall the definition, $\hat{R}_{S,\rho}(h)=\frac{1}{m}\sum _{1\le i\le m} \Phi _{\rho}(y_i\cdot h(x_i))$ which is the empirical loss of function $\Phi _\rho(\tilde{h}(x_i,y_i))$ where $\tilde{h}\in\tilde{\mathcal{H}} = {yh(x)\mid h\in\mathcal{H}}$. Let&rsquo;s write $\Phi _\rho(\tilde{\mathcal{H}}) = {\Phi _ \rho(\tilde{h}(x))\mid \tilde{h}\in\tilde{\mathcal{H}}}$.</p>
+<p>It&rsquo;s easy to see for any $g\in \Phi _ \rho(\tilde{\mathcal{H}})$, we have $R(h)\le \mathbb{E}[g(x,y)]$, and according to Rademacher Complexity Theory, we have</p>
+<div>
+\[
+\mathbb{E}[g(x,y)]\le \hat{R}_{S,\rho}(h)+ 2\mathcal{R}_S(\Phi _\rho(\tilde{\mathcal{H}})) + \sqrt{\frac{\log \frac{1}{\delta}}{2m}}
+\]
+</div>
+<p>So it all boils down to prove $\mathcal{R}_S(\tilde{\mathcal{H}}) = O\left(\sqrt{\frac{r^2/p^2}{m}}\right)$. We will prove it through two steps. (i) Prove that $\mathcal{R}_S(\Phi _\rho(\tilde{\mathcal{H}})) \le \mathcal{R}_S(\tilde{\mathcal{H}})/\rho$ given that $\Phi$ is $1/\rho$-Lipschitz. (ii) Prove that $\mathcal{R}_S(\tilde{\mathcal{H}})\le \sqrt{r^2/m}$.</p>
+<p><strong>Step 1 $\mathcal{R}_S(\Phi _\rho(\tilde{\mathcal{H}})) \le \mathcal{R}_S(\tilde{\mathcal{H}})/\rho$.</strong>  We start by writing the definition.</p>
+<div>
+\[
+m\mathcal{R}_S(\Phi _\rho(\tilde{\mathcal{H}})) = \mathbb{E}_{\sigma}[\sup _{\tilde{h}\in\tilde{H}}\sum_{1\le i\le m}\sigma_i\Phi_{\rho}(\tilde{h}(x_i,y_i))]
+\]
+</div>
+<div>
+\[
+m\mathcal{R}_S(\Phi _\rho(\tilde{\mathcal{H}})) = \frac{1}{2}\mathbb{E}_{\sigma_1,...,\sigma_{m-1}}\left[\sup_{\tilde{h}\in\tilde{H}}\left(\sum_{1\le i\le m-1}\sigma_i\Phi_{\rho}(\tilde{h}(x_i,y_i))+\Phi_{\rho}(\tilde{h}(x_m,y_m))\right)\right] + \frac{1}{2}\mathbb{E}_{\sigma_1,...,\sigma_{m-1}}\left[\sup_{\tilde{h}\in\tilde{H}}\left(\sum_{1\le i\le m-1}\sigma_i\Phi_{\rho}(\tilde{h}(x_i,y_i))-\Phi_{\rho}(\tilde{h}(x_m,y_m))\right)\right]
+\]
+</div>
+<p>Suppose the first sup is $h_1$ and the second sup is $h_2$, we get</p>
+<div>
+\[
+m\mathcal{R}_S(\Phi _\rho(\tilde{\mathcal{H}})) = \frac{1}{2}\mathbb{E}_{\sigma_1,...,\sigma_{m-1}}\left[\sum_{1\le i\le m-1}\sigma_i\Phi_{\rho}(h_1(x_i,y_i))+\Phi_{\rho}(h_1(x_m,y_m))\right] + \frac{1}{2}\mathbb{E}_{\sigma_1,...,\sigma_{m-1}}\left[\sum_{1\le i\le m-1}\sigma_i\Phi_{\rho}(h_2(x_i,y_i))-\Phi_{\rho}(h_2(x_m,y_m))\right]
+\]
+</div>
+<div>
+\[
+m\mathcal{R}_S(\Phi _\rho(\tilde{\mathcal{H}})) = \frac{1}{2}\mathbb{E}_{\sigma_1,...,\sigma_{m-1}}\left[\sum_{1\le i\le m-1}\sigma_i\Phi_{\rho}(h_1(x_i,y_i))+\Phi_{\rho}(h_1(x_m,y_m))-\Phi_{\rho}(h_1(x_m,y_m))\right] 
+\]
+</div>
+<div>
+\[
+    \le \frac{1}{2}\mathbb{E}_{\sigma_1,...,\sigma_{m-1}}\left[\sum_{1\le i\le m-1}\sigma_i\Phi_{\rho}(h_1(x_i,y_i))+\frac{1}{\rho}(h_1(x_m,y_m))-\frac{1}{\rho}\Phi_{\rho}(h_1(x_m,y_m))\right]
+\]
+</div>
+<div>
+\[
+m\mathcal{R}_S(\Phi _\rho(\tilde{\mathcal{H}})) = \frac{1}{2}\mathbb{E}_{\sigma_1,...,\sigma_{m-1}}\left[\sum_{1\le i\le m-1}\sigma_i\Phi_{\rho}(h_1(x_i,y_i))+\frac{1}{p}h_1(x_m,y_m)\right] + \frac{1}{2}\mathbb{E}_{\sigma_1,...,\sigma_{m-1}}\left[\sum_{1\le i\le m-1}\sigma_i\Phi_{\rho}(h_2(x_i,y_i))-\frac{1}{p}h_2(x_m,y_m)\right]
+\]
+</div>
+<div>
+\[
+\le \frac{1}{2}\mathbb{E}_{\sigma_1,...,\sigma_{m-1}}\left[\sup_{\tilde{h}\in\tilde{H}}\left(\sum_{1\le i\le m-1}\sigma_i\Phi_{\rho}(\tilde{h}(x_i,y_i))+\frac{1}{p}\tilde{h}(x_m,y_m)\right)\right] + \frac{1}{2}\mathbb{E}_{\sigma_1,...,\sigma_{m-1}}\left[\sup_{\tilde{h}\in\tilde{H}}\left(\sum_{1\le i\le m-1}\sigma_i\Phi_{\rho}(\tilde{h}(x_i,y_i))-\frac{1}{p}\tilde{h}(x_m,y_m)\right)\right]
+\]
+</div>
+<div>
+\[
+= \frac{1}{2}\mathbb{E}_{\sigma_1,...,\sigma_{m}}\left[\sup_{\tilde{h}\in\tilde{H}}\left(\sum_{1\le i\le m-1}\sigma_i\Phi_{\rho}(\tilde{h}(x_i,y_i))+\sigma_m\frac{1}{p}\tilde{h}(x_m,y_m)\right)\right]
+\]
+</div>
+<p>By repeating this procedure we can substitue all $\Phi_{\rho}$ as $\frac{1}{\rho}$, and get</p>
+<div>
+\[
+\mathcal{R}_S(\Phi _\rho(\tilde{\mathcal{H}})) = \frac{1}{\rho}\mathbb{E}_{\sigma}[\sup _{\tilde{h}\in\tilde{H}}\sum_{1\le i\le m}\sigma_i\tilde{h}(x_i,y_i)]
+\]
+</div>
+<p><strong>Step 2 $\mathcal{R}_S(\tilde{\mathcal{H}})\le \sqrt{r^2/m}$.</strong></p>
+<p>The is easy to see by some calculations on the definition.</p>
+<div>
+\[
+m\mathcal{R}_S(\Phi _\rho(\tilde{\mathcal{H}})) = \mathbb{E}_{\sigma}[\sup _{\tilde{h}\in\tilde{H}}\sum_{1\le i\le m}\sigma_i\tilde{h}(x_i,y_i)] = \mathbb{E}_{\sigma}[\sup _{||w||\le 1}\sum_{1\le i\le m}\sigma_iy_iw x_i] = \mathbb{E}_{\sigma}[\sup _{||w||\le 1}\sum_{1\le i\le m}\sigma_iw x_i]
+\]
+</div>
+<div>
+\[
+\mathbb{E}_{\sigma}[\sup _{||w||\le 1}\sum_{1\le i\le m}\sigma_iw x_i]=\mathbb{E}_{\sigma}[\sup _{||w||\le 1}w\cdot \left(\sum_{1\le i\le m}\sigma_i x_i\right)]\le \mathbb{E}_{\sigma}[\sup _{||w||\le 1}||w||\cdot ||\sum_{1\le i\le m}\sigma_i x_i||]\le \mathbb{E}_{\sigma}[\sup _{||w||\le 1}||\sum_{1\le i\le m}\sigma_i x_i||]
+\]
+</div>
+<div>
+\[
+\mathbb{E}_{\sigma}[||\sum_{1\le i\le m}\sigma_i x_i||] = \mathbb{E}_{\sigma}[\sqrt{\left(\sum_{1\le i\le m}\sigma_i x_i\right)\cdot \left(\sum_{1\le i\le m}\sigma_i x_i\right)}] = \mathbb{E}_{\sigma}[\sqrt{\sum_{1\le i,j\le m}\sigma_i\sigma_j(x_i\cdot x_j)}]\le \sqrt{ \mathbb{E}_{\sigma}[\sum_{1\le i,j\le m}\sigma_i\sigma_j(x_i\cdot x_j)]} = \sqrt{\sum_{1\le i\le m}||x_i||^2}\le \sqrt{mr^2}
+\]
+</div>
+                </div>
+                
+                
+
+                
+
+
+
+                
+
+
+
+            </div>
+            
+            <div class="hidden lg:block lg:w-1/4">
+                
+                <div class="sticky top-16 z-10 hidden lg:block px-6 py-4  bg-secondary-bg pt-16 -mt-16 ">
+    <span class="text-lg font-semibold">On This Page</span>
+</div>
+<div class="sticky-toc hidden lg:block px-6 pb-6  pt-10 -mt-10 border-l ">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#ml-foundations">ML Foundations</a>
+      <ul>
+        <li><a href="#support-vector-machine-svm">Support Vector Machine (SVM)</a>
+          <ul>
+            <li><a href="#generalization-bound">Generalization Bound</a></li>
+            <li><a href="#proof-of-generization-bound">Proof of Generization Bound</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        enableStickyToc();
+    });
+</script>
+                
+            </div>
+            
+        </div>
+
+    </div>
+
+
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        hljs.initHighlightingOnLoad();
+        changeSidebarHeight();
+        switchDocToc();
+    })
+</script>
+
+
+
+
+
+
+
+
+  </main>
+  <footer class="pl-scrollbar">
+    <div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">Powered by <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a>. Last updated in 2025 June. </p>
+</div></div>
+  </footer>
+</body>
+
+</html>

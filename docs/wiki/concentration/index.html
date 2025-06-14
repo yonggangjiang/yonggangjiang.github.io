@@ -1,0 +1,583 @@
+<!DOCTYPE html><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<style>
+  .blackout {
+    background-color: black;
+    color: black;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    padding: 2px 4px;
+    border-radius: 4px;
+  }
+
+  .blackout.revealed {
+    color: white;  
+  }
+</style>
+
+
+<title>Concentration of Measure | Home | Yonggang&#39;s homepage</title>
+
+<meta name="generator" content="Hugo Eureka 0.8.3-dev" />
+<link rel="stylesheet" href="https://jyg94.github.io/css/eureka.min.css">
+<script defer src="https://jyg94.github.io/js/eureka.min.js"></script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js"
+   crossorigin></script>
+
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/dart.min.js"
+     crossorigin></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js"
+   integrity="sha256-uNYoXefWRqv&#43;PsIF/OflNmwtKM4lStn9yrz2gVl6ymo="  crossorigin></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+   integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" 
+  integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+   integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js" 
+  integrity="sha256-Zmpaaj&#43;GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE="  crossorigin></script>
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="https://jyg94.github.io/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_32x32_fill_box_center_3.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://jyg94.github.io/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png">
+
+<meta name="description"
+  content="Concentration of Measure Suppose $X_1,X_2,&hellip;,X_n$ are $n$ random variables and $X=X_1&#43;X_2&#43;&hellip;&#43;X_n$. Many problems need us to show $X$ is concentrated on its expectation, i.e., we want to bound the probability $\Pr\left[\left|X-\mathbb{E}[X]\right|&gt;d\right]$ for different possitive real number $d$.
+We disccuss this problem by considering two cases. The first case is when $X_1,X_2,&hellip;,X_n$ are independent with each other, which is easier than the case when the independency is not gaurantteed.
+Independent Variables The general idea is to apply Markov&rsquo;s inequality to $e^{tX}$, where $t\in\mathbb{R}$ will be determined later.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Docs",
+      "item":"https://jyg94.github.io/docs/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"Home",
+      "item":"https://jyg94.github.io/docs/wiki/"},{
+      "@type": "ListItem",
+      "position": 3 ,
+      "name":"Concentration of Measure",
+      "item":"https://jyg94.github.io/docs/wiki/concentration/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://jyg94.github.io/docs/wiki/concentration/"
+    },
+    "headline": "Concentration of Measure | Home | Yonggang\u0027s homepage","datePublished": "2020-11-20T22:52:56+08:00",
+    "dateModified": "2020-11-20T22:52:56+08:00",
+    "wordCount":  897 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "C. Wang",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://jyg94.github.io/images/icon.png"
+        }
+        },
+    "description": "Concentration of Measure Suppose $X_1,X_2,\u0026hellip;,X_n$ are $n$ random variables and $X=X_1\u002bX_2\u002b\u0026hellip;\u002bX_n$. Many problems need us to show $X$ is concentrated on its expectation, i.e., we want to bound the probability $\\Pr\\left[\\left|X-\\mathbb{E}[X]\\right|\u0026gt;d\\right]$ for different possitive real number $d$.\nWe disccuss this problem by considering two cases. The first case is when $X_1,X_2,\u0026hellip;,X_n$ are independent with each other, which is easier than the case when the independency is not gaurantteed.\nIndependent Variables The general idea is to apply Markov\u0026rsquo;s inequality to $e^{tX}$, where $t\\in\\mathbb{R}$ will be determined later."
+}
+</script><meta property="og:title" content="Concentration of Measure | Home | Yonggang&#39;s homepage" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="https://jyg94.github.io/images/icon.png">
+
+
+<meta property="og:url" content="https://jyg94.github.io/docs/wiki/concentration/" />
+
+
+
+
+<meta property="og:description" content="Concentration of Measure Suppose $X_1,X_2,&hellip;,X_n$ are $n$ random variables and $X=X_1&#43;X_2&#43;&hellip;&#43;X_n$. Many problems need us to show $X$ is concentrated on its expectation, i.e., we want to bound the probability $\Pr\left[\left|X-\mathbb{E}[X]\right|&gt;d\right]$ for different possitive real number $d$.
+We disccuss this problem by considering two cases. The first case is when $X_1,X_2,&hellip;,X_n$ are independent with each other, which is easier than the case when the independency is not gaurantteed.
+Independent Variables The general idea is to apply Markov&rsquo;s inequality to $e^{tX}$, where $t\in\mathbb{R}$ will be determined later." />
+
+
+
+
+<meta property="og:locale" content="en" />
+
+
+
+
+<meta property="og:site_name" content="Yonggang&#39;s homepage" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2020-11-20T22:52:56&#43;08:00" />
+
+
+<meta property="article:modified_time" content="2020-11-20T22:52:56&#43;08:00" />
+
+
+
+<meta property="article:section" content="docs" />
+
+
+
+
+<head>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-94BJ1L4MWP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-94BJ1L4MWP');
+</script>
+</head>
+
+<body class="flex flex-col min-h-screen">
+  <header class="fixed flex items-center w-full min-h-16 z-50 bg-secondary-bg shadow-sm">
+    <div class="w-full mx-auto"><script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0" style="width:1300px">
+    <a href="/docs/wiki" class="mr-6 text-primary-text text-xl font-bold" style="color: black;">Yonggang's wiki</a>
+    
+
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+  </header>
+  <main class="flex-grow pt-16">
+
+
+<div class="flex flex-col md:flex-row bg-secondary-bg rounded">
+    <div class="md:w-1/4 lg:w-1/6 border-r">
+        <div class="sticky top-16 pt-6">
+            
+
+
+
+
+
+
+
+
+
+
+<div id="sidebar-title" class="md:hidden mx-4 px-2 pt-4 pb-2 md:border-b text-tertiary-text md:text-primary-text">
+    <span class="font-semibold">Table of Contents</span>
+    <i class="fas fa-caret-right ml-1"></i>
+</div>
+
+<div id="sidebar-toc"
+    class="hidden md:block overflow-y-auto mx-6 md:mx-0 pr-6 pt-2 md:max-h-doc-sidebar bg-primary-bg md:bg-transparent">
+
+    <div class="flex flex-wrap ml-4 -mr-2 p-2 hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://jyg94.github.io/docs/wiki/&#34;">
+        <a class=" hover:text-eureka font-bold"
+            href="https://jyg94.github.io/docs/wiki/">Home</a>
+        
+        
+        
+
+
+    </div>
+    
+    
+
+
+<ul class="pl-4">
+    
+    
+    
+    <li class="py-1"></li>
+        <div class="  -mr-2 p-2  hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://jyg94.github.io/docs/wiki/advanced/&#34;">
+            <a class=""
+            href="https://jyg94.github.io/docs/wiki/advanced/">Advanced Algorithm (ETHz)</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-1"></li>
+        <div class="  -mr-2 p-2  hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://jyg94.github.io/docs/wiki/math/&#34;">
+            <a class=""
+            href="https://jyg94.github.io/docs/wiki/math/">Basic Math</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-1"></li>
+        <div class="  -mr-2 p-2  hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://jyg94.github.io/docs/wiki/complexity/&#34;">
+            <a class=""
+            href="https://jyg94.github.io/docs/wiki/complexity/">Complexity</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-1"></li>
+        <div class="  -mr-2 p-2  hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://jyg94.github.io/docs/wiki/concentration/&#34;">
+            <a class=" text-eureka "
+            href="https://jyg94.github.io/docs/wiki/concentration/">Concentration of Measure</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-1"></li>
+        <div class="  -mr-2 p-2  hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://jyg94.github.io/docs/wiki/convex/&#34;">
+            <a class=""
+            href="https://jyg94.github.io/docs/wiki/convex/">Convex Optimization</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-1"></li>
+        <div class="  -mr-2 p-2  hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://jyg94.github.io/docs/wiki/finegrained/&#34;">
+            <a class=""
+            href="https://jyg94.github.io/docs/wiki/finegrained/">Fine-Grained Complexity</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-1"></li>
+        <div class="  -mr-2 p-2  hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://jyg94.github.io/docs/wiki/graph/&#34;">
+            <a class=""
+            href="https://jyg94.github.io/docs/wiki/graph/">Graph Theory</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-1"></li>
+        <div class="  -mr-2 p-2  hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://jyg94.github.io/docs/wiki/matrix/&#34;">
+            <a class=""
+            href="https://jyg94.github.io/docs/wiki/matrix/">Matrix</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-1"></li>
+        <div class="  -mr-2 p-2  hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://jyg94.github.io/docs/wiki/ml/&#34;">
+            <a class=""
+            href="https://jyg94.github.io/docs/wiki/ml/">ML Foundations</a>
+        </div>
+        
+    </li>
+    
+    
+    <li class="py-2"></li>
+    </li>
+</ul>
+
+</div>
+
+
+
+
+
+        </div>
+    </div>
+    <div class="w-full md:w-3/4 lg:w-4/5 pb-8 pt-2 md:pt-8">
+        <div class="flex">
+            <div class="w-full lg:w-4/4 px-6">
+                
+                
+                <div class="content">
+                    <h1 id="concentration-of-measure">Concentration of Measure</h1>
+<p>Suppose $X_1,X_2,&hellip;,X_n$ are $n$ random variables and $X=X_1+X_2+&hellip;+X_n$. Many problems need us to show $X$ is concentrated on its expectation, i.e., we want to bound the probability $\Pr\left[\left|X-\mathbb{E}[X]\right|&gt;d\right]$ for different possitive real number $d$.</p>
+<p>We disccuss this problem by considering two cases. The first case is when $X_1,X_2,&hellip;,X_n$ are independent with each other, which is easier than the case when the independency is not gaurantteed.</p>
+<h2 id="independent-variables">Independent Variables</h2>
+<p>The general idea is to apply <a href="https://en.wikipedia.org/wiki/Markov%27s_inequality">Markov&rsquo;s inequality</a> to $e^{tX}$, where $t\in\mathbb{R}$ will be determined later. We get the following inequality for any $a\in\mathbb{R}^+$.</p>
+<div>
+\[
+\Pr\left[e^{tX}>e^{ta}\right]\le\frac{\mathbb{E}[e^{tX}]}{e^{ta}}
+\]
+</div>
+<p>Based on whether $t&gt;0$ or $t&lt;0$, the event $e^{tX}&gt;e^{ta}$ is equivalent to $X&gt;a$ or $X&lt;a$, corresponding to the cases $a&gt;\mathbb{E}[X]$ and $a&lt;\mathbb{E}[X]$. Thus, our goal is to choose the best $t$ for $t&gt;0$ and $t&lt;0$ respetively and minimize $\frac{\mathbb{E}[e^{tX}]}{e^{ta}}$.</p>
+<p>The intuition to use $e^{tX}$ is from <a href="https://en.wikipedia.org/wiki/Moment-generating_function">Moment-generating function
+</a>. The Moment-generating function (MGF) of $X$ is defined to be the function $M_X(t)=\mathbb{E}\left[e^{tX}\right]$. An important property of $M_X(t)$ is that it uniquely defines the distribution $X$. i.e., if $M_X(t)=M_Y(t)$ for all $t\in\mathbb{R}$, then the distribution $X$ and $Y$ are identical.</p>
+<p>To minimize $\frac{\mathbb{E}[e^{tX}]}{e^{ta}}$ we need to calculate $\mathbb{E}[e^{tX}]$. Since $X_i$s are independent with each other, we have</p>
+<div>
+\[
+\Pr\left[e^{tX}>e^{ta}\right]\le\frac{\mathbb{E}[e^{tX}]}{e^{ta}}=\frac{\prod_{i=1}^n \mathbb{E}[e^{tX_i}]}{e^{ta}}
+\]
+</div>
+ Thus, the problem falls into bounding the MGF of $X_i$. It is hard in general. However, we can try to get upper bound for it based on different assumptions on the distribution of $X_i$.
+<h3 id="bernsteins-inequality">Bernstein&rsquo;s Inequality</h3>
+<p>To use the manner of Moment-generating function, at least we should assume the MGF of $X_i$ exists, i.e., there exists $t &gt; 0$ such that $\mathbb{E}[e^{tX_i}]&lt; \infty$. One can show that this property is equivelent to</p>
+<div>
+\[\exists K > 0,\forall t > 0,\Pr[|X_i|>t]< e^{-t/K}\]
+</div>
+<p>We say such $X_i$ has <em>sub-exponential distribution</em>. We define the <em>sub-exponential norm</em> to be the smallest $\lambda$ such that $\mathbb{E}[e^{X_i/\lambda}] &lt; 2$, denoted as $||X_i||_{\psi_1}$.</p>
+<p>One can show that $||X_i||_{\psi_1}$ is proportional to the smallest $K$ in the definition of sub-exponential distribution. With this in mind, we have the following <a href="https://en.wikipedia.org/wiki/Bernstein_inequalities_(probability_theory)">Bernstein&rsquo;s Inequality</a>.</p>
+<div class="rounded border" style="line-height:15px; background-color: #A7C1F2; border-radius: 5px; border-color: #AAAAAA; border-left-width: 2px; border-top-width: 2px;">
+    <div class="px-2 pt-2 pb-2 font-bold">
+        Bernstein's Inequality
+    </div>
+    <div class="rounded border px-4 pt-2 pb-2" style="background-color: white; border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-color: #AAAAAA; border-top-right-radius: 0%; border-top-left-radius: 0%;">
+        <div>
+Suppose $X_1,X_2,...,X_n$ are independent sub-exponential random variables. Let $X=\sum_{i=1}^nX_i$. For any $d>0$ we have
+<div>
+\[\Pr\left[\left|X-\mathbb{E}[X]\right|>d\right]\le\exp\left[-c\min\left(\frac{d^2}{\sum_{i=1}^n||X_i||^2_{\psi_1}},\frac{d}{\max_{i\in[n]}||X_i||_{\psi_1}}\right)\right]\]
+</div>
+where $c>0$ is an absolute constant.
+</div>
+    </div>
+</div>
+<h3 id="hoeffdings-inequality">Hoeffding&rsquo;s inequality</h3>
+<p>The Bernstein&rsquo;s Inequality is not sharp in many cases. For example, the number of heads of a coin tossed $n$ times is expected to close to Gaussian distribution which is something like $e^{-d^2}$ bound. However, the Bernstein&rsquo;s Inequality gives the $e^{-d}$ bound for large $d$.</p>
+<p>Actually, if the variables belongs to the <a href="https://en.wikipedia.org/wiki/Sub-Gaussian_distribution">sub-Gaussian distribution</a> which is stronger than sub-exponential, we can get rid of the $e^{-d}$ part in the Bernstein&rsquo;s Inequality.</p>
+<p>A random variable $X$ has sub-Gaussian distribution if</p>
+<div>
+\[\exists K > 0,\forall t > 0,\Pr[|X_i|>t]< e^{-t^2/K}\]
+</div>
+<p>Similar to sub-exponential distribution, we define the <em>sub-gaussian norm</em> of $X$ to be the smallest number $\lambda$ such that $\mathbb{E}[e^{X^2/\lambda^2}]&lt; 2$, denoted as $||X||_{\psi_2}$. One can also show that such $\lambda$ is proportional to the smallest $K$ in the definition of sub-Gaussian distribution.</p>
+<p>The following <a href="https://en.wikipedia.org/wiki/Hoeffding%27s_inequality">Hoeffding&rsquo;s inequality</a> is designed to handle Sub-Gaussian distribution.</p>
+<div class="rounded border" style="line-height:15px; background-color: #A7C1F2; border-radius: 5px; border-color: #AAAAAA; border-left-width: 2px; border-top-width: 2px;">
+    <div class="px-2 pt-2 pb-2 font-bold">
+        Hoeffding's inequality
+    </div>
+    <div class="rounded border px-4 pt-2 pb-2" style="background-color: white; border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-color: #AAAAAA; border-top-right-radius: 0%; border-top-left-radius: 0%;">
+        <div>
+Suppose $X_1,X_2,...,X_n$ are independent sub-Gaussian random variables. Let $X=\sum_{i=1}^nX_i$. For any $d>0$ we have
+<div>
+\[\Pr\left[\left|X-\mathbb{E}[X]\right|>d\right]\le\exp\left(-\frac{cd^2}{\sum_{i=1}^n||X_i||^2_{\psi_2}}\right)\]
+</div>
+where $c>0$ is an absolute constant.
+</div>
+    </div>
+</div>
+<p>A important application of Hoeffding&rsquo;s inequality is when $X_i\in[a_i,b_i]$, i.e., the sum of bounded random variables. After shifting we can let $X_i\in[0,b_i-a_i]$ and it is easy to see that $X_i$ belongs to the sub-Gaussian distribution with the sub-Gaussian norm at most proportional to $(b_i-a_i)$. Thus, the bound becomes $\exp\left(-cd^2/\sum_{i=1}^n(b_i-a_i)^2\right)$.</p>
+<h3 id="chernoffs-inequality">Chernoff&rsquo;s Inequality</h3>
+<p>When $||X_i||^2_{\psi_2}$ is at least a constant, it seems that the Hoeffding&rsquo;s inequality is only useful when $d$ is at least $\sqrt{n}$. However, it is not good in many cases. When $\mathbb{E}[X]$ is small, we need a shaper bound.</p>
+<p><a href="https://en.wikipedia.org/wiki/Chernoff_bound">Chernoff Bound</a> is specially desined for concentration of Bernoulli random variables. i.e., $X_i$ takes value $1$ with probability $p_i$ and takes $0$ with probability $1-p_i$.</p>
+<p>Based on the assumption that $X_i$s are Bernoulli variables, we have</p>
+<div>
+\[\mathbb{E}[e^{tX_i}]=1+(e^t-1)p_i\]
+</div>
+<div class="font-bold pt-2 pb-2" style="text-align:center;">For Identical Variables</div>
+When $p_i=p$ for all $i\in[n]$, i.e., all $X_i$s are identical distribution, we have 
+<div>
+\[
+    \frac{\prod_{i=1}^n \mathbb{E}[e^{tX_i}]}{e^{ta}}=\frac{\left(1+(e^t-1)p\right)^n}{e^{ta}}=\exp\left(n\ln\left(1+(e^t-1)p\right)-ta\right)=\exp\left(f(t)\right)
+\]
+</div>
+where
+<div>
+\[
+    f'(t)=\frac{npe^t}{1-p+e^tp}-a
+\]
+</div>
+<p>$f&rsquo;(t)$ is an incresing function on $\mathbb{R}$. By setting $e^t=\frac{a-ap}{np-ap}$ (Note that only $a &lt; n$ is the non-trivial case. Thus, $\frac{a-ap}{np-ap}$ is positive.), we get the minimum of $f(t)$. In which case we can write $\mathbb{E}[e^{tX}]/e^{ta}$ as</p>
+<div>
+\[
+\exp\left(n\ln\left(\frac{n(1-p)}{n-a}\right)-a\ln\left(\frac{a(1-p)}{p(n-a)}\right)\right)=\exp\left(n\cdot D_{KL}(B(a/n)||B(p))\right)
+\]
+</div>
+<p>Where $B(x)$ is the distribution that takes $1$ with probability $x$ and $0$ with probability $1-x$. $D_{KL}(x||y)$ is the <a href="/docs/wiki/condition/#kl">Kullback–Leibler divergence
+</a>. By applying the inequality $D_{KL}(p||x)\ge\frac{(x_1-p_1)^2}{2(x_1+p_1)}$, we can get the same result as the following Chernoff bound.</p>
+<div class="font-bold pt-2 pb-2" style="text-align:center;">For Different Variables</div>
+<p>On the other hand, if $p_i$s are not guaranteed to be identical, we can bound $\mathbb{E}\left[e^{tX_i}\right]$ by the following inequality</p>
+<div>
+\[\mathbb{E}[e^{tX_i}]=1+(e^t-1)p_i\le \exp\left((e^t-1)p_i\right)\]
+</div>
+<p>In witch case we can get bound</p>
+<div>
+\[
+\frac{\mathbb{E}[e^{tX}]}{e^{ta}}\le\exp\left((e^t-1)\sum_{i=1}^np_i-at\right)
+\]
+</div>
+<p>Write $\mu=\sum_{i=1}^np_i$ which is the expectation of $X$. Similarly by basic calculation, we can let $e^t=\frac{a}{\mu}$ and get</p>
+<div>
+\[\frac{\mathbb{E}[e^{tX}]}{e^{ta}}\le\exp\left(a-\mu-a\ln(a/\mu)\right)\le\exp\left(-\frac{(a-\mu)^2}{a+\mu}\right)\]
+</div>
+<p>Since $\frac{a}{\mu}&gt;1$ iff. $a&gt;\mu$, we get the following theorem.</p>
+<div class="pt-2"></div>
+<div class="rounded border" style="line-height:15px; background-color: #A7C1F2; border-radius: 5px; border-color: #AAAAAA; border-left-width: 2px; border-top-width: 2px;">
+    <div class="px-2 pt-2 pb-2 font-bold">
+        Chernoff Bound
+    </div>
+    <div class="rounded border px-4 pt-2 pb-2" style="background-color: white; border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-color: #AAAAAA; border-top-right-radius: 0%; border-top-left-radius: 0%;">
+        <div>
+Suppose $X_1,X_2,...,X_n$ are independent Bernoulli random variables. Let $X=\sum_{i=1}^nX_i$, and $\mu=\mathbb{E}[X]$, we have the additive error
+<div>
+\[\Pr\left[\left|X-\mu\right|>d\right]\le\exp\left(-\frac{d^2}{2\mu+d}\right)\]
+</div>
+for any $d>0$, or the multiplicative error
+\[\Pr\left[\left|\frac{X}{\mu}-1\right|>\delta\right]\le\exp\left(-\frac{\delta^2\mu}{\delta+2}\right)\]
+for any $\delta>0$.
+
+</div>
+    </div>
+</div>
+<div class="pt-2"></div>
+An easy way to see the result is considering two cases: when $d<\mu$ the exponent is proportional to $d^2/\mu$ or $\delta^2\mu$; when $d>\mu$ then exponent is proportional to $d$ or $\delta\mu$ (Notice that it is reasonalbe to see $\delta$ as $\frac{d}{\mu}$).
+<p>To get an small probability (such as $\frac{1}{poly(n)}$), we can set $d$ as $\Omega\left(\sqrt{\mu\log n}\right)$ or set $\delta$ as $\Omega\left(\sqrt{\frac{\log n}{\mu}}\right)$.</p>
+<h2 id="dependent-variables">Dependent Variables</h2>
+
+                </div>
+                
+                
+
+                
+
+
+
+                
+
+
+
+            </div>
+            
+            <div class="hidden lg:block lg:w-1/4">
+                
+                <div class="sticky top-16 z-10 hidden lg:block px-6 py-4  bg-secondary-bg pt-16 -mt-16 ">
+    <span class="text-lg font-semibold">On This Page</span>
+</div>
+<div class="sticky-toc hidden lg:block px-6 pb-6  pt-10 -mt-10 border-l ">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#concentration-of-measure">Concentration of Measure</a>
+      <ul>
+        <li><a href="#independent-variables">Independent Variables</a>
+          <ul>
+            <li><a href="#bernsteins-inequality">Bernstein&rsquo;s Inequality</a></li>
+            <li><a href="#hoeffdings-inequality">Hoeffding&rsquo;s inequality</a></li>
+            <li><a href="#chernoffs-inequality">Chernoff&rsquo;s Inequality</a></li>
+          </ul>
+        </li>
+        <li><a href="#dependent-variables">Dependent Variables</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        enableStickyToc();
+    });
+</script>
+                
+            </div>
+            
+        </div>
+
+    </div>
+
+
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        hljs.initHighlightingOnLoad();
+        changeSidebarHeight();
+        switchDocToc();
+    })
+</script>
+
+
+
+
+
+
+
+
+  </main>
+  <footer class="pl-scrollbar">
+    <div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">Powered by <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a>. Last updated in 2025 June. </p>
+</div></div>
+  </footer>
+</body>
+
+</html>
