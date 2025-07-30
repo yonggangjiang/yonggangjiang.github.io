@@ -67,11 +67,41 @@
   integrity="sha256-Zmpaaj&#43;GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE="  crossorigin></script>
 
 
-<link rel="icon" type="image/png" sizes="32x32" href="https://yonggangjiang.github.io/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_32x32_fill_box_center_3.png">
-<link rel="apple-touch-icon" sizes="180x180" href="https://yonggangjiang.github.io/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png">
+
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="https://yonggangjiang.github.io/images/icon_hu_4f4e55a10d73f6ba.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://yonggangjiang.github.io/images/icon_hu_8190559dabbef89f.png">
 
 <meta name="description"
-  content="Basics Turing Machine and Computation One possible definition of a $k$-tape Turing machine $M=(Q,\Sigma,\Gamma,\delta,q_0,Q_{acc})$ 1. $Q$ is a finite set, the states.  2. $\Sigma$ is a finite set, the input alphabet.  3. $\Gamma$ is a finite set, the tape alphabet. $\Box\in\Gamma$ is the blank symbol, $\Sigma\subseteq\Gamma\backslash\{\Box\}$.  4. The transition function $\delta: Q\times\Gamma^k\to Q\times \Gamma^k\times\{L,S,R\}^k$.  5. $q_0\subseteq Q$ is the start state.  6. $Q_{acc}\subseteq Q$ is the set of accepting states.">
+  content="Basics
+Turing Machine and Computation
+
+    
+        One possible definition of a $k$-tape Turing machine $M=(Q,\Sigma,\Gamma,\delta,q_0,Q_{acc})$
+    
+    
+        
+
+1. $Q$ is a finite set, the states.
+
+2. $\Sigma$ is a finite set, the input alphabet.
+
+3. $\Gamma$ is a finite set, the tape alphabet. $\Box\in\Gamma$ is the blank symbol, $\Sigma\subseteq\Gamma\backslash\{\Box\}$. 
+
+4. The transition function $\delta: Q\times\Gamma^k\to Q\times \Gamma^k\times\{L,S,R\}^k$. 
+
+5. $q_0\subseteq Q$ is the start state.
+
+6. $Q_{acc}\subseteq Q$ is the set of accepting states.
+
+The first tape is the input tape.
+
+For non-determinisitic, the transition function will map to multiple states. 
+
+    
+
+A configuration $C$ is $(q,(p_1,x_1),&hellip;,(p_k,x_k))$, denoting the state and positions, all information on tapes. $p_i$ are positions and $x_i$ is a string. $x_i$ only contain positions where the machine has reached. New positions will be added to $x_i$ if the pointer arrives at that position.">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -113,7 +143,7 @@
             "url": "https://yonggangjiang.github.io/images/icon.png"
         }
         },
-    "description": "Basics Turing Machine and Computation One possible definition of a $k$-tape Turing machine $M=(Q,\\Sigma,\\Gamma,\\delta,q_0,Q_{acc})$\r\r 1. $Q$ is a finite set, the states.  2. $\\Sigma$ is a finite set, the input alphabet.  3. $\\Gamma$ is a finite set, the tape alphabet. $\\Box\\in\\Gamma$ is the blank symbol, $\\Sigma\\subseteq\\Gamma\\backslash\\{\\Box\\}$.  4. The transition function $\\delta: Q\\times\\Gamma^k\\to Q\\times \\Gamma^k\\times\\{L,S,R\\}^k$.  5. $q_0\\subseteq Q$ is the start state.  6. $Q_{acc}\\subseteq Q$ is the set of accepting states."
+    "description": "\u003ch1 id=\u0022basics\u0022\u003eBasics\u003c\/h1\u003e\n\u003ch2 id=\u0022turing-machine-and-computation\u0022\u003eTuring Machine and Computation\u003c\/h2\u003e\n\u003cdiv class=\u0022rounded border\u0022 style=\u0022line-height:15px; background-color: #A7C1F2; border-radius: 5px; border-color: #AAAAAA; border-left-width: 2px; border-top-width: 2px;\u0022\u003e\r\n    \u003cdiv class=\u0022px-2 pt-2 pb-2 font-bold\u0022\u003e\r\n        One possible definition of a $k$-tape Turing machine $M=(Q,\\Sigma,\\Gamma,\\delta,q_0,Q_{acc})$\r\n    \u003c\/div\u003e\r\n    \u003cdiv class=\u0022rounded border px-4 pt-2 pb-2\u0022 style=\u0022background-color: white; border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-color: #AAAAAA; border-top-right-radius: 0%; border-top-left-radius: 0%;\u0022\u003e\r\n        \u003cdiv\u003e\n\n1. $Q$ is a finite set, the states.\n\u003c\/br\u003e\n2. $\\Sigma$ is a finite set, the input alphabet.\n\u003c\/br\u003e\n3. $\\Gamma$ is a finite set, the tape alphabet. $\\Box\\in\\Gamma$ is the blank symbol, $\\Sigma\\subseteq\\Gamma\\backslash\\{\\Box\\}$. \n\u003c\/br\u003e\n4. The transition function $\\delta: Q\\times\\Gamma^k\\to Q\\times \\Gamma^k\\times\\{L,S,R\\}^k$. \n\u003c\/br\u003e\n5. $q_0\\subseteq Q$ is the start state.\n\u003c\/br\u003e\n6. $Q_{acc}\\subseteq Q$ is the set of accepting states.\n\u003c\/br\u003e\nThe first tape is the input tape.\n\nFor non-determinisitic, the transition function will map to multiple states. \n\u003c\/div\u003e\r\n    \u003c\/div\u003e\r\n\u003c\/div\u003e\n\u003cp\u003eA configuration $C$ is $(q,(p_1,x_1),\u0026hellip;,(p_k,x_k))$, denoting the state and positions, \u003cstrong\u003eall\u003c\/strong\u003e information on tapes. $p_i$ are positions and $x_i$ is a string. $x_i$ only contain positions where the machine has reached. New positions will be added to $x_i$ if the pointer arrives at that position.\u003c\/p\u003e"
 }
 </script><meta property="og:title" content="Complexity | Home | Yonggang&#39;s homepage" />
 <meta property="og:type" content="article" />
@@ -127,7 +157,34 @@
 
 
 
-<meta property="og:description" content="Basics Turing Machine and Computation One possible definition of a $k$-tape Turing machine $M=(Q,\Sigma,\Gamma,\delta,q_0,Q_{acc})$ 1. $Q$ is a finite set, the states.  2. $\Sigma$ is a finite set, the input alphabet.  3. $\Gamma$ is a finite set, the tape alphabet. $\Box\in\Gamma$ is the blank symbol, $\Sigma\subseteq\Gamma\backslash\{\Box\}$.  4. The transition function $\delta: Q\times\Gamma^k\to Q\times \Gamma^k\times\{L,S,R\}^k$.  5. $q_0\subseteq Q$ is the start state.  6. $Q_{acc}\subseteq Q$ is the set of accepting states." />
+<meta property="og:description" content="Basics
+Turing Machine and Computation
+
+    
+        One possible definition of a $k$-tape Turing machine $M=(Q,\Sigma,\Gamma,\delta,q_0,Q_{acc})$
+    
+    
+        
+
+1. $Q$ is a finite set, the states.
+
+2. $\Sigma$ is a finite set, the input alphabet.
+
+3. $\Gamma$ is a finite set, the tape alphabet. $\Box\in\Gamma$ is the blank symbol, $\Sigma\subseteq\Gamma\backslash\{\Box\}$. 
+
+4. The transition function $\delta: Q\times\Gamma^k\to Q\times \Gamma^k\times\{L,S,R\}^k$. 
+
+5. $q_0\subseteq Q$ is the start state.
+
+6. $Q_{acc}\subseteq Q$ is the set of accepting states.
+
+The first tape is the input tape.
+
+For non-determinisitic, the transition function will map to multiple states. 
+
+    
+
+A configuration $C$ is $(q,(p_1,x_1),&hellip;,(p_k,x_k))$, denoting the state and positions, all information on tapes. $p_i$ are positions and $x_i$ is a string. $x_i$ only contain positions where the machine has reached. New positions will be added to $x_i$ if the pointer arrives at that position." />
 
 
 
@@ -156,17 +213,6 @@
 
 
 
-<head>
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-94BJ1L4MWP"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-94BJ1L4MWP');
-</script>
-</head>
 
 <body class="flex flex-col min-h-screen">
   <header class="fixed flex items-center w-full min-h-16 z-50 bg-secondary-bg shadow-sm">

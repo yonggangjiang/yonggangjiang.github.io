@@ -67,11 +67,38 @@
   integrity="sha256-Zmpaaj&#43;GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE="  crossorigin></script>
 
 
-<link rel="icon" type="image/png" sizes="32x32" href="https://yonggangjiang.github.io/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_32x32_fill_box_center_3.png">
-<link rel="apple-touch-icon" sizes="180x180" href="https://yonggangjiang.github.io/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png">
+
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="https://yonggangjiang.github.io/images/icon_hu_4f4e55a10d73f6ba.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://yonggangjiang.github.io/images/icon_hu_8190559dabbef89f.png">
 
 <meta name="description"
-  content="let variables = {&#34;approximate&#34;:&#34;exact,approximate&#34;,&#34;direct&#34;:&#34;undirected,directed&#34;,&#34;models&#34;:&#34;sequential,CONGEST,PRAM,streaming,communication,quantumQuery&#34;,&#34;parameter&#34;:&#34;parameterized, unparameterized&#34;,&#34;problems&#34;:&#34;MinVertexCut&#34;,&#34;randomize&#34;:&#34;randomized,deterministic&#34;,&#34;weight&#34;:&#34;unweighted,weighted&#34;} ;   var values = new Map(); function getResults(newValues, callback) { let problem = newValues.get(&#34;problems&#34;); let model = newValues.get(&#34;models&#34;); $.getJSON(`/collect/${problem}/${model}.json`, function(data) { // Process the data within this callback let bestMatch = null; let maxMatches = 0; for (const varItem of data) { let matches = 0; let isMatch = true; for (const [key, value] of newValues.entries()) { if (varItem.hasOwnProperty(key) && varItem[key] === value) { matches&#43;&#43;; } else if (varItem.">
+  content="
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    MinVertexCut
+  
+    
+    undefined
+  
+
+
+
+
+">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -98,7 +125,7 @@
         "@type": "WebPage",
         "@id": "https://yonggangjiang.github.io/docs/collect/"
     },
-    "headline": "Home | Yonggang\u0027s homepage","wordCount":  405 ,
+    "headline": "Home | Yonggang\u0027s homepage","wordCount":  24 ,
     "publisher": {
         "@type": "Person",
         "name": "C. Wang",
@@ -107,7 +134,7 @@
             "url": "https://yonggangjiang.github.io/images/icon.png"
         }
         },
-    "description": "let variables = {\u0022approximate\u0022:\u0022exact,approximate\u0022,\u0022direct\u0022:\u0022undirected,directed\u0022,\u0022models\u0022:\u0022sequential,CONGEST,PRAM,streaming,communication,quantumQuery\u0022,\u0022parameter\u0022:\u0022parameterized, unparameterized\u0022,\u0022problems\u0022:\u0022MinVertexCut\u0022,\u0022randomize\u0022:\u0022randomized,deterministic\u0022,\u0022weight\u0022:\u0022unweighted,weighted\u0022} ;   var values = new Map(); function getResults(newValues, callback) { let problem = newValues.get(\u0022problems\u0022); let model = newValues.get(\u0022models\u0022); $.getJSON(`\/collect\/${problem}\/${model}.json`, function(data) { \/\/ Process the data within this callback let bestMatch = null; let maxMatches = 0; for (const varItem of data) { let matches = 0; let isMatch = true; for (const [key, value] of newValues.entries()) { if (varItem.hasOwnProperty(key) \u0026\u0026 varItem[key] === value) { matches\u002b\u002b; } else if (varItem."
+    "description": "\u003cscript src=\u0022https:\/\/code.jquery.com\/jquery-3.6.0.min.js\u0022\u003e\u003c\/script\u003e\n\u003cscript src=\u0022https:\/\/polyfill.io\/v3\/polyfill.min.js?features=es6\u0022\u003e\u003c\/script\u003e\n\u003cscript id=\u0022MathJax-script\u0022 async src=\u0022https:\/\/cdn.jsdelivr.net\/npm\/mathjax@3\/es5\/tex-mml-chtml.js\u0022\u003e\u003c\/script\u003e\n\u003cscript\u003e\n    let variables = {\u0022approximate\u0022:\u0022exact,approximate\u0022,\u0022direct\u0022:\u0022undirected,directed\u0022,\u0022models\u0022:\u0022sequential,CONGEST,PRAM,streaming,communication,quantumQuery\u0022,\u0022parameter\u0022:\u0022parameterized, unparameterized\u0022,\u0022problems\u0022:\u0022MinVertexCut\u0022,\u0022randomize\u0022:\u0022randomized,deterministic\u0022,\u0022weight\u0022:\u0022unweighted,weighted\u0022} ;\n\u003c\/script\u003e\n\u003cscript\u003e\n  var values = new Map();\n\nfunction getResults(newValues, callback) {\n  let problem = newValues.get(\u0022problems\u0022);\n  let model = newValues.get(\u0022models\u0022);\n\n  $.getJSON(\u0060\/collect\/${problem}\/${model}.json\u0060, function(data) {\n    \/\/ Process the data within this callback\n\n    let bestMatch = null;\n    let maxMatches = 0;\n    for (const varItem of data) {\n      let matches = 0;\n      let isMatch = true;\n      for (const [key, value] of newValues.entries()) {\n        if (varItem.hasOwnProperty(key) \u0026\u0026 varItem[key] === value) {\n          matches\u002b\u002b;\n        } else if (varItem.hasOwnProperty(key)) {\n          isMatch = false;\n          break;\n        }\n      }\n\n      if (isMatch \u0026\u0026 matches \u003e maxMatches) {\n        bestMatch = varItem;\n        maxMatches = matches;\n      }\n    }\n\n    \/\/ Now that we have the best match, call the callback function with the result\n    if (bestMatch) {\n      callback(bestMatch[\u0022complexity\u0022]);\n    } else {\n      callback(null); \/\/ or handle the case where no match is found\n    }\n  })\n  .fail(function(jqxhr, textStatus, error) {\n    console.error(\u0027Error fetching JSON:\u0027, textStatus, error);\n    callback(null); \/\/ handle the error case\n  });\n}\n\nfunction updateTable() {\n  let table = document.getElementById(\u0022myTable\u0022);\n  table.innerHTML = \u0027\u0027; \/\/ Clear existing table\n\n  console.log(variables)\n\n  let undefinedKeys = Array.from(values.keys()).filter(k =\u003e values.get(k) === \u0022undefined\u0022);\n\n  if (undefinedKeys.length \u003e 2) {\n    table.innerText = \u0022    Please check at most 2 keys as undefined!    \u0022;\n  } \n  else if (undefinedKeys.length === 1) {\n    let header = document.createElement(\u0027tr\u0027);\n    header.innerHTML = \u0060\u003cth\u003e\\\\ ${undefinedKeys[0]}\u003c\/th\u003e\u0060 \u002b variables[undefinedKeys[0]].split(\u0027,\u0027).map(x =\u003e \u0060\u003cth\u003e${x}\u003c\/th\u003e\u0060).join(\u0027\u0027);\n    table.appendChild(header);\n\n    let row = document.createElement(\u0027tr\u0027);\n    row.innerHTML = \u0027\u003cth\u003e\u003c\/th\u003e\u0027 \u002b variables[undefinedKeys[0]].split(\u0027,\u0027).map(x =\u003e {\n      let fixedValues = new Map(values);\n      fixedValues.set(undefinedKeys[0], x);\n      return \u0060\u003ctd\u003e${getResults(fixedValues)}\u003c\/td\u003e\u0060;\n    }).join(\u0027\u0027);\n    table.appendChild(row);\n  } \n  else if (undefinedKeys.length === 0) {\n      let row = document.createElement(\u0027tr\u0027);\n      let data = document.createElement(\u0027td\u0027);\n\n        getResults(values, function(result) {\n          if (result) {\n            data.innerHTML = \u0060$$${result}$$\u0060;\n            MathJax.typeset()\n          } else {\n            data.innerHTML = \u0022No match found or error occurred\u0022;\n          }\n        });\n\n      row.appendChild(data);\n      table.appendChild(row);\n  }\n  else {\n    let header = document.createElement(\u0027tr\u0027);\n    header.innerHTML = \u0060\u003cth\u003e${undefinedKeys[1]} \\\\ ${undefinedKeys[0]}\u003c\/th\u003e\u0060 \u002b variables[undefinedKeys[0]].split(\u0027,\u0027).map(x =\u003e \u0060\u003cth\u003e${x}\u003c\/th\u003e\u0060).join(\u0027\u0027);\n    table.appendChild(header);\n\n    variables[undefinedKeys[1]].split(\u0027,\u0027).forEach((model) =\u003e {\n      let row = document.createElement(\u0027tr\u0027);\n      row.innerHTML = \u0060\u003cth\u003e${model}\u003c\/th\u003e\u0060 \u002b variables[undefinedKeys[0]].split(\u0027,\u0027).map(x =\u003e {\n        let fixedValues = new Map(values);\n        fixedValues.set(undefinedKeys[0], x);\n        fixedValues.set(undefinedKeys[1], model);\n        return \u0060\u003ctd\u003e${getResults(fixedValues)}\u003c\/td\u003e\u0060;\n      }).join(\u0027\u0027);\n      table.appendChild(row);\n    });\n  }\n}\n\n\n\n  function setupButtons(variable) {\n    let buttons = document.getElementById(variable \u002b \u0027Buttons\u0027);\n    values.set(variable, document.querySelector(\u0060input[name=\u0022${variable}\u0022]:checked\u0060).value);\n    buttons.addEventListener(\u0027change\u0027, () =\u003e {\n      values.set(variable, document.querySelector(\u0060input[name=\u0022${variable}\u0022]:checked\u0060).value);\n      updateTable();\n    });\n  }\n  function updateDebug() {\n    let debugText = \u0027\u0027;\n    for (let variable of values.keys()) {\n      debugText \u002b= \u0060${variable} = ${values.get(variable)}, \u0060;\n    }\n    document.getElementById(\u0027debug\u0027).innerText = debugText;\n  }\n\n\u003c\/script\u003e\n\u003cp\u003e\n\n\n\n\n\n\n\u003cdiv class=\u0022button-group\u0022 id=\u0022problemsButtons\u0022\u003e\n  \n    \u003cinput type=\u0022radio\u0022 id=\u0022problemsMinVertexCut\u0022 name=\u0022problems\u0022 value=\u0022MinVertexCut\u0022 checked\u003e\n    \u003clabel for=\u0022problemsMinVertexCut\u0022\u003eMinVertexCut\u003c\/label\u003e\n  \n    \u003cinput type=\u0022radio\u0022 id=\u0022problemsundefined\u0022 name=\u0022problems\u0022 value=\u0022undefined\u0022 \u003e\n    \u003clabel for=\u0022problemsundefined\u0022\u003eundefined\u003c\/label\u003e\n  \n\u003c\/div\u003e\n\n\u003cscript\u003e\n  setupButtons( \u0022problems\u0022 );\n\u003c\/script\u003e\n\n\u003cbr\u003e\u003c\/p\u003e"
 }
 </script><meta property="og:title" content="Home | Yonggang&#39;s homepage" />
 <meta property="og:type" content="website" />
@@ -147,17 +174,6 @@
 
 <link rel="alternate" type="application/rss+xml" href="https://yonggangjiang.github.io/docs/collect/index.xml" title="Yonggang's homepage" />
 
-<head>
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-94BJ1L4MWP"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-94BJ1L4MWP');
-</script>
-</head>
 
 <body class="flex flex-col min-h-screen">
   <header class="fixed flex items-center w-full min-h-16 z-50 bg-secondary-bg shadow-sm">

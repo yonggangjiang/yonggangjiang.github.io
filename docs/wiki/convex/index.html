@@ -67,13 +67,84 @@
   integrity="sha256-Zmpaaj&#43;GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE="  crossorigin></script>
 
 
-<link rel="icon" type="image/png" sizes="32x32" href="https://yonggangjiang.github.io/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_32x32_fill_box_center_3.png">
-<link rel="apple-touch-icon" sizes="180x180" href="https://yonggangjiang.github.io/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png">
+
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="https://yonggangjiang.github.io/images/icon_hu_4f4e55a10d73f6ba.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://yonggangjiang.github.io/images/icon_hu_8190559dabbef89f.png">
 
 <meta name="description"
-  content="Convex Optimization A set $K\subseteq\mathbb{R}^n$ is called convex if for any $x,y\in K,\lambda\in[0,1]$ we have $\lambda x&#43;(1-\lambda)y\in K$.
+  content="Convex Optimization
+A set $K\subseteq\mathbb{R}^n$ is called convex if for any $x,y\in K,\lambda\in[0,1]$ we have $\lambda x&#43;(1-\lambda)y\in K$.
 A function $f:K\to\mathbb{R}^n$ is called a convex function if $K$ is convex and for any $x,y\in K,\lambda\in[0,1]$ we have $\lambda f(x)&#43;(1-\lambda)f(y)\ge f(\lambda x&#43;(1-\lambda)y)$. In other words, the set $\lbrace(x,y)|y\ge f(x)\rbrace$ is a convex set in $\mathbb{R}^{n&#43;1}$.
-Supporting Hyperplane and Subgradients Seperating and Supporting Hyperplane Theorem Suppose $K\subseteq\mathbb{R}^n$ is convex and closed. Then for any $y^*\in\mathbb{R}^n$ which is not a interior node of $K$, there exists $h\in\mathbb{R}^n\backslash\lbrace \mathbf{0}\rbrace$ such that for any $x\in K$ we have  \[\langle x,h\rangle\le\langle y^*,h\rangle\]  i.">
+Supporting Hyperplane and Subgradients
+
+    
+        Seperating and Supporting Hyperplane Theorem
+    
+    
+        
+Suppose $K\subseteq\mathbb{R}^n$ is convex and closed. Then for any $y^*\in\mathbb{R}^n$ which is not a interior node of $K$, there exists $h\in\mathbb{R}^n\backslash\lbrace \mathbf{0}\rbrace$ such that for any $x\in K$ we have
+
+\[\langle x,h\rangle\le\langle y^*,h\rangle\]
+
+i.e., $h$ can define a hyperplane seperating $y^*$ and $K$.
+
+    
+
+
+    Proof.
+    
+        
+Since $|x-y^* |^2$ is a continuous function on $x$ and $K$ is closed, there exists $x^* \in K$ with smallest distance to $y^*$. Suppose $y^*\not\in K$, then $h:=y^* -x^* \not=0$. We will prove that $\langle x-x^* ,h\rangle \le 0$ for any $x\in K$, which will lead to our conclusion since $0&lt; \langle y^* -x^* ,h\rangle$. In the case $y^* \not\in K$, we have $\langle x,h\rangle&lt;\langle y^* ,h\rangle$, which is stronger. 
+
+Notice that $\lambda x &#43;(1-\lambda)x^* \in K$ for any $\lambda\in[0,1]$, and $x^*$ has the smallest distance to $y^*$, which means
+
+\[||\lambda x &#43;(1-\lambda)x^*-y^* ||^2\ge ||x^* -y^* ||^2\]
+\[||x^* -y^* &#43;\lambda(x - x^*)||^2\ge ||x^* -y^* ||^2\]
+\[-2\lambda\langle h,x-x^*\rangle &#43;\lambda^2||x-x^*||^2\ge 0\]
+
+By dividing $\lambda$ and take the limit $\lambda\to 0$, we get $\langle x-x^* , h\rangle\le 0$. 
+
+Now if $y^* \in K$, then since $y$ is not a interior node, there is an infinite sequence $y_0,y_1,...\to y^* $, and we can assign each $y_i$ an $h_i$ according to the above discussion, satisfying $\langle x,h_i\rangle\le\langle y_i^* ,h_i\rangle$. w.o.l.g, we can let $||h_i||=1$. Now the sequence $h_0,h_1,h_2,...$ must have a convergence subsequence with limit point $h^*$, since they are bounded. By taking $i\to\infty$, we get $\langle x,h^* \rangle\le\langle y^* ,h^* \rangle$ for any $x\in K$. 
+
+    
+
+
+
+
+    
+        Subgradients
+    
+    
+        
+
+Suppose $f:K\to\mathbb{R}$ is convex, then for any interior $x_0\in K$, there exists a vector $v$ such that for any $x\in K$ we have
+
+\[f(x)\ge f(x_0)&#43;\langle v,x-x_0\rangle\]
+
+$v$ is called the subgradient. When $f$ is differentiable at $x_0$, then $v$ can only be $\nabla f(x_0)$. 
+
+    
+
+
+    Proof.
+    
+        
+Recall that $\lbrace(x,y)|y\ge f(x)\rbrace$ is a convex set. By applying the above lemma on the set at $(x_0,f(x_0))$, we get a vector $h=\langle h_0,h_{n&#43;1}\rangle $ where $h_0\in\mathbb{R}^n,h_{n&#43;1}\in\mathbb{R}$. If $h_{n&#43;1}=0$, then there exists $x-x_0$ with the same direction as $h_0$ since $x$ is an interior point. Letting $\langle x-x_0,h\rangle &gt;0$, which is a contradiction. Thus, $h_{n&#43;1}\not 0$.
+
+We let $v=h_0/h_{n&#43;1}$. Intuitively, $(x,v\cdot x)$ defines the plane perpendicular to $h$. Now we have
+
+\[\langle h,(x,f(x))-(x_0,f(x_0))\rangle\le 0\]
+\[\langle \frac{h_0}{h_{n&#43;1}},x-x_0\rangle&#43;\left(f(x)-f(x_0)\right)\le 0\]
+
+
+By mulitply $-1$ at both side, we get our result. 
+
+    
+
+
+">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -106,7 +177,7 @@ Supporting Hyperplane and Subgradients Seperating and Supporting Hyperplane Theo
     },
     "headline": "Convex Optimization | Home | Yonggang\u0027s homepage","datePublished": "2020-11-20T22:52:56+08:00",
     "dateModified": "2020-11-20T22:52:56+08:00",
-    "wordCount":  4136 ,
+    "wordCount":  4110 ,
     "publisher": {
         "@type": "Person",
         "name": "C. Wang",
@@ -115,7 +186,7 @@ Supporting Hyperplane and Subgradients Seperating and Supporting Hyperplane Theo
             "url": "https://yonggangjiang.github.io/images/icon.png"
         }
         },
-    "description": "Convex Optimization A set $K\\subseteq\\mathbb{R}^n$ is called convex if for any $x,y\\in K,\\lambda\\in[0,1]$ we have $\\lambda x\u002b(1-\\lambda)y\\in K$.\nA function $f:K\\to\\mathbb{R}^n$ is called a convex function if $K$ is convex and for any $x,y\\in K,\\lambda\\in[0,1]$ we have $\\lambda f(x)\u002b(1-\\lambda)f(y)\\ge f(\\lambda x\u002b(1-\\lambda)y)$. In other words, the set $\\lbrace(x,y)|y\\ge f(x)\\rbrace$ is a convex set in $\\mathbb{R}^{n\u002b1}$.\nSupporting Hyperplane and Subgradients Seperating and Supporting Hyperplane Theorem\r\r Suppose $K\\subseteq\\mathbb{R}^n$ is convex and closed. Then for any $y^*\\in\\mathbb{R}^n$ which is not a interior node of $K$, there exists $h\\in\\mathbb{R}^n\\backslash\\lbrace \\mathbf{0}\\rbrace$ such that for any $x\\in K$ we have  \\[\\langle x,h\\rangle\\le\\langle y^*,h\\rangle\\]  i."
+    "description": "\u003ch1 id=\u0022convex-optimization\u0022\u003eConvex Optimization\u003c\/h1\u003e\n\u003cp\u003eA set $K\\subseteq\\mathbb{R}^n$ is called \u003cstrong\u003econvex\u003c\/strong\u003e if for any $x,y\\in K,\\lambda\\in[0,1]$ we have $\\lambda x\u002b(1-\\lambda)y\\in K$.\u003c\/p\u003e\n\u003cp\u003eA function $f:K\\to\\mathbb{R}^n$ is called a convex function if $K$ is convex and for any $x,y\\in K,\\lambda\\in[0,1]$ we have $\\lambda f(x)\u002b(1-\\lambda)f(y)\\ge f(\\lambda x\u002b(1-\\lambda)y)$. \u003cstrong\u003eIn other words\u003c\/strong\u003e, the set $\\lbrace(x,y)|y\\ge f(x)\\rbrace$ is a convex set in $\\mathbb{R}^{n\u002b1}$.\u003c\/p\u003e\n\u003ch2 id=\u0022supporting-hyperplane-and-subgradients\u0022\u003eSupporting Hyperplane and Subgradients\u003c\/h2\u003e\n\u003cp\u003e\u003cdiv class=\u0022rounded border\u0022 style=\u0022line-height:15px; background-color: #A7C1F2; border-radius: 5px; border-color: #AAAAAA; border-left-width: 2px; border-top-width: 2px;\u0022\u003e\r\n    \u003cdiv class=\u0022px-2 pt-2 pb-2 font-bold\u0022\u003e\r\n        Seperating and Supporting Hyperplane Theorem\r\n    \u003c\/div\u003e\r\n    \u003cdiv class=\u0022rounded border px-4 pt-2 pb-2\u0022 style=\u0022background-color: white; border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-color: #AAAAAA; border-top-right-radius: 0%; border-top-left-radius: 0%;\u0022\u003e\r\n        \u003cdiv\u003e\nSuppose $K\\subseteq\\mathbb{R}^n$ is convex and closed. Then for any $y^*\\in\\mathbb{R}^n$ which is not a interior node of $K$, there exists $h\\in\\mathbb{R}^n\\backslash\\lbrace \\mathbf{0}\\rbrace$ such that for any $x\\in K$ we have\n\u003cdiv\u003e\n\\[\\langle x,h\\rangle\\le\\langle y^*,h\\rangle\\]\n\u003c\/div\u003e\ni.e., $h$ can define a hyperplane seperating $y^*$ and $K$.\n\u003c\/div\u003e\r\n    \u003c\/div\u003e\r\n\u003c\/div\u003e\n\u003cdiv class=\u0022rounded border\u0022 style=\u0022background-color: white; border-left-width: 2px; border-top-width: 2px; border-color: #AAAAAA; \u0022\u003e\r\n    \u003cdiv class=\u0022px-2 pt-1 pb-1 font-bold\u0022\u003e\u003ca style=\u0022cursor:pointer\u0022 id=\u0022proofsupporting\u0022\u003eProof.\u003c\/a\u003e\u003c\/div\u003e\r\n    \u003cdiv class=\u0022hidden px-4 pt-0 pb-2\u0022 id=\u0022proofcontentsupporting\u0022\u003e\r\n        \u003cdiv\u003e\nSince $|x-y^* |^2$ is a continuous function on $x$ and $K$ is closed, there exists $x^* \\in K$ with smallest distance to $y^*$. Suppose $y^*\\not\\in K$, then $h:=y^* -x^* \\not=0$. We will prove that $\\langle x-x^* ,h\\rangle \\le 0$ for any $x\\in K$, which will lead to our conclusion since $0\u003c \\langle y^* -x^* ,h\\rangle$. In the case $y^* \\not\\in K$, we have $\\langle x,h\\rangle\u003c\\langle y^* ,h\\rangle$, which is stronger. \n\nNotice that $\\lambda x \u002b(1-\\lambda)x^* \\in K$ for any $\\lambda\\in[0,1]$, and $x^*$ has the smallest distance to $y^*$, which means\n\u003cdiv\u003e\n\\[||\\lambda x \u002b(1-\\lambda)x^*-y^* ||^2\\ge ||x^* -y^* ||^2\\]\n\\[||x^* -y^* \u002b\\lambda(x - x^*)||^2\\ge ||x^* -y^* ||^2\\]\n\\[-2\\lambda\\langle h,x-x^*\\rangle \u002b\\lambda^2||x-x^*||^2\\ge 0\\]\n\u003c\/div\u003e\nBy dividing $\\lambda$ and take the limit $\\lambda\\to 0$, we get $\\langle x-x^* , h\\rangle\\le 0$. \n\nNow if $y^* \\in K$, then since $y$ is not a interior node, there is an infinite sequence $y_0,y_1,...\\to y^* $, and we can assign each $y_i$ an $h_i$ according to the above discussion, satisfying $\\langle x,h_i\\rangle\\le\\langle y_i^* ,h_i\\rangle$. w.o.l.g, we can let $||h_i||=1$. Now the sequence $h_0,h_1,h_2,...$ must have a convergence subsequence with limit point $h^*$, since they are bounded. By taking $i\\to\\infty$, we get $\\langle x,h^* \\rangle\\le\\langle y^* ,h^* \\rangle$ for any $x\\in K$. \n\u003c\/div\u003e\r\n    \u003c\/div\u003e\r\n\u003c\/div\u003e\r\n\u003cscript\u003e\r\n    document.getElementById(\u0027proofsupporting\u0027).addEventListener(\u0027click\u0027, () =\u003e {\r\n        element = document.getElementById(\u0027proofcontentsupporting\u0027)\r\n        console.log(element.classList)\r\n        if(element.classList.contains(\u0027hidden\u0027))\r\n            element.classList.remove(\u0027hidden\u0027)\r\n        else\r\n            element.classList.add(\u0027hidden\u0027)\r\n    })\r\n\u003c\/script\u003e\r\n\u003cdiv\u003e\u003c\/div\u003e\n\u003cdiv class=\u0022rounded border\u0022 style=\u0022line-height:15px; background-color: #A7C1F2; border-radius: 5px; border-color: #AAAAAA; border-left-width: 2px; border-top-width: 2px;\u0022\u003e\r\n    \u003cdiv class=\u0022px-2 pt-2 pb-2 font-bold\u0022\u003e\r\n        Subgradients\r\n    \u003c\/div\u003e\r\n    \u003cdiv class=\u0022rounded border px-4 pt-2 pb-2\u0022 style=\u0022background-color: white; border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-color: #AAAAAA; border-top-right-radius: 0%; border-top-left-radius: 0%;\u0022\u003e\r\n        \u003cdiv\u003e\n\nSuppose $f:K\\to\\mathbb{R}$ is convex, then for any interior $x_0\\in K$, there exists a vector $v$ such that for any $x\\in K$ we have\n\u003cdiv\u003e\n\\[f(x)\\ge f(x_0)\u002b\\langle v,x-x_0\\rangle\\]\n\u003c\/div\u003e\n$v$ is called the subgradient. When $f$ is differentiable at $x_0$, then $v$ can only be $\\nabla f(x_0)$. \n\u003c\/div\u003e\r\n    \u003c\/div\u003e\r\n\u003c\/div\u003e\n\u003cdiv class=\u0022rounded border\u0022 style=\u0022background-color: white; border-left-width: 2px; border-top-width: 2px; border-color: #AAAAAA; \u0022\u003e\r\n    \u003cdiv class=\u0022px-2 pt-1 pb-1 font-bold\u0022\u003e\u003ca style=\u0022cursor:pointer\u0022 id=\u0022proofsubgradients\u0022\u003eProof.\u003c\/a\u003e\u003c\/div\u003e\r\n    \u003cdiv class=\u0022hidden px-4 pt-0 pb-2\u0022 id=\u0022proofcontentsubgradients\u0022\u003e\r\n        \u003cdiv\u003e\nRecall that $\\lbrace(x,y)|y\\ge f(x)\\rbrace$ is a convex set. By applying the above lemma on the set at $(x_0,f(x_0))$, we get a vector $h=\\langle h_0,h_{n\u002b1}\\rangle $ where $h_0\\in\\mathbb{R}^n,h_{n\u002b1}\\in\\mathbb{R}$. If $h_{n\u002b1}=0$, then there exists $x-x_0$ with the same direction as $h_0$ since $x$ is an interior point. Letting $\\langle x-x_0,h\\rangle \u003e0$, which is a contradiction. Thus, $h_{n\u002b1}\\not 0$.\n\nWe let $v=h_0\/h_{n\u002b1}$. Intuitively, $(x,v\\cdot x)$ defines the plane perpendicular to $h$. Now we have\n\u003cdiv\u003e\n\\[\\langle h,(x,f(x))-(x_0,f(x_0))\\rangle\\le 0\\]\n\\[\\langle \\frac{h_0}{h_{n\u002b1}},x-x_0\\rangle\u002b\\left(f(x)-f(x_0)\\right)\\le 0\\]\n\u003c\/div\u003e\n\nBy mulitply $-1$ at both side, we get our result. \n\u003c\/div\u003e\r\n    \u003c\/div\u003e\r\n\u003c\/div\u003e\r\n\u003cscript\u003e\r\n    document.getElementById(\u0027proofsubgradients\u0027).addEventListener(\u0027click\u0027, () =\u003e {\r\n        element = document.getElementById(\u0027proofcontentsubgradients\u0027)\r\n        console.log(element.classList)\r\n        if(element.classList.contains(\u0027hidden\u0027))\r\n            element.classList.remove(\u0027hidden\u0027)\r\n        else\r\n            element.classList.add(\u0027hidden\u0027)\r\n    })\r\n\u003c\/script\u003e\r\n\u003cdiv\u003e\u003c\/div\u003e\u003c\/p\u003e"
 }
 </script><meta property="og:title" content="Convex Optimization | Home | Yonggang&#39;s homepage" />
 <meta property="og:type" content="article" />
@@ -129,9 +200,77 @@ Supporting Hyperplane and Subgradients Seperating and Supporting Hyperplane Theo
 
 
 
-<meta property="og:description" content="Convex Optimization A set $K\subseteq\mathbb{R}^n$ is called convex if for any $x,y\in K,\lambda\in[0,1]$ we have $\lambda x&#43;(1-\lambda)y\in K$.
+<meta property="og:description" content="Convex Optimization
+A set $K\subseteq\mathbb{R}^n$ is called convex if for any $x,y\in K,\lambda\in[0,1]$ we have $\lambda x&#43;(1-\lambda)y\in K$.
 A function $f:K\to\mathbb{R}^n$ is called a convex function if $K$ is convex and for any $x,y\in K,\lambda\in[0,1]$ we have $\lambda f(x)&#43;(1-\lambda)f(y)\ge f(\lambda x&#43;(1-\lambda)y)$. In other words, the set $\lbrace(x,y)|y\ge f(x)\rbrace$ is a convex set in $\mathbb{R}^{n&#43;1}$.
-Supporting Hyperplane and Subgradients Seperating and Supporting Hyperplane Theorem Suppose $K\subseteq\mathbb{R}^n$ is convex and closed. Then for any $y^*\in\mathbb{R}^n$ which is not a interior node of $K$, there exists $h\in\mathbb{R}^n\backslash\lbrace \mathbf{0}\rbrace$ such that for any $x\in K$ we have  \[\langle x,h\rangle\le\langle y^*,h\rangle\]  i." />
+Supporting Hyperplane and Subgradients
+
+    
+        Seperating and Supporting Hyperplane Theorem
+    
+    
+        
+Suppose $K\subseteq\mathbb{R}^n$ is convex and closed. Then for any $y^*\in\mathbb{R}^n$ which is not a interior node of $K$, there exists $h\in\mathbb{R}^n\backslash\lbrace \mathbf{0}\rbrace$ such that for any $x\in K$ we have
+
+\[\langle x,h\rangle\le\langle y^*,h\rangle\]
+
+i.e., $h$ can define a hyperplane seperating $y^*$ and $K$.
+
+    
+
+
+    Proof.
+    
+        
+Since $|x-y^* |^2$ is a continuous function on $x$ and $K$ is closed, there exists $x^* \in K$ with smallest distance to $y^*$. Suppose $y^*\not\in K$, then $h:=y^* -x^* \not=0$. We will prove that $\langle x-x^* ,h\rangle \le 0$ for any $x\in K$, which will lead to our conclusion since $0&lt; \langle y^* -x^* ,h\rangle$. In the case $y^* \not\in K$, we have $\langle x,h\rangle&lt;\langle y^* ,h\rangle$, which is stronger. 
+
+Notice that $\lambda x &#43;(1-\lambda)x^* \in K$ for any $\lambda\in[0,1]$, and $x^*$ has the smallest distance to $y^*$, which means
+
+\[||\lambda x &#43;(1-\lambda)x^*-y^* ||^2\ge ||x^* -y^* ||^2\]
+\[||x^* -y^* &#43;\lambda(x - x^*)||^2\ge ||x^* -y^* ||^2\]
+\[-2\lambda\langle h,x-x^*\rangle &#43;\lambda^2||x-x^*||^2\ge 0\]
+
+By dividing $\lambda$ and take the limit $\lambda\to 0$, we get $\langle x-x^* , h\rangle\le 0$. 
+
+Now if $y^* \in K$, then since $y$ is not a interior node, there is an infinite sequence $y_0,y_1,...\to y^* $, and we can assign each $y_i$ an $h_i$ according to the above discussion, satisfying $\langle x,h_i\rangle\le\langle y_i^* ,h_i\rangle$. w.o.l.g, we can let $||h_i||=1$. Now the sequence $h_0,h_1,h_2,...$ must have a convergence subsequence with limit point $h^*$, since they are bounded. By taking $i\to\infty$, we get $\langle x,h^* \rangle\le\langle y^* ,h^* \rangle$ for any $x\in K$. 
+
+    
+
+
+
+
+    
+        Subgradients
+    
+    
+        
+
+Suppose $f:K\to\mathbb{R}$ is convex, then for any interior $x_0\in K$, there exists a vector $v$ such that for any $x\in K$ we have
+
+\[f(x)\ge f(x_0)&#43;\langle v,x-x_0\rangle\]
+
+$v$ is called the subgradient. When $f$ is differentiable at $x_0$, then $v$ can only be $\nabla f(x_0)$. 
+
+    
+
+
+    Proof.
+    
+        
+Recall that $\lbrace(x,y)|y\ge f(x)\rbrace$ is a convex set. By applying the above lemma on the set at $(x_0,f(x_0))$, we get a vector $h=\langle h_0,h_{n&#43;1}\rangle $ where $h_0\in\mathbb{R}^n,h_{n&#43;1}\in\mathbb{R}$. If $h_{n&#43;1}=0$, then there exists $x-x_0$ with the same direction as $h_0$ since $x$ is an interior point. Letting $\langle x-x_0,h\rangle &gt;0$, which is a contradiction. Thus, $h_{n&#43;1}\not 0$.
+
+We let $v=h_0/h_{n&#43;1}$. Intuitively, $(x,v\cdot x)$ defines the plane perpendicular to $h$. Now we have
+
+\[\langle h,(x,f(x))-(x_0,f(x_0))\rangle\le 0\]
+\[\langle \frac{h_0}{h_{n&#43;1}},x-x_0\rangle&#43;\left(f(x)-f(x_0)\right)\le 0\]
+
+
+By mulitply $-1$ at both side, we get our result. 
+
+    
+
+
+" />
 
 
 
@@ -160,17 +299,6 @@ Supporting Hyperplane and Subgradients Seperating and Supporting Hyperplane Theo
 
 
 
-<head>
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-94BJ1L4MWP"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-94BJ1L4MWP');
-</script>
-</head>
 
 <body class="flex flex-col min-h-screen">
   <header class="fixed flex items-center w-full min-h-16 z-50 bg-secondary-bg shadow-sm">
