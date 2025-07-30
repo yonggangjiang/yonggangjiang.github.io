@@ -1,4 +1,4 @@
-<!DOCTYPE html><meta charset="utf-8">
+<!DOCTYPE html><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
 <style>
   .blackout {
@@ -19,8 +19,8 @@
 <title>Docs | Yonggang&#39;s homepage</title>
 
 <meta name="generator" content="Hugo Eureka 0.8.3-dev" />
-<link rel="stylesheet" href="https://yonggangjiang.github.io/css/eureka.min.css">
-<script defer src="https://yonggangjiang.github.io/js/eureka.min.js"></script>
+<link rel="stylesheet" href="http://localhost:1313/css/eureka.min.css">
+<script defer src="http://localhost:1313/js/eureka.min.js"></script>
 
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload"
@@ -70,8 +70,8 @@
 
 
 
-<link rel="icon" type="image/png" sizes="32x32" href="https://yonggangjiang.github.io/images/icon_hu_4f4e55a10d73f6ba.png">
-<link rel="apple-touch-icon" sizes="180x180" href="https://yonggangjiang.github.io/images/icon_hu_8190559dabbef89f.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/images/icon_hu_4f4e55a10d73f6ba.png">
+<link rel="apple-touch-icon" sizes="180x180" href="http://localhost:1313/images/icon_hu_8190559dabbef89f.png">
 
 <meta name="description"
   content="Eureka is a elegant and powerful theme for Hugo.">
@@ -88,7 +88,7 @@
             "position":  1 ,
             "name": "Home",
             "description": "\u003cscript src=\"https://code.jquery.com/jquery-3.6.0.min.js\"\u003e\u003c/script\u003e\n\u003cscript src=\"https://polyfill.io/v3/polyfill.min.js?features=es6\"\u003e\u003c/script\u003e\n\u003cscript id=\"MathJax-script\" async src=\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js\"\u003e\u003c/script\u003e\n\u003cscript\u003e\n    let variables = {\"approximate\":\"exact,approximate\",\"direct\":\"undirected,directed\",\"models\":\"sequential,CONGEST,PRAM,streaming,communication,quantumQuery\",\"parameter\":\"parameterized, unparameterized\",\"problems\":\"MinVertexCut\",\"randomize\":\"randomized,deterministic\",\"weight\":\"unweighted,weighted\"} ;\n\u003c/script\u003e\n\u003cscript\u003e\n  var values = new Map();\n\nfunction getResults(newValues, callback) {\n  let problem = newValues.get(\"problems\");\n  let model = newValues.get(\"models\");\n\n  $.getJSON(`/collect/${problem}/${model}.json`, function(data) {\n    // Process the data within this callback\n\n    let bestMatch = null;\n    let maxMatches = 0;\n    for (const varItem of data) {\n      let matches = 0;\n      let isMatch = true;\n      for (const [key, value] of newValues.entries()) {\n        if (varItem.hasOwnProperty(key) \u0026\u0026 varItem[key] === value) {\n          matches++;\n        } else if (varItem.hasOwnProperty(key)) {\n          isMatch = false;\n          break;\n        }\n      }\n\n      if (isMatch \u0026\u0026 matches \u003e maxMatches) {\n        bestMatch = varItem;\n        maxMatches = matches;\n      }\n    }\n\n    // Now that we have the best match, call the callback function with the result\n    if (bestMatch) {\n      callback(bestMatch[\"complexity\"]);\n    } else {\n      callback(null); // or handle the case where no match is found\n    }\n  })\n  .fail(function(jqxhr, textStatus, error) {\n    console.error('Error fetching JSON:', textStatus, error);\n    callback(null); // handle the error case\n  });\n}\n\nfunction updateTable() {\n  let table = document.getElementById(\"myTable\");\n  table.innerHTML = ''; // Clear existing table\n\n  console.log(variables)\n\n  let undefinedKeys = Array.from(values.keys()).filter(k =\u003e values.get(k) === \"undefined\");\n\n  if (undefinedKeys.length \u003e 2) {\n    table.innerText = \"    Please check at most 2 keys as undefined!    \";\n  } \n  else if (undefinedKeys.length === 1) {\n    let header = document.createElement('tr');\n    header.innerHTML = `\u003cth\u003e\\\\ ${undefinedKeys[0]}\u003c/th\u003e` + variables[undefinedKeys[0]].split(',').map(x =\u003e `\u003cth\u003e${x}\u003c/th\u003e`).join('');\n    table.appendChild(header);\n\n    let row = document.createElement('tr');\n    row.innerHTML = '\u003cth\u003e\u003c/th\u003e' + variables[undefinedKeys[0]].split(',').map(x =\u003e {\n      let fixedValues = new Map(values);\n      fixedValues.set(undefinedKeys[0], x);\n      return `\u003ctd\u003e${getResults(fixedValues)}\u003c/td\u003e`;\n    }).join('');\n    table.appendChild(row);\n  } \n  else if (undefinedKeys.length === 0) {\n      let row = document.createElement('tr');\n      let data = document.createElement('td');\n\n        getResults(values, function(result) {\n          if (result) {\n            data.innerHTML = `$$${result}$$`;\n            MathJax.typeset()\n          } else {\n            data.innerHTML = \"No match found or error occurred\";\n          }\n        });\n\n      row.appendChild(data);\n      table.appendChild(row);\n  }\n  else {\n    let header = document.createElement('tr');\n    header.innerHTML = `\u003cth\u003e${undefinedKeys[1]} \\\\ ${undefinedKeys[0]}\u003c/th\u003e` + variables[undefinedKeys[0]].split(',').map(x =\u003e `\u003cth\u003e${x}\u003c/th\u003e`).join('');\n    table.appendChild(header);\n\n    variables[undefinedKeys[1]].split(',').forEach((model) =\u003e {\n      let row = document.createElement('tr');\n      row.innerHTML = `\u003cth\u003e${model}\u003c/th\u003e` + variables[undefinedKeys[0]].split(',').map(x =\u003e {\n        let fixedValues = new Map(values);\n        fixedValues.set(undefinedKeys[0], x);\n        fixedValues.set(undefinedKeys[1], model);\n        return `\u003ctd\u003e${getResults(fixedValues)}\u003c/td\u003e`;\n      }).join('');\n      table.appendChild(row);\n    });\n  }\n}\n\n\n\n  function setupButtons(variable) {\n    let buttons = document.getElementById(variable + 'Buttons');\n    values.set(variable, document.querySelector(`input[name=\"${variable}\"]:checked`).value);\n    buttons.addEventListener('change', () =\u003e {\n      values.set(variable, document.querySelector(`input[name=\"${variable}\"]:checked`).value);\n      updateTable();\n    });\n  }\n  function updateDebug() {\n    let debugText = '';\n    for (let variable of values.keys()) {\n      debugText += `${variable} = ${values.get(variable)}, `;\n    }\n    document.getElementById('debug').innerText = debugText;\n  }\n\n\u003c/script\u003e\n\u003cp\u003e\n\n\n\n\n\n\n\u003cdiv class=\"button-group\" id=\"problemsButtons\"\u003e\n  \n    \u003cinput type=\"radio\" id=\"problemsMinVertexCut\" name=\"problems\" value=\"MinVertexCut\" checked\u003e\n    \u003clabel for=\"problemsMinVertexCut\"\u003eMinVertexCut\u003c/label\u003e\n  \n    \u003cinput type=\"radio\" id=\"problemsundefined\" name=\"problems\" value=\"undefined\" \u003e\n    \u003clabel for=\"problemsundefined\"\u003eundefined\u003c/label\u003e\n  \n\u003c/div\u003e\n\n\u003cscript\u003e\n  setupButtons( \"problems\" );\n\u003c/script\u003e\n\n\u003cbr\u003e\u003c/p\u003e",
-            "url": "https://yonggangjiang.github.io/docs/collect/"
+            "url": "http://localhost:1313/docs/collect/"
         }
     ]
 }
@@ -96,10 +96,10 @@
 <meta property="og:type" content="website" />
 
 
-<meta property="og:image" content="https://yonggangjiang.github.io/images/icon.png">
+<meta property="og:image" content="http://localhost:1313/images/icon.png">
 
 
-<meta property="og:url" content="https://yonggangjiang.github.io/docs/" />
+<meta property="og:url" content="http://localhost:1313/docs/" />
 
 
 
@@ -130,7 +130,7 @@
 <meta property="article:section" content="docs" />
 
 
-<link rel="alternate" type="application/rss+xml" href="https://yonggangjiang.github.io/docs/index.xml" title="Yonggang's homepage" />
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/docs/index.xml" title="Yonggang's homepage" />
 
 
 <body class="flex flex-col min-h-screen">

@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Home on Yonggang&#39;s homepage</title>
-    <link>https://yonggangjiang.github.io/docs/research/</link>
+    <link>http://localhost:1313/docs/research/</link>
     <description>Recent content in Home on Yonggang&#39;s homepage</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Powered by &lt;a href=&#34;https://github.com/wangchucheng/hugo-eureka&#34; class=&#34;hover:text-eureka&#34;&gt;Eureka&lt;/a&gt; theme for &lt;a href=&#34;https://gohugo.io&#34; class=&#34;hover:text-eureka&#34;&gt;Hugo&lt;/a&gt;. Last update in</copyright>
     <lastBuildDate>Fri, 20 Nov 2020 22:52:56 +0800</lastBuildDate>
-    <atom:link href="https://yonggangjiang.github.io/docs/research/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/docs/research/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Congest Model</title>
-      <link>https://yonggangjiang.github.io/docs/research/congest/</link>
+      <link>http://localhost:1313/docs/research/congest/</link>
       <pubDate>Fri, 20 Nov 2020 22:52:56 +0800</pubDate>
-      <guid>https://yonggangjiang.github.io/docs/research/congest/</guid>
+      <guid>http://localhost:1313/docs/research/congest/</guid>
       <description>&lt;h1 id=&#34;reachability&#34;&gt;Reachability&lt;/h1&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://dl.acm.org/doi/pdf/10.1145/2767386.2767444&#34;&gt;Brief Announcement: Distributed Single-Source Reachability&lt;/a&gt;, &lt;span style=&#34;color: lime&#34;&gt;[read]&lt;/span&gt; &lt;strong&gt;randomized&lt;/strong&gt;, in $\tilde{O}(D+\sqrt{n}D^{1/4})$ rounds. Imporved from &lt;a href=&#34;https://arxiv.org/pdf/1403.5171.pdf&#34;&gt;Distributed Approximation Algorithms for Weighted Shortest Paths&lt;/a&gt; which is $\tilde{O}(D+\sqrt{n}D^{1/2})$ rounds.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/1905.08841.pdf&#34;&gt;Parallel Reachability in Almost Linear Work and Square Root Depth&lt;/a&gt;, &lt;strong&gt;randomized&lt;/strong&gt;, in $\tilde{O}(\sqrt{n}+n^{1/3+o(1)}D^{2/3})$ rounds.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://drops.dagstuhl.de/opus/volltexte/2020/13116/pdf/LIPIcs-DISC-2020-38.pdf&#34;&gt;Distributed Planar Reachability in Nearly Optimal Time&lt;/a&gt;, planer graph in $\tilde{O}(D)$ rounds.&lt;/p&gt;&#xA;&lt;h1 id=&#34;global-minimum-cut&#34;&gt;Global minimum cut&lt;/h1&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/1305.5520.pdf&#34;&gt;[Ghaffari, Kuhn, 13]Distributed Minimum Cut Approximation&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/1408.0557.pdf&#34;&gt;Almost-Tight Distributed Minimum Cut Algorithms&lt;/a&gt;, &lt;span style=&#34;color: lime&#34;&gt;[read]&lt;/span&gt;, in $\tilde(O)(D+\sqrt{n})\lambda^4$ rounds where $\lambda$ is the edge connectivity.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/2004.09129.pdf&#34;&gt;Distributed Weighted Min-Cut in Nearly-Optimal Time&lt;/a&gt;, &lt;strong&gt;randomized, undirected, weighted&lt;/strong&gt;, in $\tilde{O}(D+\sqrt{n})$ rounds.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Interested Topics</title>
-      <link>https://yonggangjiang.github.io/docs/research/intersted/</link>
+      <link>http://localhost:1313/docs/research/intersted/</link>
       <pubDate>Fri, 20 Nov 2020 22:52:56 +0800</pubDate>
-      <guid>https://yonggangjiang.github.io/docs/research/intersted/</guid>
+      <guid>http://localhost:1313/docs/research/intersted/</guid>
       <description>&lt;h1 id=&#34;misc&#34;&gt;Misc.&lt;/h1&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/2103.12908.pdf&#34;&gt;[Chekuri, Quanrud, ICALP&#39;21]&lt;/a&gt; &lt;strong&gt;Isolating Cuts, (Bi-)Submodularity, and Faster Algorithms for Global Connectivity Problems&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/2203.00751.pdf&#34;&gt;[Li, Nanongkai, Panigrahi, Saranurak]&lt;/a&gt; &lt;strong&gt;Fair Cuts, Approximate Isolating Cuts, and Approximate Gomory-Hu Trees in Near-Linear Time&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://dl.acm.org/doi/pdf/10.1145/3087801.3087827&#34;&gt;[Ghaffari, Kuhn, Su, PODC&#39;17]&lt;/a&gt; &lt;strong&gt;Distributed MST and Routing in Almost Mixing Time&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;string-sketching&#34;&gt;String Sketching&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Improved sketching of hamming distance with error correcting&lt;/strong&gt; [Porat, Lipsky, CPM&#39;07]&lt;/p&gt;&#xA;&lt;h1 id=&#34;connectivity&#34;&gt;Connectivity&lt;/h1&gt;&#xA;&lt;h2 id=&#34;vertex-sampling-and-vertex-connectivity&#34;&gt;Vertex Sampling and Vertex Connectivity&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://epubs.siam.org/doi/pdf/10.1137/1.9781611973402.41&#34;&gt;[Censor-Hillel, Ghaffari, Kuhn, SODA&#39;14]&lt;/a&gt; &lt;strong&gt;A New Perspective on Vertex Connectivity&lt;/strong&gt;, sampling with probability $p$ leads to $\Omega(kp^2/\log^3 n)$ connected.&lt;/p&gt;</description>
     </item>
     <item>
       <title>old</title>
-      <link>https://yonggangjiang.github.io/docs/research/old/</link>
+      <link>http://localhost:1313/docs/research/old/</link>
       <pubDate>Fri, 20 Nov 2020 22:52:56 +0800</pubDate>
-      <guid>https://yonggangjiang.github.io/docs/research/old/</guid>
+      <guid>http://localhost:1313/docs/research/old/</guid>
       <description>&lt;h1 id=&#34;quantum&#34;&gt;Quantum&lt;/h1&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/quant-ph/0401091.pdf&#34;&gt;Quantum query complexity of some graph problems&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;approximate-k-spanner&#34;&gt;Approximate k-spanner&lt;/h1&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.cs.bgu.ac.il/~elkinm/tree_sp.tcsa_final.pdf&#34;&gt;Approximating k-Spanner Problems for k &amp;gt; 2&lt;/a&gt; bicriteria approximation&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.wisdom.weizmann.ac.il/~/oded/PTW/sr.pdf&#34;&gt;Transitive-Closure Spanners: A Survey&lt;/a&gt;, two interesting papers: &lt;a href=&#34;https://arxiv.org/pdf/0808.1787.pdf&#34;&gt;Transitive-Closure Spanners&lt;/a&gt;, &lt;a href=&#34;https://drops.dagstuhl.de/opus/volltexte/2010/2883/pdf/37.pdf&#34;&gt;Finding Sparser Directed Spanners&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://crab.rutgers.edu/~guyk/pub/hard/nabs.pdf&#34;&gt;On the Hardness of Approximating Spanners&lt;/a&gt; Hardness of MIN-REP&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://link.springer.com/content/pdf/10.1007/s00224-006-1266-2.pdf&#34;&gt;The Hardness of Approximating Spanner Problems&lt;/a&gt; hardness result for many settings (directed), reduction to MIN-REP&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://epubs.siam.org/doi/pdf/10.1137/1.9781611974331.ch59&#34;&gt;Approximating Low-Stretch Spanners&lt;/a&gt; improvements on $k=4$&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://reader.elsevier.com/reader/sd/pii/S0890540112001484?token=4910B2442727D690BBCD14F5A7E4D444CF06247F8DBC8C388D497461B899E0C607DCA5C713CD4B835C6A351E479749CE&amp;amp;originRegion=eu-west-1&amp;amp;originCreation=20220930121756&#34;&gt;Approximation algorithms for spanner problems and Directed Steiner Forest&lt;/a&gt; for any $k$&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://dl.acm.org/doi/pdf/10.1145/2818375&#34;&gt;Label Cover Instances with Large Girth and the Hardness of Approximating Basic k-Spanner&lt;/a&gt; hardness for undirected&lt;/p&gt;</description>
     </item>
     <item>
       <title>Sequential Graph Problems</title>
-      <link>https://yonggangjiang.github.io/docs/research/sequential/</link>
+      <link>http://localhost:1313/docs/research/sequential/</link>
       <pubDate>Fri, 20 Nov 2020 22:52:56 +0800</pubDate>
-      <guid>https://yonggangjiang.github.io/docs/research/sequential/</guid>
+      <guid>http://localhost:1313/docs/research/sequential/</guid>
       <description>&lt;h1 id=&#34;misc&#34;&gt;Misc.&lt;/h1&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=1498448&#34;&gt;[Irmak, Mihaylov, Suel, 05]&lt;/a&gt; &lt;strong&gt;Improved single-round protocols for remote file synchronization&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/1708.05223.pdf&#34;&gt;[Clifford, Kociumaka, Porat, SODA&#39;19]&lt;/a&gt; &lt;strong&gt;The streaming k-mismatch problem&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;h1 id=&#34;global-minimum-cut&#34;&gt;Global minimum cut&lt;/h1&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://dl.acm.org/doi/pdf/10.1145/331605.331608&#34;&gt;Minimum Cuts in Near-Linear Time&lt;/a&gt;. &lt;span style=&#34;color: lime&#34;&gt;[read]&lt;/span&gt; &lt;strong&gt;randomized, undirected, weighted&lt;/strong&gt;, $\tilde{O}(m)$, hide a factor $O(m\log^3n)$.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://dl.acm.org/doi/pdf/10.1145/3274663&#34;&gt;Deterministic Edge Connectivity in Near-Linear Time&lt;/a&gt;. &lt;strong&gt;deterministic, undirected, unweighted&lt;/strong&gt;, $\tilde{O}(m)$, hide a factor $O(\log^{12}n)$ which is large.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/1704.01254.pdf&#34;&gt;Local Flow Partitioning for Faster Edge Connectivity&lt;/a&gt;. &lt;strong&gt;deterministic, undirected. unweighted&lt;/strong&gt;, improves the factor to $O(m\log^2n\log\log^2n)$. Add a factor $\alpha^4$ for $\alpha$-balanced directed graph (every cut is $\alpha$ balanced regarding in-out edge).&lt;/p&gt;</description>
     </item>
   </channel>
