@@ -1,4 +1,4 @@
-<!DOCTYPE html><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<!DOCTYPE html><meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
 <style>
   .blackout {
@@ -19,8 +19,8 @@
 <title>Home | Yonggang&#39;s homepage</title>
 
 <meta name="generator" content="Hugo Eureka 0.8.3-dev" />
-<link rel="stylesheet" href="http://localhost:1313/css/eureka.min.css">
-<script defer src="http://localhost:1313/js/eureka.min.js"></script>
+<link rel="stylesheet" href="https://yonggangjiang.github.io/css/eureka.min.css">
+<script defer src="https://yonggangjiang.github.io/js/eureka.min.js"></script>
 
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload"
@@ -70,8 +70,8 @@
 
 
 
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/images/icon_hu_4f4e55a10d73f6ba.png">
-<link rel="apple-touch-icon" sizes="180x180" href="http://localhost:1313/images/icon_hu_8190559dabbef89f.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://yonggangjiang.github.io/images/icon_hu_4f4e55a10d73f6ba.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://yonggangjiang.github.io/images/icon_hu_8190559dabbef89f.png">
 
 <meta name="description"
   content="
@@ -107,11 +107,11 @@
       "@type": "ListItem",
       "position": 1 ,
       "name":"Docs",
-      "item":"http://localhost:1313/docs/"},{
+      "item":"https://yonggangjiang.github.io/docs/"},{
       "@type": "ListItem",
       "position": 2 ,
       "name":"Home",
-      "item":"http://localhost:1313/docs/collect/"}]
+      "item":"https://yonggangjiang.github.io/docs/collect/"}]
 }
 </script>
 
@@ -123,7 +123,7 @@
     "@type": "Article",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "http://localhost:1313/docs/collect/"
+        "@id": "https://yonggangjiang.github.io/docs/collect/"
     },
     "headline": "Home | Yonggang\u0027s homepage","wordCount":  24 ,
     "publisher": {
@@ -131,19 +131,19 @@
         "name": "C. Wang",
         "logo": {
             "@type": "ImageObject",
-            "url": "http://localhost:1313/images/icon.png"
+            "url": "https://yonggangjiang.github.io/images/icon.png"
         }
         },
-    "description": "\u003cscript src=\u0022https:\/\/code.jquery.com\/jquery-3.6.0.min.js\u0022\u003e\u003c\/script\u003e\n\u003cscript src=\u0022https:\/\/polyfill.io\/v3\/polyfill.min.js?features=es6\u0022\u003e\u003c\/script\u003e\n\u003cscript id=\u0022MathJax-script\u0022 async src=\u0022https:\/\/cdn.jsdelivr.net\/npm\/mathjax@3\/es5\/tex-mml-chtml.js\u0022\u003e\u003c\/script\u003e\n\u003cscript\u003e\n    let variables = {\u0022approximate\u0022:\u0022exact,approximate\u0022,\u0022direct\u0022:\u0022undirected,directed\u0022,\u0022models\u0022:\u0022sequential,CONGEST,PRAM,streaming,communication,quantumQuery\u0022,\u0022parameter\u0022:\u0022parameterized, unparameterized\u0022,\u0022problems\u0022:\u0022MinVertexCut\u0022,\u0022randomize\u0022:\u0022randomized,deterministic\u0022,\u0022weight\u0022:\u0022unweighted,weighted\u0022} ;\n\u003c\/script\u003e\n\u003cscript\u003e\n  var values = new Map();\n\nfunction getResults(newValues, callback) {\n  let problem = newValues.get(\u0022problems\u0022);\n  let model = newValues.get(\u0022models\u0022);\n\n  $.getJSON(\u0060\/collect\/${problem}\/${model}.json\u0060, function(data) {\n    \/\/ Process the data within this callback\n\n    let bestMatch = null;\n    let maxMatches = 0;\n    for (const varItem of data) {\n      let matches = 0;\n      let isMatch = true;\n      for (const [key, value] of newValues.entries()) {\n        if (varItem.hasOwnProperty(key) \u0026\u0026 varItem[key] === value) {\n          matches\u002b\u002b;\n        } else if (varItem.hasOwnProperty(key)) {\n          isMatch = false;\n          break;\n        }\n      }\n\n      if (isMatch \u0026\u0026 matches \u003e maxMatches) {\n        bestMatch = varItem;\n        maxMatches = matches;\n      }\n    }\n\n    \/\/ Now that we have the best match, call the callback function with the result\n    if (bestMatch) {\n      callback(bestMatch[\u0022complexity\u0022]);\n    } else {\n      callback(null); \/\/ or handle the case where no match is found\n    }\n  })\n  .fail(function(jqxhr, textStatus, error) {\n    console.error(\u0027Error fetching JSON:\u0027, textStatus, error);\n    callback(null); \/\/ handle the error case\n  });\n}\n\nfunction updateTable() {\n  let table = document.getElementById(\u0022myTable\u0022);\n  table.innerHTML = \u0027\u0027; \/\/ Clear existing table\n\n  console.log(variables)\n\n  let undefinedKeys = Array.from(values.keys()).filter(k =\u003e values.get(k) === \u0022undefined\u0022);\n\n  if (undefinedKeys.length \u003e 2) {\n    table.innerText = \u0022    Please check at most 2 keys as undefined!    \u0022;\n  } \n  else if (undefinedKeys.length === 1) {\n    let header = document.createElement(\u0027tr\u0027);\n    header.innerHTML = \u0060\u003cth\u003e\\\\ ${undefinedKeys[0]}\u003c\/th\u003e\u0060 \u002b variables[undefinedKeys[0]].split(\u0027,\u0027).map(x =\u003e \u0060\u003cth\u003e${x}\u003c\/th\u003e\u0060).join(\u0027\u0027);\n    table.appendChild(header);\n\n    let row = document.createElement(\u0027tr\u0027);\n    row.innerHTML = \u0027\u003cth\u003e\u003c\/th\u003e\u0027 \u002b variables[undefinedKeys[0]].split(\u0027,\u0027).map(x =\u003e {\n      let fixedValues = new Map(values);\n      fixedValues.set(undefinedKeys[0], x);\n      return \u0060\u003ctd\u003e${getResults(fixedValues)}\u003c\/td\u003e\u0060;\n    }).join(\u0027\u0027);\n    table.appendChild(row);\n  } \n  else if (undefinedKeys.length === 0) {\n      let row = document.createElement(\u0027tr\u0027);\n      let data = document.createElement(\u0027td\u0027);\n\n        getResults(values, function(result) {\n          if (result) {\n            data.innerHTML = \u0060$$${result}$$\u0060;\n            MathJax.typeset()\n          } else {\n            data.innerHTML = \u0022No match found or error occurred\u0022;\n          }\n        });\n\n      row.appendChild(data);\n      table.appendChild(row);\n  }\n  else {\n    let header = document.createElement(\u0027tr\u0027);\n    header.innerHTML = \u0060\u003cth\u003e${undefinedKeys[1]} \\\\ ${undefinedKeys[0]}\u003c\/th\u003e\u0060 \u002b variables[undefinedKeys[0]].split(\u0027,\u0027).map(x =\u003e \u0060\u003cth\u003e${x}\u003c\/th\u003e\u0060).join(\u0027\u0027);\n    table.appendChild(header);\n\n    variables[undefinedKeys[1]].split(\u0027,\u0027).forEach((model) =\u003e {\n      let row = document.createElement(\u0027tr\u0027);\n      row.innerHTML = \u0060\u003cth\u003e${model}\u003c\/th\u003e\u0060 \u002b variables[undefinedKeys[0]].split(\u0027,\u0027).map(x =\u003e {\n        let fixedValues = new Map(values);\n        fixedValues.set(undefinedKeys[0], x);\n        fixedValues.set(undefinedKeys[1], model);\n        return \u0060\u003ctd\u003e${getResults(fixedValues)}\u003c\/td\u003e\u0060;\n      }).join(\u0027\u0027);\n      table.appendChild(row);\n    });\n  }\n}\n\n\n\n  function setupButtons(variable) {\n    let buttons = document.getElementById(variable \u002b \u0027Buttons\u0027);\n    values.set(variable, document.querySelector(\u0060input[name=\u0022${variable}\u0022]:checked\u0060).value);\n    buttons.addEventListener(\u0027change\u0027, () =\u003e {\n      values.set(variable, document.querySelector(\u0060input[name=\u0022${variable}\u0022]:checked\u0060).value);\n      updateTable();\n    });\n  }\n  function updateDebug() {\n    let debugText = \u0027\u0027;\n    for (let variable of values.keys()) {\n      debugText \u002b= \u0060${variable} = ${values.get(variable)}, \u0060;\n    }\n    document.getElementById(\u0027debug\u0027).innerText = debugText;\n  }\n\n\u003c\/script\u003e\n\u003cp\u003e\n\n\n\n\n\n\n\u003cdiv class=\u0022button-group\u0022 id=\u0022problemsButtons\u0022\u003e\n  \n    \u003cinput type=\u0022radio\u0022 id=\u0022problemsMinVertexCut\u0022 name=\u0022problems\u0022 value=\u0022MinVertexCut\u0022 checked\u003e\n    \u003clabel for=\u0022problemsMinVertexCut\u0022\u003eMinVertexCut\u003c\/label\u003e\n  \n    \u003cinput type=\u0022radio\u0022 id=\u0022problemsundefined\u0022 name=\u0022problems\u0022 value=\u0022undefined\u0022 \u003e\n    \u003clabel for=\u0022problemsundefined\u0022\u003eundefined\u003c\/label\u003e\n  \n\u003c\/div\u003e\n\n\u003cscript\u003e\n  setupButtons( \u0022problems\u0022 );\n\u003c\/script\u003e\n\n\u003cbr\u003e\u003c\/p\u003e"
+    "description": "\u003cscript src=\u0022https:\/\/code.jquery.com\/jquery-3.6.0.min.js\u0022\u003e\u003c\/script\u003e\r\n\u003cscript src=\u0022https:\/\/polyfill.io\/v3\/polyfill.min.js?features=es6\u0022\u003e\u003c\/script\u003e\r\n\u003cscript id=\u0022MathJax-script\u0022 async src=\u0022https:\/\/cdn.jsdelivr.net\/npm\/mathjax@3\/es5\/tex-mml-chtml.js\u0022\u003e\u003c\/script\u003e\r\n\u003cscript\u003e\r\n    let variables = {\u0022approximate\u0022:\u0022exact,approximate\u0022,\u0022direct\u0022:\u0022undirected,directed\u0022,\u0022models\u0022:\u0022sequential,CONGEST,PRAM,streaming,communication,quantumQuery\u0022,\u0022parameter\u0022:\u0022parameterized, unparameterized\u0022,\u0022problems\u0022:\u0022MinVertexCut\u0022,\u0022randomize\u0022:\u0022randomized,deterministic\u0022,\u0022weight\u0022:\u0022unweighted,weighted\u0022} ;\r\n\u003c\/script\u003e\n\u003cscript\u003e\r\n  var values = new Map();\r\n\r\nfunction getResults(newValues, callback) {\r\n  let problem = newValues.get(\u0022problems\u0022);\r\n  let model = newValues.get(\u0022models\u0022);\r\n\r\n  $.getJSON(\u0060\/collect\/${problem}\/${model}.json\u0060, function(data) {\r\n    \/\/ Process the data within this callback\r\n\r\n    let bestMatch = null;\r\n    let maxMatches = 0;\r\n    for (const varItem of data) {\r\n      let matches = 0;\r\n      let isMatch = true;\r\n      for (const [key, value] of newValues.entries()) {\r\n        if (varItem.hasOwnProperty(key) \u0026\u0026 varItem[key] === value) {\r\n          matches\u002b\u002b;\r\n        } else if (varItem.hasOwnProperty(key)) {\r\n          isMatch = false;\r\n          break;\r\n        }\r\n      }\r\n\r\n      if (isMatch \u0026\u0026 matches \u003e maxMatches) {\r\n        bestMatch = varItem;\r\n        maxMatches = matches;\r\n      }\r\n    }\r\n\r\n    \/\/ Now that we have the best match, call the callback function with the result\r\n    if (bestMatch) {\r\n      callback(bestMatch[\u0022complexity\u0022]);\r\n    } else {\r\n      callback(null); \/\/ or handle the case where no match is found\r\n    }\r\n  })\r\n  .fail(function(jqxhr, textStatus, error) {\r\n    console.error(\u0027Error fetching JSON:\u0027, textStatus, error);\r\n    callback(null); \/\/ handle the error case\r\n  });\r\n}\r\n\r\nfunction updateTable() {\r\n  let table = document.getElementById(\u0022myTable\u0022);\r\n  table.innerHTML = \u0027\u0027; \/\/ Clear existing table\r\n\r\n  console.log(variables)\r\n\r\n  let undefinedKeys = Array.from(values.keys()).filter(k =\u003e values.get(k) === \u0022undefined\u0022);\r\n\r\n  if (undefinedKeys.length \u003e 2) {\r\n    table.innerText = \u0022    Please check at most 2 keys as undefined!    \u0022;\r\n  } \r\n  else if (undefinedKeys.length === 1) {\r\n    let header = document.createElement(\u0027tr\u0027);\r\n    header.innerHTML = \u0060\u003cth\u003e\\\\ ${undefinedKeys[0]}\u003c\/th\u003e\u0060 \u002b variables[undefinedKeys[0]].split(\u0027,\u0027).map(x =\u003e \u0060\u003cth\u003e${x}\u003c\/th\u003e\u0060).join(\u0027\u0027);\r\n    table.appendChild(header);\r\n\r\n    let row = document.createElement(\u0027tr\u0027);\r\n    row.innerHTML = \u0027\u003cth\u003e\u003c\/th\u003e\u0027 \u002b variables[undefinedKeys[0]].split(\u0027,\u0027).map(x =\u003e {\r\n      let fixedValues = new Map(values);\r\n      fixedValues.set(undefinedKeys[0], x);\r\n      return \u0060\u003ctd\u003e${getResults(fixedValues)}\u003c\/td\u003e\u0060;\r\n    }).join(\u0027\u0027);\r\n    table.appendChild(row);\r\n  } \r\n  else if (undefinedKeys.length === 0) {\r\n      let row = document.createElement(\u0027tr\u0027);\r\n      let data = document.createElement(\u0027td\u0027);\r\n\r\n        getResults(values, function(result) {\r\n          if (result) {\r\n            data.innerHTML = \u0060$$${result}$$\u0060;\r\n            MathJax.typeset()\r\n          } else {\r\n            data.innerHTML = \u0022No match found or error occurred\u0022;\r\n          }\r\n        });\r\n\r\n      row.appendChild(data);\r\n      table.appendChild(row);\r\n  }\r\n  else {\r\n    let header = document.createElement(\u0027tr\u0027);\r\n    header.innerHTML = \u0060\u003cth\u003e${undefinedKeys[1]} \\\\ ${undefinedKeys[0]}\u003c\/th\u003e\u0060 \u002b variables[undefinedKeys[0]].split(\u0027,\u0027).map(x =\u003e \u0060\u003cth\u003e${x}\u003c\/th\u003e\u0060).join(\u0027\u0027);\r\n    table.appendChild(header);\r\n\r\n    variables[undefinedKeys[1]].split(\u0027,\u0027).forEach((model) =\u003e {\r\n      let row = document.createElement(\u0027tr\u0027);\r\n      row.innerHTML = \u0060\u003cth\u003e${model}\u003c\/th\u003e\u0060 \u002b variables[undefinedKeys[0]].split(\u0027,\u0027).map(x =\u003e {\r\n        let fixedValues = new Map(values);\r\n        fixedValues.set(undefinedKeys[0], x);\r\n        fixedValues.set(undefinedKeys[1], model);\r\n        return \u0060\u003ctd\u003e${getResults(fixedValues)}\u003c\/td\u003e\u0060;\r\n      }).join(\u0027\u0027);\r\n      table.appendChild(row);\r\n    });\r\n  }\r\n}\r\n\r\n\r\n\r\n  function setupButtons(variable) {\r\n    let buttons = document.getElementById(variable \u002b \u0027Buttons\u0027);\r\n    values.set(variable, document.querySelector(\u0060input[name=\u0022${variable}\u0022]:checked\u0060).value);\r\n    buttons.addEventListener(\u0027change\u0027, () =\u003e {\r\n      values.set(variable, document.querySelector(\u0060input[name=\u0022${variable}\u0022]:checked\u0060).value);\r\n      updateTable();\r\n    });\r\n  }\r\n  function updateDebug() {\r\n    let debugText = \u0027\u0027;\r\n    for (let variable of values.keys()) {\r\n      debugText \u002b= \u0060${variable} = ${values.get(variable)}, \u0060;\r\n    }\r\n    document.getElementById(\u0027debug\u0027).innerText = debugText;\r\n  }\r\n\r\n\u003c\/script\u003e\r\n\u003cp\u003e\r\n\r\n\r\n\r\n\r\n\r\n\r\n\u003cdiv class=\u0022button-group\u0022 id=\u0022problemsButtons\u0022\u003e\r\n  \r\n    \u003cinput type=\u0022radio\u0022 id=\u0022problemsMinVertexCut\u0022 name=\u0022problems\u0022 value=\u0022MinVertexCut\u0022 checked\u003e\r\n    \u003clabel for=\u0022problemsMinVertexCut\u0022\u003eMinVertexCut\u003c\/label\u003e\r\n  \r\n    \u003cinput type=\u0022radio\u0022 id=\u0022problemsundefined\u0022 name=\u0022problems\u0022 value=\u0022undefined\u0022 \u003e\r\n    \u003clabel for=\u0022problemsundefined\u0022\u003eundefined\u003c\/label\u003e\r\n  \r\n\u003c\/div\u003e\r\n\r\n\u003cscript\u003e\r\n  setupButtons( \u0022problems\u0022 );\r\n\u003c\/script\u003e\r\n\n\u003cbr\u003e\u003c\/p\u003e"
 }
 </script><meta property="og:title" content="Home | Yonggang&#39;s homepage" />
 <meta property="og:type" content="website" />
 
 
-<meta property="og:image" content="http://localhost:1313/images/icon.png">
+<meta property="og:image" content="https://yonggangjiang.github.io/images/icon.png">
 
 
-<meta property="og:url" content="http://localhost:1313/docs/collect/" />
+<meta property="og:url" content="https://yonggangjiang.github.io/docs/collect/" />
 
 
 
@@ -172,7 +172,7 @@
 <meta property="article:section" content="docs" />
 
 
-<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/docs/collect/index.xml" title="Yonggang's homepage" />
+<link rel="alternate" type="application/rss+xml" href="https://yonggangjiang.github.io/docs/collect/index.xml" title="Yonggang's homepage" />
 
 
 <body class="flex flex-col min-h-screen">
@@ -238,9 +238,9 @@
 <div id="sidebar-toc"
     class="hidden md:block overflow-y-auto mx-6 md:mx-0 pr-6 pt-2 md:max-h-doc-sidebar bg-primary-bg md:bg-transparent">
 
-    <div class="flex flex-wrap ml-4 -mr-2 p-2 hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;http://localhost:1313/docs/collect/&#34;">
+    <div class="flex flex-wrap ml-4 -mr-2 p-2 hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://yonggangjiang.github.io/docs/collect/&#34;">
         <a class="text-eureka hover:text-eureka font-bold"
-            href="http://localhost:1313/docs/collect/">Home</a>
+            href="https://yonggangjiang.github.io/docs/collect/">Home</a>
         
         
         
