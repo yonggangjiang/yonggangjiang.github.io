@@ -127,8 +127,37 @@
         document.getElementsByTagName('html')[0].classList.add('dark')
     }
 </script>
-<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0" style="width:1300px">
-     <a href="/" class="mr-6 text-primary-text text-xl font-bold" align="right" style="width:210pt; color: black">Yonggang's Homepage</a>
+<nav class="flex items-center justify-center px-4 py-4 md:py-0" style="max-width:1300px; margin: 0 auto;">
+     
+        
+        
+        
+        
+        <div class="flex items-center space-x-2" id="page-tabs">
+            
+              
+                
+                
+                <button class="header-tab active" 
+                        data-tab="about"
+                        onclick="switchTab('about')">
+                  Home
+                </button>
+              
+            
+              
+                
+                
+                <button class="header-tab " 
+                        data-tab="offers"
+                        onclick="switchTab('offers')">
+                  Offers
+                </button>
+              
+            
+        </div>
+        
+    
 
     <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
         <i class="fas fa-bars"></i>
@@ -165,9 +194,12 @@
   <main class="flex-grow pt-16">
   
   
+
+  
   
     
-      
+      <div class="tab-content" id="about-content" >
+        
   
 
   
@@ -273,7 +305,7 @@
 <p>I am broadly interested in the design and analysis of algorithms. My current research focuses on <strong>graph algorithms</strong>, with the goal of understanding their theoretical limits across various settings, including <strong>parallel</strong> and <strong>distributed</strong> computing.</p>
 <p>My research is supported by the <a href="https://research.google/programs-and-events/phd-fellowship">Google PhD Fellowship</a>.</p>
 <p>My <a href="https://scholar.google.com/citations?user=b81oyQUAAAAJ">Google Scholar</a> and <a href="CV.pdf">CV</a> (not frequently updated).</p>
-<p>If you <a href="https://dblp.org/pid/188/6546.html">search for my name on DBLP</a>, many of the listed papers are <strong>NOT</strong> mine.</p>
+<p>I am currently <span style="color:red;"><strong>hiring Hiwis and interns</strong></span> — see <a href="/#offers">offers</a> for details.</p>
 <h2 id="education">Education</h2>
 <div class="bg-secondary-bg rounded border hover:shadow-lg transition ease-in-out duration-200 px-6 pt-6 pb-4">
     <a href = "https://www.mpi-inf.mpg.de/" class = "font-semibold text-xl" >Max Planck Institute for Informatics</a>
@@ -402,14 +434,95 @@ Yonggang Jiang, Haimin Chen,  Chaodong Zheng. <br>
     </div>
   </div>
 
+      </div>
     
+  
+    
+      <div class="tab-content" id="offers-content" style="display: none;">
+        
+  
 
   
+
+  
+  
+  
+
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+  
+
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+
+    
+    
+    
+    
+    
+  
+
+  <div class="pl-scrollbar bg-secondary-bg" 
+    >
+    <div class="max-w-screen-xl mx-auto">
+      <div id="offers" class="lg:w-3/4 mx-auto px-6 md:px-8 xl:px-12 py-12">
+        
+  
+
+  
+    
+<div class="mb-8">
+  <h1 class="text-4xl font-bold mb-6">Offers</h1>
+</div>
+
+
+<div class="content">
+  <p>We are looking for motivated Hiwis (student assistants) to join the Algorithms &amp; Complexity group (Department 1) at the Max Planck Institute for Informatics. Students will be co-advised by <a href="/#about">me</a> and <a href="https://sites.google.com/site/dannanongkai/home">Danupon Nanongkai</a>.</p>
+<p>Experience in <strong>competitive programming is highly welcome</strong>.</p>
+<h2 id="topic-1-algorithms-engineering">Topic 1: Algorithms Engineering</h2>
+<p>Write high-performance code for fundamental graph problems such as shortest paths, maximum flow, matching, and related areas.</p>
+<p>You are required to have <strong>strong coding skills</strong> and <strong>understanding of algorithms</strong>.</p>
+<h2 id="topic-2-theory">Topic 2: Theory</h2>
+<p>Pure theory in algorithm research, design and analysis of algorithms, especially graph algorithms.</p>
+<p>You are required to have <strong>very strong mathematical background</strong> and <strong>understanding of algorithms</strong>.</p>
+<h2 id="what-we-offer">What we offer:</h2>
+<p>Opportunity to co-author <strong>top-tier research publications</strong>.</p>
+<p>Flexible working hours and <strong>competitive salary</strong>.</p>
+<h2 id="contacts">Contacts</h2>
+<p>If you are interested, please send <a href="/#about">me</a> an email.</p>
+
+</div>
+
+  
+
+      </div>
+    </div>
+  </div>
+
+      </div>
+    
   
   </main>
   <footer class="pl-scrollbar">
     <div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
-    <p class="text-sm text-tertiary-text">Powered by <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a>. Last updated in 2025 October. </p>
+    <p class="text-sm text-tertiary-text">Powered by <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a>. Last updated in 2025 November. </p>
 </div></div>
   </footer>
 </body>
