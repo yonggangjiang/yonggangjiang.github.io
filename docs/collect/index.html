@@ -1,278 +1,86 @@
-<!DOCTYPE html><meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
-<style>
-  .blackout {
-    background-color: black;
-    color: black;
-    cursor: pointer;
-    transition: color 0.3s ease;
-    padding: 2px 4px;
-    border-radius: 4px;
-  }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Collect | Yonggang&#39;s homepage</title>
+<meta name="description" content="let variables = …">
+<link rel="canonical" href="https://yonggangjiang.github.io/docs/collect/">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta property="og:title" content="Collect | Yonggang&#39;s homepage">
+<meta property="og:description" content="let variables = …">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://yonggangjiang.github.io/docs/collect/">
+<meta property="og:site_name" content="Yonggang&#39;s homepage">
+<meta property="og:image" content="https://yonggangjiang.github.io/images/me.png">
+<meta name="twitter:card" content="summary">
 
-  .blackout.revealed {
-    color: white;  
-  }
-</style>
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f5f8ff" data-color="#f5f8ff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#080f20" data-color="#080f20" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script>(function(){try{var bar={"dark":"#080f20","light":"#f5f8ff"};var t=localStorage.getItem("theme");if(t==="light"||t==="dark"){document.documentElement.setAttribute("data-theme",t);var m=document.querySelectorAll('meta[name="theme-color"]');for(var i=0;i<m.length;i++)m[i].setAttribute("content",bar[t]);}}catch(e){}})();</script>
+<link rel="preload" href="/fonts/source-serif-4-normal-400_700-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/source-serif-4-display-600_700-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/inter-normal-400_700-latin.woff2" as="font" type="font/woff2" crossorigin>
 
-
-<title>Home | Yonggang&#39;s homepage</title>
-
-<meta name="generator" content="Hugo Eureka 0.8.3-dev" />
-<link rel="stylesheet" href="https://yonggangjiang.github.io/css/eureka.min.css">
-<script defer src="https://yonggangjiang.github.io/js/eureka.min.js"></script>
-
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload"
-  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
-  as="style" onload="this.onload=null;this.rel='stylesheet'">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css"
-   media="print"
-  onload="this.media='all';this.onload=null" crossorigin>
-<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js"
-   crossorigin></script>
-
-  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/dart.min.js"
-     crossorigin></script>
-
-<script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js"
-   integrity="sha256-uNYoXefWRqv&#43;PsIF/OflNmwtKM4lStn9yrz2gVl6ymo="  crossorigin></script>
-
-
-
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
-   integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"  media="print"
-  onload="this.media='all';this.onload=null" crossorigin>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" 
-  integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"  crossorigin></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
-   integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"  crossorigin></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"></script>
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    renderMathInElement(document.body, {
+    if (!window.renderMathInElement) return;    
+    renderMathInElement(document.querySelector("main") || document.body, {
       delimiters: [
         { left: "$$", right: "$$", display: true },
         { left: "$", right: "$", display: false },
         { left: "\\(", right: "\\)", display: false },
         { left: "\\[", right: "\\]", display: true }
-      ],
+      ]
     });
   });
 </script>
 
+<link rel="stylesheet" href="/css/modern-sidebar-bundle.min.69f840065977fa0ea3c929d6d80cef590ea5c3a3a8ef682c391e5eef2fc4c941.css" integrity="sha256-afhABll3&#43;g6jySnW2AzvWQ6lw6Oo72gsOR5e7y/EyUE=">
+<script defer src="/js/site.min.7d2e60624697a8399205e1d06f04d0a0b003adf1d6a7f821ad9220b5d18d2573.js" integrity="sha256-fS5gYkaXqDmSBeHQbwTQoLADrfHWp/ghrZIgtdGNJXM="></script>
+<script defer src="/js/avatar-caption.min.863927548a51d409a8128fdb8c6874f2f6565cc5aaae3a83a97c581ffc81707e.js" integrity="sha256-hjknVIpR1AmoEo/bjGh08vZWXMWqrjqDqXxYH/yBcH4="></script>
+<script defer src="/js/modern-sidebar-variant.min.d44235078db1b531c72c84b9e9ffa2da7bc3a5912d110c2b19163bd8f0a53afe.js" integrity="sha256-1EI1B42xtTHHLIS56f&#43;i2nvDpZEtEQwrGRY72PClOv4="></script>
+<noscript><style>.theme-toggle,.menu-btn,.copy-btn,.folds-btn{display:none!important}@media (max-width:63.99em){.rail--docs .rail-nav,.rail--docs .rail-foot{display:block!important}.profile--compact .p-links{display:flex!important}}</style></noscript>
 
-<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js" 
-  integrity="sha256-Zmpaaj&#43;GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE="  crossorigin></script>
+</head>
+<body id="top" class="page page--docs">
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="shell shell--docs">
 
+<header class="rail rail--docs" id="rail">
+  <div class="rail-inner">
+    <div class="docs-brand">
+      <a class="brand" href="/"><img class="avatar avatar--sm" src="/images/me_hu78b6507a05da9074dfb0da277d46e879_597748_48x48_fill_q85_bgffffff_box_center_3.jpg" srcset="/images/me_hu78b6507a05da9074dfb0da277d46e879_597748_48x48_fill_q85_bgffffff_box_center_3.jpg 1x, /images/me_hu78b6507a05da9074dfb0da277d46e879_597748_96x96_fill_q85_bgffffff_box_center_3.jpg 2x" alt="" width="48" height="48">
+        <span class="brand-text"><span class="brand-name">Yonggang Jiang</span></span>
+      </a>
+      <button class="icon-btn theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="Dark theme" title="Dark theme"><svg class="i i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg><svg class="i i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></button>
 
-
-
-
-<link rel="icon" type="image/png" sizes="32x32" href="https://yonggangjiang.github.io/images/icon_hu_4f4e55a10d73f6ba.png">
-<link rel="apple-touch-icon" sizes="180x180" href="https://yonggangjiang.github.io/images/icon_hu_8190559dabbef89f.png">
-
-<meta name="description"
-  content="
-
-
-
-
-
-
-
-
-
-
-
-
-  
-    
-    MinVertexCut
-  
-    
-    undefined
-  
-
-
-
-
-">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [{
-      "@type": "ListItem",
-      "position": 1 ,
-      "name":"Docs",
-      "item":"https://yonggangjiang.github.io/docs/"},{
-      "@type": "ListItem",
-      "position": 2 ,
-      "name":"Home",
-      "item":"https://yonggangjiang.github.io/docs/collect/"}]
-}
-</script>
-
-
-
-<script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://yonggangjiang.github.io/docs/collect/"
-    },
-    "headline": "Home | Yonggang\u0027s homepage","wordCount":  24 ,
-    "publisher": {
-        "@type": "Person",
-        "name": "C. Wang",
-        "logo": {
-            "@type": "ImageObject",
-            "url": "https://yonggangjiang.github.io/images/icon.png"
-        }
-        },
-    "description": "\u003cscript src=\u0022https:\/\/code.jquery.com\/jquery-3.6.0.min.js\u0022\u003e\u003c\/script\u003e\r\n\u003cscript src=\u0022https:\/\/polyfill.io\/v3\/polyfill.min.js?features=es6\u0022\u003e\u003c\/script\u003e\r\n\u003cscript id=\u0022MathJax-script\u0022 async src=\u0022https:\/\/cdn.jsdelivr.net\/npm\/mathjax@3\/es5\/tex-mml-chtml.js\u0022\u003e\u003c\/script\u003e\r\n\u003cscript\u003e\r\n    let variables = {\u0022approximate\u0022:\u0022exact,approximate\u0022,\u0022direct\u0022:\u0022undirected,directed\u0022,\u0022models\u0022:\u0022sequential,CONGEST,PRAM,streaming,communication,quantumQuery\u0022,\u0022parameter\u0022:\u0022parameterized, unparameterized\u0022,\u0022problems\u0022:\u0022MinVertexCut\u0022,\u0022randomize\u0022:\u0022randomized,deterministic\u0022,\u0022weight\u0022:\u0022unweighted,weighted\u0022} ;\r\n\u003c\/script\u003e\n\u003cscript\u003e\r\n  var values = new Map();\r\n\r\nfunction getResults(newValues, callback) {\r\n  let problem = newValues.get(\u0022problems\u0022);\r\n  let model = newValues.get(\u0022models\u0022);\r\n\r\n  $.getJSON(\u0060\/collect\/${problem}\/${model}.json\u0060, function(data) {\r\n    \/\/ Process the data within this callback\r\n\r\n    let bestMatch = null;\r\n    let maxMatches = 0;\r\n    for (const varItem of data) {\r\n      let matches = 0;\r\n      let isMatch = true;\r\n      for (const [key, value] of newValues.entries()) {\r\n        if (varItem.hasOwnProperty(key) \u0026\u0026 varItem[key] === value) {\r\n          matches\u002b\u002b;\r\n        } else if (varItem.hasOwnProperty(key)) {\r\n          isMatch = false;\r\n          break;\r\n        }\r\n      }\r\n\r\n      if (isMatch \u0026\u0026 matches \u003e maxMatches) {\r\n        bestMatch = varItem;\r\n        maxMatches = matches;\r\n      }\r\n    }\r\n\r\n    \/\/ Now that we have the best match, call the callback function with the result\r\n    if (bestMatch) {\r\n      callback(bestMatch[\u0022complexity\u0022]);\r\n    } else {\r\n      callback(null); \/\/ or handle the case where no match is found\r\n    }\r\n  })\r\n  .fail(function(jqxhr, textStatus, error) {\r\n    console.error(\u0027Error fetching JSON:\u0027, textStatus, error);\r\n    callback(null); \/\/ handle the error case\r\n  });\r\n}\r\n\r\nfunction updateTable() {\r\n  let table = document.getElementById(\u0022myTable\u0022);\r\n  table.innerHTML = \u0027\u0027; \/\/ Clear existing table\r\n\r\n  console.log(variables)\r\n\r\n  let undefinedKeys = Array.from(values.keys()).filter(k =\u003e values.get(k) === \u0022undefined\u0022);\r\n\r\n  if (undefinedKeys.length \u003e 2) {\r\n    table.innerText = \u0022    Please check at most 2 keys as undefined!    \u0022;\r\n  } \r\n  else if (undefinedKeys.length === 1) {\r\n    let header = document.createElement(\u0027tr\u0027);\r\n    header.innerHTML = \u0060\u003cth\u003e\\\\ ${undefinedKeys[0]}\u003c\/th\u003e\u0060 \u002b variables[undefinedKeys[0]].split(\u0027,\u0027).map(x =\u003e \u0060\u003cth\u003e${x}\u003c\/th\u003e\u0060).join(\u0027\u0027);\r\n    table.appendChild(header);\r\n\r\n    let row = document.createElement(\u0027tr\u0027);\r\n    row.innerHTML = \u0027\u003cth\u003e\u003c\/th\u003e\u0027 \u002b variables[undefinedKeys[0]].split(\u0027,\u0027).map(x =\u003e {\r\n      let fixedValues = new Map(values);\r\n      fixedValues.set(undefinedKeys[0], x);\r\n      return \u0060\u003ctd\u003e${getResults(fixedValues)}\u003c\/td\u003e\u0060;\r\n    }).join(\u0027\u0027);\r\n    table.appendChild(row);\r\n  } \r\n  else if (undefinedKeys.length === 0) {\r\n      let row = document.createElement(\u0027tr\u0027);\r\n      let data = document.createElement(\u0027td\u0027);\r\n\r\n        getResults(values, function(result) {\r\n          if (result) {\r\n            data.innerHTML = \u0060$$${result}$$\u0060;\r\n            MathJax.typeset()\r\n          } else {\r\n            data.innerHTML = \u0022No match found or error occurred\u0022;\r\n          }\r\n        });\r\n\r\n      row.appendChild(data);\r\n      table.appendChild(row);\r\n  }\r\n  else {\r\n    let header = document.createElement(\u0027tr\u0027);\r\n    header.innerHTML = \u0060\u003cth\u003e${undefinedKeys[1]} \\\\ ${undefinedKeys[0]}\u003c\/th\u003e\u0060 \u002b variables[undefinedKeys[0]].split(\u0027,\u0027).map(x =\u003e \u0060\u003cth\u003e${x}\u003c\/th\u003e\u0060).join(\u0027\u0027);\r\n    table.appendChild(header);\r\n\r\n    variables[undefinedKeys[1]].split(\u0027,\u0027).forEach((model) =\u003e {\r\n      let row = document.createElement(\u0027tr\u0027);\r\n      row.innerHTML = \u0060\u003cth\u003e${model}\u003c\/th\u003e\u0060 \u002b variables[undefinedKeys[0]].split(\u0027,\u0027).map(x =\u003e {\r\n        let fixedValues = new Map(values);\r\n        fixedValues.set(undefinedKeys[0], x);\r\n        fixedValues.set(undefinedKeys[1], model);\r\n        return \u0060\u003ctd\u003e${getResults(fixedValues)}\u003c\/td\u003e\u0060;\r\n      }).join(\u0027\u0027);\r\n      table.appendChild(row);\r\n    });\r\n  }\r\n}\r\n\r\n\r\n\r\n  function setupButtons(variable) {\r\n    let buttons = document.getElementById(variable \u002b \u0027Buttons\u0027);\r\n    values.set(variable, document.querySelector(\u0060input[name=\u0022${variable}\u0022]:checked\u0060).value);\r\n    buttons.addEventListener(\u0027change\u0027, () =\u003e {\r\n      values.set(variable, document.querySelector(\u0060input[name=\u0022${variable}\u0022]:checked\u0060).value);\r\n      updateTable();\r\n    });\r\n  }\r\n  function updateDebug() {\r\n    let debugText = \u0027\u0027;\r\n    for (let variable of values.keys()) {\r\n      debugText \u002b= \u0060${variable} = ${values.get(variable)}, \u0060;\r\n    }\r\n    document.getElementById(\u0027debug\u0027).innerText = debugText;\r\n  }\r\n\r\n\u003c\/script\u003e\r\n\u003cp\u003e\r\n\r\n\r\n\r\n\r\n\r\n\r\n\u003cdiv class=\u0022button-group\u0022 id=\u0022problemsButtons\u0022\u003e\r\n  \r\n    \u003cinput type=\u0022radio\u0022 id=\u0022problemsMinVertexCut\u0022 name=\u0022problems\u0022 value=\u0022MinVertexCut\u0022 checked\u003e\r\n    \u003clabel for=\u0022problemsMinVertexCut\u0022\u003eMinVertexCut\u003c\/label\u003e\r\n  \r\n    \u003cinput type=\u0022radio\u0022 id=\u0022problemsundefined\u0022 name=\u0022problems\u0022 value=\u0022undefined\u0022 \u003e\r\n    \u003clabel for=\u0022problemsundefined\u0022\u003eundefined\u003c\/label\u003e\r\n  \r\n\u003c\/div\u003e\r\n\r\n\u003cscript\u003e\r\n  setupButtons( \u0022problems\u0022 );\r\n\u003c\/script\u003e\r\n\n\u003cbr\u003e\u003c\/p\u003e"
-}
-</script><meta property="og:title" content="Home | Yonggang&#39;s homepage" />
-<meta property="og:type" content="website" />
-
-
-<meta property="og:image" content="https://yonggangjiang.github.io/images/icon.png">
-
-
-<meta property="og:url" content="https://yonggangjiang.github.io/docs/collect/" />
-
-
-
-
-
-<meta property="og:description" content="Eureka is a elegant and powerful theme for Hugo." />
-
-
-
-
-
-<meta property="og:locale" content="en" />
-
-
-
-
-<meta property="og:site_name" content="Yonggang&#39;s homepage" />
-
-
-
-
-
-
-
-
-<meta property="article:section" content="docs" />
-
-
-<link rel="alternate" type="application/rss+xml" href="https://yonggangjiang.github.io/docs/collect/index.xml" title="Yonggang's homepage" />
-
-
-<body class="flex flex-col min-h-screen">
-  <header class="fixed flex items-center w-full min-h-16 z-50 bg-secondary-bg shadow-sm">
-    <div class="w-full mx-auto"><script>
-    let storageColorScheme = localStorage.getItem("lightDarkMode")
-    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
-        document.getElementsByTagName('html')[0].classList.add('dark')
-    }
-</script>
-<nav class="flex items-center justify-center px-4 py-4 md:py-0" style="max-width:1300px; margin: 0 auto;">
-     
-        
-        
-    
-
-    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
-        <i class="fas fa-bars"></i>
-    </button>
-
-    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
     </div>
+    <p class="rail-foot"><a class="rail-home" href="/"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg><span>Homepage</span></a></p>
+  </div>
+</header>
 
+
+<div class="column">
+<nav class="chipbar" aria-label="Sections">
+  <span class="chips chips--empty"></span>
+  <button class="icon-btn menu-btn" id="nav-toggle" type="button" aria-controls="site-menu" aria-expanded="false" aria-label="Menu"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h10"/></svg></button>
 </nav>
-<script>
-    
-    let element = document.getElementById('lightDarkMode')
-    if (storageColorScheme == null || storageColorScheme == 'Auto') {
-        document.addEventListener('DOMContentLoaded', () => {
-            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
-        })
-    } else if (storageColorScheme == "Light") {
-        element.firstElementChild.classList.remove('fa-adjust')
-        element.firstElementChild.setAttribute("data-icon", 'sun')
-        element.firstElementChild.classList.add('fa-sun')
-    } else if (storageColorScheme == "Dark") {
-        element.firstElementChild.classList.remove('fa-adjust')
-        element.firstElementChild.setAttribute("data-icon", 'moon')
-        element.firstElementChild.classList.add('fa-moon')
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-        getcolorscheme();
-        switchBurger();
-    });
-</script>
-</div>
-  </header>
-  <main class="flex-grow pt-16">
 
 
-<div class="flex flex-col md:flex-row bg-secondary-bg rounded">
-    <div class="md:w-1/4 lg:w-1/6 border-r">
-        <div class="sticky top-16 pt-6">
-            
-
-
-
-
-
-<div id="sidebar-title" class="md:hidden mx-4 px-2 pt-4 pb-2 md:border-b text-tertiary-text md:text-primary-text">
-    <span class="font-semibold">Table of Contents</span>
-    <i class="fas fa-caret-right ml-1"></i>
-</div>
-
-<div id="sidebar-toc"
-    class="hidden md:block overflow-y-auto mx-6 md:mx-0 pr-6 pt-2 md:max-h-doc-sidebar bg-primary-bg md:bg-transparent">
-
-    <div class="flex flex-wrap ml-4 -mr-2 p-2 hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://yonggangjiang.github.io/docs/collect/&#34;">
-        <a class="text-eureka hover:text-eureka font-bold"
-            href="https://yonggangjiang.github.io/docs/collect/">Home</a>
-        
-        
-        
-
-
-    </div>
-    
-    
-
-
-<ul class="pl-4">
-    
-    <li class="py-2"></li>
-    </li>
-</ul>
-
-</div>
-
-
-
-        </div>
-    </div>
-    <div class="w-full md:w-3/4 lg:w-4/5 pb-8 pt-2 md:pt-8">
-        <div class="flex">
-            <div class="w-full lg:w-4/4 px-6">
-                
-                
-                <div class="content">
-                    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<main id="main" class="main main--docs" tabindex="-1">
+  <div class="doc-bar">
+    <nav class="crumbs" aria-label="Breadcrumb"><span aria-current="page">Collect</span></nav>
+  </div>
+  <article class="prose doc" id="article">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script>
@@ -591,48 +399,35 @@ function updateTable() {
   updateTable();
 </script>
 
-                </div>
-                
-                
-
-                
+  </article>
+</main>
 
 
-
-                
-
-
-
-            </div>
-            
-        </div>
-
-    </div>
-
+<footer class="site-footer">
+  <p class="footer-updated">Last updated in 2026 October.</p>
+  <p class="footer-links"><a class="footer-top" href="#top"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg><span>Back to top</span></a></p>
+</footer>
 
 </div>
+</div>
+<div class="drawer" id="site-menu" hidden>
+  <div class="drawer__backdrop" data-drawer-close></div>
+  <div class="drawer__panel" role="dialog" aria-modal="true" aria-labelledby="drawer-title" tabindex="-1">
+    <div class="drawer__head">
+      <p class="drawer__title" id="drawer-title">Menu</p>
+      <button class="icon-btn" type="button" data-drawer-close aria-label="Close menu"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+    </div>
+    <div class="drawer__group">
+      <p class="nav-label" id="drawer-theme">Appearance</p>
+      <div class="seg" role="group" aria-labelledby="drawer-theme">
+        <button type="button" class="seg__btn" data-theme-set="light" aria-pressed="false"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg><span>Light</span></button>
+        <button type="button" class="seg__btn" data-theme-set="dark" aria-pressed="false"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg><span>Dark</span></button>
+        <button type="button" class="seg__btn" data-theme-set="system" aria-pressed="false"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="20" height="14" x="2" y="3" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg><span>Auto</span></button>
+      </div>
+    </div>
+    <p class="drawer__group drawer__foot"><a class="rail-home" href="/"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg><span>Homepage</span></a></p>
+  </div>
+</div>
 
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        hljs.initHighlightingOnLoad();
-        changeSidebarHeight();
-        switchDocToc();
-    })
-</script>
-
-
-
-
-
-
-
-
-  </main>
-  <footer class="pl-scrollbar">
-    <div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
-    <p class="text-sm text-tertiary-text"> Last updated in 2026 September. </p>
-</div></div>
-  </footer>
 </body>
-
 </html>

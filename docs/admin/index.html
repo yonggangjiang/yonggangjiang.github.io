@@ -1,259 +1,102 @@
-<!DOCTYPE html><meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
-<style>
-  .blackout {
-    background-color: black;
-    color: black;
-    cursor: pointer;
-    transition: color 0.3s ease;
-    padding: 2px 4px;
-    border-radius: 4px;
-  }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin | Yonggang&#39;s homepage</title>
+<meta name="description" content="D1 Software Admin Guidance Ste-by-step guidance on the responsibilities of a D1 software admin.
+Create Accounts for Newcomers Upon receiving the …">
+<link rel="canonical" href="https://yonggangjiang.github.io/docs/admin/">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta property="og:title" content="Admin | Yonggang&#39;s homepage">
+<meta property="og:description" content="D1 Software Admin Guidance Ste-by-step guidance on the responsibilities of a D1 software admin.
+Create Accounts for Newcomers Upon receiving the …">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://yonggangjiang.github.io/docs/admin/">
+<meta property="og:site_name" content="Yonggang&#39;s homepage">
+<meta property="og:image" content="https://yonggangjiang.github.io/images/me.png">
+<meta name="twitter:card" content="summary">
 
-  .blackout.revealed {
-    color: white;  
-  }
-</style>
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f5f8ff" data-color="#f5f8ff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#080f20" data-color="#080f20" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script>(function(){try{var bar={"dark":"#080f20","light":"#f5f8ff"};var t=localStorage.getItem("theme");if(t==="light"||t==="dark"){document.documentElement.setAttribute("data-theme",t);var m=document.querySelectorAll('meta[name="theme-color"]');for(var i=0;i<m.length;i++)m[i].setAttribute("content",bar[t]);}}catch(e){}})();</script>
+<link rel="preload" href="/fonts/source-serif-4-normal-400_700-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/source-serif-4-display-600_700-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/inter-normal-400_700-latin.woff2" as="font" type="font/woff2" crossorigin>
 
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js" integrity="sha384-7XNZTuA80Gz/IexIsuU1Zm/T+ak0WT8HtwO3rzVG8qoJZZMkMu5J0PEh22Qgiwpl" crossorigin="anonymous"></script>
+<script>document.addEventListener("DOMContentLoaded", function () { if (window.hljs) hljs.initHighlighting(); });</script>
 
-<title>Home | Yonggang&#39;s homepage</title>
+<link rel="stylesheet" href="/css/modern-sidebar-bundle.min.69f840065977fa0ea3c929d6d80cef590ea5c3a3a8ef682c391e5eef2fc4c941.css" integrity="sha256-afhABll3&#43;g6jySnW2AzvWQ6lw6Oo72gsOR5e7y/EyUE=">
+<script defer src="/js/site.min.7d2e60624697a8399205e1d06f04d0a0b003adf1d6a7f821ad9220b5d18d2573.js" integrity="sha256-fS5gYkaXqDmSBeHQbwTQoLADrfHWp/ghrZIgtdGNJXM="></script>
+<script defer src="/js/avatar-caption.min.863927548a51d409a8128fdb8c6874f2f6565cc5aaae3a83a97c581ffc81707e.js" integrity="sha256-hjknVIpR1AmoEo/bjGh08vZWXMWqrjqDqXxYH/yBcH4="></script>
+<script defer src="/js/modern-sidebar-variant.min.d44235078db1b531c72c84b9e9ffa2da7bc3a5912d110c2b19163bd8f0a53afe.js" integrity="sha256-1EI1B42xtTHHLIS56f&#43;i2nvDpZEtEQwrGRY72PClOv4="></script>
+<noscript><style>.theme-toggle,.menu-btn,.copy-btn,.folds-btn{display:none!important}@media (max-width:63.99em){.rail--docs .rail-nav,.rail--docs .rail-foot{display:block!important}.profile--compact .p-links{display:flex!important}}</style></noscript>
 
-<meta name="generator" content="Hugo Eureka 0.8.3-dev" />
-<link rel="stylesheet" href="https://yonggangjiang.github.io/css/eureka.min.css">
-<script defer src="https://yonggangjiang.github.io/js/eureka.min.js"></script>
+</head>
+<body id="top" class="page page--docs">
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="shell shell--docs shell--toc">
 
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload"
-  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
-  as="style" onload="this.onload=null;this.rel='stylesheet'">
+<header class="rail rail--docs" id="rail">
+  <div class="rail-inner">
+    <div class="docs-brand">
+      <a class="brand" href="/"><img class="avatar avatar--sm" src="/images/me_hu78b6507a05da9074dfb0da277d46e879_597748_48x48_fill_q85_bgffffff_box_center_3.jpg" srcset="/images/me_hu78b6507a05da9074dfb0da277d46e879_597748_48x48_fill_q85_bgffffff_box_center_3.jpg 1x, /images/me_hu78b6507a05da9074dfb0da277d46e879_597748_96x96_fill_q85_bgffffff_box_center_3.jpg 2x" alt="" width="48" height="48">
+        <span class="brand-text"><span class="brand-name">Yonggang Jiang</span></span>
+      </a>
+      <button class="icon-btn theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="Dark theme" title="Dark theme"><svg class="i i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg><svg class="i i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></button>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css"
-   media="print"
-  onload="this.media='all';this.onload=null" crossorigin>
-<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js"
-   crossorigin></script>
-
-  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/dart.min.js"
-     crossorigin></script>
-
-<script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js"
-   integrity="sha256-uNYoXefWRqv&#43;PsIF/OflNmwtKM4lStn9yrz2gVl6ymo="  crossorigin></script>
-
-
-
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
-   integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"  media="print"
-  onload="this.media='all';this.onload=null" crossorigin>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" 
-  integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"  crossorigin></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
-   integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"  crossorigin></script>
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    renderMathInElement(document.body, {
-      delimiters: [
-        { left: "$$", right: "$$", display: true },
-        { left: "$", right: "$", display: false },
-        { left: "\\(", right: "\\)", display: false },
-        { left: "\\[", right: "\\]", display: true }
-      ],
-    });
-  });
-</script>
-
-
-<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js" 
-  integrity="sha256-Zmpaaj&#43;GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE="  crossorigin></script>
-
-
-
-
-
-<link rel="icon" type="image/png" sizes="32x32" href="https://yonggangjiang.github.io/images/icon_hu_4f4e55a10d73f6ba.png">
-<link rel="apple-touch-icon" sizes="180x180" href="https://yonggangjiang.github.io/images/icon_hu_8190559dabbef89f.png">
-
-<meta name="description"
-  content="D1 Software Admin Guidance
-Ste-by-step guidance on the responsibilities of a D1 software admin.
-Create Accounts for Newcomers
-Upon receiving the account-creating request e-mail from our secretary (usually the e-mail is sent to both the admin and the newcomer). There are three important pieces of information: the newcomer&rsquo;s name, the newcomer&rsquo;s current e-mail, and the newcomer&rsquo;s rule (Ph.D. student? Vister? Postdoc?).
-Step 1: Create an account request.
-Go to https://domino.mpi-inf.mpg.de/ and click &ldquo;Request a new account&rdquo;. Then check the correct person, click &ldquo;Proceed&rdquo;, and a form will appear. There is only one place we need to change, which is &ldquo;Email (Alias) Group(s)&rdquo;, check &ldquo;d1-phd&rdquo; or &ldquo;d1-postdocs&rdquo; or &ldquo;d1-students&rdquo; or &ldquo;d1-guest&rdquo; according to the newcomer&rsquo;s role (interns are in the category &ldquo;d1-students&rdquo;). Then click &ldquo;Request a new account&rdquo; and &ldquo;Complete the request&rdquo;.">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [{
-      "@type": "ListItem",
-      "position": 1 ,
-      "name":"Docs",
-      "item":"https://yonggangjiang.github.io/docs/"},{
-      "@type": "ListItem",
-      "position": 2 ,
-      "name":"Home",
-      "item":"https://yonggangjiang.github.io/docs/admin/"}]
-}
-</script>
-
-
-
-<script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://yonggangjiang.github.io/docs/admin/"
-    },
-    "headline": "Home | Yonggang\u0027s homepage","wordCount":  375 ,
-    "publisher": {
-        "@type": "Person",
-        "name": "C. Wang",
-        "logo": {
-            "@type": "ImageObject",
-            "url": "https://yonggangjiang.github.io/images/icon.png"
-        }
-        },
-    "description": "\u003ch1 id=\u0022d1-software-admin-guidance\u0022\u003eD1 Software Admin Guidance\u003c\/h1\u003e\n\u003cp\u003eSte-by-step guidance on the responsibilities of a D1 software admin.\u003c\/p\u003e\n\u003ch2 id=\u0022create-accounts-for-newcomers\u0022\u003eCreate Accounts for Newcomers\u003c\/h2\u003e\n\u003cp\u003eUpon receiving the account-creating request e-mail from our secretary (usually the e-mail is sent to both the admin and the newcomer). There are three important pieces of information: the newcomer\u0026rsquo;s name, the newcomer\u0026rsquo;s current e-mail, and the newcomer\u0026rsquo;s rule (Ph.D. student? Vister? Postdoc?).\u003c\/p\u003e\n\u003ch3 id=\u0022step-1-create-an-account-request\u0022\u003eStep 1: Create an account request.\u003c\/h3\u003e\n\u003cp\u003eGo to \u003ca href=\u0022https:\/\/domino.mpi-inf.mpg.de\/\u0022\u003ehttps:\/\/domino.mpi-inf.mpg.de\/\u003c\/a\u003e and click \u0026ldquo;Request a new account\u0026rdquo;. Then check the correct person, click \u0026ldquo;Proceed\u0026rdquo;, and a form will appear. There is only one place we need to change, which is \u0026ldquo;Email (Alias) Group(s)\u0026rdquo;, check \u0026ldquo;d1-phd\u0026rdquo; or \u0026ldquo;d1-postdocs\u0026rdquo; or \u0026ldquo;d1-students\u0026rdquo; or \u0026ldquo;d1-guest\u0026rdquo; according to the newcomer\u0026rsquo;s role (interns are in the category \u0026ldquo;d1-students\u0026rdquo;). Then click \u0026ldquo;Request a new account\u0026rdquo; and \u0026ldquo;Complete the request\u0026rdquo;.\u003c\/p\u003e"
-}
-</script><meta property="og:title" content="Home | Yonggang&#39;s homepage" />
-<meta property="og:type" content="website" />
-
-
-<meta property="og:image" content="https://yonggangjiang.github.io/images/icon.png">
-
-
-<meta property="og:url" content="https://yonggangjiang.github.io/docs/admin/" />
-
-
-
-
-
-<meta property="og:description" content="Eureka is a elegant and powerful theme for Hugo." />
-
-
-
-
-
-<meta property="og:locale" content="en" />
-
-
-
-
-<meta property="og:site_name" content="Yonggang&#39;s homepage" />
-
-
-
-
-
-
-
-
-<meta property="article:section" content="docs" />
-
-
-<link rel="alternate" type="application/rss+xml" href="https://yonggangjiang.github.io/docs/admin/index.xml" title="Yonggang's homepage" />
-
-
-<body class="flex flex-col min-h-screen">
-  <header class="fixed flex items-center w-full min-h-16 z-50 bg-secondary-bg shadow-sm">
-    <div class="w-full mx-auto"><script>
-    let storageColorScheme = localStorage.getItem("lightDarkMode")
-    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
-        document.getElementsByTagName('html')[0].classList.add('dark')
-    }
-</script>
-<nav class="flex items-center justify-center px-4 py-4 md:py-0" style="max-width:1300px; margin: 0 auto;">
-     
-        
-        
-    
-
-    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
-        <i class="fas fa-bars"></i>
-    </button>
-
-    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
     </div>
+    <p class="rail-foot"><a class="rail-home" href="/"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg><span>Homepage</span></a></p>
+  </div>
+</header>
 
+
+<div class="column">
+<nav class="chipbar" aria-label="Sections">
+  <ul class="chips" data-spy data-chips>
+    <li><a class="chip" href="#create-accounts-for-newcomers">Create Accounts for Newcomers</a></li>
+    <li><a class="chip" href="#update-d1-activity">Update D1 Activity</a></li>
+  </ul>
+  <button class="icon-btn menu-btn" id="nav-toggle" type="button" aria-controls="site-menu" aria-expanded="false" aria-label="Menu"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h10"/></svg></button>
 </nav>
-<script>
-    
-    let element = document.getElementById('lightDarkMode')
-    if (storageColorScheme == null || storageColorScheme == 'Auto') {
-        document.addEventListener('DOMContentLoaded', () => {
-            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
-        })
-    } else if (storageColorScheme == "Light") {
-        element.firstElementChild.classList.remove('fa-adjust')
-        element.firstElementChild.setAttribute("data-icon", 'sun')
-        element.firstElementChild.classList.add('fa-sun')
-    } else if (storageColorScheme == "Dark") {
-        element.firstElementChild.classList.remove('fa-adjust')
-        element.firstElementChild.setAttribute("data-icon", 'moon')
-        element.firstElementChild.classList.add('fa-moon')
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-        getcolorscheme();
-        switchBurger();
-    });
-</script>
-</div>
-  </header>
-  <main class="flex-grow pt-16">
 
 
-<div class="flex flex-col md:flex-row bg-secondary-bg rounded">
-    <div class="md:w-1/4 lg:w-1/6 border-r">
-        <div class="sticky top-16 pt-6">
-            
-
-
-
-
-
-<div id="sidebar-title" class="md:hidden mx-4 px-2 pt-4 pb-2 md:border-b text-tertiary-text md:text-primary-text">
-    <span class="font-semibold">Table of Contents</span>
-    <i class="fas fa-caret-right ml-1"></i>
-</div>
-
-<div id="sidebar-toc"
-    class="hidden md:block overflow-y-auto mx-6 md:mx-0 pr-6 pt-2 md:max-h-doc-sidebar bg-primary-bg md:bg-transparent">
-
-    <div class="flex flex-wrap ml-4 -mr-2 p-2 hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://yonggangjiang.github.io/docs/admin/&#34;">
-        <a class="text-eureka hover:text-eureka font-bold"
-            href="https://yonggangjiang.github.io/docs/admin/">Home</a>
-        
-        
-        
-
-
-    </div>
-    
-    
-
-
-<ul class="pl-4">
-    
-    <li class="py-2"></li>
+<main id="main" class="main main--docs" tabindex="-1">
+  <div class="doc-bar">
+    <nav class="crumbs" aria-label="Breadcrumb"><span aria-current="page">Admin</span></nav>
+    <div class="doc-tools">
+      <details class="toc-pop" data-popover>
+        <summary class="tool-btn toc-pop__btn"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 6h13"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M3 6h.01"/><path d="M3 12h.01"/><path d="M3 18h.01"/></svg><span>On this page</span><svg class="i toc-pop__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="toc-pop__panel"><nav class="toc toc--pop" aria-label="On this page" data-spy>
+  <ul>
+    <li><a href="#d1-software-admin-guidance">D1 Software Admin Guidance</a>
+      <ul>
+        <li><a href="#create-accounts-for-newcomers">Create Accounts for Newcomers</a>
+          <ul>
+            <li><a href="#step-1-create-an-account-request">Step 1: Create an account request.</a></li>
+            <li><a href="#step-2-send-information-to-the-newcomer">Step 2: send information to the newcomer.</a></li>
+          </ul>
+        </li>
+        <li><a href="#update-d1-activity">Update D1 Activity</a>
+          <ul>
+            <li><a href="#account-expiration">Account expiration</a></li>
+            <li><a href="#change-e-mail-group">Change e-mail group</a></li>
+          </ul>
+        </li>
+      </ul>
     </li>
-</ul>
-
-</div>
-
-
-
-        </div>
+  </ul>
+</nav></div>
+      </details>
     </div>
-    <div class="w-full md:w-3/4 lg:w-4/5 pb-8 pt-2 md:pt-8">
-        <div class="flex">
-            <div class="w-full lg:w-4/4 px-6">
-                
-                
-                <div class="content">
-                    <h1 id="d1-software-admin-guidance">D1 Software Admin Guidance</h1>
+  </div>
+  <article class="prose doc" id="article">
+<h1 id="d1-software-admin-guidance">D1 Software Admin Guidance</h1>
 <p>Ste-by-step guidance on the responsibilities of a D1 software admin.</p>
 <h2 id="create-accounts-for-newcomers">Create Accounts for Newcomers</h2>
 <p>Upon receiving the account-creating request e-mail from our secretary (usually the e-mail is sent to both the admin and the newcomer). There are three important pieces of information: the newcomer&rsquo;s name, the newcomer&rsquo;s current e-mail, and the newcomer&rsquo;s rule (Ph.D. student? Vister? Postdoc?).</p>
@@ -273,27 +116,20 @@ Go to https://domino.mpi-inf.mpg.de/ and click &ldquo;Request a new account&rdqu
 <h3 id="change-e-mail-group">Change e-mail group</h3>
 <p>This is also done in the &ldquo;IDM group manager&rdquo;, currently there are two situations: 1. someone wants to be added to the noon-seminar group 2. construct a conspiracy group for the hat making.</p>
 
-                </div>
-                
-                
-
-                
+  </article>
+</main>
 
 
+<footer class="site-footer">
+  <p class="footer-updated">Last updated in 2026 October.</p>
+  <p class="footer-links"><a class="footer-top" href="#top"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg><span>Back to top</span></a></p>
+</footer>
 
-                
-
-
-
-            </div>
-            
-            <div class="hidden lg:block lg:w-1/4">
-                
-                <div class="sticky top-16 z-10 hidden lg:block px-6 py-4  bg-secondary-bg pt-16 -mt-16 ">
-    <span class="text-lg font-semibold">On This Page</span>
 </div>
-<div class="sticky-toc hidden lg:block px-6 pb-6  pt-10 -mt-10 border-l ">
-    <nav id="TableOfContents">
+<aside class="toc-rail" aria-labelledby="toc-title">
+  <div class="toc-rail__inner">
+    <p class="nav-label" id="toc-title">On this page</p>
+    <nav class="toc" aria-labelledby="toc-title" data-spy>
   <ul>
     <li><a href="#d1-software-admin-guidance">D1 Software Admin Guidance</a>
       <ul>
@@ -313,43 +149,28 @@ Go to https://domino.mpi-inf.mpg.de/ and click &ldquo;Request a new account&rdqu
     </li>
   </ul>
 </nav>
-</div>
-<script>
-    window.addEventListener('DOMContentLoaded', () => {
-        enableStickyToc();
-    });
-</script>
-                
-            </div>
-            
-        </div>
+  </div>
+</aside>
 
+</div>
+<div class="drawer" id="site-menu" hidden>
+  <div class="drawer__backdrop" data-drawer-close></div>
+  <div class="drawer__panel" role="dialog" aria-modal="true" aria-labelledby="drawer-title" tabindex="-1">
+    <div class="drawer__head">
+      <p class="drawer__title" id="drawer-title">Menu</p>
+      <button class="icon-btn" type="button" data-drawer-close aria-label="Close menu"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
     </div>
-
-
+    <div class="drawer__group">
+      <p class="nav-label" id="drawer-theme">Appearance</p>
+      <div class="seg" role="group" aria-labelledby="drawer-theme">
+        <button type="button" class="seg__btn" data-theme-set="light" aria-pressed="false"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg><span>Light</span></button>
+        <button type="button" class="seg__btn" data-theme-set="dark" aria-pressed="false"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg><span>Dark</span></button>
+        <button type="button" class="seg__btn" data-theme-set="system" aria-pressed="false"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="20" height="14" x="2" y="3" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg><span>Auto</span></button>
+      </div>
+    </div>
+    <p class="drawer__group drawer__foot"><a class="rail-home" href="/"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg><span>Homepage</span></a></p>
+  </div>
 </div>
 
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        hljs.initHighlightingOnLoad();
-        changeSidebarHeight();
-        switchDocToc();
-    })
-</script>
-
-
-
-
-
-
-
-
-  </main>
-  <footer class="pl-scrollbar">
-    <div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
-    <p class="text-sm text-tertiary-text"> Last updated in 2026 September. </p>
-</div></div>
-  </footer>
 </body>
-
 </html>

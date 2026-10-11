@@ -1,515 +1,179 @@
-<!DOCTYPE html><meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
-<style>
-  .blackout {
-    background-color: black;
-    color: black;
-    cursor: pointer;
-    transition: color 0.3s ease;
-    padding: 2px 4px;
-    border-radius: 4px;
-  }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Convex Optimization | Yonggang&#39;s wiki</title>
+<meta name="description" content="Convex Optimization A set $K\subseteq\mathbb{R}^n$ is called convex if for any $x,y\in K,\lambda\in[0,1]$ we have $\lambda x&#43;(1-\lambda)y\in K$.
+A function …">
+<link rel="canonical" href="https://yonggangjiang.github.io/docs/wiki/convex/">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta property="og:title" content="Convex Optimization | Yonggang&#39;s wiki">
+<meta property="og:description" content="Convex Optimization A set $K\subseteq\mathbb{R}^n$ is called convex if for any $x,y\in K,\lambda\in[0,1]$ we have $\lambda x&#43;(1-\lambda)y\in K$.
+A function …">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://yonggangjiang.github.io/docs/wiki/convex/">
+<meta property="og:site_name" content="Yonggang&#39;s homepage">
+<meta property="og:image" content="https://yonggangjiang.github.io/images/me.png">
+<meta name="twitter:card" content="summary">
 
-  .blackout.revealed {
-    color: white;  
-  }
-</style>
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f5f8ff" data-color="#f5f8ff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#080f20" data-color="#080f20" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script>(function(){try{var bar={"dark":"#080f20","light":"#f5f8ff"};var t=localStorage.getItem("theme");if(t==="light"||t==="dark"){document.documentElement.setAttribute("data-theme",t);var m=document.querySelectorAll('meta[name="theme-color"]');for(var i=0;i<m.length;i++)m[i].setAttribute("content",bar[t]);}}catch(e){}})();</script>
+<link rel="preload" href="/fonts/source-serif-4-normal-400_700-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/source-serif-4-display-600_700-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/inter-normal-400_700-latin.woff2" as="font" type="font/woff2" crossorigin>
 
-
-<title>Convex Optimization | Home | Yonggang&#39;s homepage</title>
-
-<meta name="generator" content="Hugo Eureka 0.8.3-dev" />
-<link rel="stylesheet" href="https://yonggangjiang.github.io/css/eureka.min.css">
-<script defer src="https://yonggangjiang.github.io/js/eureka.min.js"></script>
-
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload"
-  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
-  as="style" onload="this.onload=null;this.rel='stylesheet'">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css"
-   media="print"
-  onload="this.media='all';this.onload=null" crossorigin>
-<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js"
-   crossorigin></script>
-
-  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/dart.min.js"
-     crossorigin></script>
-
-<script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js"
-   integrity="sha256-uNYoXefWRqv&#43;PsIF/OflNmwtKM4lStn9yrz2gVl6ymo="  crossorigin></script>
-
-
-
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
-   integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"  media="print"
-  onload="this.media='all';this.onload=null" crossorigin>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" 
-  integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"  crossorigin></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
-   integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"  crossorigin></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"></script>
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    renderMathInElement(document.body, {
+    if (!window.renderMathInElement) return;    
+    renderMathInElement(document.querySelector("main") || document.body, {
       delimiters: [
         { left: "$$", right: "$$", display: true },
         { left: "$", right: "$", display: false },
         { left: "\\(", right: "\\)", display: false },
         { left: "\\[", right: "\\]", display: true }
-      ],
+      ]
     });
   });
 </script>
 
-
-<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js" 
-  integrity="sha256-Zmpaaj&#43;GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE="  crossorigin></script>
-
-
-
-
-
-<link rel="icon" type="image/png" sizes="32x32" href="https://yonggangjiang.github.io/images/icon_hu_4f4e55a10d73f6ba.png">
-<link rel="apple-touch-icon" sizes="180x180" href="https://yonggangjiang.github.io/images/icon_hu_8190559dabbef89f.png">
-
-<meta name="description"
-  content="Convex Optimization
-A set $K\subseteq\mathbb{R}^n$ is called convex if for any $x,y\in K,\lambda\in[0,1]$ we have $\lambda x&#43;(1-\lambda)y\in K$.
-A function $f:K\to\mathbb{R}^n$ is called a convex function if $K$ is convex and for any $x,y\in K,\lambda\in[0,1]$ we have $\lambda f(x)&#43;(1-\lambda)f(y)\ge f(\lambda x&#43;(1-\lambda)y)$. In other words, the set $\lbrace(x,y)|y\ge f(x)\rbrace$ is a convex set in $\mathbb{R}^{n&#43;1}$.
-Supporting Hyperplane and Subgradients
-
-    
-        Seperating and Supporting Hyperplane Theorem
-    
-    
-        
-Suppose $K\subseteq\mathbb{R}^n$ is convex and closed. Then for any $y^*\in\mathbb{R}^n$ which is not a interior node of $K$, there exists $h\in\mathbb{R}^n\backslash\lbrace \mathbf{0}\rbrace$ such that for any $x\in K$ we have
-
-\[\langle x,h\rangle\le\langle y^*,h\rangle\]
-
-i.e., $h$ can define a hyperplane seperating $y^*$ and $K$.
-
-    
-
-
-    Proof.
-    
-        
-Since $|x-y^* |^2$ is a continuous function on $x$ and $K$ is closed, there exists $x^* \in K$ with smallest distance to $y^*$. Suppose $y^*\not\in K$, then $h:=y^* -x^* \not=0$. We will prove that $\langle x-x^* ,h\rangle \le 0$ for any $x\in K$, which will lead to our conclusion since $0&lt; \langle y^* -x^* ,h\rangle$. In the case $y^* \not\in K$, we have $\langle x,h\rangle&lt;\langle y^* ,h\rangle$, which is stronger. 
-
-Notice that $\lambda x &#43;(1-\lambda)x^* \in K$ for any $\lambda\in[0,1]$, and $x^*$ has the smallest distance to $y^*$, which means
-
-\[||\lambda x &#43;(1-\lambda)x^*-y^* ||^2\ge ||x^* -y^* ||^2\]
-\[||x^* -y^* &#43;\lambda(x - x^*)||^2\ge ||x^* -y^* ||^2\]
-\[-2\lambda\langle h,x-x^*\rangle &#43;\lambda^2||x-x^*||^2\ge 0\]
-
-By dividing $\lambda$ and take the limit $\lambda\to 0$, we get $\langle x-x^* , h\rangle\le 0$. 
-
-Now if $y^* \in K$, then since $y$ is not a interior node, there is an infinite sequence $y_0,y_1,...\to y^* $, and we can assign each $y_i$ an $h_i$ according to the above discussion, satisfying $\langle x,h_i\rangle\le\langle y_i^* ,h_i\rangle$. w.o.l.g, we can let $||h_i||=1$. Now the sequence $h_0,h_1,h_2,...$ must have a convergence subsequence with limit point $h^*$, since they are bounded. By taking $i\to\infty$, we get $\langle x,h^* \rangle\le\langle y^* ,h^* \rangle$ for any $x\in K$. 
-
-    
-
-
-
-
-    
-        Subgradients
-    
-    
-        
-
-Suppose $f:K\to\mathbb{R}$ is convex, then for any interior $x_0\in K$, there exists a vector $v$ such that for any $x\in K$ we have
-
-\[f(x)\ge f(x_0)&#43;\langle v,x-x_0\rangle\]
-
-$v$ is called the subgradient. When $f$ is differentiable at $x_0$, then $v$ can only be $\nabla f(x_0)$. 
-
-    
-
-
-    Proof.
-    
-        
-Recall that $\lbrace(x,y)|y\ge f(x)\rbrace$ is a convex set. By applying the above lemma on the set at $(x_0,f(x_0))$, we get a vector $h=\langle h_0,h_{n&#43;1}\rangle $ where $h_0\in\mathbb{R}^n,h_{n&#43;1}\in\mathbb{R}$. If $h_{n&#43;1}=0$, then there exists $x-x_0$ with the same direction as $h_0$ since $x$ is an interior point. Letting $\langle x-x_0,h\rangle &gt;0$, which is a contradiction. Thus, $h_{n&#43;1}\not 0$.
-
-We let $v=h_0/h_{n&#43;1}$. Intuitively, $(x,v\cdot x)$ defines the plane perpendicular to $h$. Now we have
-
-\[\langle h,(x,f(x))-(x_0,f(x_0))\rangle\le 0\]
-\[\langle \frac{h_0}{h_{n&#43;1}},x-x_0\rangle&#43;\left(f(x)-f(x_0)\right)\le 0\]
-
-
-By mulitply $-1$ at both side, we get our result. 
-
-    
-
-
-">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [{
-      "@type": "ListItem",
-      "position": 1 ,
-      "name":"Docs",
-      "item":"https://yonggangjiang.github.io/docs/"},{
-      "@type": "ListItem",
-      "position": 2 ,
-      "name":"Home",
-      "item":"https://yonggangjiang.github.io/docs/wiki/"},{
-      "@type": "ListItem",
-      "position": 3 ,
-      "name":"Convex Optimization",
-      "item":"https://yonggangjiang.github.io/docs/wiki/convex/"}]
-}
-</script>
-
-
-
-<script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://yonggangjiang.github.io/docs/wiki/convex/"
-    },
-    "headline": "Convex Optimization | Home | Yonggang\u0027s homepage","datePublished": "2020-11-20T22:52:56+08:00",
-    "dateModified": "2020-11-20T22:52:56+08:00",
-    "wordCount":  4110 ,
-    "publisher": {
-        "@type": "Person",
-        "name": "C. Wang",
-        "logo": {
-            "@type": "ImageObject",
-            "url": "https://yonggangjiang.github.io/images/icon.png"
-        }
-        },
-    "description": "\u003ch1 id=\u0022convex-optimization\u0022\u003eConvex Optimization\u003c\/h1\u003e\n\u003cp\u003eA set $K\\subseteq\\mathbb{R}^n$ is called \u003cstrong\u003econvex\u003c\/strong\u003e if for any $x,y\\in K,\\lambda\\in[0,1]$ we have $\\lambda x\u002b(1-\\lambda)y\\in K$.\u003c\/p\u003e\n\u003cp\u003eA function $f:K\\to\\mathbb{R}^n$ is called a convex function if $K$ is convex and for any $x,y\\in K,\\lambda\\in[0,1]$ we have $\\lambda f(x)\u002b(1-\\lambda)f(y)\\ge f(\\lambda x\u002b(1-\\lambda)y)$. \u003cstrong\u003eIn other words\u003c\/strong\u003e, the set $\\lbrace(x,y)|y\\ge f(x)\\rbrace$ is a convex set in $\\mathbb{R}^{n\u002b1}$.\u003c\/p\u003e\n\u003ch2 id=\u0022supporting-hyperplane-and-subgradients\u0022\u003eSupporting Hyperplane and Subgradients\u003c\/h2\u003e\n\u003cp\u003e\u003cdiv class=\u0022rounded border\u0022 style=\u0022line-height:15px; background-color: #A7C1F2; border-radius: 5px; border-color: #AAAAAA; border-left-width: 2px; border-top-width: 2px;\u0022\u003e\r\n    \u003cdiv class=\u0022px-2 pt-2 pb-2 font-bold\u0022\u003e\r\n        Seperating and Supporting Hyperplane Theorem\r\n    \u003c\/div\u003e\r\n    \u003cdiv class=\u0022rounded border px-4 pt-2 pb-2\u0022 style=\u0022background-color: white; border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-color: #AAAAAA; border-top-right-radius: 0%; border-top-left-radius: 0%;\u0022\u003e\r\n        \u003cdiv\u003e\r\nSuppose $K\\subseteq\\mathbb{R}^n$ is convex and closed. Then for any $y^*\\in\\mathbb{R}^n$ which is not a interior node of $K$, there exists $h\\in\\mathbb{R}^n\\backslash\\lbrace \\mathbf{0}\\rbrace$ such that for any $x\\in K$ we have\r\n\u003cdiv\u003e\r\n\\[\\langle x,h\\rangle\\le\\langle y^*,h\\rangle\\]\r\n\u003c\/div\u003e\r\ni.e., $h$ can define a hyperplane seperating $y^*$ and $K$.\r\n\u003c\/div\u003e\r\n    \u003c\/div\u003e\r\n\u003c\/div\u003e\n\u003cdiv class=\u0022rounded border\u0022 style=\u0022background-color: white; border-left-width: 2px; border-top-width: 2px; border-color: #AAAAAA; \u0022\u003e\r\n    \u003cdiv class=\u0022px-2 pt-1 pb-1 font-bold\u0022\u003e\u003ca style=\u0022cursor:pointer\u0022 id=\u0022proofsupporting\u0022\u003eProof.\u003c\/a\u003e\u003c\/div\u003e\r\n    \u003cdiv class=\u0022hidden px-4 pt-0 pb-2\u0022 id=\u0022proofcontentsupporting\u0022\u003e\r\n        \u003cdiv\u003e\r\nSince $|x-y^* |^2$ is a continuous function on $x$ and $K$ is closed, there exists $x^* \\in K$ with smallest distance to $y^*$. Suppose $y^*\\not\\in K$, then $h:=y^* -x^* \\not=0$. We will prove that $\\langle x-x^* ,h\\rangle \\le 0$ for any $x\\in K$, which will lead to our conclusion since $0\u003c \\langle y^* -x^* ,h\\rangle$. In the case $y^* \\not\\in K$, we have $\\langle x,h\\rangle\u003c\\langle y^* ,h\\rangle$, which is stronger. \r\n\r\nNotice that $\\lambda x \u002b(1-\\lambda)x^* \\in K$ for any $\\lambda\\in[0,1]$, and $x^*$ has the smallest distance to $y^*$, which means\r\n\u003cdiv\u003e\r\n\\[||\\lambda x \u002b(1-\\lambda)x^*-y^* ||^2\\ge ||x^* -y^* ||^2\\]\r\n\\[||x^* -y^* \u002b\\lambda(x - x^*)||^2\\ge ||x^* -y^* ||^2\\]\r\n\\[-2\\lambda\\langle h,x-x^*\\rangle \u002b\\lambda^2||x-x^*||^2\\ge 0\\]\r\n\u003c\/div\u003e\r\nBy dividing $\\lambda$ and take the limit $\\lambda\\to 0$, we get $\\langle x-x^* , h\\rangle\\le 0$. \r\n\r\nNow if $y^* \\in K$, then since $y$ is not a interior node, there is an infinite sequence $y_0,y_1,...\\to y^* $, and we can assign each $y_i$ an $h_i$ according to the above discussion, satisfying $\\langle x,h_i\\rangle\\le\\langle y_i^* ,h_i\\rangle$. w.o.l.g, we can let $||h_i||=1$. Now the sequence $h_0,h_1,h_2,...$ must have a convergence subsequence with limit point $h^*$, since they are bounded. By taking $i\\to\\infty$, we get $\\langle x,h^* \\rangle\\le\\langle y^* ,h^* \\rangle$ for any $x\\in K$. \r\n\u003c\/div\u003e\r\n    \u003c\/div\u003e\r\n\u003c\/div\u003e\r\n\u003cscript\u003e\r\n    document.getElementById(\u0027proofsupporting\u0027).addEventListener(\u0027click\u0027, () =\u003e {\r\n        element = document.getElementById(\u0027proofcontentsupporting\u0027)\r\n        console.log(element.classList)\r\n        if(element.classList.contains(\u0027hidden\u0027))\r\n            element.classList.remove(\u0027hidden\u0027)\r\n        else\r\n            element.classList.add(\u0027hidden\u0027)\r\n    })\r\n\u003c\/script\u003e\r\n\u003cdiv\u003e\u003c\/div\u003e\n\u003cdiv class=\u0022rounded border\u0022 style=\u0022line-height:15px; background-color: #A7C1F2; border-radius: 5px; border-color: #AAAAAA; border-left-width: 2px; border-top-width: 2px;\u0022\u003e\r\n    \u003cdiv class=\u0022px-2 pt-2 pb-2 font-bold\u0022\u003e\r\n        Subgradients\r\n    \u003c\/div\u003e\r\n    \u003cdiv class=\u0022rounded border px-4 pt-2 pb-2\u0022 style=\u0022background-color: white; border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-color: #AAAAAA; border-top-right-radius: 0%; border-top-left-radius: 0%;\u0022\u003e\r\n        \u003cdiv\u003e\r\n\r\nSuppose $f:K\\to\\mathbb{R}$ is convex, then for any interior $x_0\\in K$, there exists a vector $v$ such that for any $x\\in K$ we have\r\n\u003cdiv\u003e\r\n\\[f(x)\\ge f(x_0)\u002b\\langle v,x-x_0\\rangle\\]\r\n\u003c\/div\u003e\r\n$v$ is called the subgradient. When $f$ is differentiable at $x_0$, then $v$ can only be $\\nabla f(x_0)$. \r\n\u003c\/div\u003e\r\n    \u003c\/div\u003e\r\n\u003c\/div\u003e\n\u003cdiv class=\u0022rounded border\u0022 style=\u0022background-color: white; border-left-width: 2px; border-top-width: 2px; border-color: #AAAAAA; \u0022\u003e\r\n    \u003cdiv class=\u0022px-2 pt-1 pb-1 font-bold\u0022\u003e\u003ca style=\u0022cursor:pointer\u0022 id=\u0022proofsubgradients\u0022\u003eProof.\u003c\/a\u003e\u003c\/div\u003e\r\n    \u003cdiv class=\u0022hidden px-4 pt-0 pb-2\u0022 id=\u0022proofcontentsubgradients\u0022\u003e\r\n        \u003cdiv\u003e\r\nRecall that $\\lbrace(x,y)|y\\ge f(x)\\rbrace$ is a convex set. By applying the above lemma on the set at $(x_0,f(x_0))$, we get a vector $h=\\langle h_0,h_{n\u002b1}\\rangle $ where $h_0\\in\\mathbb{R}^n,h_{n\u002b1}\\in\\mathbb{R}$. If $h_{n\u002b1}=0$, then there exists $x-x_0$ with the same direction as $h_0$ since $x$ is an interior point. Letting $\\langle x-x_0,h\\rangle \u003e0$, which is a contradiction. Thus, $h_{n\u002b1}\\not 0$.\r\n\r\nWe let $v=h_0\/h_{n\u002b1}$. Intuitively, $(x,v\\cdot x)$ defines the plane perpendicular to $h$. Now we have\r\n\u003cdiv\u003e\r\n\\[\\langle h,(x,f(x))-(x_0,f(x_0))\\rangle\\le 0\\]\r\n\\[\\langle \\frac{h_0}{h_{n\u002b1}},x-x_0\\rangle\u002b\\left(f(x)-f(x_0)\\right)\\le 0\\]\r\n\u003c\/div\u003e\r\n\r\nBy mulitply $-1$ at both side, we get our result. \r\n\u003c\/div\u003e\r\n    \u003c\/div\u003e\r\n\u003c\/div\u003e\r\n\u003cscript\u003e\r\n    document.getElementById(\u0027proofsubgradients\u0027).addEventListener(\u0027click\u0027, () =\u003e {\r\n        element = document.getElementById(\u0027proofcontentsubgradients\u0027)\r\n        console.log(element.classList)\r\n        if(element.classList.contains(\u0027hidden\u0027))\r\n            element.classList.remove(\u0027hidden\u0027)\r\n        else\r\n            element.classList.add(\u0027hidden\u0027)\r\n    })\r\n\u003c\/script\u003e\r\n\u003cdiv\u003e\u003c\/div\u003e\u003c\/p\u003e"
-}
-</script><meta property="og:title" content="Convex Optimization | Home | Yonggang&#39;s homepage" />
-<meta property="og:type" content="article" />
-
-
-<meta property="og:image" content="https://yonggangjiang.github.io/images/icon.png">
-
-
-<meta property="og:url" content="https://yonggangjiang.github.io/docs/wiki/convex/" />
-
-
-
-
-<meta property="og:description" content="Convex Optimization
-A set $K\subseteq\mathbb{R}^n$ is called convex if for any $x,y\in K,\lambda\in[0,1]$ we have $\lambda x&#43;(1-\lambda)y\in K$.
-A function $f:K\to\mathbb{R}^n$ is called a convex function if $K$ is convex and for any $x,y\in K,\lambda\in[0,1]$ we have $\lambda f(x)&#43;(1-\lambda)f(y)\ge f(\lambda x&#43;(1-\lambda)y)$. In other words, the set $\lbrace(x,y)|y\ge f(x)\rbrace$ is a convex set in $\mathbb{R}^{n&#43;1}$.
-Supporting Hyperplane and Subgradients
-
-    
-        Seperating and Supporting Hyperplane Theorem
-    
-    
-        
-Suppose $K\subseteq\mathbb{R}^n$ is convex and closed. Then for any $y^*\in\mathbb{R}^n$ which is not a interior node of $K$, there exists $h\in\mathbb{R}^n\backslash\lbrace \mathbf{0}\rbrace$ such that for any $x\in K$ we have
-
-\[\langle x,h\rangle\le\langle y^*,h\rangle\]
-
-i.e., $h$ can define a hyperplane seperating $y^*$ and $K$.
-
-    
-
-
-    Proof.
-    
-        
-Since $|x-y^* |^2$ is a continuous function on $x$ and $K$ is closed, there exists $x^* \in K$ with smallest distance to $y^*$. Suppose $y^*\not\in K$, then $h:=y^* -x^* \not=0$. We will prove that $\langle x-x^* ,h\rangle \le 0$ for any $x\in K$, which will lead to our conclusion since $0&lt; \langle y^* -x^* ,h\rangle$. In the case $y^* \not\in K$, we have $\langle x,h\rangle&lt;\langle y^* ,h\rangle$, which is stronger. 
-
-Notice that $\lambda x &#43;(1-\lambda)x^* \in K$ for any $\lambda\in[0,1]$, and $x^*$ has the smallest distance to $y^*$, which means
-
-\[||\lambda x &#43;(1-\lambda)x^*-y^* ||^2\ge ||x^* -y^* ||^2\]
-\[||x^* -y^* &#43;\lambda(x - x^*)||^2\ge ||x^* -y^* ||^2\]
-\[-2\lambda\langle h,x-x^*\rangle &#43;\lambda^2||x-x^*||^2\ge 0\]
-
-By dividing $\lambda$ and take the limit $\lambda\to 0$, we get $\langle x-x^* , h\rangle\le 0$. 
-
-Now if $y^* \in K$, then since $y$ is not a interior node, there is an infinite sequence $y_0,y_1,...\to y^* $, and we can assign each $y_i$ an $h_i$ according to the above discussion, satisfying $\langle x,h_i\rangle\le\langle y_i^* ,h_i\rangle$. w.o.l.g, we can let $||h_i||=1$. Now the sequence $h_0,h_1,h_2,...$ must have a convergence subsequence with limit point $h^*$, since they are bounded. By taking $i\to\infty$, we get $\langle x,h^* \rangle\le\langle y^* ,h^* \rangle$ for any $x\in K$. 
-
-    
-
-
-
-
-    
-        Subgradients
-    
-    
-        
-
-Suppose $f:K\to\mathbb{R}$ is convex, then for any interior $x_0\in K$, there exists a vector $v$ such that for any $x\in K$ we have
-
-\[f(x)\ge f(x_0)&#43;\langle v,x-x_0\rangle\]
-
-$v$ is called the subgradient. When $f$ is differentiable at $x_0$, then $v$ can only be $\nabla f(x_0)$. 
-
-    
-
-
-    Proof.
-    
-        
-Recall that $\lbrace(x,y)|y\ge f(x)\rbrace$ is a convex set. By applying the above lemma on the set at $(x_0,f(x_0))$, we get a vector $h=\langle h_0,h_{n&#43;1}\rangle $ where $h_0\in\mathbb{R}^n,h_{n&#43;1}\in\mathbb{R}$. If $h_{n&#43;1}=0$, then there exists $x-x_0$ with the same direction as $h_0$ since $x$ is an interior point. Letting $\langle x-x_0,h\rangle &gt;0$, which is a contradiction. Thus, $h_{n&#43;1}\not 0$.
-
-We let $v=h_0/h_{n&#43;1}$. Intuitively, $(x,v\cdot x)$ defines the plane perpendicular to $h$. Now we have
-
-\[\langle h,(x,f(x))-(x_0,f(x_0))\rangle\le 0\]
-\[\langle \frac{h_0}{h_{n&#43;1}},x-x_0\rangle&#43;\left(f(x)-f(x_0)\right)\le 0\]
-
-
-By mulitply $-1$ at both side, we get our result. 
-
-    
-
-
-" />
-
-
-
-
-<meta property="og:locale" content="en" />
-
-
-
-
-<meta property="og:site_name" content="Yonggang&#39;s homepage" />
-
-
-
-
-
-
-<meta property="article:published_time" content="2020-11-20T22:52:56&#43;08:00" />
-
-
-<meta property="article:modified_time" content="2020-11-20T22:52:56&#43;08:00" />
-
-
-
-<meta property="article:section" content="docs" />
-
-
-
-
-
-<body class="flex flex-col min-h-screen">
-  <header class="fixed flex items-center w-full min-h-16 z-50 bg-secondary-bg shadow-sm">
-    <div class="w-full mx-auto"><script>
-    let storageColorScheme = localStorage.getItem("lightDarkMode")
-    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
-        document.getElementsByTagName('html')[0].classList.add('dark')
-    }
-</script>
-<nav class="flex items-center justify-center px-4 py-4 md:py-0" style="max-width:1300px; margin: 0 auto;">
-    <a href="/docs/wiki" class="mr-6 text-primary-text text-xl font-bold" style="color: black;">Yonggang's wiki</a>
-    
-
-    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
-        <i class="fas fa-bars"></i>
-    </button>
-
-    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
-    </div>
-
-</nav>
-<script>
-    
-    let element = document.getElementById('lightDarkMode')
-    if (storageColorScheme == null || storageColorScheme == 'Auto') {
-        document.addEventListener('DOMContentLoaded', () => {
-            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
-        })
-    } else if (storageColorScheme == "Light") {
-        element.firstElementChild.classList.remove('fa-adjust')
-        element.firstElementChild.setAttribute("data-icon", 'sun')
-        element.firstElementChild.classList.add('fa-sun')
-    } else if (storageColorScheme == "Dark") {
-        element.firstElementChild.classList.remove('fa-adjust')
-        element.firstElementChild.setAttribute("data-icon", 'moon')
-        element.firstElementChild.classList.add('fa-moon')
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-        getcolorscheme();
-        switchBurger();
-    });
-</script>
-</div>
-  </header>
-  <main class="flex-grow pt-16">
-
-
-<div class="flex flex-col md:flex-row bg-secondary-bg rounded">
-    <div class="md:w-1/4 lg:w-1/6 border-r">
-        <div class="sticky top-16 pt-6">
-            
-
-
-
-
-
-
-
-
-
-
-<div id="sidebar-title" class="md:hidden mx-4 px-2 pt-4 pb-2 md:border-b text-tertiary-text md:text-primary-text">
-    <span class="font-semibold">Table of Contents</span>
-    <i class="fas fa-caret-right ml-1"></i>
-</div>
-
-<div id="sidebar-toc"
-    class="hidden md:block overflow-y-auto mx-6 md:mx-0 pr-6 pt-2 md:max-h-doc-sidebar bg-primary-bg md:bg-transparent">
-
-    <div class="flex flex-wrap ml-4 -mr-2 p-2 hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://yonggangjiang.github.io/docs/wiki/&#34;">
-        <a class=" hover:text-eureka font-bold"
-            href="https://yonggangjiang.github.io/docs/wiki/">Home</a>
-        
-        
-        
-
+<link rel="stylesheet" href="/css/modern-sidebar-bundle.min.69f840065977fa0ea3c929d6d80cef590ea5c3a3a8ef682c391e5eef2fc4c941.css" integrity="sha256-afhABll3&#43;g6jySnW2AzvWQ6lw6Oo72gsOR5e7y/EyUE=">
+<script defer src="/js/site.min.7d2e60624697a8399205e1d06f04d0a0b003adf1d6a7f821ad9220b5d18d2573.js" integrity="sha256-fS5gYkaXqDmSBeHQbwTQoLADrfHWp/ghrZIgtdGNJXM="></script>
+<script defer src="/js/avatar-caption.min.863927548a51d409a8128fdb8c6874f2f6565cc5aaae3a83a97c581ffc81707e.js" integrity="sha256-hjknVIpR1AmoEo/bjGh08vZWXMWqrjqDqXxYH/yBcH4="></script>
+<script defer src="/js/modern-sidebar-variant.min.d44235078db1b531c72c84b9e9ffa2da7bc3a5912d110c2b19163bd8f0a53afe.js" integrity="sha256-1EI1B42xtTHHLIS56f&#43;i2nvDpZEtEQwrGRY72PClOv4="></script>
+<noscript><style>.theme-toggle,.menu-btn,.copy-btn,.folds-btn{display:none!important}@media (max-width:63.99em){.rail--docs .rail-nav,.rail--docs .rail-foot{display:block!important}.profile--compact .p-links{display:flex!important}}</style></noscript>
+
+</head>
+<body id="top" class="page page--docs">
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="shell shell--docs shell--toc">
+
+<header class="rail rail--docs" id="rail">
+  <div class="rail-inner">
+    <div class="docs-brand">
+      <a class="brand" href="/docs/wiki/"><img class="avatar avatar--sm" src="/images/me_hu78b6507a05da9074dfb0da277d46e879_597748_48x48_fill_q85_bgffffff_box_center_3.jpg" srcset="/images/me_hu78b6507a05da9074dfb0da277d46e879_597748_48x48_fill_q85_bgffffff_box_center_3.jpg 1x, /images/me_hu78b6507a05da9074dfb0da277d46e879_597748_96x96_fill_q85_bgffffff_box_center_3.jpg 2x" alt="" width="48" height="48">
+        <span class="brand-text"><span class="brand-name">Yonggang&#39;s wiki</span><span class="brand-sub">by Yonggang Jiang</span></span>
+      </a>
+      <button class="icon-btn theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="Dark theme" title="Dark theme"><svg class="i i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg><svg class="i i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></button>
 
     </div>
-    
-    
-
-
-<ul class="pl-4">
-    
-    
-    
-    <li class="py-1"></li>
-        <div class="  -mr-2 p-2  hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://yonggangjiang.github.io/docs/wiki/advanced/&#34;">
-            <a class=""
-            href="https://yonggangjiang.github.io/docs/wiki/advanced/">Advanced Algorithm (ETHz)</a>
-        </div>
-        
-    </li>
-    
-    
-    
-    
-    <li class="py-1"></li>
-        <div class="  -mr-2 p-2  hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://yonggangjiang.github.io/docs/wiki/math/&#34;">
-            <a class=""
-            href="https://yonggangjiang.github.io/docs/wiki/math/">Basic Math</a>
-        </div>
-        
-    </li>
-    
-    
-    
-    
-    <li class="py-1"></li>
-        <div class="  -mr-2 p-2  hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://yonggangjiang.github.io/docs/wiki/complexity/&#34;">
-            <a class=""
-            href="https://yonggangjiang.github.io/docs/wiki/complexity/">Complexity</a>
-        </div>
-        
-    </li>
-    
-    
-    
-    
-    <li class="py-1"></li>
-        <div class="  -mr-2 p-2  hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://yonggangjiang.github.io/docs/wiki/concentration/&#34;">
-            <a class=""
-            href="https://yonggangjiang.github.io/docs/wiki/concentration/">Concentration of Measure</a>
-        </div>
-        
-    </li>
-    
-    
-    
-    
-    <li class="py-1"></li>
-        <div class="  -mr-2 p-2  hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://yonggangjiang.github.io/docs/wiki/convex/&#34;">
-            <a class=" text-eureka "
-            href="https://yonggangjiang.github.io/docs/wiki/convex/">Convex Optimization</a>
-        </div>
-        
-    </li>
-    
-    
-    
-    
-    <li class="py-1"></li>
-        <div class="  -mr-2 p-2  hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://yonggangjiang.github.io/docs/wiki/finegrained/&#34;">
-            <a class=""
-            href="https://yonggangjiang.github.io/docs/wiki/finegrained/">Fine-Grained Complexity</a>
-        </div>
-        
-    </li>
-    
-    
-    
-    
-    <li class="py-1"></li>
-        <div class="  -mr-2 p-2  hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://yonggangjiang.github.io/docs/wiki/graph/&#34;">
-            <a class=""
-            href="https://yonggangjiang.github.io/docs/wiki/graph/">Graph Theory</a>
-        </div>
-        
-    </li>
-    
-    
-    
-    
-    <li class="py-1"></li>
-        <div class="  -mr-2 p-2  hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://yonggangjiang.github.io/docs/wiki/matrix/&#34;">
-            <a class=""
-            href="https://yonggangjiang.github.io/docs/wiki/matrix/">Matrix</a>
-        </div>
-        
-    </li>
-    
-    
-    
-    
-    <li class="py-1"></li>
-        <div class="  -mr-2 p-2  hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://yonggangjiang.github.io/docs/wiki/ml/&#34;">
-            <a class=""
-            href="https://yonggangjiang.github.io/docs/wiki/ml/">ML Foundations</a>
-        </div>
-        
-    </li>
-    
-    
-    <li class="py-2"></li>
-    </li>
+    <nav class="rail-nav" aria-labelledby="rail-pages">
+      <p class="nav-label" id="rail-pages">Pages</p>
+      <ul class="nav-list nav-list--pages">
+  <li><a href="/docs/wiki/"><span class="nav-text">Home</span></a></li>
+  <li>
+    <a href="/docs/wiki/advanced/"><span class="nav-text">Advanced Algorithm (ETHz)</span></a>
+  </li>
+  <li>
+    <a href="/docs/wiki/math/"><span class="nav-text">Basic Math</span></a>
+  </li>
+  <li>
+    <a href="/docs/wiki/complexity/"><span class="nav-text">Complexity</span></a>
+  </li>
+  <li>
+    <a href="/docs/wiki/concentration/"><span class="nav-text">Concentration of Measure</span></a>
+  </li>
+  <li>
+    <a href="/docs/wiki/convex/" aria-current="page"><span class="nav-text">Convex Optimization</span></a>
+  </li>
+  <li>
+    <a href="/docs/wiki/finegrained/"><span class="nav-text">Fine-Grained Complexity</span></a>
+  </li>
+  <li>
+    <a href="/docs/wiki/graph/"><span class="nav-text">Graph Theory</span></a>
+  </li>
+  <li>
+    <a href="/docs/wiki/matrix/"><span class="nav-text">Matrix</span></a>
+  </li>
+  <li>
+    <a href="/docs/wiki/ml/"><span class="nav-text">ML Foundations</span></a>
+  </li>
 </ul>
 
-</div>
+    </nav>
+    <p class="rail-foot"><a class="rail-home" href="/"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg><span>Homepage</span></a></p>
+  </div>
+</header>
 
 
+<div class="column">
+<nav class="chipbar" aria-label="Sections">
+  <ul class="chips" data-spy data-chips>
+    <li><a class="chip" href="#supporting-hyperplane-and-subgradients">Supporting Hyperplane and Subgradients</a></li>
+    <li><a class="chip" href="#relation-to-derivative">Relation to Derivative</a></li>
+    <li><a class="chip" href="#duality">Duality</a></li>
+    <li><a class="chip" href="#mirror-decent">Mirror Decent</a></li>
+    <li><a class="chip" href="#gradient-decent">Gradient Decent</a></li>
+    <li><a class="chip" href="#accelerated-gradient-descent">Accelerated Gradient Descent</a></li>
+    <li><a class="chip" href="#newtons-method">Newton’s Method</a></li>
+    <li><a class="chip" href="#interior-node-method">Interior Node Method</a></li>
+  </ul>
+  <button class="icon-btn menu-btn" id="nav-toggle" type="button" aria-controls="site-menu" aria-expanded="false" aria-label="Menu"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h10"/></svg></button>
+</nav>
 
 
-
-        </div>
+<main id="main" class="main main--docs" tabindex="-1">
+  <div class="doc-bar">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/docs/wiki/">Wiki</a><span class="crumb-sep" aria-hidden="true">/</span><span aria-current="page">Convex Optimization</span></nav>
+    <div class="doc-tools">
+      <button class="tool-btn folds-btn" type="button" data-folds-toggle><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m7 15 5 5 5-5"/><path d="m7 9 5-5 5 5"/></svg><span data-label>Expand all proofs</span></button>
+      <details class="toc-pop" data-popover>
+        <summary class="tool-btn toc-pop__btn"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 6h13"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M3 6h.01"/><path d="M3 12h.01"/><path d="M3 18h.01"/></svg><span>On this page</span><svg class="i toc-pop__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="toc-pop__panel"><nav class="toc toc--pop" aria-label="On this page" data-spy>
+  <ul>
+    <li><a href="#convex-optimization">Convex Optimization</a>
+      <ul>
+        <li><a href="#supporting-hyperplane-and-subgradients">Supporting Hyperplane and Subgradients</a></li>
+        <li><a href="#relation-to-derivative">Relation to Derivative</a></li>
+        <li><a href="#duality">Duality</a></li>
+        <li><a href="#mirror-decent">Mirror Decent</a>
+          <ul>
+            <li><a href="#analysis">Analysis</a></li>
+          </ul>
+        </li>
+        <li><a href="#gradient-decent">Gradient Decent</a></li>
+        <li><a href="#accelerated-gradient-descent">Accelerated Gradient Descent</a>
+          <ul>
+            <li><a href="#analysis-1">Analysis</a></li>
+            <li><a href="#when-function-is-both-lipschitz-and-strongly-convex">When Function is both Lipschitz and Strongly Convex</a></li>
+            <li><a href="#application-solve-linear-system">Application: Solve Linear System</a></li>
+          </ul>
+        </li>
+        <li><a href="#newtons-method">Newton&rsquo;s Method</a>
+          <ul>
+            <li><a href="#intuition-1">Intuition 1</a></li>
+            <li><a href="#intuition-2">Intuition 2</a></li>
+            <li><a href="#ne-condition">NE condition</a></li>
+            <li><a href="#intuition-3">Intuition 3</a></li>
+            <li><a href="#nl-condition">NL condition</a></li>
+          </ul>
+        </li>
+        <li><a href="#interior-node-method">Interior Node Method</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      </details>
     </div>
-    <div class="w-full md:w-3/4 lg:w-4/5 pb-8 pt-2 md:pt-8">
-        <div class="flex">
-            <div class="w-full lg:w-4/4 px-6">
-                
-                
-                <div class="content">
-                    <h1 id="convex-optimization">Convex Optimization</h1>
+  </div>
+  <article class="prose doc" id="article">
+<h1 id="convex-optimization">Convex Optimization</h1>
 <p>A set $K\subseteq\mathbb{R}^n$ is called <strong>convex</strong> if for any $x,y\in K,\lambda\in[0,1]$ we have $\lambda x+(1-\lambda)y\in K$.</p>
 <p>A function $f:K\to\mathbb{R}^n$ is called a convex function if $K$ is convex and for any $x,y\in K,\lambda\in[0,1]$ we have $\lambda f(x)+(1-\lambda)f(y)\ge f(\lambda x+(1-\lambda)y)$. <strong>In other words</strong>, the set $\lbrace(x,y)|y\ge f(x)\rbrace$ is a convex set in $\mathbb{R}^{n+1}$.</p>
 <h2 id="supporting-hyperplane-and-subgradients">Supporting Hyperplane and Subgradients</h2>
-<p><div class="rounded border" style="line-height:15px; background-color: #A7C1F2; border-radius: 5px; border-color: #AAAAAA; border-left-width: 2px; border-top-width: 2px;">
-    <div class="px-2 pt-2 pb-2 font-bold">
-        Seperating and Supporting Hyperplane Theorem
+<p><div class="thm" data-kind="box">
+    <div class="thm__head">
+        <span class="thm__title">Seperating and Supporting Hyperplane Theorem</span>
     </div>
-    <div class="rounded border px-4 pt-2 pb-2" style="background-color: white; border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-color: #AAAAAA; border-top-right-radius: 0%; border-top-left-radius: 0%;">
+    <div class="thm__body">
         <div>
 Suppose $K\subseteq\mathbb{R}^n$ is convex and closed. Then for any $y^*\in\mathbb{R}^n$ which is not a interior node of $K$, there exists $h\in\mathbb{R}^n\backslash\lbrace \mathbf{0}\rbrace$ such that for any $x\in K$ we have
 <div>
@@ -519,9 +183,9 @@ i.e., $h$ can define a hyperplane seperating $y^*$ and $K$.
 </div>
     </div>
 </div>
-<div class="rounded border" style="background-color: white; border-left-width: 2px; border-top-width: 2px; border-color: #AAAAAA; ">
-    <div class="px-2 pt-1 pb-1 font-bold"><a style="cursor:pointer" id="proofsupporting">Proof.</a></div>
-    <div class="hidden px-4 pt-0 pb-2" id="proofcontentsupporting">
+<details class="fold" data-kind="proof">
+    <summary class="fold__label"><span class="fold__chev"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m9 6 6 6-6 6"/></svg></span><span class="fold__text">Proof.</span></summary>
+    <div class="fold__body">
         <div>
 Since $|x-y^* |^2$ is a continuous function on $x$ and $K$ is closed, there exists $x^* \in K$ with smallest distance to $y^*$. Suppose $y^*\not\in K$, then $h:=y^* -x^* \not=0$. We will prove that $\langle x-x^* ,h\rangle \le 0$ for any $x\in K$, which will lead to our conclusion since $0< \langle y^* -x^* ,h\rangle$. In the case $y^* \not\in K$, we have $\langle x,h\rangle<\langle y^* ,h\rangle$, which is stronger. 
 
@@ -536,23 +200,13 @@ By dividing $\lambda$ and take the limit $\lambda\to 0$, we get $\langle x-x^* ,
 Now if $y^* \in K$, then since $y$ is not a interior node, there is an infinite sequence $y_0,y_1,...\to y^* $, and we can assign each $y_i$ an $h_i$ according to the above discussion, satisfying $\langle x,h_i\rangle\le\langle y_i^* ,h_i\rangle$. w.o.l.g, we can let $||h_i||=1$. Now the sequence $h_0,h_1,h_2,...$ must have a convergence subsequence with limit point $h^*$, since they are bounded. By taking $i\to\infty$, we get $\langle x,h^* \rangle\le\langle y^* ,h^* \rangle$ for any $x\in K$. 
 </div>
     </div>
-</div>
-<script>
-    document.getElementById('proofsupporting').addEventListener('click', () => {
-        element = document.getElementById('proofcontentsupporting')
-        console.log(element.classList)
-        if(element.classList.contains('hidden'))
-            element.classList.remove('hidden')
-        else
-            element.classList.add('hidden')
-    })
-</script>
+</details>
 <div></div>
-<div class="rounded border" style="line-height:15px; background-color: #A7C1F2; border-radius: 5px; border-color: #AAAAAA; border-left-width: 2px; border-top-width: 2px;">
-    <div class="px-2 pt-2 pb-2 font-bold">
-        Subgradients
+<div class="thm" data-kind="box">
+    <div class="thm__head">
+        <span class="thm__title">Subgradients</span>
     </div>
-    <div class="rounded border px-4 pt-2 pb-2" style="background-color: white; border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-color: #AAAAAA; border-top-right-radius: 0%; border-top-left-radius: 0%;">
+    <div class="thm__body">
         <div>
 
 Suppose $f:K\to\mathbb{R}$ is convex, then for any interior $x_0\in K$, there exists a vector $v$ such that for any $x\in K$ we have
@@ -563,9 +217,9 @@ $v$ is called the subgradient. When $f$ is differentiable at $x_0$, then $v$ can
 </div>
     </div>
 </div>
-<div class="rounded border" style="background-color: white; border-left-width: 2px; border-top-width: 2px; border-color: #AAAAAA; ">
-    <div class="px-2 pt-1 pb-1 font-bold"><a style="cursor:pointer" id="proofsubgradients">Proof.</a></div>
-    <div class="hidden px-4 pt-0 pb-2" id="proofcontentsubgradients">
+<details class="fold" data-kind="proof">
+    <summary class="fold__label"><span class="fold__chev"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m9 6 6 6-6 6"/></svg></span><span class="fold__text">Proof.</span></summary>
+    <div class="fold__body">
         <div>
 Recall that $\lbrace(x,y)|y\ge f(x)\rbrace$ is a convex set. By applying the above lemma on the set at $(x_0,f(x_0))$, we get a vector $h=\langle h_0,h_{n+1}\rangle $ where $h_0\in\mathbb{R}^n,h_{n+1}\in\mathbb{R}$. If $h_{n+1}=0$, then there exists $x-x_0$ with the same direction as $h_0$ since $x$ is an interior point. Letting $\langle x-x_0,h\rangle >0$, which is a contradiction. Thus, $h_{n+1}\not 0$.
 
@@ -578,24 +232,14 @@ We let $v=h_0/h_{n+1}$. Intuitively, $(x,v\cdot x)$ defines the plane perpendicu
 By mulitply $-1$ at both side, we get our result. 
 </div>
     </div>
-</div>
-<script>
-    document.getElementById('proofsubgradients').addEventListener('click', () => {
-        element = document.getElementById('proofcontentsubgradients')
-        console.log(element.classList)
-        if(element.classList.contains('hidden'))
-            element.classList.remove('hidden')
-        else
-            element.classList.add('hidden')
-    })
-</script>
+</details>
 <div></div></p>
 <p>The opposite direction of the above theorem also hold. So this is acctually an equivalent definition for convex function.
-<div class="rounded border" style="line-height:15px; background-color: #A7C1F2; border-radius: 5px; border-color: #AAAAAA; border-left-width: 2px; border-top-width: 2px;">
-    <div class="px-2 pt-2 pb-2 font-bold">
-        Equivalence
+<div class="thm" data-kind="box">
+    <div class="thm__head">
+        <span class="thm__title">Equivalence</span>
     </div>
-    <div class="rounded border px-4 pt-2 pb-2" style="background-color: white; border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-color: #AAAAAA; border-top-right-radius: 0%; border-top-left-radius: 0%;">
+    <div class="thm__body">
         <div>
 
 Suppose $f:K\to\mathbb{R}$, then $f$ is convex iff. for any interior $x_0\in K$, there exists a vector $v$ such that for any $x\in K$ we have
@@ -613,11 +257,11 @@ For any $x,y\in K,\lambda\in(0,1)$, let $z=\lambda x+(1-\lambda y)$, we have</p>
 Sum up this two inequalities. 
 <h2 id="relation-to-derivative">Relation to Derivative</h2>
 <p>When $f$ is diferentiable, the $v$ in the above discussion is simply $\nabla f$. We have the following relationship to derivative.
-<div class="rounded border" style="line-height:15px; background-color: #A7C1F2; border-radius: 5px; border-color: #AAAAAA; border-left-width: 2px; border-top-width: 2px;">
-    <div class="px-2 pt-2 pb-2 font-bold">
-        Differential Convex Function
+<div class="thm" data-kind="box">
+    <div class="thm__head">
+        <span class="thm__title">Differential Convex Function</span>
     </div>
-    <div class="rounded border px-4 pt-2 pb-2" style="background-color: white; border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-color: #AAAAAA; border-top-right-radius: 0%; border-top-left-radius: 0%;">
+    <div class="thm__body">
         <div>
 Suppose $f:K\to\mathbb{R}$ is twice differentiable. Then $f$ is convex if and only if for any $x,y\in K$ we have
 <div>
@@ -646,19 +290,19 @@ Which is also equivalent to
 </div>
 <p>It is easy to see that the dual maximum value is at most the primal minumum value by swaping $\inf$ and $\sup$ in the dual problem (recall that minumum of maximums are at least the maximum of minimums). This is called the weak duality.</p>
 <p>If we want the strong duality holds, i.e., dual solution is euqal to primal solution, a useful constraint to the primal problem is <a href="https://en.wikipedia.org/wiki/Slater%27s_condition">Slater&rsquo;s condition</a>. We have the following theorem.</p>
-<div class="rounded border" style="line-height:15px; background-color: #A7C1F2; border-radius: 5px; border-color: #AAAAAA; border-left-width: 2px; border-top-width: 2px;">
-    <div class="px-2 pt-2 pb-2 font-bold">
-        Strong Duality
+<div class="thm" data-kind="box">
+    <div class="thm__head">
+        <span class="thm__title">Strong Duality</span>
     </div>
-    <div class="rounded border px-4 pt-2 pb-2" style="background-color: white; border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-color: #AAAAAA; border-top-right-radius: 0%; border-top-left-radius: 0%;">
+    <div class="thm__body">
         <div>
 Suppose in Primal problem, $f,f_1,f_2,...,f_m$ are all convex functions, and $h_1,...,h_k$ are affine functions, and there exists $x^*\in\mathbb{R}^n$ such that $f_i(x^*)<0$ for all $i\in[m]$ and $h_j(x^* )=0$ for all $j\in[k]$, then the the dual and primal have the same solution.
 </div>
     </div>
 </div>
-<div class="rounded border" style="background-color: white; border-left-width: 2px; border-top-width: 2px; border-color: #AAAAAA; ">
-    <div class="px-2 pt-1 pb-1 font-bold"><a style="cursor:pointer" id="proofstrong dualitry">Proof.</a></div>
-    <div class="hidden px-4 pt-0 pb-2" id="proofcontentstrong dualitry">
+<details class="fold" data-kind="proof">
+    <summary class="fold__label"><span class="fold__chev"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m9 6 6 6-6 6"/></svg></span><span class="fold__text">Proof.</span></summary>
+    <div class="fold__body">
         <div>
 Omit $h_j$ by decreasing the dimension. <span style="color:red">(need to verify)</span>
 </br>
@@ -678,25 +322,15 @@ But there must exists an $\lambda_k\not=0$ since $(\lambda_0,\lambda)\not=\mathb
 
 </div>
     </div>
-</div>
-<script>
-    document.getElementById('proofstrong dualitry').addEventListener('click', () => {
-        element = document.getElementById('proofcontentstrong dualitry')
-        console.log(element.classList)
-        if(element.classList.contains('hidden'))
-            element.classList.remove('hidden')
-        else
-            element.classList.add('hidden')
-    })
-</script>
+</details>
 <div></div>
 <p><strong>Remark:</strong>  If we add affine equality constraint, then we can decrease the dimension and again check the condition and use the lemma.</p>
 <p>The following lemma is useful to find the optimal value if functions are convext and differentiable, by just finding the stable point.</p>
-<div class="rounded border" style="line-height:15px; background-color: #A7C1F2; border-radius: 5px; border-color: #AAAAAA; border-left-width: 2px; border-top-width: 2px;">
-    <div class="px-2 pt-2 pb-2 font-bold">
-        KKT condition
+<div class="thm" data-kind="box">
+    <div class="thm__head">
+        <span class="thm__title">KKT condition</span>
     </div>
-    <div class="rounded border px-4 pt-2 pb-2" style="background-color: white; border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-color: #AAAAAA; border-top-right-radius: 0%; border-top-left-radius: 0%;">
+    <div class="thm__body">
         <div>
 Let $L(x,\lambda,\mu)=f(x)+\sum_{i=1}^m\lambda_if_i(x)+\sum_{j=1}^k\mu_jh_j(x)$. Suppose $x'$ and $(\lambda',\mu')$ are the Primal and Dual optimal point and $f(x')=g(\lambda',\mu')$, then we must have $\partial L_x(x',\lambda',\mu')=0$ and $\lambda_i f_i(x)=0$ for all $i\in[m]$. If $f,f_i$ are convex and $h_j$ are affine, then the converse is also true.
 </div>
@@ -756,11 +390,11 @@ Where $D_R$ is the Bregman divergence of a function $R$ which is defined to be $
 </div>
 <p>If we want to achieve $\epsilon$ approximation, then we need to choose $T=\frac{2DG^2}{\epsilon^2\sigma}$.</p>
 <p>We sumarize all the requirement for mirror decent here.</p>
-<div class="rounded border" style="line-height:15px; background-color: MediumSeaGreen; border-radius: 5px; border-color: #AAAAAA; border-left-width: 2px; border-top-width: 2px;">
-    <div class="px-2 pt-2 pb-2 font-bold">
-        Mirror Decent Algorithm
+<div class="thm thm--color" data-kind="colorbox" style="--thm-color: MediumSeaGreen;">
+    <div class="thm__head">
+        <span class="thm__title">Mirror Decent Algorithm</span>
     </div>
-    <div class="rounded border px-4 pt-2 pb-2" style="background-color: white; border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-color: #AAAAAA; border-top-right-radius: 0%; border-top-left-radius: 0%;">
+    <div class="thm__body">
         
 Mirror decent to find the minimum of convex function $f$ should choose a good measurement functioin $R$ and the update rule is $x_{t+1}=\argmin_{x\in K}D_R(x,\nabla^{-1}R\left(\nabla R(x_t)-\eta g_t\right))$. We need the following assumption to compute the update.
 
@@ -770,11 +404,11 @@ Mirror decent to find the minimum of convex function $f$ should choose a good me
 
     </div>
 </div>
-<div class="rounded border" style="line-height:15px; background-color: #A7C1F2; border-radius: 5px; border-color: #AAAAAA; border-left-width: 2px; border-top-width: 2px;">
-    <div class="px-2 pt-2 pb-2 font-bold">
-        Mirror Decent Efficiency
+<div class="thm" data-kind="box">
+    <div class="thm__head">
+        <span class="thm__title">Mirror Decent Efficiency</span>
     </div>
-    <div class="rounded border px-4 pt-2 pb-2" style="background-color: white; border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-color: #AAAAAA; border-top-right-radius: 0%; border-top-left-radius: 0%;">
+    <div class="thm__body">
         <div>
 To make Mirror Decent efficient, we need to following assumptions. For some good choosed norm and dual norm $||\cdot||,||\cdot||^*$, if we have
 
@@ -821,11 +455,11 @@ Then one can choose $\eta=\frac{\sigma\epsilon}{G^2}$ and runs for $T=\frac{2DG^
 <h2 id="accelerated-gradient-descent">Accelerated Gradient Descent</h2>
 <p>Accelerated Gradient Descent is a combinition of Gradient decent and Mirror decent. This will lead to a $\sqrt{\epsilon}^{-1}$ time cost, much faster than previous algorithm. Starting from a point $x_0,y_0,z_0$, we procede the decent as following: $z_{t-1}$ procedes a mirror decent based on the gradient at $y_{t-1}$ to get $z_t$, $y_{t-1}$ procedes a gradient decent to get $x_t$, choose an appropriete linear combinition of $x_t$ and $z_t$ to get $y_t$.</p>
 <p>In this section $||\cdot||$ is an arbitrary norm.
-<div class="rounded border" style="line-height:15px; background-color: MediumSeaGreen; border-radius: 5px; border-color: #AAAAAA; border-left-width: 2px; border-top-width: 2px;">
-    <div class="px-2 pt-2 pb-2 font-bold">
-        Accelerated Gradient Descent Algorithm
+<div class="thm thm--color" data-kind="colorbox" style="--thm-color: MediumSeaGreen;">
+    <div class="thm__head">
+        <span class="thm__title">Accelerated Gradient Descent Algorithm</span>
     </div>
-    <div class="rounded border px-4 pt-2 pb-2" style="background-color: white; border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-color: #AAAAAA; border-top-right-radius: 0%; border-top-left-radius: 0%;">
+    <div class="thm__body">
         
 <div>
 Initialize $x_0,z_0$, choose a regularizer $R$, choose appropriate $\gamma_t,\eta_t,\eta'_t$ for any $t\in\mathbb{N}^+$ do
@@ -841,11 +475,11 @@ i.e., when $||\cdot||=||\cdot||_2$, the algorithm is
     </div>
 </div></p>
 <p>With some assumptions we can prove the efficiency.
-<div class="rounded border" style="line-height:15px; background-color: #A7C1F2; border-radius: 5px; border-color: #AAAAAA; border-left-width: 2px; border-top-width: 2px;">
-    <div class="px-2 pt-2 pb-2 font-bold">
-        Accelerated Gradient Descent Efficiency
+<div class="thm" data-kind="box">
+    <div class="thm__head">
+        <span class="thm__title">Accelerated Gradient Descent Efficiency</span>
     </div>
-    <div class="rounded border px-4 pt-2 pb-2" style="background-color: white; border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-color: #AAAAAA; border-top-right-radius: 0%; border-top-left-radius: 0%;">
+    <div class="thm__body">
         <div>
 If the following conditions are satisfied
 <li>$f$ is $1$-smooth with repect to norm $||\cdot||$. </li>
@@ -949,11 +583,11 @@ Now we use the fact to find $x_t$ such that $f(x_t)\le\phi_t(x)$ by induction.
 </div>
 <h3 id="ne-condition">NE condition</h3>
 <p>Now we seek for assumptions that make Newton&rsquo;s Method efficient. Use standard analysis in one-dimation we can see the crutial value for the convergence is $g&rsquo;&rsquo;(x)/g&rsquo;(x)$, the smaller the better.</p>
-<div class="rounded border" style="line-height:15px; background-color: #A7C1F2; border-radius: 5px; border-color: #AAAAAA; border-left-width: 2px; border-top-width: 2px;">
-    <div class="px-2 pt-2 pb-2 font-bold">
-        Convergence in NE condition
+<div class="thm" data-kind="box">
+    <div class="thm__head">
+        <span class="thm__title">Convergence in NE condition</span>
     </div>
-    <div class="rounded border px-4 pt-2 pb-2" style="background-color: white; border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-color: #AAAAAA; border-top-right-radius: 0%; border-top-left-radius: 0%;">
+    <div class="thm__body">
         <div>
 Let $f:\mathbb{R}^n\to\mathbb{R}$ be a function and write $H(x)=\nabla^2f(x)$ for simplicity. Let $x^\star$ be one of its minimal value. Suppose there exists $L,h,R$ such that in the Euclidean Ball centered as $x^\star$ with radio $R$ denoted as $B(x^\star, R)$, has the following property (called $NE\left(\frac{L}{2h}\right))$ condition)
 <ul>
@@ -980,11 +614,11 @@ Let $f:\mathbb{R}^n\to\mathbb{R}$ be a function and write $H(x)=\nabla^2f(x)$ fo
 <p>And that means we should use the assumption $e^T\nabla^2 f(x_0)e=1$. So we set the norm $||\cdot||=\sqrt{e^T\nabla^2 f(x_0)e}$. That is called the <strong>Local Norm</strong> based on $x_0$ in the book, written as $||\cdot||_{x_0}$. It will lead to the intuition for the following condition and analysis.</p>
 <h3 id="nl-condition">NL condition</h3>
 <p>Remember that $g&rsquo;&rsquo;(x)/g&rsquo;(x)$ is crucial, which can also be written as $\left|\frac{g&rsquo;(x)-g&rsquo;(y)}{x-y}\cdot\frac{1}{g&rsquo;(x)}\right|$. If this term is bounded by a constant $M$, where $|x-y|=\delta$ is small enough, then $(1-M\delta)g&rsquo;(x)\le g&rsquo;(y)\le (1+M\delta)g&rsquo;(x)$, whenever $x$ and $y$ are close. Combining the local norm, we get the following lemma.</p>
-<div class="rounded border" style="line-height:15px; background-color: #A7C1F2; border-radius: 5px; border-color: #AAAAAA; border-left-width: 2px; border-top-width: 2px;">
-    <div class="px-2 pt-2 pb-2 font-bold">
-        Convergence in NL condition
+<div class="thm" data-kind="box">
+    <div class="thm__head">
+        <span class="thm__title">Convergence in NL condition</span>
     </div>
-    <div class="rounded border px-4 pt-2 pb-2" style="background-color: white; border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-color: #AAAAAA; border-top-right-radius: 0%; border-top-left-radius: 0%;">
+    <div class="thm__body">
         <div>
 Let $f:\mathbb{R}^n\to\mathbb{R}$ be a function and write $H(x)=\nabla^2f(x)$ for simplicity. Let $x^\star$ be one of its minimal value. Suppose for any $x,y\in\mathbb{R}$ where $||x-y||_{x}\le\delta\le\frac{1}{6}$ we have
 <div>
@@ -1011,9 +645,9 @@ Let $f:\mathbb{R}^n\to\mathbb{R}$ be a function and write $H(x)=\nabla^2f(x)$ fo
 \]
 </div>
 <p>Here we define $\log(0)=-\infty$. Such a function is smooth. We can also prove <strong>it satisfies the NL condition</strong>.</p>
-<div class="rounded border" style="background-color: white; border-left-width: 2px; border-top-width: 2px; border-color: #AAAAAA; ">
-    <div class="px-2 pt-1 pb-1 font-bold"><a style="cursor:pointer" id="proofsatisfies the NL condition">Proof.</a></div>
-    <div class="hidden px-4 pt-0 pb-2" id="proofcontentsatisfies the NL condition">
+<details class="fold" data-kind="proof">
+    <summary class="fold__label"><span class="fold__chev"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m9 6 6 6-6 6"/></svg></span><span class="fold__text">Proof.</span></summary>
+    <div class="fold__body">
         <div>
 <p>The Hessian of $F$ is</p>
 <div>
@@ -1031,17 +665,7 @@ Let $f:\mathbb{R}^n\to\mathbb{R}$ be a function and write $H(x)=\nabla^2f(x)$ fo
 </div> 
 </div>
     </div>
-</div>
-<script>
-    document.getElementById('proofsatisfies the NL condition').addEventListener('click', () => {
-        element = document.getElementById('proofcontentsatisfies the NL condition')
-        console.log(element.classList)
-        if(element.classList.contains('hidden'))
-            element.classList.remove('hidden')
-        else
-            element.classList.add('hidden')
-    })
-</script>
+</details>
 <div></div>
 <p>But remember that we want to minimize $c^Tx$, which is a linear function has has $0$ Hessian. Thus, we intergrate $c^Tx$ to our $F(x)$ with weight $\eta$.</p>
 <div>
@@ -1050,9 +674,9 @@ Let $f:\mathbb{R}^n\to\mathbb{R}$ be a function and write $H(x)=\nabla^2f(x)$ fo
 <p>$f_\eta(x)$ has the same Hessian as $F(x)$. Thus, by applying Newton&rsquo;s method on $f_\eta(x)$, we can easily converge to the minimum of $f_\eta(x)$, denoted as $x^\star_\eta$. As long as $\eta\to+\infty$, $x^\star_\eta$ tends to the minimum of $\eta$. The trace of $x^\star_\eta$ as $\eta\to+\infty$ is called the center path, lies in the interior of $P$. That&rsquo;s why the method is called interior point method.</p>
 <p>However, remember that Newton&rsquo;s Method only work when the Newton step $n _\eta(x)=(H_F(x))^{-1}\nabla f _\eta(x)$ is bounded. It&rsquo;s not easy to find an intial point satisfying this condition for large $\eta$. Thus, we consider finding an intial point with small $\eta$ and then update $\eta$ by following the center path.
 Formally, <strong>we will prove $||n _\eta(x)||_x$ won&rsquo;t vary too much by increase $\eta$ by a factor</strong>.</p>
-<div class="rounded border" style="background-color: white; border-left-width: 2px; border-top-width: 2px; border-color: #AAAAAA; ">
-    <div class="px-2 pt-1 pb-1 font-bold"><a style="cursor:pointer" id="proofvery eta">Proof.</a></div>
-    <div class="hidden px-4 pt-0 pb-2" id="proofcontentvery eta">
+<details class="fold" data-kind="proof">
+    <summary class="fold__label"><span class="fold__chev"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m9 6 6 6-6 6"/></svg></span><span class="fold__text">Proof.</span></summary>
+    <div class="fold__body">
         <div>
 We want to bound $||n_{\eta'}(x)||_x$ for $\eta'>\approx \eta$. For simplicity we write $H(x)=H_F(x)$. 
 <div>
@@ -1080,63 +704,36 @@ Thus, we get $||z(x)||^2_x\le\sqrt{m}$. Finally we have
 
 </div>
     </div>
-</div>
-<script>
-    document.getElementById('proofvery eta').addEventListener('click', () => {
-        element = document.getElementById('proofcontentvery eta')
-        console.log(element.classList)
-        if(element.classList.contains('hidden'))
-            element.classList.remove('hidden')
-        else
-            element.classList.add('hidden')
-    })
-</script>
+</details>
 <div></div>
 <p>If we let $\eta&rsquo;=(1+\Omega(1/\sqrt{m}))\eta$, then we can bound $||n_{\eta&rsquo;}(x)||<em>x$ by $\epsilon||n</em>{\eta&rsquo;}(x)||_x+\epsilon$, where $\epsilon$ is a small contant which we can set as small as we want. Moreover, $\eta$ grows exponentially, on the base of $\sqrt{m}$.</p>
 <p>Thus, by starting from an intial point, and repeated perform: constant times of Newton&rsquo;s method to let $||n_\eta(x)||<em>x$ be a sufficiently small constant 2. change $\eta$ to let $||n</em>{\eta&rsquo;}(x)||<em>x$ still lie in the Newton&rsquo;s Method efficency area. There are two more things to show: 1. how to find the initial point. We will do this later. 2. At some point we will get sufficiently large $\eta$ and a small constant bound for $||n</em>{\eta&rsquo;}(x)||_x$, how could this lead to $c^Tx$ close to $c^Tx^\star$? We will first show the later.</p>
-<div class="rounded border" style="background-color: white; border-left-width: 2px; border-top-width: 2px; border-color: #AAAAAA; ">
-    <div class="px-2 pt-1 pb-1 font-bold"><a style="cursor:pointer" id="prooffinal step">Proof.</a></div>
-    <div class="hidden px-4 pt-0 pb-2" id="proofcontentfinal step">
+<details class="fold" data-kind="proof">
+    <summary class="fold__label"><span class="fold__chev"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m9 6 6 6-6 6"/></svg></span><span class="fold__text">Proof.</span></summary>
+    <div class="fold__body">
         <div>
 I don't understand...
 </div>
     </div>
-</div>
-<script>
-    document.getElementById('prooffinal step').addEventListener('click', () => {
-        element = document.getElementById('proofcontentfinal step')
-        console.log(element.classList)
-        if(element.classList.contains('hidden'))
-            element.classList.remove('hidden')
-        else
-            element.classList.add('hidden')
-    })
-</script>
+</details>
 <div></div>
 <p>Finding the initial point: TBD.</p>
 <p>Too hard for me&hellip;</p>
 
-                </div>
-                
-                
-
-                
+  </article>
+</main>
 
 
+<footer class="site-footer">
+  <p class="footer-updated">Last updated in 2026 October.</p>
+  <p class="footer-links"><a class="footer-top" href="#top"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg><span>Back to top</span></a></p>
+</footer>
 
-                
-
-
-
-            </div>
-            
-            <div class="hidden lg:block lg:w-1/4">
-                
-                <div class="sticky top-16 z-10 hidden lg:block px-6 py-4  bg-secondary-bg pt-16 -mt-16 ">
-    <span class="text-lg font-semibold">On This Page</span>
 </div>
-<div class="sticky-toc hidden lg:block px-6 pb-6  pt-10 -mt-10 border-l ">
-    <nav id="TableOfContents">
+<aside class="toc-rail" aria-labelledby="toc-title">
+  <div class="toc-rail__inner">
+    <p class="nav-label" id="toc-title">On this page</p>
+    <nav class="toc" aria-labelledby="toc-title" data-spy>
   <ul>
     <li><a href="#convex-optimization">Convex Optimization</a>
       <ul>
@@ -1170,43 +767,62 @@ I don't understand...
     </li>
   </ul>
 </nav>
-</div>
-<script>
-    window.addEventListener('DOMContentLoaded', () => {
-        enableStickyToc();
-    });
-</script>
-                
-            </div>
-            
-        </div>
+  </div>
+</aside>
 
+</div>
+<div class="drawer" id="site-menu" hidden>
+  <div class="drawer__backdrop" data-drawer-close></div>
+  <div class="drawer__panel" role="dialog" aria-modal="true" aria-labelledby="drawer-title" tabindex="-1">
+    <div class="drawer__head">
+      <p class="drawer__title" id="drawer-title">Menu</p>
+      <button class="icon-btn" type="button" data-drawer-close aria-label="Close menu"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
     </div>
+    <nav class="drawer__group" aria-labelledby="drawer-pages">
+      <p class="nav-label" id="drawer-pages">Yonggang&#39;s wiki</p>
+      <ul class="nav-list nav-list--pages">
+  <li><a href="/docs/wiki/"><span class="nav-text">Home</span></a></li>
+  <li>
+    <a href="/docs/wiki/advanced/"><span class="nav-text">Advanced Algorithm (ETHz)</span></a>
+  </li>
+  <li>
+    <a href="/docs/wiki/math/"><span class="nav-text">Basic Math</span></a>
+  </li>
+  <li>
+    <a href="/docs/wiki/complexity/"><span class="nav-text">Complexity</span></a>
+  </li>
+  <li>
+    <a href="/docs/wiki/concentration/"><span class="nav-text">Concentration of Measure</span></a>
+  </li>
+  <li>
+    <a href="/docs/wiki/convex/" aria-current="page"><span class="nav-text">Convex Optimization</span></a>
+  </li>
+  <li>
+    <a href="/docs/wiki/finegrained/"><span class="nav-text">Fine-Grained Complexity</span></a>
+  </li>
+  <li>
+    <a href="/docs/wiki/graph/"><span class="nav-text">Graph Theory</span></a>
+  </li>
+  <li>
+    <a href="/docs/wiki/matrix/"><span class="nav-text">Matrix</span></a>
+  </li>
+  <li>
+    <a href="/docs/wiki/ml/"><span class="nav-text">ML Foundations</span></a>
+  </li>
+</ul>
 
-
+    </nav>
+    <div class="drawer__group">
+      <p class="nav-label" id="drawer-theme">Appearance</p>
+      <div class="seg" role="group" aria-labelledby="drawer-theme">
+        <button type="button" class="seg__btn" data-theme-set="light" aria-pressed="false"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg><span>Light</span></button>
+        <button type="button" class="seg__btn" data-theme-set="dark" aria-pressed="false"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg><span>Dark</span></button>
+        <button type="button" class="seg__btn" data-theme-set="system" aria-pressed="false"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="20" height="14" x="2" y="3" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg><span>Auto</span></button>
+      </div>
+    </div>
+    <p class="drawer__group drawer__foot"><a class="rail-home" href="/"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg><span>Homepage</span></a></p>
+  </div>
 </div>
 
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        hljs.initHighlightingOnLoad();
-        changeSidebarHeight();
-        switchDocToc();
-    })
-</script>
-
-
-
-
-
-
-
-
-  </main>
-  <footer class="pl-scrollbar">
-    <div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
-    <p class="text-sm text-tertiary-text"> Last updated in 2026 September. </p>
-</div></div>
-  </footer>
 </body>
-
 </html>

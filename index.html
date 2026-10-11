@@ -1,473 +1,525 @@
-<!DOCTYPE html><meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
-<style>
-  .blackout {
-    background-color: black;
-    color: black;
-    cursor: pointer;
-    transition: color 0.3s ease;
-    padding: 2px 4px;
-    border-radius: 4px;
-  }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="generator" content="Hugo 0.98.0" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yonggang Jiang (姜勇刚)</title>
+<meta name="description" content="Yonggang&#39;s homepage">
+<link rel="canonical" href="https://yonggangjiang.github.io/">
+<meta property="og:title" content="Yonggang Jiang (姜勇刚)">
+<meta property="og:description" content="Yonggang&#39;s homepage">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://yonggangjiang.github.io/">
+<meta property="og:site_name" content="Yonggang&#39;s homepage">
+<meta property="og:image" content="https://yonggangjiang.github.io/images/me.png">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","affiliation":{"@type":"Organization","name":"ETH-ITS","url":"https://eth-its.ethz.ch/"},"alternateName":"姜勇刚","image":"https://yonggangjiang.github.io/images/me.png","jobTitle":"Junior Fellow at ETH-ITS","name":"Yonggang Jiang","sameAs":["https://scholar.google.com/citations?user=b81oyQUAAAAJ","https://github.com/yonggangjiang"],"url":"https://yonggangjiang.github.io/"}</script>
+<link rel="alternate" type="application/rss&#43;xml" href="https://yonggangjiang.github.io/index.xml" title="Yonggang&#39;s homepage">
 
-  .blackout.revealed {
-    color: white;  
-  }
-</style>
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f5f8ff" data-color="#f5f8ff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#080f20" data-color="#080f20" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script>(function(){try{var bar={"dark":"#080f20","light":"#f5f8ff"};var t=localStorage.getItem("theme");if(t==="light"||t==="dark"){document.documentElement.setAttribute("data-theme",t);var m=document.querySelectorAll('meta[name="theme-color"]');for(var i=0;i<m.length;i++)m[i].setAttribute("content",bar[t]);}}catch(e){}})();</script>
+<link rel="preload" href="/fonts/source-serif-4-normal-400_700-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/source-serif-4-display-600_700-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/inter-normal-400_700-latin.woff2" as="font" type="font/woff2" crossorigin>
 
-
-<title>Yonggang&#39;s homepage</title>
-
-<meta name="generator" content="Hugo Eureka 0.8.3-dev" />
-<link rel="stylesheet" href="https://yonggangjiang.github.io/css/eureka.min.css">
-<script defer src="https://yonggangjiang.github.io/js/eureka.min.js"></script>
-
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload"
-  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
-  as="style" onload="this.onload=null;this.rel='stylesheet'">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css"
-   media="print"
-  onload="this.media='all';this.onload=null" crossorigin>
-<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js"
-   crossorigin></script>
-
-  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/dart.min.js"
-     crossorigin></script>
-
-<script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js"
-   integrity="sha256-uNYoXefWRqv&#43;PsIF/OflNmwtKM4lStn9yrz2gVl6ymo="  crossorigin></script>
-
-
-
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
-   integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"  media="print"
-  onload="this.media='all';this.onload=null" crossorigin>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" 
-  integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"  crossorigin></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
-   integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"  crossorigin></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"></script>
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    renderMathInElement(document.body, {
+    if (!window.renderMathInElement) return;    
+    renderMathInElement(document.querySelector("main") || document.body, {
       delimiters: [
         { left: "$$", right: "$$", display: true },
         { left: "$", right: "$", display: false },
         { left: "\\(", right: "\\)", display: false },
         { left: "\\[", right: "\\]", display: true }
-      ],
+      ]
     });
   });
 </script>
 
+<link rel="stylesheet" href="/css/modern-sidebar-bundle.min.69f840065977fa0ea3c929d6d80cef590ea5c3a3a8ef682c391e5eef2fc4c941.css" integrity="sha256-afhABll3&#43;g6jySnW2AzvWQ6lw6Oo72gsOR5e7y/EyUE=">
+<script defer src="/js/site.min.7d2e60624697a8399205e1d06f04d0a0b003adf1d6a7f821ad9220b5d18d2573.js" integrity="sha256-fS5gYkaXqDmSBeHQbwTQoLADrfHWp/ghrZIgtdGNJXM="></script>
+<script defer src="/js/avatar-caption.min.863927548a51d409a8128fdb8c6874f2f6565cc5aaae3a83a97c581ffc81707e.js" integrity="sha256-hjknVIpR1AmoEo/bjGh08vZWXMWqrjqDqXxYH/yBcH4="></script>
+<script defer src="/js/modern-sidebar-variant.min.d44235078db1b531c72c84b9e9ffa2da7bc3a5912d110c2b19163bd8f0a53afe.js" integrity="sha256-1EI1B42xtTHHLIS56f&#43;i2nvDpZEtEQwrGRY72PClOv4="></script>
+<noscript><style>.theme-toggle,.menu-btn,.copy-btn,.folds-btn{display:none!important}@media (max-width:63.99em){.rail--docs .rail-nav,.rail--docs .rail-foot{display:block!important}.profile--compact .p-links{display:flex!important}}</style></noscript>
 
-<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js" 
-  integrity="sha256-Zmpaaj&#43;GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE="  crossorigin></script>
+</head>
+<body id="top" class="page page--home">
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="shell shell--home">
 
-
-
-
-
-<link rel="icon" type="image/png" sizes="32x32" href="https://yonggangjiang.github.io/images/icon_hu_4f4e55a10d73f6ba.png">
-<link rel="apple-touch-icon" sizes="180x180" href="https://yonggangjiang.github.io/images/icon_hu_8190559dabbef89f.png">
-
-<meta name="description"
-  content="Eureka is a elegant and powerful theme for Hugo.">
-
-
-
-<meta property="og:title" content="Yonggang&#39;s homepage" />
-<meta property="og:type" content="website" />
-
-
-<meta property="og:image" content="https://yonggangjiang.github.io/images/icon.png">
-
-
-<meta property="og:url" content="https://yonggangjiang.github.io/" />
-
-
-
-
-
-<meta property="og:description" content="Eureka is a elegant and powerful theme for Hugo." />
-
-
-
-
-
-<meta property="og:locale" content="en" />
-
-
-
-
-<meta property="og:site_name" content="Yonggang&#39;s homepage" />
-
-
-
-
-
-
-<meta property="og:updated_time" content="2020-11-20T22:52:56&#43;08:00" />
-
-
-
-<meta property="article:section" content="" />
-
-
-<link rel="alternate" type="application/rss+xml" href="https://yonggangjiang.github.io/index.xml" title="Yonggang's homepage" />
-
-
-<body class="flex flex-col min-h-screen">
-  <header class="fixed flex items-center w-full min-h-16 z-50 bg-secondary-bg shadow-sm">
-    <div class="w-full mx-auto"><script>
-    let storageColorScheme = localStorage.getItem("lightDarkMode")
-    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
-        document.getElementsByTagName('html')[0].classList.add('dark')
-    }
-</script>
-<nav class="flex items-center justify-center px-4 py-4 md:py-0" style="max-width:1300px; margin: 0 auto;">
-     
-        
-        
-        
-        
-        <div class="flex items-center space-x-2" id="page-tabs">
-            
-              
-                
-                
-                <button class="header-tab active" 
-                        data-tab="about"
-                        onclick="switchTab('about')">
-                  Home
-                </button>
-              
-            
-        </div>
-        
+<header class="rail" id="rail">
+  <div class="rail-inner">
     
+<div class="profile profile--full">
+  <svg class="p-art" viewBox="0 0 680 370" aria-hidden="true" focusable="false"><g class="ga-edges"><line x1="60" y1="300" x2="130" y2="205"/><line x1="60" y1="300" x2="215" y2="285"/><line x1="130" y1="205" x2="215" y2="285"/><line x1="130" y1="205" x2="255" y2="150"/><line x1="130" y1="205" x2="168" y2="78"/><line x1="215" y1="285" x2="335" y2="238"/><line x1="255" y1="150" x2="335" y2="238"/><line x1="255" y1="150" x2="365" y2="92"/><line x1="255" y1="150" x2="168" y2="78"/><line x1="168" y1="78" x2="300" y2="34"/><line x1="300" y1="34" x2="365" y2="92"/><line x1="365" y1="92" x2="440" y2="188"/><line x1="335" y1="238" x2="440" y2="188"/><line x1="335" y1="238" x2="388" y2="338"/><line x1="440" y1="188" x2="470" y2="300"/><line x1="440" y1="188" x2="528" y2="118"/><line x1="470" y1="300" x2="388" y2="338"/><line x1="470" y1="300" x2="590" y2="228"/><line x1="528" y1="118" x2="590" y2="228"/><line x1="528" y1="118" x2="455" y2="36"/><line x1="455" y1="36" x2="365" y2="92"/><line x1="455" y1="36" x2="604" y2="54"/><line x1="604" y1="54" x2="528" y2="118"/><line x1="590" y1="228" x2="622" y2="330"/><line x1="470" y1="300" x2="622" y2="330"/><line x1="300" y1="34" x2="455" y2="36"/><line x1="215" y1="285" x2="388" y2="338"/></g><polyline class="ga-path" points="60,300 130,205 255,150 365,92 455,36 604,54"/><g class="ga-nodes"><circle cx="215" cy="285" r="4.5"/><circle cx="335" cy="238" r="4.5"/><circle cx="440" cy="188" r="4.5"/><circle cx="470" cy="300" r="4.5"/><circle cx="528" cy="118" r="4.5"/><circle cx="590" cy="228" r="4.5"/><circle cx="168" cy="78" r="4.5"/><circle cx="300" cy="34" r="4.5"/><circle cx="622" cy="330" r="4.5"/><circle cx="388" cy="338" r="4.5"/></g><g class="ga-pnodes"><circle cx="60" cy="300" r="5.5"/><circle cx="130" cy="205" r="5.5"/><circle cx="255" cy="150" r="5.5"/><circle cx="365" cy="92" r="5.5"/><circle cx="455" cy="36" r="5.5"/><circle cx="604" cy="54" r="5.5"/></g></svg>
+  <div class="p-head">
+    <button class="avatar-caption-trigger" type="button" aria-label="About this photo" aria-haspopup="dialog" aria-controls="avatar-caption">
+    <img class="avatar" src="/images/me_hu78b6507a05da9074dfb0da277d46e879_597748_128x128_fill_q85_bgffffff_box_center_3.jpg" srcset="/images/me_hu78b6507a05da9074dfb0da277d46e879_597748_128x128_fill_q85_bgffffff_box_center_3.jpg 1x, /images/me_hu78b6507a05da9074dfb0da277d46e879_597748_256x256_fill_q85_bgffffff_box_center_3.jpg 2x" alt="A scientist facing a luminous computing system in Honkai Star Rail" width="128" height="128"></button>
+    <button class="icon-btn theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="Dark theme" title="Dark theme"><svg class="i i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg><svg class="i i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></button>
 
-    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
-        <i class="fas fa-bars"></i>
-    </button>
+  </div>
+  <div class="p-id">
+    <h1 class="p-name"><span class="p-name__main">Yonggang Jiang</span> <span class="p-name__alt" lang="zh-Hans">(姜勇刚)</span></h1>
+    <p class="p-role">Junior Fellow at <a href="https://eth-its.ethz.ch/">ETH-ITS</a></p>
+  </div>
+  <ul class="p-contact" aria-label="Contact">
+    <li class="p-contact__item p-contact__email"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><a class="p-email" href="#about" data-email-user="ygdjiang" data-email-domain="gmail.com"><span>ygdjiang</span><span class="p-at" aria-hidden="true"></span><span class="visually-hidden"> at </span><span>gmail.com</span></a><button class="copy-btn" type="button" data-copy-email aria-label="Copy e-mail address" title="Copy e-mail address" hidden><svg class="i i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="13" height="13" x="9" y="9" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><svg class="i i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span class="copy-tip" aria-hidden="true">Copied</span></button><span class="copy-status visually-hidden" role="status"></span>
+</li>
+  </ul>
+  <ul class="p-links" aria-label="Profiles">
+  <li><a class="pill" href="https://scholar.google.com/citations?user=b81oyQUAAAAJ" aria-label="Google Scholar" title="Google Scholar"><svg class="i" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2.2 1.2 10.1h21.6z"/><circle cx="12" cy="15.6" r="6.2"/></svg><span>Scholar</span></a></li>
+  <li><a class="pill" href="/CV.pdf"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg><span>CV</span></a></li>
+  <li><a class="pill" href="https://github.com/yonggangjiang"><svg class="i" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 .5C5.73.5.5 5.73.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a10.9 10.9 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg><span>GitHub</span></a></li>
+</ul>
 
-    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
-    </div>
+</div>
+<dialog class="avatar-caption-dialog" id="avatar-caption" aria-labelledby="avatar-caption-title">
+  <div class="avatar-caption-dialog__head">
+    <h2 id="avatar-caption-title">About this photo</h2>
+    <button class="icon-btn" type="button" data-avatar-caption-close aria-label="Close photo description" autofocus><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+  </div>
+  <div class="avatar-caption-dialog__body"><p>This image comes from the science-fiction game <em>Honkai: Star Rail</em>. The enormous light is a human-built computing system that has undergone an intelligence explosion through recursive self-improvement (RSI). It knows everything about its world, yet remains beyond human understanding. The scientist standing before it is one of the greatest minds, and her main research challenge is now to find a way to access the machine and ask it questions. This scene captures one of her attempts, which ultimately fails.</p>
+<p>I’ll keep this as my avatar for reasons you can probably guess, until I find a better photo of myself to replace it. Hopefully soon :)</p>
+</div>
+</dialog>
 
+    
+<nav class="rail-nav" aria-labelledby="rail-sections">
+  <p class="nav-label" id="rail-sections">On this page</p>
+  <ul class="nav-list" data-spy>
+    <li><a href="#research-interests"><span class="nav-text">Research Interests</span></a></li>
+    <li><a href="#education"><span class="nav-text">Education &amp; Experience</span></a></li>
+    <li><a href="#honors--awards"><span class="nav-text">Awards</span></a></li>
+    <li><a href="#publications"><span class="nav-text">Publications</span></a></li>
+  </ul>
 </nav>
-<script>
-    
-    let element = document.getElementById('lightDarkMode')
-    if (storageColorScheme == null || storageColorScheme == 'Auto') {
-        document.addEventListener('DOMContentLoaded', () => {
-            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
-        })
-    } else if (storageColorScheme == "Light") {
-        element.firstElementChild.classList.remove('fa-adjust')
-        element.firstElementChild.setAttribute("data-icon", 'sun')
-        element.firstElementChild.classList.add('fa-sun')
-    } else if (storageColorScheme == "Dark") {
-        element.firstElementChild.classList.remove('fa-adjust')
-        element.firstElementChild.setAttribute("data-icon", 'moon')
-        element.firstElementChild.classList.add('fa-moon')
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-        getcolorscheme();
-        switchBurger();
-    });
-</script>
-</div>
-  </header>
-  <main class="flex-grow pt-16">
-  
-  
-
-  
-  
-    
-      <div class="tab-content" id="about-content" >
-        
-  
-
-  
-
-  
-  
-  
-
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-  
-
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-    
-
-    
-    
-    
-    
-    
-  
-
-  <div class="pl-scrollbar bg-secondary-bg" 
-    >
-    <div class="max-w-screen-xl mx-auto">
-      <div id="about" class="lg:w-3/4 mx-auto px-6 md:px-8 xl:px-12 py-12">
-        
-  
-
-  
-    
-
-<div class="flex flex-col md:flex-row items-center justify-center mb-12">
-  
-    <div class="flex-none w-48 mx-auto md:ml-0 md:mr-8 md:pr-8 md:border-r">
-      <img src="https://yonggangjiang.github.io/images/me.png"  alt="Avatar">
-    </div>
-  
-  <div class="flex-grow mt-4 md:mt-0">
-      <div class="text-3xl py-4">Yonggang Jiang (姜勇刚)</div>  
-    <div class="w-3/12 xl:w-2/12 border-b"></div>
-
-    <div class="flex items-center pt-4">
-
-		<div class="mr-6 my-2">
-     	
-    	  <i class="fas fa-user"></i>
-    	
-        
-          <span class="pl-1">PhD candidate at MPI-INF</span>
-        
-		</div>
-
-		<div class="mr-6 my-2">
-     	
-    	  <i class="fas fa-envelope"></i>
-    	
-          <span class="pl-1">
-			  <span>yjiang</span>
-		  	  <span style="font-size: 0.8rem;"><i class="fas fa-at"></i></span>
-			  <span>mpi-inf.mpg.de</span>
-		  </span>
-		</div>
-
-    </div>
-
-		<div class="mr-6 my-2">
-    	<i class="fas fa-briefcase"></i>
-      
-          <span class="pl-1"><a href="https://g.page/MPI-INF?share">E14, Room 315, Saarland Informatics Campus</a></span>
-       
-    </div>
 
   </div>
-  <div class="flex md:flex-col justify-center items-end ml-8">
-    
-    
-  </div>
-</div>
+</header>
+
+<div class="column">
+<nav class="chipbar" aria-label="Sections">
+  <ul class="chips" data-spy data-chips>
+    <li><a class="chip" href="#research-interests">Research Interests</a></li>
+    <li><a class="chip" href="#education">Education &amp; Experience</a></li>
+    <li><a class="chip" href="#honors--awards">Awards</a></li>
+    <li><a class="chip" href="#publications">Publications</a></li>
+  </ul>
+  <button class="icon-btn menu-btn" id="nav-toggle" type="button" aria-controls="site-menu" aria-expanded="false" aria-label="Menu"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h10"/></svg></button>
+</nav>
 
 
-<div class="content">
-  <script src="https://kit.fontawesome.com/ed3aaea031.js" crossorigin="anonymous"></script>
-<h2 id="short-bio">Short Bio</h2>
-<p>I am an incoming Junior Fellow at the <a href="https://eth-its.ethz.ch/">ETH Institute for Theoretical Studies (ETH-ITS)</a>. I am completing my PhD at the <a href="https://www.mpi-inf.mpg.de/home">Max Planck Institute for Informatics</a>, where I am advised by <a href="https://sites.google.com/site/dannanongkai">Danupon Nanongkai</a>. Before that, I received my bachelor’s degree in Computer Science from Nanjing University.</p>
-<p>My research interests span the design and analysis of algorithms, with a focus on graph algorithms, parallel and distributed computing, combinotorial optimization, and algorithm engineering.</p>
-<p>My research is supported by the <a href="https://research.google/programs-and-events/phd-fellowship">Google PhD Fellowship</a>.</p>
-<p>My <a href="https://scholar.google.com/citations?user=b81oyQUAAAAJ">Google Scholar</a> and <a href="CV.pdf">CV</a> (not frequently updated).</p>
-<h2 id="ai-tools">AI Tools</h2>
-<p>I am developing several harnesses for my research emphasizing <strong>explainability</strong> and <strong>long-term reasoning</strong>. See <a href="https://github.com/yonggangjiang/tcs-prover">TCS-Prover</a>. I also contribute to <a href="https://github.com/eth-sri/proof-council">ProofCouncil</a>, a powerful LLM harness for math research.</p>
-<h2 id="hiring">Hiring</h2>
-<p>MPI-INF has <a href="https://www.mpi-inf.mpg.de/departments/algorithms-complexity/offers">open positions</a> for LLM agentic workflow in theory and algorithm design. Strong math and algorithm background, or LLM agent design experience required. Feel free to drop me an email with CV and transcript attached if you are interested.</p>
-<h2 id="education">Education</h2>
-<div class="bg-secondary-bg rounded border hover:shadow-lg transition ease-in-out duration-200 px-6 pt-6 pb-4">
-    <a href = "https://www.mpi-inf.mpg.de/" class = "font-semibold text-xl" >Max Planck Institute for Informatics</a>
-    <div class="flex flex-wrap flex-row items-center  ">
-        <div class="mr-6 my-2">
-            <i class="fas fa-calendar mr-1"></i>
-            <span><html>2023.4 - 2026.9</html></span>
-        </div>
-        <div class="mr-6 my-2">
-            <i class="fas fa-user-graduate"></i>
-            <span>Doctoral study in Computer Science</span>
-        </div>
-    </div>
-<p>(2021.10 - 2023.3) <a href="https://www.graduateschool-computerscience.de/preparatory-phase/">Preparatory Phase</a> for doctoral study.</p>
+<main id="main" class="main" tabindex="-1">
+
+<div class="prose about" id="about">
+<script src="https://kit.fontawesome.com/ed3aaea031.js" crossorigin="anonymous"></script>
+
+<section class="section" id="sec-research-interests" data-section="research-interests" style="--sec-icon: var(--i-lightbulb)">
+<h2 id="research-interests">Research Interests</h2>
+<div class="section__body">
+
+<p>I work broadly on algorithms and optimization. My goal is to design algorithms that are theoretically efficient and fast in practice. I am particularly interested in:</p>
+<ul>
+<li>Graph algorithms</li>
+<li>Parallel computing</li>
+<li>Algorithm engineering</li>
+<li>AI for mathematics and optimization</li>
+</ul>
+<p>I am currently developing LLM harnesses for mathematical research. I lead the development of <a href="https://github.com/yonggangjiang/tcs-prover">TCS-prover</a> and contribute to <a href="https://github.com/eth-sri/proof-council">ProofCouncil</a>.</p>
+
 </div>
-<div class="bg-secondary-bg rounded border hover:shadow-lg transition ease-in-out duration-200 px-6 pt-6 pb-4">
-    <a href = "https://www.nju.edu.cn/EN/" class = "font-semibold text-xl" >Nanjing University</a>
-    <div class="flex flex-wrap flex-row items-center  ">
-        <div class="mr-6 my-2">
-            <i class="fas fa-calendar mr-1"></i>
-            <span><html>2017.9 - 2021.6</html></span>
-        </div>
-        <div class="mr-6 my-2">
-            <i class="fas fa-user-graduate"></i>
-            <span>Bachelor of Science in <a href = "https://cs.nju.edu.cn/">Computer Science and Technology</a></span>
-        </div>
-    </div>
+</section>
+<section class="section" id="sec-education" data-section="education" style="--sec-icon: var(--i-cap)">
+<h2 id="education">Education &amp; Experience</h2>
+<div class="section__body">
+
+<article class="edu edu--experience">
+    <p class="edu__kind">Experience</p>
+    <h3 class="edu__school"><a href="https://eth-its.ethz.ch/">ETH Institute for Theoretical Studies (ETH-ITS)</a></h3>
+    <p class="edu__time">2026.10 – Present</p>
+    <p class="edu__degree">Junior Fellow</p>
+</article>
+<article class="edu edu--education">
+    <p class="edu__kind">Education</p>
+    <h3 class="edu__school"><a href="https://www.mpi-inf.mpg.de/">Max Planck Institute for Informatics</a></h3>
+    <p class="edu__time">2021.10 - 2026.9</p>
+    <p class="edu__degree">PhD in Computer Science</p>
+<div class="edu__body">
+<p>Thanks to my wonderful advisor, <a href="https://sites.google.com/site/dannanongkai">Danupon Nanongkai</a>, for his guidance and support. My PhD thesis is available <a href="phd_thesis.pdf"><em>here</em></a>.</p>
+</div>
+</article>
+<article class="edu edu--education">
+    <p class="edu__kind">Education</p>
+    <h3 class="edu__school"><a href="https://www.nju.edu.cn/EN/">Nanjing University</a></h3>
+    <p class="edu__time">2017.9 - 2021.7</p>
+    <p class="edu__degree">Bachelor of Science in <a href = "https://cs.nju.edu.cn/">Computer Science and Technology</a></p>
+<div class="edu__body">
 <p>Thanks to <a href="http://tcs.nju.edu.cn/yinyt/">Yitong Yin</a> and <a href="https://chaodong.me/">Chaodong Zheng</a> for supervising my undergraduate research, and to <a href="https://sites.google.com/site/bingkai314159/">Binkai Lin</a> for supervising my undergraduate thesis.</p>
 <p>I spent some wonderful years at the <a href="http://tcs.nju.edu.cn/">theory group</a>, doing research and having fun with my peers and seniors. Thanks to all of them.</p>
 <p>(2020.1 - 2020.5) Exchange student at <a href="https://bisp.berkeley.edu/">University of California, Berkeley</a>.</p>
 </div>
-<h2 id="publications">Publications</h2>
-<p><em>* Following the <a href="https://www.ams.org/profession/leaders/culture/JointResearchandItsPublicationfinal.pdf">convention in mathematics</a>, authors are listed in alphabetical order with equal contribution.</em></p>
+</article>
+
+</div>
+</section>
+<section class="section" id="sec-honors--awards" data-section="honors--awards" style="--sec-icon: var(--i-award)">
+<h2 id="honors--awards">Honors &amp; Awards</h2>
+<div class="section__body">
+
 <ul>
-<li>
-<p><u>The Complexity of Distributed Minimum Weight Cycle Approximation</u> <a href="https://arxiv.org/abs/2603.25368"><i class="far fa-file-alt"></i>arXiv</a> <br>
-Yi-Jun Chang, Yanyu Chen, Dipan Dey, Yonggang Jiang, Gopinath Mishra, Hung Thuan Nguyen, Mingyang Yang.</p>
-</li>
-<li>
-<p><u>Approximating Directed Minimum Cut and Arborescence Packing via Directed Expander Hierarchies</u> <a href="https://arxiv.org/abs/2512.05300"><i class="far fa-file-alt"></i>arXiv</a> <br>
-Yonggang Jiang, Yaowei Long, Thatchaphol Saranurak, Benyu Wang.</p>
-</li>
-<li>
-<p><u>A Subquadratic Two-Party Communication Protocol for Minimum Cost Flow</u> <a href="https://arxiv.org/abs/2510.03427"><i class="far fa-file-alt"></i>arXiv</a> <br>
-Hossein Gholizadeh, Yonggang Jiang.</p>
-</li>
-<li>
+<li class="dated"><strong class="dated__year">2025</strong> Google PhD Fellowship</li>
+<li class="dated"><strong class="dated__year">2025</strong> Distinguished Paper Award, SPAA 2025</li>
+<li class="dated"><strong class="dated__year">2021</strong> Outstanding Graduate, Nanjing University</li>
+<li class="dated"><strong class="dated__year">2018, 2019, 2020</strong> National Elite Program Scholarship, Outstanding Prize (top 1)</li>
+<li class="dated"><strong class="dated__year">2018</strong> China Collegiate Programming Contest (CCPC), Gold Medal</li>
+<li class="dated"><strong class="dated__year">2015</strong> National Olympiad in Informatics in Provinces (NOIP), First Prize</li>
+</ul>
+
+</div>
+</section>
+
+<section class="section section--pubs" id="sec-publications" data-section="publications" style="--sec-icon: var(--i-library)">
+<h2 id="publications">Publications</h2>
+<div class="section__body">
+
+<p><em>Following the <a href="https://www.ams.org/profession/leaders/culture/JointResearchandItsPublicationfinal.pdf">convention in mathematics</a>, authors are listed alphabetically with equal contribution unless marked †. † indicates authors ordered by contribution.</em></p>
+<div class="pub-ai-note" role="note"><p><em>Papers marked with <span class="pub-ai" role="note" aria-label="Main result generated by AI">AI</span>
+ have an AI-generated solution as their main contribution. For unmarked papers, the main ideas are <strong>entirely human-generated</strong>. <a href="#ai-principles">See my principles on AI results</a>.</em></p></div>
+
+<nav class="pub-index" aria-label="Publications by year">
+  <ul>
+    <li><a href="#pubs-2027">2027</a></li>
+    <li><a href="#pubs-2026">2026</a></li>
+    <li><a href="#pubs-2025">2025</a></li>
+    <li><a href="#pubs-2024">2024</a></li>
+    <li><a href="#pubs-2023">2023</a></li>
+    <li><a href="#pubs-2022">2022</a></li>
+    <li><a href="#pubs-2021">2021</a></li>
+  </ul>
+</nav>
+</div>
+<div class="pub-group" id="pubs-2027" data-year="2027">
+<h3 class="pub-year"><span class="pub-year__label">2027</span></h3>
+<ul class="pubs">
+<li class="pub pub--numbered">
+<span class="pub-number" aria-label="Publication 26">26.</span>
+
 <p><u>Almost Optimal Streaming and Cut-Query Algorithms for Undirected Max-Flow</u> <br>
-Yonggang Jiang, Tatsuya Terao . <br>
-<strong>SODA 2026:</strong> ACM-SIAM Symposium on Discrete Algorithms.</p>
+<span class="me">Yonggang Jiang</span>, Tatsuya Terao. <br>
+<strong class="venue">SODA 2027:</strong> ACM-SIAM Symposium on Discrete Algorithms.</p>
 </li>
-<li>
+
+</ul>
+</div>
+<div class="pub-group" id="pubs-2026" data-year="2026">
+<h3 class="pub-year"><span class="pub-year__label">2026</span></h3>
+<ul class="pubs">
+<li class="pub pub--numbered pub--arxiv">
+<span class="pub-number" aria-label="Publication 25">25.</span>
+
+<p><u>Quantum Submodular Maximization</u>&nbsp;<a href="https://arxiv.org/abs/2610.04560"><i class="far fa-file-alt"></i>arXiv</a> <span class="pub-ai" role="note" aria-label="Main result generated by AI">AI</span>
+ 
+ <br>
+<span class="me">Yonggang Jiang</span>, Xiaoming Sun, Penghui Yao, Zekun Ye, Jialin Zhang, Zhijie Zhang.</p>
+</li>
+
+<li class="pub pub--numbered pub--arxiv">
+<span class="pub-number" aria-label="Publication 24">24.</span>
+
+<p><u>The Complexity of Distributed Minimum Weight Cycle Approximation</u>&nbsp;<a href="https://arxiv.org/abs/2603.25368"><i class="far fa-file-alt"></i>arXiv</a> <br>
+Yi-Jun Chang, Yanyu Chen, Dipan Dey, <span class="me">Yonggang Jiang</span>, Gopinath Mishra, Hung Thuan Nguyen, Mingyang Yang.</p>
+</li>
+
+<li class="pub pub--numbered">
+<span class="pub-number" aria-label="Publication 23">23.</span>
+
+<p><u>Breaking the Barrier: Practical Cascade-Based Parallel Push-Relabel for Maximum Flow</u> 
+ <br>
+Xiaojun Dong, Matei Chiriac, <span class="me">Yonggang Jiang</span>.<sup class="pub-contribution" title="Authors ordered by contribution" aria-label="Authors ordered by contribution">†</sup></p>
+</li>
+
+<li class="pub pub--numbered">
+<span class="pub-number" aria-label="Publication 22">22.</span>
+
+<p><u>Meta-Harness Adaptation for Evolving Fast Graph Algorithms</u> <br>
+Amirhossein Abedi, <span class="me">Yonggang Jiang</span>, Xiaojun Dong.<sup class="pub-contribution" title="Authors ordered by contribution" aria-label="Authors ordered by contribution">†</sup> <br>
+<strong class="venue">NeurIPS 2026:</strong> Neural Information Processing Systems, Meta-Agents Workshop.</p>
+</li>
+
+<li class="pub pub--numbered">
+<span class="pub-number" aria-label="Publication 21">21.</span>
+
 <p><u>Combinatorial Minimum Cost Flow in Almost-Linear Time on Dense Graphs</u> <br>
-Bernhard Haeupler, Yonggang Jiang, Thatchaphol Saranurak.<br>
-<strong>FOCS 2026:</strong> IEEE Symposium on Foundations of Computer Science.</p>
+Bernhard Haeupler, <span class="me">Yonggang Jiang</span>, Thatchaphol Saranurak.<br>
+<strong class="venue">FOCS 2026:</strong> IEEE Symposium on Foundations of Computer Science.</p>
 </li>
-<li>
-<p><u>Parallel Small Vertex Connectivity in Near-Linear Work and Polylogarithmic Depth</u> <a href="https://arxiv.org/abs/2504.06033"><i class="far fa-file-alt"></i>arXiv</a> <br>
-Yonggang Jiang, Changki Yun. <br>
-<strong>FOCS 2026:</strong> IEEE Symposium on Foundations of Computer Science.</p>
+
+<li class="pub pub--numbered pub--arxiv">
+<span class="pub-number" aria-label="Publication 20">20.</span>
+
+<p><u>Parallel Small Vertex Connectivity in Near-Linear Work and Polylogarithmic Depth</u>&nbsp;<a href="https://arxiv.org/abs/2504.06033"><i class="far fa-file-alt"></i>arXiv</a> <br>
+<span class="me">Yonggang Jiang</span>, Changki Yun. <br>
+<strong class="venue">FOCS 2026:</strong> IEEE Symposium on Foundations of Computer Science.</p>
 </li>
-<li>
-<p><u>Deterministic Negative-Weight Shortest Paths in Nearly Linear Time via Path Covers</u> <a href="https://arxiv.org/abs/2511.08551"><i class="far fa-file-alt"></i>arXiv</a> <br>
-Bernhard Haeupler, Yonggang Jiang, Thatchaphol Saranurak.<br>
-<strong>STOC 2026:</strong> ACM Symposium on Theory of Computing.</p>
+
+<li class="pub pub--numbered pub--arxiv">
+<span class="pub-number" aria-label="Publication 19">19.</span>
+
+<p><u>Deterministic Negative-Weight Shortest Paths in Nearly Linear Time via Path Covers</u>&nbsp;<a href="https://arxiv.org/abs/2511.08551"><i class="far fa-file-alt"></i>arXiv</a> <br>
+Bernhard Haeupler, <span class="me">Yonggang Jiang</span>, Thatchaphol Saranurak.<br>
+<strong class="venue">STOC 2026:</strong> ACM Symposium on Theory of Computing.</p>
 </li>
-<li>
-<p><u>DAG Projections: Reducing Distance and Flow Problems to DAGs</u> <a href="https://arxiv.org/abs/2604.04752"><i class="far fa-file-alt"></i>arXiv</a> <br>
-Bernhard Haeupler, Yonggang Jiang, Thatchaphol Saranurak.<br>
-<strong>STOC 2026:</strong> ACM Symposium on Theory of Computing.</p>
+
+<li class="pub pub--numbered pub--arxiv">
+<span class="pub-number" aria-label="Publication 18">18.</span>
+
+<p><u>DAG Projections: Reducing Distance and Flow Problems to DAGs</u>&nbsp;<a href="https://arxiv.org/abs/2604.04752"><i class="far fa-file-alt"></i>arXiv</a> <br>
+Bernhard Haeupler, <span class="me">Yonggang Jiang</span>, Thatchaphol Saranurak.<br>
+<strong class="venue">STOC 2026:</strong> ACM Symposium on Theory of Computing.</p>
 </li>
-<li>
-<p><u>Reviving Thorup&rsquo;s Shortcut Conjecture</u> <a href="https://arxiv.org/abs/2510.24954"><i class="far fa-file-alt"></i>arXiv</a> <br>
-Aaron Bernstein, Henry Fleischmann, Maximilian Probst Gutenberg, Bernhard Haeupler, Gary Hoppenworth, Yonggang Jiang, George Z. Li, Seth Pettie, Thatchaphol Saranurak, Leon Schiller<br>
-<strong>STOC 2026:</strong> ACM Symposium on Theory of Computing.</p>
+
+<li class="pub pub--numbered pub--arxiv">
+<span class="pub-number" aria-label="Publication 17">17.</span>
+
+<p><u>Reviving Thorup&rsquo;s Shortcut Conjecture</u>&nbsp;<a href="https://arxiv.org/abs/2510.24954"><i class="far fa-file-alt"></i>arXiv</a> <br>
+Aaron Bernstein, Henry Fleischmann, Maximilian Probst Gutenberg, Bernhard Haeupler, Gary Hoppenworth, <span class="me">Yonggang Jiang</span>, George Z. Li, Seth Pettie, Thatchaphol Saranurak, Leon Schiller.<br>
+<strong class="venue">STOC 2026:</strong> ACM Symposium on Theory of Computing.</p>
 </li>
-<li>
-<p><u>Perfect Simulation of Las Vegas Algorithms via Local Computation</u> <a href="https://arxiv.org/abs/2311.11679"><i class="far fa-file-alt"></i>arXiv</a> <br>
-Xinyu Fu, Yonggang Jiang, Yitong Yin.  <br>
-<strong>ITCS 2026:</strong> Innovations in Theoretical Computer Science.</p>
+
+<li class="pub pub--numbered pub--arxiv">
+<span class="pub-number" aria-label="Publication 16">16.</span>
+
+<p><u>Perfect Simulation of Las Vegas Algorithms via Local Computation</u>&nbsp;<a href="https://arxiv.org/abs/2311.11679"><i class="far fa-file-alt"></i>arXiv</a> <br>
+Xinyu Fu, <span class="me">Yonggang Jiang</span>, Yitong Yin.  <br>
+<strong class="venue">ITCS 2026:</strong> Innovations in Theoretical Computer Science.</p>
 </li>
-<li>
-<p><u>Reducing Shortcut and Hopset Constructions to Shallow Graphs</u> <a href="https://arxiv.org/abs/2508.20302"><i class="far fa-file-alt"></i>arXiv</a> <br>
-Bernhard Haeupler, Yonggang Jiang, Thatchaphol Saranurak.<br>
-<strong>SOSA 2026:</strong> SIAM Symposium on Simplicity in Algorithms.</p>
+
+<li class="pub pub--numbered pub--arxiv">
+<span class="pub-number" aria-label="Publication 15">15.</span>
+
+<p><u>Reducing Shortcut and Hopset Constructions to Shallow Graphs</u>&nbsp;<a href="https://arxiv.org/abs/2508.20302"><i class="far fa-file-alt"></i>arXiv</a> <br>
+Bernhard Haeupler, <span class="me">Yonggang Jiang</span>, Thatchaphol Saranurak.<br>
+<strong class="venue">SOSA 2026:</strong> SIAM Symposium on Simplicity in Algorithms.</p>
 </li>
-<li>
-<p><u>Directed and Undirected Vertex Connectivity Problems are Equivalent for Dense Graphs</u> <a href="https://arxiv.org/abs/2508.20305"><i class="far fa-file-alt"></i>arXiv</a> <br>
-Yonggang Jiang, Sagnik Mukhopadhyay, Sorrachai Yingchareonthawornchai.<br>
-<strong>SOSA 2026:</strong> SIAM Symposium on Simplicity in Algorithms.</p>
+
+<li class="pub pub--numbered pub--arxiv">
+<span class="pub-number" aria-label="Publication 14">14.</span>
+
+<p><u>Directed and Undirected Vertex Connectivity Problems are Equivalent for Dense Graphs</u>&nbsp;<a href="https://arxiv.org/abs/2508.20305"><i class="far fa-file-alt"></i>arXiv</a> <br>
+Olivier Fischer, <span class="me">Yonggang Jiang</span>, Sagnik Mukhopadhyay, Sorrachai Yingchareonthawornchai.<br>
+<strong class="venue">SOSA 2026:</strong> SIAM Symposium on Simplicity in Algorithms.</p>
 </li>
-<li>
-<p><u>Minimum s–t Cuts with Fewer Cut Queries</u>  <a href="https://arxiv.org/abs/2510.18274"><i class="far fa-file-alt"></i>arXiv</a> <br>
-Yonggang Jiang, Danupon Nanongkai, Pachara Sawettamalya. <br>
-<strong>SODA 2026:</strong> ACM-SIAM Symposium on Discrete Algorithms.</p>
+
+<li class="pub pub--numbered pub--arxiv">
+<span class="pub-number" aria-label="Publication 13">13.</span>
+
+<p><u>Minimum s–t Cuts with Fewer Cut Queries</u>&nbsp;<a href="https://arxiv.org/abs/2510.18274"><i class="far fa-file-alt"></i>arXiv</a> <br>
+<span class="me">Yonggang Jiang</span>, Danupon Nanongkai, Pachara Sawettamalya. <br>
+<strong class="venue">SODA 2026:</strong> ACM-SIAM Symposium on Discrete Algorithms.</p>
 </li>
-<li>
-<p><u>Shortcuts and Transitive-Closure Spanners Approximation</u> <a href="https://arxiv.org/abs/2502.08032"><i class="far fa-file-alt"></i>arXiv</a> <br>
-Parinya Chalermsook, Yonggang Jiang, Sagnik Mukhopadhyay, Danupon Nanongkai. <br>
-<strong>SODA 2026:</strong> ACM-SIAM Symposium on Discrete Algorithms.</p>
+
+<li class="pub pub--numbered pub--arxiv">
+<span class="pub-number" aria-label="Publication 12">12.</span>
+
+<p><u>Shortcuts and Transitive-Closure Spanners Approximation</u>&nbsp;<a href="https://arxiv.org/abs/2502.08032"><i class="far fa-file-alt"></i>arXiv</a> <br>
+Parinya Chalermsook, <span class="me">Yonggang Jiang</span>, Sagnik Mukhopadhyay, Danupon Nanongkai. <br>
+<strong class="venue">SODA 2026:</strong> ACM-SIAM Symposium on Discrete Algorithms.</p>
 </li>
-<li>
-<p><u>New Oracles and Labeling Schemes for Vertex Cut Queries</u> <a href="https://arxiv.org/abs/2501.13596"><i class="far fa-file-alt"></i>arXiv</a> <br>
-Yonggang Jiang, Merav Parter, Asaf Petruschka. <br>
-<strong>SODA 2026:</strong> ACM-SIAM Symposium on Discrete Algorithms.</p>
+
+<li class="pub pub--numbered pub--arxiv">
+<span class="pub-number" aria-label="Publication 11">11.</span>
+
+<p><u>New Oracles and Labeling Schemes for Vertex Cut Queries</u>&nbsp;<a href="https://arxiv.org/abs/2501.13596"><i class="far fa-file-alt"></i>arXiv</a> <br>
+<span class="me">Yonggang Jiang</span>, Merav Parter, Asaf Petruschka. <br>
+<strong class="venue">SODA 2026:</strong> ACM-SIAM Symposium on Discrete Algorithms.</p>
 </li>
-<li>
-<p><u>Parallel $(1+\epsilon)$-Approximate Multi-Commodity Mincost Flow in Almost Optimal Depth and Work</u> <a href="https://arxiv.org/abs/2510.20456"><i class="far fa-file-alt"></i>arXiv</a>  <br>
-Bernhard Haeupler, Yonggang Jiang, Yaowei Long, Thatchaphol Saranurak, Shengzhe Wang. <br>
-<strong>FOCS 2025:</strong> IEEE Symposium on Foundations of Computer Science.</p>
+
+</ul>
+</div>
+<div class="pub-group" id="pubs-2025" data-year="2025">
+<h3 class="pub-year"><span class="pub-year__label">2025</span></h3>
+<ul class="pubs">
+<li class="pub pub--numbered pub--arxiv">
+<span class="pub-number" aria-label="Publication 10">10.</span>
+
+<p><u>Approximating Directed Minimum Cut and Arborescence Packing via Directed Expander Hierarchies</u>&nbsp;<a href="https://arxiv.org/abs/2512.05300"><i class="far fa-file-alt"></i>arXiv</a> <br>
+<span class="me">Yonggang Jiang</span>, Yaowei Long, Thatchaphol Saranurak, Benyu Wang.</p>
 </li>
-<li>
-<p><u>Parallel Minimum Cost Flow in Near-Linear Work and Square Root Depth for Dense Instances</u> <a href="https://arxiv.org/abs/2503.13274"><i class="far fa-file-alt"></i>arXiv</a> <br>
-Jan van den Brand, Hossein Gholizadeh, Yonggang Jiang, Tijn de Vos. <br>
-<strong>SPAA 2025:</strong> ACM Symposium on Parallelism in Algorithms and Architectures.<br>
+
+<li class="pub pub--numbered pub--arxiv">
+<span class="pub-number" aria-label="Publication 9">9.</span>
+
+<p><u>A Subquadratic Two-Party Communication Protocol for Minimum Cost Flow</u>&nbsp;<a href="https://arxiv.org/abs/2510.03427"><i class="far fa-file-alt"></i>arXiv</a> <br>
+Hossein Gholizadeh, <span class="me">Yonggang Jiang</span>.</p>
+</li>
+
+<li class="pub pub--numbered pub--arxiv">
+<span class="pub-number" aria-label="Publication 8">8.</span>
+
+<p><u>Parallel $(1+\epsilon)$-Approximate Multi-Commodity Mincost Flow in Almost Optimal Depth and Work</u>&nbsp;<a href="https://arxiv.org/abs/2510.20456"><i class="far fa-file-alt"></i>arXiv</a>  <br>
+Bernhard Haeupler, <span class="me">Yonggang Jiang</span>, Yaowei Long, Thatchaphol Saranurak, Shengzhe Wang. <br>
+<strong class="venue">FOCS 2025:</strong> IEEE Symposium on Foundations of Computer Science.</p>
+</li>
+
+<li class="pub pub--numbered pub--award pub--arxiv">
+<span class="pub-number" aria-label="Publication 7">7.</span>
+
+<p><u>Parallel Minimum Cost Flow in Near-Linear Work and Square Root Depth for Dense Instances</u>&nbsp;<a href="https://arxiv.org/abs/2503.13274"><i class="far fa-file-alt"></i>arXiv</a> <br>
+Jan van den Brand, Hossein Gholizadeh, <span class="me">Yonggang Jiang</span>, Tijn de Vos. <br>
+<strong class="venue">SPAA 2025:</strong> ACM Symposium on Parallelism in Algorithms and Architectures.<br>
 <b style="color:red;">Distinguished Paper Award</b><br>
 <b style="color:green;">Invited to TOPC Special Issue</b></p>
 </li>
-<li>
-<p><u>Deterministic Vertex Connectivity via Common-Neighborhood Clustering and Pseudorandomness</u> <a href="https://arxiv.org/abs/2503.20985"><i class="far fa-file-alt"></i>arXiv</a><br>
-Yonggang Jiang, Chaitanya Nalam, Thatchaphol Saranurak, Sorrachai Yingchareonthawornchai.  <br>
-<strong>STOC 2025:</strong> ACM Symposium on Theory of Computing.</p>
+
+<li class="pub pub--numbered pub--arxiv">
+<span class="pub-number" aria-label="Publication 6">6.</span>
+
+<p><u>Deterministic Vertex Connectivity via Common-Neighborhood Clustering and Pseudorandomness</u>&nbsp;<a href="https://arxiv.org/abs/2503.20985"><i class="far fa-file-alt"></i>arXiv</a><br>
+<span class="me">Yonggang Jiang</span>, Chaitanya Nalam, Thatchaphol Saranurak, Sorrachai Yingchareonthawornchai.  <br>
+<strong class="venue">STOC 2025:</strong> ACM Symposium on Theory of Computing.</p>
 </li>
-<li>
-<p><u>Global vs. s-t Vertex Connectivity Beyond Sequential: Almost-Perfect Reductions &amp; Near-Optimal Separations</u> <a href="https://arxiv.org/abs/2503.20366"><i class="far fa-file-alt"></i>arXiv</a><br>
-Joakim Blikstad, Yonggang Jiang, Sagnik Mukhopadhyay, Sorrachai Yingchareonthawornchai.  <br>
-<strong>STOC 2025:</strong> ACM Symposium on Theory of Computing.</p>
+
+<li class="pub pub--numbered pub--arxiv">
+<span class="pub-number" aria-label="Publication 5">5.</span>
+
+<p><u>Global vs. s-t Vertex Connectivity Beyond Sequential: Almost-Perfect Reductions &amp; Near-Optimal Separations</u>&nbsp;<a href="https://arxiv.org/abs/2503.20366"><i class="far fa-file-alt"></i>arXiv</a><br>
+Joakim Blikstad, <span class="me">Yonggang Jiang</span>, Sagnik Mukhopadhyay, Sorrachai Yingchareonthawornchai.  <br>
+<strong class="venue">STOC 2025:</strong> ACM Symposium on Theory of Computing.</p>
 </li>
-<li>
-<p><u>Parallel, Distributed, and Quantum Exact Single-Source Shortest Paths with Negative Edge Weights</u> <a href="https://arxiv.org/abs/2303.00811"><i class="far fa-file-alt"></i>arXiv</a> <br>
-Vikrant Ashvinkumar, Aaron Bernstein, Nairen Cao, Christoph Grunau, Bernhard Haeupler, Yonggang Jiang, Danupon Nanongkai, Hsin Hao Su.   <br>
-<strong>ESA 2024:</strong> European Symposium on Algorithms.</p>
-</li>
-<li>
-<p><u>Finding a Small Vertex Cut on Distributed Networks</u> <a href="https://arxiv.org/abs/2302.11651"><i class="far fa-file-alt"></i>arXiv</a> <br>
-Yonggang Jiang, Sagnik Mukhopadhyay.  <br>
-<strong>STOC 2023:</strong> ACM Symposium on Theory of Computing.</p>
-</li>
-<li>
-<p><u>Robust and Optimal Contention Resolution without Collision Detection</u>  <a href="https://arxiv.org/abs/2111.06650"><i class="far fa-file-alt"></i>arXiv</a> <br>
-Yonggang Jiang, Chaodong Zheng.  <br>
-<strong>SPAA 2022:</strong> ACM Symposium on Parallelism in Algorithms and Architectures.</p>
-</li>
-<li>
-<p><u>Tight Trade-off in Contention Resolution without Collision Detection</u>   <a href="https://arxiv.org/abs/2102.09716"><i class="far fa-file-alt"></i>arXiv</a><br>
-Yonggang Jiang, Haimin Chen,  Chaodong Zheng. <br>
-<strong>PODC 2021:</strong> ACM Symposium on Principles of Distributed Computing.</p>
-</li>
+
 </ul>
+</div>
+<div class="pub-group" id="pubs-2024" data-year="2024">
+<h3 class="pub-year"><span class="pub-year__label">2024</span></h3>
+<ul class="pubs">
+<li class="pub pub--numbered pub--arxiv">
+<span class="pub-number" aria-label="Publication 4">4.</span>
+
+<p><u>Parallel and Distributed Exact Single-Source Shortest Paths with Negative Edge Weights</u>&nbsp;<a href="https://arxiv.org/abs/2303.00811"><i class="far fa-file-alt"></i>arXiv</a> <br>
+Vikrant Ashvinkumar, Aaron Bernstein, Nairen Cao, Christoph Grunau, Bernhard Haeupler, <span class="me">Yonggang Jiang</span>, Danupon Nanongkai, Hsin Hao Su.   <br>
+<strong class="venue">ESA 2024:</strong> European Symposium on Algorithms.</p>
+</li>
+
+</ul>
+</div>
+<div class="pub-group" id="pubs-2023" data-year="2023">
+<h3 class="pub-year"><span class="pub-year__label">2023</span></h3>
+<ul class="pubs">
+<li class="pub pub--numbered pub--arxiv">
+<span class="pub-number" aria-label="Publication 3">3.</span>
+
+<p><u>Finding a Small Vertex Cut on Distributed Networks</u>&nbsp;<a href="https://arxiv.org/abs/2302.11651"><i class="far fa-file-alt"></i>arXiv</a> <br>
+<span class="me">Yonggang Jiang</span>, Sagnik Mukhopadhyay.  <br>
+<strong class="venue">STOC 2023:</strong> ACM Symposium on Theory of Computing.</p>
+</li>
+
+</ul>
+</div>
+<div class="pub-group" id="pubs-2022" data-year="2022">
+<h3 class="pub-year"><span class="pub-year__label">2022</span></h3>
+<ul class="pubs">
+<li class="pub pub--numbered pub--arxiv">
+<span class="pub-number" aria-label="Publication 2">2.</span>
+
+<p><u>Robust and Optimal Contention Resolution without Collision Detection</u>&nbsp;<a href="https://arxiv.org/abs/2111.06650"><i class="far fa-file-alt"></i>arXiv</a> <br>
+<span class="me">Yonggang Jiang</span>, Chaodong Zheng.  <br>
+<strong class="venue">SPAA 2022:</strong> ACM Symposium on Parallelism in Algorithms and Architectures.</p>
+</li>
+
+</ul>
+</div>
+<div class="pub-group pub-group--last" id="pubs-2021" data-year="2021">
+<h3 class="pub-year"><span class="pub-year__label">2021</span></h3>
+<ul class="pubs">
+<li class="pub pub--numbered pub--arxiv">
+<span class="pub-number" aria-label="Publication 1">1.</span>
+
+<p><u>Tight Trade-off in Contention Resolution without Collision Detection</u>&nbsp;<a href="https://arxiv.org/abs/2102.09716"><i class="far fa-file-alt"></i>arXiv</a><br>
+Haimin Chen, <span class="me">Yonggang Jiang</span>, Chaodong Zheng. <br>
+<strong class="venue">PODC 2021:</strong> ACM Symposium on Principles of Distributed Computing.</p>
+</li>
+
+</ul>
+</div>
+<div class="section__body section__body--after">
+
+
 <div  style="display:none">
 <script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=fe7Ce6z87gsayoSi3h0muHdIn7i1tKmOGfd0hwwA7fU&cl=ffffff&w=a"></script>
 </div>
+
+</div>
+<aside class="pub-ai-footnote" id="ai-principles" aria-label="Personal opinions and principles on AI-generated main results" tabindex="-1">
+<h3 id="my-personal-opinions-and-principles-on-papers-with-ai-generated-results">My personal opinions and principles on papers with AI-generated results</h3>
+<p>I distinguish two kinds of contribution in theoretical papers:</p>
+<ol class="pub-ai-principles">
+<li class="pub-ai-principle">Introducing a new concept, problem, model, or conjecture, and explaining why it is useful or important.</li>
+<li class="pub-ai-principle">Finding a new solution to an established open problem on which progress has been difficult.</li>
+</ol>
+<p>Traditionally, progress on open problems was usually scarce, so <span class="pub-ai-contribution-ref">2</span> was often a paper’s main contribution.</p>
+<p>Recently, AI has become powerful at <span class="pub-ai-contribution-ref">2</span> (see <a href="https://openai.com/index/sharing-ai-progress-in-mathematics/">OpenAI’s report</a>, as one of the examples). However, many recent theoretical papers still follow the traditional framing: they present <span class="pub-ai-contribution-ref">2</span> as their main contribution, even when the solution is produced by AI and the paper contributes nothing of <span class="pub-ai-contribution-ref">1</span>. I mark such papers with <span class="pub-ai" role="note" aria-label="Main result generated by AI">AI</span>
+. Note that I do <strong>not</strong> use this marker for papers whose main contribution is a new human-developed concept, problem, model, or conjecture, even if their proofs are generated by AI.</p>
+<p>Personally, I see papers with this marker primarily as communicating what is now known about existing open problems. This is <strong>important</strong>: sharing these results helps others avoid duplicating effort and allows the community to move forward. However, I do not claim credits from the main contributions of these papers. The credits go to AI.</p>
+</aside>
+</section>
+
 </div>
 
-  
+</main>
 
+<footer class="site-footer">
+  <p class="footer-updated">Last updated in 2026 October.</p>
+  <p class="footer-links"><a class="footer-top" href="#top"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg><span>Back to top</span></a></p>
+</footer>
+
+</div>
+</div>
+<div class="drawer" id="site-menu" hidden>
+  <div class="drawer__backdrop" data-drawer-close></div>
+  <div class="drawer__panel" role="dialog" aria-modal="true" aria-labelledby="drawer-title" tabindex="-1">
+    <div class="drawer__head">
+      <p class="drawer__title" id="drawer-title">Menu</p>
+      <button class="icon-btn" type="button" data-drawer-close aria-label="Close menu"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+    </div>
+    <nav class="drawer__group" aria-labelledby="drawer-sections">
+      <p class="nav-label" id="drawer-sections">On this page</p>
+      <ul class="nav-list" data-spy>
+        <li><a href="#research-interests"><span class="nav-text">Research Interests</span></a></li>
+        <li><a href="#education"><span class="nav-text">Education &amp; Experience</span></a></li>
+        <li><a href="#honors--awards"><span class="nav-text">Awards</span></a></li>
+        <li><a href="#publications"><span class="nav-text">Publications</span></a></li>
+      </ul>
+    </nav>
+    <div class="drawer__group">
+      <p class="nav-label">Contact</p>
+      <p class="p-contact__item p-contact__email drawer__email"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><a class="p-email" href="#about" data-email-user="ygdjiang" data-email-domain="gmail.com"><span>ygdjiang</span><span class="p-at" aria-hidden="true"></span><span class="visually-hidden"> at </span><span>gmail.com</span></a><button class="copy-btn" type="button" data-copy-email aria-label="Copy e-mail address" title="Copy e-mail address" hidden><svg class="i i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="13" height="13" x="9" y="9" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><svg class="i i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span class="copy-tip" aria-hidden="true">Copied</span></button><span class="copy-status visually-hidden" role="status"></span>
+</p>
+      <ul class="p-links" aria-label="Profiles">
+  <li><a class="pill" href="https://scholar.google.com/citations?user=b81oyQUAAAAJ" aria-label="Google Scholar" title="Google Scholar"><svg class="i" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2.2 1.2 10.1h21.6z"/><circle cx="12" cy="15.6" r="6.2"/></svg><span>Scholar</span></a></li>
+  <li><a class="pill" href="/CV.pdf"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg><span>CV</span></a></li>
+  <li><a class="pill" href="https://github.com/yonggangjiang"><svg class="i" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 .5C5.73.5.5 5.73.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a10.9 10.9 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg><span>GitHub</span></a></li>
+</ul>
+
+    </div>
+    <div class="drawer__group">
+      <p class="nav-label" id="drawer-theme">Appearance</p>
+      <div class="seg" role="group" aria-labelledby="drawer-theme">
+        <button type="button" class="seg__btn" data-theme-set="light" aria-pressed="false"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg><span>Light</span></button>
+        <button type="button" class="seg__btn" data-theme-set="dark" aria-pressed="false"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg><span>Dark</span></button>
+        <button type="button" class="seg__btn" data-theme-set="system" aria-pressed="false"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="20" height="14" x="2" y="3" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg><span>Auto</span></button>
       </div>
     </div>
   </div>
+</div>
 
-      </div>
-    
-  
-  </main>
-  <footer class="pl-scrollbar">
-    <div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
-    <p class="text-sm text-tertiary-text"> Last updated in 2026 September. </p>
-</div></div>
-  </footer>
 </body>
-
 </html>

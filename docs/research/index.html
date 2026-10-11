@@ -1,309 +1,188 @@
-<!DOCTYPE html><meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
-<style>
-  .blackout {
-    background-color: black;
-    color: black;
-    cursor: pointer;
-    transition: color 0.3s ease;
-    padding: 2px 4px;
-    border-radius: 4px;
-  }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yonggang&#39;s Page</title>
+<meta name="description" content="Teaching Algorithm Design: A Literature Review
+Potential Research Topics Dynamic Vertex Connectivity For very small connectivity (subpolynomial) Fully …">
+<link rel="canonical" href="https://yonggangjiang.github.io/docs/research/">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta property="og:title" content="Yonggang&#39;s Page">
+<meta property="og:description" content="Teaching Algorithm Design: A Literature Review
+Potential Research Topics Dynamic Vertex Connectivity For very small connectivity (subpolynomial) Fully …">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://yonggangjiang.github.io/docs/research/">
+<meta property="og:site_name" content="Yonggang&#39;s homepage">
+<meta property="og:image" content="https://yonggangjiang.github.io/images/me.png">
+<meta name="twitter:card" content="summary">
 
-  .blackout.revealed {
-    color: white;  
-  }
-</style>
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f5f8ff" data-color="#f5f8ff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#080f20" data-color="#080f20" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script>(function(){try{var bar={"dark":"#080f20","light":"#f5f8ff"};var t=localStorage.getItem("theme");if(t==="light"||t==="dark"){document.documentElement.setAttribute("data-theme",t);var m=document.querySelectorAll('meta[name="theme-color"]');for(var i=0;i<m.length;i++)m[i].setAttribute("content",bar[t]);}}catch(e){}})();</script>
+<link rel="preload" href="/fonts/source-serif-4-normal-400_700-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/source-serif-4-display-600_700-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/inter-normal-400_700-latin.woff2" as="font" type="font/woff2" crossorigin>
 
-
-<title>Home | Yonggang&#39;s homepage</title>
-
-<meta name="generator" content="Hugo Eureka 0.8.3-dev" />
-<link rel="stylesheet" href="https://yonggangjiang.github.io/css/eureka.min.css">
-<script defer src="https://yonggangjiang.github.io/js/eureka.min.js"></script>
-
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload"
-  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
-  as="style" onload="this.onload=null;this.rel='stylesheet'">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css"
-   media="print"
-  onload="this.media='all';this.onload=null" crossorigin>
-<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js"
-   crossorigin></script>
-
-  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/dart.min.js"
-     crossorigin></script>
-
-<script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js"
-   integrity="sha256-uNYoXefWRqv&#43;PsIF/OflNmwtKM4lStn9yrz2gVl6ymo="  crossorigin></script>
-
-
-
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
-   integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"  media="print"
-  onload="this.media='all';this.onload=null" crossorigin>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" 
-  integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"  crossorigin></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
-   integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"  crossorigin></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"></script>
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    renderMathInElement(document.body, {
+    if (!window.renderMathInElement) return;    
+    renderMathInElement(document.querySelector("main") || document.body, {
       delimiters: [
         { left: "$$", right: "$$", display: true },
         { left: "$", right: "$", display: false },
         { left: "\\(", right: "\\)", display: false },
         { left: "\\[", right: "\\]", display: true }
-      ],
+      ]
     });
   });
 </script>
 
+<link rel="stylesheet" href="/css/modern-sidebar-bundle.min.69f840065977fa0ea3c929d6d80cef590ea5c3a3a8ef682c391e5eef2fc4c941.css" integrity="sha256-afhABll3&#43;g6jySnW2AzvWQ6lw6Oo72gsOR5e7y/EyUE=">
+<script defer src="/js/site.min.7d2e60624697a8399205e1d06f04d0a0b003adf1d6a7f821ad9220b5d18d2573.js" integrity="sha256-fS5gYkaXqDmSBeHQbwTQoLADrfHWp/ghrZIgtdGNJXM="></script>
+<script defer src="/js/avatar-caption.min.863927548a51d409a8128fdb8c6874f2f6565cc5aaae3a83a97c581ffc81707e.js" integrity="sha256-hjknVIpR1AmoEo/bjGh08vZWXMWqrjqDqXxYH/yBcH4="></script>
+<script defer src="/js/modern-sidebar-variant.min.d44235078db1b531c72c84b9e9ffa2da7bc3a5912d110c2b19163bd8f0a53afe.js" integrity="sha256-1EI1B42xtTHHLIS56f&#43;i2nvDpZEtEQwrGRY72PClOv4="></script>
+<noscript><style>.theme-toggle,.menu-btn,.copy-btn,.folds-btn{display:none!important}@media (max-width:63.99em){.rail--docs .rail-nav,.rail--docs .rail-foot{display:block!important}.profile--compact .p-links{display:flex!important}}</style></noscript>
 
-<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js" 
-  integrity="sha256-Zmpaaj&#43;GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE="  crossorigin></script>
+</head>
+<body id="top" class="page page--docs">
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="shell shell--docs shell--toc">
 
-
-
-
-
-<link rel="icon" type="image/png" sizes="32x32" href="https://yonggangjiang.github.io/images/icon_hu_4f4e55a10d73f6ba.png">
-<link rel="apple-touch-icon" sizes="180x180" href="https://yonggangjiang.github.io/images/icon_hu_8190559dabbef89f.png">
-
-<meta name="description"
-  content="Teaching Algorithm Design: A Literature Review
-Potential Research Topics
-Dynamic Vertex Connectivity
-For very small connectivity (subpolynomial)
-Fully Dynamic s-t Edge Connectivity in Subpolynomial Time
-Deterministic Small Vertex Connectivity in Almost Linear Time
-For larger connectivity that requires reduction to max-flow
-Dynamic Maxflow via Dynamic Interior Point Methods
-TSP
-Faster Approximations for Metric-TSP via Linear Programming, reduction from fraction to approximate
-Talk by Omri Weinstein
-A Nearly Time-Optimal Distributed Approximation of Minimum Cost k-Edge-Connected Spanning Subgraph">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [{
-      "@type": "ListItem",
-      "position": 1 ,
-      "name":"Docs",
-      "item":"https://yonggangjiang.github.io/docs/"},{
-      "@type": "ListItem",
-      "position": 2 ,
-      "name":"Home",
-      "item":"https://yonggangjiang.github.io/docs/research/"}]
-}
-</script>
-
-
-
-<script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://yonggangjiang.github.io/docs/research/"
-    },
-    "headline": "Home | Yonggang\u0027s homepage","wordCount":  607 ,
-    "publisher": {
-        "@type": "Person",
-        "name": "C. Wang",
-        "logo": {
-            "@type": "ImageObject",
-            "url": "https://yonggangjiang.github.io/images/icon.png"
-        }
-        },
-    "description": "\u003cp\u003e\u003ca href=\u0022https:\/\/arxiv.org\/abs\/2405.00832\u0022\u003eTeaching Algorithm Design: A Literature Review\u003c\/a\u003e\u003c\/p\u003e\n\u003ch1 id=\u0022potential-research-topics\u0022\u003ePotential Research Topics\u003c\/h1\u003e\n\u003ch2 id=\u0022dynamic-vertex-connectivity\u0022\u003eDynamic Vertex Connectivity\u003c\/h2\u003e\n\u003ch3 id=\u0022for-very-small-connectivity-subpolynomial\u0022\u003eFor very small connectivity (subpolynomial)\u003c\/h3\u003e\n\u003cp\u003e\u003ca href=\u0022https:\/\/arxiv.org\/abs\/2004.07650\u0022\u003eFully Dynamic s-t Edge Connectivity in Subpolynomial Time\u003c\/a\u003e\u003c\/p\u003e\n\u003cp\u003e\u003ca href=\u0022https:\/\/arxiv.org\/abs\/2210.13739\u0022\u003eDeterministic Small Vertex Connectivity in Almost Linear Time\u003c\/a\u003e\u003c\/p\u003e\n\u003ch3 id=\u0022for-larger-connectivity-that-requires-reduction-to-max-flow\u0022\u003eFor larger connectivity that requires reduction to max-flow\u003c\/h3\u003e\n\u003cp\u003e\u003ca href=\u0022https:\/\/arxiv.org\/abs\/2212.06315\u0022\u003eDynamic Maxflow via Dynamic Interior Point Methods\u003c\/a\u003e\u003c\/p\u003e\n\u003ch2 id=\u0022tsp\u0022\u003eTSP\u003c\/h2\u003e\n\u003cp\u003e\u003ca href=\u0022https:\/\/arxiv.org\/pdf\/1802.01242\u0022\u003eFaster Approximations for Metric-TSP via Linear Programming\u003c\/a\u003e, reduction from fraction to approximate\u003c\/p\u003e\n\u003cp\u003e\u003ca href=\u0022https:\/\/simons.berkeley.edu\/talks\/omri-weinstein-hebrew-u-columbia-u-2023-09-22\u0022\u003eTalk by Omri Weinstein\u003c\/a\u003e\u003c\/p\u003e\n\u003cp\u003e\u003ca href=\u0022https:\/\/arxiv.org\/abs\/2211.04994\u0022\u003eA Nearly Time-Optimal Distributed Approximation of Minimum Cost k-Edge-Connected Spanning Subgraph\u003c\/a\u003e\u003c\/p\u003e"
-}
-</script><meta property="og:title" content="Home | Yonggang&#39;s homepage" />
-<meta property="og:type" content="website" />
-
-
-<meta property="og:image" content="https://yonggangjiang.github.io/images/icon.png">
-
-
-<meta property="og:url" content="https://yonggangjiang.github.io/docs/research/" />
-
-
-
-
-
-<meta property="og:description" content="Eureka is a elegant and powerful theme for Hugo." />
-
-
-
-
-
-<meta property="og:locale" content="en" />
-
-
-
-
-<meta property="og:site_name" content="Yonggang&#39;s homepage" />
-
-
-
-
-
-
-<meta property="og:updated_time" content="2020-10-16T00:00:00&#43;00:00" />
-
-
-
-<meta property="article:section" content="docs" />
-
-
-<link rel="alternate" type="application/rss+xml" href="https://yonggangjiang.github.io/docs/research/index.xml" title="Yonggang's homepage" />
-
-
-<body class="flex flex-col min-h-screen">
-  <header class="fixed flex items-center w-full min-h-16 z-50 bg-secondary-bg shadow-sm">
-    <div class="w-full mx-auto"><script>
-    let storageColorScheme = localStorage.getItem("lightDarkMode")
-    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
-        document.getElementsByTagName('html')[0].classList.add('dark')
-    }
-</script>
-<nav class="flex items-center justify-center px-4 py-4 md:py-0" style="max-width:1300px; margin: 0 auto;">
-    <a href="/docs/research" class="mr-6 text-primary-text text-xl font-bold pl-3" style="color: black;">Yonggang's Page</a>
-    
-
-    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
-        <i class="fas fa-bars"></i>
-    </button>
-
-    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
-    </div>
-
-</nav>
-<script>
-    
-    let element = document.getElementById('lightDarkMode')
-    if (storageColorScheme == null || storageColorScheme == 'Auto') {
-        document.addEventListener('DOMContentLoaded', () => {
-            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
-        })
-    } else if (storageColorScheme == "Light") {
-        element.firstElementChild.classList.remove('fa-adjust')
-        element.firstElementChild.setAttribute("data-icon", 'sun')
-        element.firstElementChild.classList.add('fa-sun')
-    } else if (storageColorScheme == "Dark") {
-        element.firstElementChild.classList.remove('fa-adjust')
-        element.firstElementChild.setAttribute("data-icon", 'moon')
-        element.firstElementChild.classList.add('fa-moon')
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-        getcolorscheme();
-        switchBurger();
-    });
-</script>
-</div>
-  </header>
-  <main class="flex-grow pt-16">
-
-
-<div class="flex flex-col md:flex-row bg-secondary-bg rounded">
-    <div class="md:w-1/4 lg:w-1/6 border-r">
-        <div class="sticky top-16 pt-6">
-            
-
-
-
-
-
-<div id="sidebar-title" class="md:hidden mx-4 px-2 pt-4 pb-2 md:border-b text-tertiary-text md:text-primary-text">
-    <span class="font-semibold">Table of Contents</span>
-    <i class="fas fa-caret-right ml-1"></i>
-</div>
-
-<div id="sidebar-toc"
-    class="hidden md:block overflow-y-auto mx-6 md:mx-0 pr-6 pt-2 md:max-h-doc-sidebar bg-primary-bg md:bg-transparent">
-
-    <div class="flex flex-wrap ml-4 -mr-2 p-2 hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://yonggangjiang.github.io/docs/research/&#34;">
-        <a class="text-eureka hover:text-eureka font-bold"
-            href="https://yonggangjiang.github.io/docs/research/">Home</a>
-        
-        
-        
-
+<header class="rail rail--docs" id="rail">
+  <div class="rail-inner">
+    <div class="docs-brand">
+      <a class="brand" href="/docs/research/"><img class="avatar avatar--sm" src="/images/me_hu78b6507a05da9074dfb0da277d46e879_597748_48x48_fill_q85_bgffffff_box_center_3.jpg" srcset="/images/me_hu78b6507a05da9074dfb0da277d46e879_597748_48x48_fill_q85_bgffffff_box_center_3.jpg 1x, /images/me_hu78b6507a05da9074dfb0da277d46e879_597748_96x96_fill_q85_bgffffff_box_center_3.jpg 2x" alt="" width="48" height="48">
+        <span class="brand-text"><span class="brand-name">Yonggang&#39;s Page</span><span class="brand-sub">by Yonggang Jiang</span></span>
+      </a>
+      <button class="icon-btn theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="Dark theme" title="Dark theme"><svg class="i i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg><svg class="i i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></button>
 
     </div>
-    
-    
-
-
-<ul class="pl-4">
-    
-    
-    
-    <li class="py-1"></li>
-        <div class="  -mr-2 p-2  hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://yonggangjiang.github.io/docs/research/congest/&#34;">
-            <a class=""
-            href="https://yonggangjiang.github.io/docs/research/congest/">Congest Model</a>
-        </div>
-        
-    </li>
-    
-    
-    
-    
-    <li class="py-1"></li>
-        <div class="  -mr-2 p-2  hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://yonggangjiang.github.io/docs/research/intersted/&#34;">
-            <a class=""
-            href="https://yonggangjiang.github.io/docs/research/intersted/">Interested Topics</a>
-        </div>
-        
-    </li>
-    
-    
-    
-    
-    <li class="py-1"></li>
-        <div class="  -mr-2 p-2  hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://yonggangjiang.github.io/docs/research/old/&#34;">
-            <a class=""
-            href="https://yonggangjiang.github.io/docs/research/old/">old</a>
-        </div>
-        
-    </li>
-    
-    
-    
-    
-    <li class="py-1"></li>
-        <div class="  -mr-2 p-2  hover:bg-primary-bg rounded" style="cursor:pointer" onclick="window.location.href=&#34;https://yonggangjiang.github.io/docs/research/sequential/&#34;">
-            <a class=""
-            href="https://yonggangjiang.github.io/docs/research/sequential/">Sequential Graph Problems</a>
-        </div>
-        
-    </li>
-    
-    
-    <li class="py-2"></li>
-    </li>
+    <nav class="rail-nav" aria-labelledby="rail-pages">
+      <p class="nav-label" id="rail-pages">Pages</p>
+      <ul class="nav-list nav-list--pages">
+  <li><a href="/docs/research/" aria-current="page"><span class="nav-text">Home</span></a></li>
+  <li>
+    <a href="/docs/research/congest/"><span class="nav-text">Congest Model</span></a>
+  </li>
+  <li>
+    <a href="/docs/research/intersted/"><span class="nav-text">Interested Topics</span></a>
+  </li>
+  <li>
+    <a href="/docs/research/old/"><span class="nav-text">old</span></a>
+  </li>
+  <li>
+    <a href="/docs/research/sequential/"><span class="nav-text">Sequential Graph Problems</span></a>
+  </li>
 </ul>
 
-</div>
+    </nav>
+    <p class="rail-foot"><a class="rail-home" href="/"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg><span>Homepage</span></a></p>
+  </div>
+</header>
 
 
+<div class="column">
+<nav class="chipbar" aria-label="Sections">
+  <ul class="chips" data-spy data-chips>
+    <li><a class="chip" href="#dynamic-vertex-connectivity">Dynamic Vertex Connectivity</a></li>
+    <li><a class="chip" href="#tsp">TSP</a></li>
+    <li><a class="chip" href="#maroid-intersection">Maroid Intersection</a></li>
+    <li><a class="chip" href="#congest-lower-bound-using-rounds-vs-bits-complexity">Congest Lower Bound Using Rounds vs. Bits Complexity</a></li>
+    <li><a class="chip" href="#large-vertex-connectivity">Large Vertex Connectivity</a></li>
+    <li><a class="chip" href="#congest-small-edgevertex-connectivity">Congest small Edge/Vertex Connectivity</a></li>
+    <li><a class="chip" href="#sequential-local-vertex-cut--directed-edge-cut">Sequential local vertex cut / directed edge cut</a></li>
+    <li><a class="chip" href="#distributedparallel-negative-weighted-sssp">Distributed/Parallel Negative Weighted SSSP</a></li>
+    <li><a class="chip" href="#triangle-detection-in-congest-clique-model">Triangle Detection in CONGEST (Clique) Model</a></li>
+    <li><a class="chip" href="#strong-sublinear-time-algorithm-in-congest-model">Strong sublinear time algorithm in CONGEST model</a></li>
+    <li><a class="chip" href="#strong-polynomial-time-negative-weight-shortest-path-via-max-flow">Strong polynomial time negative weight shortest path via max-flow</a></li>
+    <li><a class="chip" href="#lower-bounds-for-dynamic-query-model">lower bounds for dynamic query model</a></li>
+    <li><a class="chip" href="#streaming-space-vs-passes-lower-bound-for-reachability">Streaming Space vs. Passes Lower Bound for Reachability</a></li>
+    <li><a class="chip" href="#directed-edge-connectivity">Directed Edge Connectivity</a></li>
+    <li><a class="chip" href="#submodular-function-minimization">Submodular Function Minimization</a></li>
+  </ul>
+  <button class="icon-btn menu-btn" id="nav-toggle" type="button" aria-controls="site-menu" aria-expanded="false" aria-label="Menu"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h10"/></svg></button>
+</nav>
 
-        </div>
+
+<main id="main" class="main main--docs" tabindex="-1">
+  <div class="doc-bar">
+    <nav class="crumbs" aria-label="Breadcrumb"><span aria-current="page">Research</span></nav>
+    <div class="doc-tools">
+      <details class="toc-pop" data-popover>
+        <summary class="tool-btn toc-pop__btn"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 6h13"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M3 6h.01"/><path d="M3 12h.01"/><path d="M3 18h.01"/></svg><span>On this page</span><svg class="i toc-pop__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="toc-pop__panel"><nav class="toc toc--pop" aria-label="On this page" data-spy>
+  <ul>
+    <li><a href="#potential-research-topics">Potential Research Topics</a>
+      <ul>
+        <li><a href="#dynamic-vertex-connectivity">Dynamic Vertex Connectivity</a>
+          <ul>
+            <li><a href="#for-very-small-connectivity-subpolynomial">For very small connectivity (subpolynomial)</a></li>
+            <li><a href="#for-larger-connectivity-that-requires-reduction-to-max-flow">For larger connectivity that requires reduction to max-flow</a></li>
+          </ul>
+        </li>
+        <li><a href="#tsp">TSP</a></li>
+        <li><a href="#maroid-intersection">Maroid Intersection</a></li>
+        <li><a href="#congest-lower-bound-using-rounds-vs-bits-complexity">Congest Lower Bound Using Rounds vs. Bits Complexity</a>
+          <ul>
+            <li><a href="#future-goals">Future Goals</a></li>
+            <li><a href="#related-papers">Related Papers</a></li>
+          </ul>
+        </li>
+        <li><a href="#large-vertex-connectivity">Large Vertex Connectivity</a>
+          <ul>
+            <li><a href="#related-papers-1">Related Papers</a></li>
+          </ul>
+        </li>
+        <li><a href="#congest-small-edgevertex-connectivity">Congest small Edge/Vertex Connectivity</a>
+          <ul>
+            <li><a href="#future-goals-1">Future Goals</a></li>
+            <li><a href="#related-papers-2">Related Papers</a></li>
+          </ul>
+        </li>
+        <li><a href="#sequential-local-vertex-cut--directed-edge-cut">Sequential local vertex cut / directed edge cut</a>
+          <ul>
+            <li><a href="#related-papers-3">Related Papers</a></li>
+          </ul>
+        </li>
+        <li><a href="#distributedparallel-negative-weighted-sssp">Distributed/Parallel Negative Weighted SSSP</a>
+          <ul>
+            <li><a href="#future-goals-2">Future Goals</a></li>
+            <li><a href="#related-papers-4">Related Papers</a></li>
+          </ul>
+        </li>
+        <li><a href="#triangle-detection-in-congest-clique-model">Triangle Detection in CONGEST (Clique) Model</a></li>
+        <li><a href="#strong-sublinear-time-algorithm-in-congest-model">Strong sublinear time algorithm in CONGEST model</a></li>
+        <li><a href="#strong-polynomial-time-negative-weight-shortest-path-via-max-flow">Strong polynomial time negative weight shortest path via max-flow</a></li>
+        <li><a href="#lower-bounds-for-dynamic-query-model">lower bounds for dynamic query model</a></li>
+      </ul>
+    </li>
+    <li><a href="#hard-problems">Hard Problems</a>
+      <ul>
+        <li><a href="#streaming-space-vs-passes-lower-bound-for-reachability">Streaming Space vs. Passes Lower Bound for Reachability</a>
+          <ul>
+            <li><a href="#future-goals-3">Future Goals</a></li>
+            <li><a href="#related-papers-5">Related Papers</a></li>
+          </ul>
+        </li>
+        <li><a href="#directed-edge-connectivity">Directed Edge Connectivity</a></li>
+        <li><a href="#submodular-function-minimization">Submodular Function Minimization</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      </details>
     </div>
-    <div class="w-full md:w-3/4 lg:w-4/5 pb-8 pt-2 md:pt-8">
-        <div class="flex">
-            <div class="w-full lg:w-4/4 px-6">
-                
-                
-                <div class="content">
-                    <p><a href="https://arxiv.org/abs/2405.00832">Teaching Algorithm Design: A Literature Review</a></p>
+  </div>
+  <article class="prose doc" id="article">
+<p><a href="https://arxiv.org/abs/2405.00832">Teaching Algorithm Design: A Literature Review</a></p>
 <h1 id="potential-research-topics">Potential Research Topics</h1>
 <h2 id="dynamic-vertex-connectivity">Dynamic Vertex Connectivity</h2>
 <h3 id="for-very-small-connectivity-subpolynomial">For very small connectivity (subpolynomial)</h3>
@@ -386,27 +265,20 @@ A Nearly Time-Optimal Distributed Approximation of Minimum Cost k-Edge-Connected
 <p><a href="https://arxiv.org/abs/1911.06889">New Query Lower Bounds for Submodular Function MInimization [Graur, Pollner, Ramaswamy, Weinberg, ITCS'20]</a></p>
 <p><a href="https://arxiv.org/abs/2007.01445">Minimizing Convex Functions with Integral Minimizers [Jiang, SODA'21]</a></p>
 
-                </div>
-                
-                
-
-                
+  </article>
+</main>
 
 
+<footer class="site-footer">
+  <p class="footer-updated">Last updated in 2026 October.</p>
+  <p class="footer-links"><a class="footer-top" href="#top"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg><span>Back to top</span></a></p>
+</footer>
 
-                
-
-
-
-            </div>
-            
-            <div class="hidden lg:block lg:w-1/4">
-                
-                <div class="sticky top-16 z-10 hidden lg:block px-6 py-4  bg-secondary-bg pt-16 -mt-16 ">
-    <span class="text-lg font-semibold">On This Page</span>
 </div>
-<div class="sticky-toc hidden lg:block px-6 pb-6  pt-10 -mt-10 border-l ">
-    <nav id="TableOfContents">
+<aside class="toc-rail" aria-labelledby="toc-title">
+  <div class="toc-rail__inner">
+    <p class="nav-label" id="toc-title">On this page</p>
+    <nav class="toc" aria-labelledby="toc-title" data-spy>
   <ul>
     <li><a href="#potential-research-topics">Potential Research Topics</a>
       <ul>
@@ -466,43 +338,47 @@ A Nearly Time-Optimal Distributed Approximation of Minimum Cost k-Edge-Connected
     </li>
   </ul>
 </nav>
-</div>
-<script>
-    window.addEventListener('DOMContentLoaded', () => {
-        enableStickyToc();
-    });
-</script>
-                
-            </div>
-            
-        </div>
+  </div>
+</aside>
 
+</div>
+<div class="drawer" id="site-menu" hidden>
+  <div class="drawer__backdrop" data-drawer-close></div>
+  <div class="drawer__panel" role="dialog" aria-modal="true" aria-labelledby="drawer-title" tabindex="-1">
+    <div class="drawer__head">
+      <p class="drawer__title" id="drawer-title">Menu</p>
+      <button class="icon-btn" type="button" data-drawer-close aria-label="Close menu"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
     </div>
+    <nav class="drawer__group" aria-labelledby="drawer-pages">
+      <p class="nav-label" id="drawer-pages">Yonggang&#39;s Page</p>
+      <ul class="nav-list nav-list--pages">
+  <li><a href="/docs/research/" aria-current="page"><span class="nav-text">Home</span></a></li>
+  <li>
+    <a href="/docs/research/congest/"><span class="nav-text">Congest Model</span></a>
+  </li>
+  <li>
+    <a href="/docs/research/intersted/"><span class="nav-text">Interested Topics</span></a>
+  </li>
+  <li>
+    <a href="/docs/research/old/"><span class="nav-text">old</span></a>
+  </li>
+  <li>
+    <a href="/docs/research/sequential/"><span class="nav-text">Sequential Graph Problems</span></a>
+  </li>
+</ul>
 
-
+    </nav>
+    <div class="drawer__group">
+      <p class="nav-label" id="drawer-theme">Appearance</p>
+      <div class="seg" role="group" aria-labelledby="drawer-theme">
+        <button type="button" class="seg__btn" data-theme-set="light" aria-pressed="false"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg><span>Light</span></button>
+        <button type="button" class="seg__btn" data-theme-set="dark" aria-pressed="false"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg><span>Dark</span></button>
+        <button type="button" class="seg__btn" data-theme-set="system" aria-pressed="false"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="20" height="14" x="2" y="3" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg><span>Auto</span></button>
+      </div>
+    </div>
+    <p class="drawer__group drawer__foot"><a class="rail-home" href="/"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg><span>Homepage</span></a></p>
+  </div>
 </div>
 
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        hljs.initHighlightingOnLoad();
-        changeSidebarHeight();
-        switchDocToc();
-    })
-</script>
-
-
-
-
-
-
-
-
-  </main>
-  <footer class="pl-scrollbar">
-    <div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
-    <p class="text-sm text-tertiary-text"> Last updated in 2026 September. </p>
-</div></div>
-  </footer>
 </body>
-
 </html>

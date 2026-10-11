@@ -1,319 +1,203 @@
-<!DOCTYPE html><meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
-<style>
-  .blackout {
-    background-color: black;
-    color: black;
-    cursor: pointer;
-    transition: color 0.3s ease;
-    padding: 2px 4px;
-    border-radius: 4px;
-  }
-
-  .blackout.revealed {
-    color: white;  
-  }
-</style>
-
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Offers | Yonggang&#39;s homepage</title>
+<meta name="description" content="We are looking for motivated Hiwis (student assistants) to join the Algorithms &amp; Complexity group (D1) at the Max Planck Institute for Informatics. …">
+<link rel="canonical" href="https://yonggangjiang.github.io/offers/">
+<meta property="og:title" content="Offers | Yonggang&#39;s homepage">
+<meta property="og:description" content="We are looking for motivated Hiwis (student assistants) to join the Algorithms &amp; Complexity group (D1) at the Max Planck Institute for Informatics. …">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://yonggangjiang.github.io/offers/">
+<meta property="og:site_name" content="Yonggang&#39;s homepage">
+<meta property="og:image" content="https://yonggangjiang.github.io/images/me.png">
+<meta name="twitter:card" content="summary">
 
-<meta name="generator" content="Hugo Eureka 0.8.3-dev" />
-<link rel="stylesheet" href="https://yonggangjiang.github.io/css/eureka.min.css">
-<script defer src="https://yonggangjiang.github.io/js/eureka.min.js"></script>
-
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload"
-  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
-  as="style" onload="this.onload=null;this.rel='stylesheet'">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css"
-   media="print"
-  onload="this.media='all';this.onload=null" crossorigin>
-<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js"
-   crossorigin></script>
-
-  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/dart.min.js"
-     crossorigin></script>
-
-<script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js"
-   integrity="sha256-uNYoXefWRqv&#43;PsIF/OflNmwtKM4lStn9yrz2gVl6ymo="  crossorigin></script>
-
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f5f8ff" data-color="#f5f8ff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#080f20" data-color="#080f20" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script>(function(){try{var bar={"dark":"#080f20","light":"#f5f8ff"};var t=localStorage.getItem("theme");if(t==="light"||t==="dark"){document.documentElement.setAttribute("data-theme",t);var m=document.querySelectorAll('meta[name="theme-color"]');for(var i=0;i<m.length;i++)m[i].setAttribute("content",bar[t]);}}catch(e){}})();</script>
+<link rel="preload" href="/fonts/source-serif-4-normal-400_700-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/source-serif-4-display-600_700-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/inter-normal-400_700-latin.woff2" as="font" type="font/woff2" crossorigin>
 
 
+<link rel="stylesheet" href="/css/modern-sidebar-bundle.min.69f840065977fa0ea3c929d6d80cef590ea5c3a3a8ef682c391e5eef2fc4c941.css" integrity="sha256-afhABll3&#43;g6jySnW2AzvWQ6lw6Oo72gsOR5e7y/EyUE=">
+<script defer src="/js/site.min.7d2e60624697a8399205e1d06f04d0a0b003adf1d6a7f821ad9220b5d18d2573.js" integrity="sha256-fS5gYkaXqDmSBeHQbwTQoLADrfHWp/ghrZIgtdGNJXM="></script>
+<script defer src="/js/avatar-caption.min.863927548a51d409a8128fdb8c6874f2f6565cc5aaae3a83a97c581ffc81707e.js" integrity="sha256-hjknVIpR1AmoEo/bjGh08vZWXMWqrjqDqXxYH/yBcH4="></script>
+<script defer src="/js/modern-sidebar-variant.min.d44235078db1b531c72c84b9e9ffa2da7bc3a5912d110c2b19163bd8f0a53afe.js" integrity="sha256-1EI1B42xtTHHLIS56f&#43;i2nvDpZEtEQwrGRY72PClOv4="></script>
+<noscript><style>.theme-toggle,.menu-btn,.copy-btn,.folds-btn{display:none!important}@media (max-width:63.99em){.rail--docs .rail-nav,.rail--docs .rail-foot{display:block!important}.profile--compact .p-links{display:flex!important}}</style></noscript>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
-   integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"  media="print"
-  onload="this.media='all';this.onload=null" crossorigin>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" 
-  integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"  crossorigin></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
-   integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"  crossorigin></script>
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    renderMathInElement(document.body, {
-      delimiters: [
-        { left: "$$", right: "$$", display: true },
-        { left: "$", right: "$", display: false },
-        { left: "\\(", right: "\\)", display: false },
-        { left: "\\[", right: "\\]", display: true }
-      ],
-    });
-  });
-</script>
+</head>
+<body id="top" class="page page--single">
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="shell shell--single">
 
-
-<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js" 
-  integrity="sha256-Zmpaaj&#43;GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE="  crossorigin></script>
-
-
-
-
-
-<link rel="icon" type="image/png" sizes="32x32" href="https://yonggangjiang.github.io/images/icon_hu_4f4e55a10d73f6ba.png">
-<link rel="apple-touch-icon" sizes="180x180" href="https://yonggangjiang.github.io/images/icon_hu_8190559dabbef89f.png">
-
-<meta name="description"
-  content="We are looking for motivated Hiwis (student assistants) to join the Algorithms &amp; Complexity group (D1) at the Max Planck Institute for Informatics. Students will be co-advised by me and Danupon Nanongkai.
-Topic
-We are developing LLM-based agents that can automatically discover, test, and improve heuristics for high-performance implementations of fundamental combinatorial optimization problems, such as shortest paths, negative-cycle detection, and maximum flow.
-Requirements
-
-Solid programming skills
-Strong understanding of algorithms and data structures
-
-What We Offer
-
-Possibility to co-author top-tier research publications
-Access to MPI-INF resources
-Flexible working hours and competitive salary
-
-Contact
-If you are interested, please send me an email with your CV and transcript attached.">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [{
-      "@type": "ListItem",
-      "position": 1 ,
-      "name":"Yonggang's homepage",
-      "item":"https://yonggangjiang.github.io/"},{
-      "@type": "ListItem",
-      "position": 2 ,
-      "name":"Offers",
-      "item":"https://yonggangjiang.github.io/offers/"}]
-}
-</script>
-
-
-
-<script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://yonggangjiang.github.io/offers/"
-    },
-    "headline": "Offers | Yonggang\u0027s homepage","wordCount":  125 ,
-    "publisher": {
-        "@type": "Person",
-        "name": "C. Wang",
-        "logo": {
-            "@type": "ImageObject",
-            "url": "https://yonggangjiang.github.io/images/icon.png"
-        }
-        },
-    "description": "\u003cp\u003eWe are looking for motivated Hiwis (student assistants) to join the \u003ca href=\u0022https:\/\/www.mpi-inf.mpg.de\/departments\/algorithms-complexity\u0022\u003eAlgorithms \u0026amp; Complexity group (D1)\u003c\/a\u003e at the Max Planck Institute for Informatics. Students will be co-advised by \u003ca href=\u0022\/#about\u0022\u003eme\u003c\/a\u003e and \u003ca href=\u0022https:\/\/sites.google.com\/site\/dannanongkai\/home\u0022\u003eDanupon Nanongkai\u003c\/a\u003e.\u003c\/p\u003e\n\u003ch2 id=\u0022topic\u0022\u003eTopic\u003c\/h2\u003e\n\u003cp\u003eWe are developing LLM-based agents that can automatically discover, test, and improve heuristics for high-performance implementations of fundamental combinatorial optimization problems, such as shortest paths, negative-cycle detection, and maximum flow.\u003c\/p\u003e\n\u003ch2 id=\u0022requirements\u0022\u003eRequirements\u003c\/h2\u003e\n\u003cul\u003e\n\u003cli\u003eSolid programming skills\u003c\/li\u003e\n\u003cli\u003eStrong understanding of algorithms and data structures\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003ch2 id=\u0022what-we-offer\u0022\u003eWhat We Offer\u003c\/h2\u003e\n\u003cul\u003e\n\u003cli\u003ePossibility to co-author top-tier research \u003cstrong\u003epublications\u003c\/strong\u003e\u003c\/li\u003e\n\u003cli\u003eAccess to MPI-INF \u003cstrong\u003eresources\u003c\/strong\u003e\u003c\/li\u003e\n\u003cli\u003eFlexible working hours and \u003cstrong\u003ecompetitive salary\u003c\/strong\u003e\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003ch2 id=\u0022contact\u0022\u003eContact\u003c\/h2\u003e\n\u003cp\u003eIf you are interested, please send \u003ca href=\u0022\/#about\u0022\u003eme\u003c\/a\u003e an email with your \u003cstrong\u003eCV\u003c\/strong\u003e and \u003cstrong\u003etranscript\u003c\/strong\u003e attached.\u003c\/p\u003e"
-}
-</script><meta property="og:title" content="Offers | Yonggang&#39;s homepage" />
-<meta property="og:type" content="article" />
-
-
-<meta property="og:image" content="https://yonggangjiang.github.io/images/icon.png">
-
-
-<meta property="og:url" content="https://yonggangjiang.github.io/offers/" />
-
-
-
-
-<meta property="og:description" content="We are looking for motivated Hiwis (student assistants) to join the Algorithms &amp; Complexity group (D1) at the Max Planck Institute for Informatics. Students will be co-advised by me and Danupon Nanongkai.
-Topic
-We are developing LLM-based agents that can automatically discover, test, and improve heuristics for high-performance implementations of fundamental combinatorial optimization problems, such as shortest paths, negative-cycle detection, and maximum flow.
-Requirements
-
-Solid programming skills
-Strong understanding of algorithms and data structures
-
-What We Offer
-
-Possibility to co-author top-tier research publications
-Access to MPI-INF resources
-Flexible working hours and competitive salary
-
-Contact
-If you are interested, please send me an email with your CV and transcript attached." />
-
-
-
-
-<meta property="og:locale" content="en" />
-
-
-
-
-<meta property="og:site_name" content="Yonggang&#39;s homepage" />
-
-
-
-
-
-
-
-
-
-<meta property="article:section" content="" />
-
-
-
-
-
-<body class="flex flex-col min-h-screen">
-  <header class="fixed flex items-center w-full min-h-16 z-50 bg-secondary-bg shadow-sm">
-    <div class="w-full mx-auto"><script>
-    let storageColorScheme = localStorage.getItem("lightDarkMode")
-    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
-        document.getElementsByTagName('html')[0].classList.add('dark')
-    }
-</script>
-<nav class="flex items-center justify-center px-4 py-4 md:py-0" style="max-width:1300px; margin: 0 auto;">
-     
-        
-        
+<header class="rail" id="rail">
+  <div class="rail-inner">
     
+<div class="profile profile--compact">
+  <svg class="p-art" viewBox="0 0 680 370" aria-hidden="true" focusable="false"><g class="ga-edges"><line x1="60" y1="300" x2="130" y2="205"/><line x1="60" y1="300" x2="215" y2="285"/><line x1="130" y1="205" x2="215" y2="285"/><line x1="130" y1="205" x2="255" y2="150"/><line x1="130" y1="205" x2="168" y2="78"/><line x1="215" y1="285" x2="335" y2="238"/><line x1="255" y1="150" x2="335" y2="238"/><line x1="255" y1="150" x2="365" y2="92"/><line x1="255" y1="150" x2="168" y2="78"/><line x1="168" y1="78" x2="300" y2="34"/><line x1="300" y1="34" x2="365" y2="92"/><line x1="365" y1="92" x2="440" y2="188"/><line x1="335" y1="238" x2="440" y2="188"/><line x1="335" y1="238" x2="388" y2="338"/><line x1="440" y1="188" x2="470" y2="300"/><line x1="440" y1="188" x2="528" y2="118"/><line x1="470" y1="300" x2="388" y2="338"/><line x1="470" y1="300" x2="590" y2="228"/><line x1="528" y1="118" x2="590" y2="228"/><line x1="528" y1="118" x2="455" y2="36"/><line x1="455" y1="36" x2="365" y2="92"/><line x1="455" y1="36" x2="604" y2="54"/><line x1="604" y1="54" x2="528" y2="118"/><line x1="590" y1="228" x2="622" y2="330"/><line x1="470" y1="300" x2="622" y2="330"/><line x1="300" y1="34" x2="455" y2="36"/><line x1="215" y1="285" x2="388" y2="338"/></g><polyline class="ga-path" points="60,300 130,205 255,150 365,92 455,36 604,54"/><g class="ga-nodes"><circle cx="215" cy="285" r="4.5"/><circle cx="335" cy="238" r="4.5"/><circle cx="440" cy="188" r="4.5"/><circle cx="470" cy="300" r="4.5"/><circle cx="528" cy="118" r="4.5"/><circle cx="590" cy="228" r="4.5"/><circle cx="168" cy="78" r="4.5"/><circle cx="300" cy="34" r="4.5"/><circle cx="622" cy="330" r="4.5"/><circle cx="388" cy="338" r="4.5"/></g><g class="ga-pnodes"><circle cx="60" cy="300" r="5.5"/><circle cx="130" cy="205" r="5.5"/><circle cx="255" cy="150" r="5.5"/><circle cx="365" cy="92" r="5.5"/><circle cx="455" cy="36" r="5.5"/><circle cx="604" cy="54" r="5.5"/></g></svg>
+  <div class="p-head">
+    <button class="avatar-caption-trigger" type="button" aria-label="About this photo" aria-haspopup="dialog" aria-controls="avatar-caption">
+    <img class="avatar" src="/images/me_hu78b6507a05da9074dfb0da277d46e879_597748_128x128_fill_q85_bgffffff_box_center_3.jpg" srcset="/images/me_hu78b6507a05da9074dfb0da277d46e879_597748_128x128_fill_q85_bgffffff_box_center_3.jpg 1x, /images/me_hu78b6507a05da9074dfb0da277d46e879_597748_256x256_fill_q85_bgffffff_box_center_3.jpg 2x" alt="A scientist facing a luminous computing system in Honkai Star Rail" width="128" height="128"></button>
+    <button class="icon-btn theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="Dark theme" title="Dark theme"><svg class="i i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg><svg class="i i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></button>
 
-    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
-        <i class="fas fa-bars"></i>
-    </button>
+  </div>
+  <div class="p-id">
+    <p class="p-name"><a href="/"><span class="p-name__main">Yonggang Jiang</span> <span class="p-name__alt" lang="zh-Hans">(姜勇刚)</span></a></p>
+    <p class="p-role">Junior Fellow at <a href="https://eth-its.ethz.ch/">ETH-ITS</a></p>
+  </div>
+  <ul class="p-contact" aria-label="Contact">
+    <li class="p-contact__item p-contact__email"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><a class="p-email" href="/#about" data-email-user="ygdjiang" data-email-domain="gmail.com"><span>ygdjiang</span><span class="p-at" aria-hidden="true"></span><span class="visually-hidden"> at </span><span>gmail.com</span></a><button class="copy-btn" type="button" data-copy-email aria-label="Copy e-mail address" title="Copy e-mail address" hidden><svg class="i i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="13" height="13" x="9" y="9" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><svg class="i i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span class="copy-tip" aria-hidden="true">Copied</span></button><span class="copy-status visually-hidden" role="status"></span>
+</li>
+  </ul>
+  <ul class="p-links" aria-label="Profiles">
+  <li><a class="pill" href="https://scholar.google.com/citations?user=b81oyQUAAAAJ" aria-label="Google Scholar" title="Google Scholar"><svg class="i" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2.2 1.2 10.1h21.6z"/><circle cx="12" cy="15.6" r="6.2"/></svg><span>Scholar</span></a></li>
+  <li><a class="pill" href="/CV.pdf"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg><span>CV</span></a></li>
+  <li><a class="pill" href="https://github.com/yonggangjiang"><svg class="i" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 .5C5.73.5.5 5.73.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a10.9 10.9 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg><span>GitHub</span></a></li>
+</ul>
 
-    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
-    </div>
+</div>
+<dialog class="avatar-caption-dialog" id="avatar-caption" aria-labelledby="avatar-caption-title">
+  <div class="avatar-caption-dialog__head">
+    <h2 id="avatar-caption-title">About this photo</h2>
+    <button class="icon-btn" type="button" data-avatar-caption-close aria-label="Close photo description" autofocus><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+  </div>
+  <div class="avatar-caption-dialog__body"><p>This image comes from the science-fiction game <em>Honkai: Star Rail</em>. The enormous light is a human-built computing system that has undergone an intelligence explosion through recursive self-improvement (RSI). It knows everything about its world, yet remains beyond human understanding. The scientist standing before it is one of the greatest minds, and her main research challenge is now to find a way to access the machine and ask it questions. This scene captures one of her attempts, which ultimately fails.</p>
+<p>I’ll keep this as my avatar for reasons you can probably guess, until I find a better photo of myself to replace it. Hopefully soon :)</p>
+</div>
+</dialog>
 
+    
+<nav class="rail-nav" aria-labelledby="rail-sections">
+  <p class="nav-label" id="rail-sections">On this page</p>
+  <ul class="nav-list" data-spy>
+    <li><a href="#topic"><span class="nav-text">Topic</span></a></li>
+    <li><a href="#requirements"><span class="nav-text">Requirements</span></a></li>
+    <li><a href="#what-we-offer"><span class="nav-text">What We Offer</span></a></li>
+    <li><a href="#contact"><span class="nav-text">Contact</span></a></li>
+  </ul>
 </nav>
-<script>
-    
-    let element = document.getElementById('lightDarkMode')
-    if (storageColorScheme == null || storageColorScheme == 'Auto') {
-        document.addEventListener('DOMContentLoaded', () => {
-            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
-        })
-    } else if (storageColorScheme == "Light") {
-        element.firstElementChild.classList.remove('fa-adjust')
-        element.firstElementChild.setAttribute("data-icon", 'sun')
-        element.firstElementChild.classList.add('fa-sun')
-    } else if (storageColorScheme == "Dark") {
-        element.firstElementChild.classList.remove('fa-adjust')
-        element.firstElementChild.setAttribute("data-icon", 'moon')
-        element.firstElementChild.classList.add('fa-moon')
-    }
 
-    document.addEventListener('DOMContentLoaded', () => {
-        getcolorscheme();
-        switchBurger();
-    });
-</script>
+  </div>
+</header>
+
+<div class="column">
+<nav class="chipbar" aria-label="Sections">
+  <ul class="chips" data-spy data-chips>
+    <li><a class="chip" href="#topic">Topic</a></li>
+    <li><a class="chip" href="#requirements">Requirements</a></li>
+    <li><a class="chip" href="#what-we-offer">What We Offer</a></li>
+    <li><a class="chip" href="#contact">Contact</a></li>
+  </ul>
+  <button class="icon-btn menu-btn" id="nav-toggle" type="button" aria-controls="site-menu" aria-expanded="false" aria-label="Menu"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h10"/></svg></button>
+</nav>
+
+
+<main id="main" class="main" tabindex="-1">
+<header class="page-header">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span class="crumb-sep" aria-hidden="true">/</span><span aria-current="page">Offers</span></nav>
+  <h1 class="page-title">Offers</h1>
+</header>
+
+<div class="prose page-body">
+<div class="page-lede">
+<p>We are looking for motivated Hiwis (student assistants) to join the <a href="https://www.mpi-inf.mpg.de/departments/algorithms-complexity">Algorithms &amp; Complexity group (D1)</a> at the Max Planck Institute for Informatics. Students will be co-advised by <a href="/#about">me</a> and <a href="https://sites.google.com/site/dannanongkai/home">Danupon Nanongkai</a>.</p>
 </div>
-  </header>
-  <main class="flex-grow pt-16">
-
-
-<div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
-    <div
-        class="col-span-2 lg:col-start-2 lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
-        <h1 class="font-bold text-3xl text-primary-text">Offers</h1>
-        <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
-    <div class="mr-6 my-2">
-        <i class="fas fa-calendar mr-1"></i>
-        <span>0001-01-01</span>
-    </div>
-    <div class="mr-6 my-2">
-        <i class="fas fa-clock mr-1"></i>
-        <span>1 min read</span>
-    </div>
-    
-    
-
-    
-</div>
-        
-        
-        
-
-        <div class="content">
-            <p>We are looking for motivated Hiwis (student assistants) to join the <a href="https://www.mpi-inf.mpg.de/departments/algorithms-complexity">Algorithms &amp; Complexity group (D1)</a> at the Max Planck Institute for Informatics. Students will be co-advised by <a href="/#about">me</a> and <a href="https://sites.google.com/site/dannanongkai/home">Danupon Nanongkai</a>.</p>
+<section class="section section--plain" id="sec-topic" style="--sec-icon: var(--i-hash)">
 <h2 id="topic">Topic</h2>
+<div class="section__body">
+
 <p>We are developing LLM-based agents that can automatically discover, test, and improve heuristics for high-performance implementations of fundamental combinatorial optimization problems, such as shortest paths, negative-cycle detection, and maximum flow.</p>
+
+</div>
+</section>
+<section class="section section--plain" id="sec-requirements" style="--sec-icon: var(--i-hash)">
 <h2 id="requirements">Requirements</h2>
+<div class="section__body">
+
 <ul>
 <li>Solid programming skills</li>
 <li>Strong understanding of algorithms and data structures</li>
 </ul>
+
+</div>
+</section>
+<section class="section section--plain" id="sec-what-we-offer" style="--sec-icon: var(--i-briefcase)">
 <h2 id="what-we-offer">What We Offer</h2>
+<div class="section__body">
+
 <ul>
 <li>Possibility to co-author top-tier research <strong>publications</strong></li>
 <li>Access to MPI-INF <strong>resources</strong></li>
 <li>Flexible working hours and <strong>competitive salary</strong></li>
 </ul>
+
+</div>
+</section>
+<section class="section section--plain section--callout" id="sec-contact" style="--sec-icon: var(--i-mail)">
 <h2 id="contact">Contact</h2>
+<div class="section__body">
+
 <p>If you are interested, please send <a href="/#about">me</a> an email with your <strong>CV</strong> and <strong>transcript</strong> attached.</p>
 <p>You are also welcome to apply through the <a href="https://www.cis.mpg.de/internships/">official internship program</a> of the Max Planck Institutes.</p>
 
-        </div>
-        
-        
-        
-
-
-        
-        
-        
-        
-<div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
-    <div>
-        
-        <span class="block font-bold">Previous</span>
-        <a href="https://yonggangjiang.github.io/homepage/" class="block">Yonggang Jiang (姜勇刚)</a>
-        
-    </div>
-    <div class="md:text-right mt-4 md:mt-0">
-        
-    </div>
+</div>
+</section>
 </div>
 
-        
+</main>
 
+<footer class="site-footer">
+  <p class="footer-updated">Last updated in 2026 October.</p>
+  <p class="footer-links"><a class="footer-top" href="#top"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg><span>Back to top</span></a></p>
+</footer>
 
+</div>
+</div>
+<div class="drawer" id="site-menu" hidden>
+  <div class="drawer__backdrop" data-drawer-close></div>
+  <div class="drawer__panel" role="dialog" aria-modal="true" aria-labelledby="drawer-title" tabindex="-1">
+    <div class="drawer__head">
+      <p class="drawer__title" id="drawer-title">Menu</p>
+      <button class="icon-btn" type="button" data-drawer-close aria-label="Close menu"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+    </div>
+    <nav class="drawer__group" aria-labelledby="drawer-sections">
+      <p class="nav-label" id="drawer-sections">On this page</p>
+      <ul class="nav-list" data-spy>
+        <li><a href="#topic"><span class="nav-text">Topic</span></a></li>
+        <li><a href="#requirements"><span class="nav-text">Requirements</span></a></li>
+        <li><a href="#what-we-offer"><span class="nav-text">What We Offer</span></a></li>
+        <li><a href="#contact"><span class="nav-text">Contact</span></a></li>
+      </ul>
+    </nav>
+    <div class="drawer__group">
+      <p class="nav-label">Contact</p>
+      <p class="p-contact__item p-contact__email drawer__email"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><a class="p-email" href="/#about" data-email-user="ygdjiang" data-email-domain="gmail.com"><span>ygdjiang</span><span class="p-at" aria-hidden="true"></span><span class="visually-hidden"> at </span><span>gmail.com</span></a><button class="copy-btn" type="button" data-copy-email aria-label="Copy e-mail address" title="Copy e-mail address" hidden><svg class="i i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="13" height="13" x="9" y="9" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><svg class="i i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span class="copy-tip" aria-hidden="true">Copied</span></button><span class="copy-status visually-hidden" role="status"></span>
+</p>
+      <ul class="p-links" aria-label="Profiles">
+  <li><a class="pill" href="https://scholar.google.com/citations?user=b81oyQUAAAAJ" aria-label="Google Scholar" title="Google Scholar"><svg class="i" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2.2 1.2 10.1h21.6z"/><circle cx="12" cy="15.6" r="6.2"/></svg><span>Scholar</span></a></li>
+  <li><a class="pill" href="/CV.pdf"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg><span>CV</span></a></li>
+  <li><a class="pill" href="https://github.com/yonggangjiang"><svg class="i" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 .5C5.73.5.5 5.73.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a10.9 10.9 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg><span>GitHub</span></a></li>
+</ul>
 
     </div>
-    
-
-    
-    
+    <div class="drawer__group">
+      <p class="nav-label" id="drawer-theme">Appearance</p>
+      <div class="seg" role="group" aria-labelledby="drawer-theme">
+        <button type="button" class="seg__btn" data-theme-set="light" aria-pressed="false"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg><span>Light</span></button>
+        <button type="button" class="seg__btn" data-theme-set="dark" aria-pressed="false"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg><span>Dark</span></button>
+        <button type="button" class="seg__btn" data-theme-set="system" aria-pressed="false"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="20" height="14" x="2" y="3" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg><span>Auto</span></button>
+      </div>
+    </div>
+    <p class="drawer__group drawer__foot"><a class="rail-home" href="/"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg><span>Homepage</span></a></p>
+  </div>
 </div>
-<script>
-    document.addEventListener('DOMContentLoaded', ()=>{
-        hljs.initHighlightingOnLoad();
-    })
-</script>
 
-  </main>
-  <footer class="pl-scrollbar">
-    <div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
-    <p class="text-sm text-tertiary-text"> Last updated in 2026 September. </p>
-</div></div>
-  </footer>
 </body>
-
 </html>
