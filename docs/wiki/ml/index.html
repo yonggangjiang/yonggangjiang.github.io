@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-palette="ember" data-palette-default="ember">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,12 +16,13 @@
 <meta name="twitter:card" content="summary">
 
 <meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#f5f8ff" data-color="#f5f8ff" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#080f20" data-color="#080f20" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#fcf8f7" data-color="#fcf8f7" data-blue="#f5f8ff" data-ember="#fcf8f7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#170d13" data-color="#170d13" data-blue="#080f20" data-ember="#170d13" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<script>(function(){try{var bar={"dark":"#080f20","light":"#f5f8ff"};var t=localStorage.getItem("theme");if(t==="light"||t==="dark"){document.documentElement.setAttribute("data-theme",t);var m=document.querySelectorAll('meta[name="theme-color"]');for(var i=0;i<m.length;i++)m[i].setAttribute("content",bar[t]);}}catch(e){}})();</script>
+<script>(function(){try{var bar={"dark":"#170d13","default":"ember","light":"#fcf8f7"};var t=localStorage.getItem("theme");if(t==="light"||t==="dark"){document.documentElement.setAttribute("data-theme",t);var m=document.querySelectorAll('meta[name="theme-color"]');for(var i=0;i<m.length;i++)m[i].setAttribute("content",bar[t]);}}catch(e){}})();</script>
+<script src="/js/orbit-palette.min.9244021d83956188e5fd431512f8bdaf843f6f8828b26bd7ae2dafa2db8a908c.js"></script>
 <link rel="preload" href="/fonts/source-serif-4-normal-400_700-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/source-serif-4-display-600_700-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/inter-normal-400_700-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -43,11 +44,11 @@
   });
 </script>
 
-<link rel="stylesheet" href="/css/modern-sidebar-bundle.min.b598485aab78b23786afe7717f561e902eb474dfa2a33b6f08282bdf2cbbcbea.css">
-<script defer src="/js/site.min.98312892c4d280680beba96ee9700d419c60486ba60be58a313762ea2ce27c4d.js"></script>
+<link rel="stylesheet" href="/css/modern-sidebar-bundle.min.af98489ecf5aef0bb477842598210aed282cfd24b0bb5d6114aa2250a35957ab.css">
+<script defer src="/js/site.min.3c6e6b93df3564f46f9e6963ada8324d797c0992294a08d9bb59971353c8e74f.js"></script>
 <script defer src="/js/avatar-caption.min.863927548a51d409a8128fdb8c6874f2f6565cc5aaae3a83a97c581ffc81707e.js"></script>
 <script defer src="/js/modern-sidebar-variant.min.491b05509d6830641a5a78d07a7b4c676e259869e9abf4aa083a54ebecf31af0.js"></script>
-<noscript><style>.theme-toggle,.menu-btn,.copy-btn,.folds-btn{display:none!important}@media (max-width:63.99em){.rail--docs .rail-nav,.rail--docs .rail-foot{display:block!important}.profile--compact .p-links{display:flex!important}}</style></noscript>
+<noscript><style>.theme-toggle,.menu-btn,.copy-btn,.folds-btn,.appearance-settings{display:none!important}@media (max-width:63.99em){.rail--docs .rail-nav,.rail--docs .rail-foot{display:block!important}.profile--compact .p-links{display:flex!important}}</style></noscript>
 
 </head>
 <body id="top" class="page page--docs">
@@ -296,7 +297,26 @@ m\mathcal{R}_S(\Phi _\rho(\tilde{\mathcal{H}})) = \mathbb{E}_{\sigma}[\sup _{\ti
 
 <footer class="site-footer">
   <p class="footer-updated">Last updated in 2026 October.</p>
-  <p class="footer-links"><a class="footer-top" href="#top"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg><span>Back to top</span></a></p>
+  <div class="footer-links">
+    <a class="footer-top" href="#top"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg><span>Back to top</span></a>
+    <details class="appearance-settings" data-popover>
+      <summary>Appearance</summary>
+      <div class="appearance-settings__panel">
+        <p class="appearance-settings__label">Color</p>
+        <div class="color-switch" role="group" aria-label="Color palette" hidden>
+  <button type="button" data-palette-set="blue" aria-pressed="false"><span class="color-switch__dot" aria-hidden="true"></span>Blue</button>
+  <button type="button" data-palette-set="ember" aria-pressed="false"><span class="color-switch__dot" aria-hidden="true"></span>Ember</button>
+</div>
+
+        <p class="appearance-settings__label">Display</p>
+        <div class="seg" role="group" aria-label="Display mode">
+          <button type="button" class="seg__btn" data-theme-set="light" aria-pressed="false"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg><span>Light</span></button>
+          <button type="button" class="seg__btn" data-theme-set="dark" aria-pressed="false"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg><span>Dark</span></button>
+          <button type="button" class="seg__btn" data-theme-set="system" aria-pressed="false"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="20" height="14" x="2" y="3" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg><span>Auto</span></button>
+        </div>
+      </div>
+    </details>
+  </div>
 </footer>
 
 </div>
@@ -368,7 +388,11 @@ m\mathcal{R}_S(\Phi _\rho(\tilde{\mathcal{H}})) = \mathbb{E}_{\sigma}[\sup _{\ti
         <button type="button" class="seg__btn" data-theme-set="light" aria-pressed="false"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg><span>Light</span></button>
         <button type="button" class="seg__btn" data-theme-set="dark" aria-pressed="false"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg><span>Dark</span></button>
         <button type="button" class="seg__btn" data-theme-set="system" aria-pressed="false"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="20" height="14" x="2" y="3" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg><span>Auto</span></button>
-      </div>
+      </div><div class="color-switch" role="group" aria-label="Color palette" hidden>
+  <button type="button" data-palette-set="blue" aria-pressed="false"><span class="color-switch__dot" aria-hidden="true"></span>Blue</button>
+  <button type="button" data-palette-set="ember" aria-pressed="false"><span class="color-switch__dot" aria-hidden="true"></span>Ember</button>
+</div>
+
     </div>
     <p class="drawer__group drawer__foot"><a class="rail-home" href="/"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg><span>Homepage</span></a></p>
   </div>
